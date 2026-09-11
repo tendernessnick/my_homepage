@@ -33,6 +33,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: auto; }
+/* 隐藏页面滚动条但保留滚动能力（位置由进度条与导航提示） */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
@@ -488,6 +491,24 @@ a.contact-card:hover { transform: translateY(-4px); border-color: rgba(94, 234, 
 html.js [data-hero] { opacity: 0; }
 html.gsap-failed [data-hero], html.no-anim [data-hero] { opacity: 1 !important; }
 
+/* ============ 回到顶部 ============ */
+.to-top {
+  position: fixed; right: 26px; bottom: 26px; z-index: 90;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(16, 20, 29, 0.9);
+  border: 1px solid var(--line); color: var(--ink-dim);
+  cursor: pointer;
+  opacity: 0; transform: translateY(14px); pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s var(--ease-out), border-color 0.25s, color 0.25s;
+}
+.to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover {
+  border-color: rgba(94, 234, 212, 0.5); color: var(--accent);
+  transform: translateY(-3px);
+}
+.to-top svg { width: 20px; height: 20px; }
+
 /* ============ 响应式 ============ */
 @media (max-width: 960px) {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -501,6 +522,7 @@ html.gsap-failed [data-hero], html.no-anim [data-hero] { opacity: 1 !important; 
 
 @media (max-width: 760px) {
   .project-grid { grid-template-columns: 1fr; }
+  .to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
   .nav-toggle {
     display: flex; flex-direction: column; justify-content: center; gap: 6px;
     width: 42px; height: 42px; padding: 0 10px;

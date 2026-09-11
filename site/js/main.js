@@ -8,11 +8,12 @@ import { initGallery } from './gallery.js';
 import { initDehaze } from './dehaze.js';
 
 // GSAP 未加载成功（如部署路径错误）时，兜底显示所有动画元素
+let lenis = null;
 if (!window.gsap || !window.ScrollTrigger) {
   document.documentElement.classList.add('gsap-failed');
 } else {
   gsap.registerPlugin(ScrollTrigger);
-  initScroll();
+  lenis = initScroll();
   initAnimations();
 }
 
@@ -36,4 +37,15 @@ navLinks?.addEventListener('click', (e) => {
 // Escape 收起菜单
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMobileNav();
+});
+
+// ---------- 回到顶部 ----------
+const toTop = document.getElementById('toTop');
+const onScrollForTop = () => toTop?.classList.toggle('visible', window.scrollY > 640);
+window.addEventListener('scroll', onScrollForTop, { passive: true });
+onScrollForTop();
+
+toTop?.addEventListener('click', () => {
+  if (lenis) lenis.scrollTo(0, { duration: 1.4 });
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
 });
