@@ -295,6 +295,40 @@ ul { list-style: none; }
 .t-card h3 { font-size: 20px; margin-bottom: 8px; }
 .t-desc { color: var(--ink-dim); font-size: 14.5px; max-width: 640px; }
 
+/* ============ 微信推文卡片 ============ */
+.wx-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  margin-top: 18px;
+}
+.wx-card {
+  display: flex; flex-direction: column; gap: 7px;
+  border: 1px solid var(--line); border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px 16px 13px;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease-out);
+}
+.wx-card:hover {
+  border-color: rgba(94, 234, 212, 0.45);
+  background: rgba(94, 234, 212, 0.05);
+  transform: translateY(-2px);
+}
+.wx-card-tag {
+  align-self: flex-start;
+  padding: 2px 9px; border-radius: 999px;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  color: var(--accent); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+}
+.wx-card-tag--school { border-color: rgba(139, 154, 255, 0.4); color: #a5b4fc; }
+.wx-card strong {
+  font-size: 13.5px; font-weight: 600; line-height: 1.5; color: var(--ink);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.wx-card-src { font-size: 11.5px; color: var(--ink-faint); }
+
+@media (max-width: 760px) {
+  .wx-grid { grid-template-columns: 1fr; }
+}
+
 /* ============ 项目 ============ */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .project-card {
