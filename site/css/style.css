@@ -309,15 +309,49 @@ ul { list-style: none; }
 }
 .wx-card:hover {
   border-color: rgba(94, 234, 212, 0.45);
-  background: rgba(94, 234, 212, 0.05);
+  background: linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(129, 140, 248, 0.05) 60%, transparent);
   transform: translateY(-2px);
 }
-.wx-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
-.wx-thumb {
-  width: 84px; height: 84px; flex-shrink: 0;
-  border-radius: 10px; object-fit: cover;
-  border: 1px solid var(--line);
+.wx-card--school:hover {
+  border-color: rgba(129, 140, 248, 0.5);
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.09), rgba(56, 189, 248, 0.05) 60%, transparent);
 }
+.wx-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+
+/* 渐变描边缩略图：学院推文 = 薄荷青→靛蓝，学校官号 = 靛蓝→天蓝 */
+.wx-thumb-wrap {
+  position: relative; flex-shrink: 0;
+  width: 86px; height: 86px;
+  padding: 1.5px; border-radius: 12px;
+  background: linear-gradient(135deg, #5eead4, #6366f1);
+  overflow: hidden;
+}
+.wx-thumb-wrap--school { background: linear-gradient(135deg, #818cf8, #38bdf8); }
+.wx-thumb {
+  width: 100%; height: 100%;
+  border-radius: 10.5px; object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--ease-out);
+}
+/* 图片上的渐变镀层：让照片融进暗色主题 */
+.wx-thumb-wrap::after {
+  content: ""; position: absolute; inset: 1.5px; border-radius: 10.5px;
+  background: linear-gradient(155deg, rgba(94, 234, 212, 0.22), transparent 42%, rgba(99, 102, 241, 0.3));
+  pointer-events: none;
+}
+.wx-thumb-wrap--school::after {
+  background: linear-gradient(155deg, rgba(129, 140, 248, 0.25), transparent 42%, rgba(56, 189, 248, 0.3));
+}
+/* 悬停：流光扫过 + 图片微放大 */
+.wx-thumb-wrap::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.16) 48%, transparent 62%);
+  transform: translateX(-130%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.wx-card:hover .wx-thumb-wrap::before { transform: translateX(130%); }
+.wx-card:hover .wx-thumb { transform: scale(1.07); }
 .wx-card-tag {
   align-self: flex-start;
   padding: 2px 9px; border-radius: 999px;
