@@ -239,6 +239,11 @@ ul { list-style: none; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 
 .approach-cards { display: grid; gap: 16px; }
+/* 案例页三列变体 */
+.approach-cards--row { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.nav-cta { color: var(--accent) !important; font-weight: 600; }
+.footer-link { color: var(--ink-dim); text-decoration: underline; text-underline-offset: 3px; }
+.footer-link:hover { color: var(--accent); }
 .approach-card {
   position: relative; padding: 26px 26px 22px;
   border: 1px solid var(--line); border-radius: var(--radius);
@@ -512,6 +517,7 @@ html.gsap-failed [data-hero], html.no-anim [data-hero] { opacity: 1 !important; 
 /* ============ 响应式 ============ */
 @media (max-width: 960px) {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .approach-cards--row { grid-template-columns: 1fr; }
   .project-card--feature { flex-direction: column; }
   .project-card--feature .project-visual { min-height: 220px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
@@ -545,6 +551,13 @@ html.gsap-failed [data-hero], html.no-anim [data-hero] { opacity: 1 !important; 
   .nav-links.open { opacity: 1; pointer-events: auto; }
   .nav-links a { font-size: 22px; padding: 12px 20px; }
   .nav-links a i { font-size: 12px; }
+
+  /* 案例页（dehaze.html）：无汉堡按钮，导航项始终可见 */
+  .case-nav .nav-links {
+    position: static; inset: auto; opacity: 1; pointer-events: auto;
+    background: none; flex-direction: row; gap: 4px;
+  }
+  .case-nav .nav-links a { font-size: 14px; padding: 8px 12px; }
 
   .section { padding: 96px 22px 72px; }
   .hero { padding-left: 22px; padding-right: 22px; }

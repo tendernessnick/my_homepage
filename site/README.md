@@ -16,7 +16,8 @@ python -m http.server 8765
 
 ```
 site/
-├── index.html          # 页面结构（所有区块内容在这里改）
+├── index.html          # 主页（所有区块内容在这里改）
+├── dehaze.html         # 毕业设计独立体验页（介绍 + 在线 Demo）
 ├── css/style.css       # 主题变量在 :root，双区氛围（暗色工作区 / 暖色生活区）
 ├── js/
 │   ├── config.js       # ★ 去雾 API 地址等配置，部署前必改
@@ -26,23 +27,16 @@ site/
 │   ├── dehaze.js       # 去雾 Demo（上传→推理→前后对比滑块）
 │   └── gallery.js      # 照片墙拖拽横滑
 ├── vendor/             # gsap / ScrollTrigger / lenis 本地库
-└── assets/             # 示例雾图、favicon、照片墙占位图
+└── assets/             # 简历(docx)、示例雾图、favicon、照片墙占位图
 ```
 
 ## 填充真实素材（替换占位内容）
 
-在 `index.html` 里搜索 `TODO`，共以下几处：
+文字内容（姓名/经历/项目/联系方式）已按简历填充。还需要：
 
-1. **姓名**：Hero 区"林霁 / LIN JI"、`<title>`、品牌角标"霁"、页脚
-2. **身份定位**：Hero 的 role / 一句话介绍
-3. **简历**：`assets/resume.pdf`（下载简历按钮指向这里）
-4. **数据条**：4 个 `data-count` 数字
-5. **关于我**：两段自我介绍 + 技能标签
-6. **教育与经历**：时间线条目与量化指标 pill
-7. **项目**：第二、三张占位卡
-8. **照片墙**：把 `assets/photos/p1.svg ~ p8.svg` 换成真实照片（建议同名 `jpg` 并同步改 `<img>` 的 `src`），说明文字在 `figcaption`
-9. **生活区**：在看/在读/爱好
-10. **联系方式**：邮箱 / GitHub / 微信
+1. **简历 PDF**：下载按钮目前指向 `assets/resume.docx`，建议导出一份 PDF 放到 `assets/resume.pdf` 并把 `index.html` 里的链接改为 `.pdf`
+2. **照片墙**：把 `assets/photos/p1.svg ~ p8.svg` 换成真实照片（建议同名 `jpg` 并同步改 `<img>` 的 `src`），说明文字在 `figcaption`
+3. **在读/观影清单**：生活区"在动/在创作"两列如有更新直接改 `index.html`
 
 ## 配置去雾 API（毕业设计对接）
 
