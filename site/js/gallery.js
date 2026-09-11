@@ -1,11 +1,8 @@
 // ============================================================
-// 照片墙：鼠标拖拽横向滚动（触摸设备走原生滚动）
+// 拖拽横向滚动：照片墙 + 证书墙（触摸设备走原生滚动）
 // ============================================================
 
-export function initGallery() {
-  const wall = document.getElementById('photoWall');
-  if (!wall) return;
-
+function enableDrag(wall) {
   let down = false;
   let startX = 0;
   let startLeft = 0;
@@ -30,4 +27,8 @@ export function initGallery() {
       wall.classList.remove('dragging');
     })
   );
+}
+
+export function initGallery() {
+  document.querySelectorAll('.photo-wall, .cert-wall').forEach(enableDrag);
 }
