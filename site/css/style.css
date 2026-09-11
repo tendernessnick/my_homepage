@@ -301,57 +301,39 @@ ul { list-style: none; }
   margin-top: 18px;
 }
 .wx-card {
-  display: flex; align-items: center; gap: 14px;
+  position: relative; isolation: isolate;
+  display: flex; flex-direction: column; justify-content: center; gap: 8px;
+  min-height: 138px;
   border: 1px solid var(--line); border-radius: 14px;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 12px 14px;
-  transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease-out);
-}
-.wx-card:hover {
-  border-color: rgba(94, 234, 212, 0.45);
-  background: linear-gradient(135deg, rgba(94, 234, 212, 0.08), rgba(129, 140, 248, 0.05) 60%, transparent);
-  transform: translateY(-2px);
-}
-.wx-card--school:hover {
-  border-color: rgba(129, 140, 248, 0.5);
-  background: linear-gradient(135deg, rgba(129, 140, 248, 0.09), rgba(56, 189, 248, 0.05) 60%, transparent);
-}
-.wx-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
-
-/* 渐变描边缩略图：学院推文 = 薄荷青→靛蓝，学校官号 = 靛蓝→天蓝 */
-.wx-thumb-wrap {
-  position: relative; flex-shrink: 0;
-  width: 86px; height: 86px;
-  padding: 1.5px; border-radius: 12px;
-  background: linear-gradient(135deg, #5eead4, #6366f1);
+  background: var(--bg-2);
+  padding: 18px 20px;
   overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s var(--ease-out);
 }
-.wx-thumb-wrap--school { background: linear-gradient(135deg, #818cf8, #38bdf8); }
-.wx-thumb {
-  width: 100%; height: 100%;
-  border-radius: 10.5px; object-fit: cover;
-  display: block;
-  transition: transform 0.4s var(--ease-out);
+/* 推文首图铺在卡片右侧，渐变融入左侧文字区 */
+.wx-card::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background-image: var(--cover);
+  background-size: cover; background-position: center right;
+  filter: brightness(1.22) saturate(1.08);
+  transition: transform 0.5s var(--ease-out);
 }
-/* 图片上的渐变镀层：让照片融进暗色主题 */
-.wx-thumb-wrap::after {
-  content: ""; position: absolute; inset: 1.5px; border-radius: 10.5px;
-  background: linear-gradient(155deg, rgba(94, 234, 212, 0.22), transparent 42%, rgba(99, 102, 241, 0.3));
-  pointer-events: none;
+/* 渐变遮罩：左实右透，保证文字可读；学校官号带一点靛蓝色温 */
+.wx-card::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, #10141d 0%, #10141d 30%, rgba(16, 20, 29, 0.72) 55%, rgba(16, 20, 29, 0.16) 92%),
+    linear-gradient(180deg, rgba(16, 20, 29, 0.18), transparent 35%, transparent 68%, rgba(16, 20, 29, 0.28));
 }
-.wx-thumb-wrap--school::after {
-  background: linear-gradient(155deg, rgba(129, 140, 248, 0.25), transparent 42%, rgba(56, 189, 248, 0.3));
+.wx-card--school::after {
+  background:
+    linear-gradient(90deg, #10141d 0%, #10141d 30%, rgba(16, 20, 29, 0.7) 55%, rgba(30, 27, 75, 0.28) 92%),
+    linear-gradient(180deg, rgba(16, 20, 29, 0.18), transparent 35%, transparent 68%, rgba(16, 20, 29, 0.28));
 }
-/* 悬停：流光扫过 + 图片微放大 */
-.wx-thumb-wrap::before {
-  content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.16) 48%, transparent 62%);
-  transform: translateX(-130%);
-  transition: transform 0.6s var(--ease-out);
-  pointer-events: none;
-}
-.wx-card:hover .wx-thumb-wrap::before { transform: translateX(130%); }
-.wx-card:hover .wx-thumb { transform: scale(1.07); }
+.wx-card:hover { border-color: rgba(94, 234, 212, 0.45); transform: translateY(-2px); }
+.wx-card:hover::before { transform: scale(1.06); filter: brightness(1.32) saturate(1.12); }
+.wx-card:hover::after { opacity: 0.88; }
+.wx-card--school:hover { border-color: rgba(129, 140, 248, 0.5); }
 .wx-card-tag {
   align-self: flex-start;
   padding: 2px 9px; border-radius: 999px;
@@ -367,6 +349,12 @@ ul { list-style: none; }
 
 @media (max-width: 760px) {
   .wx-grid { grid-template-columns: 1fr; }
+  /* 窄屏文字与图片重叠更多，遮罩加深保证可读性 */
+  .wx-card::after {
+    background:
+      linear-gradient(90deg, rgba(16, 20, 29, 0.97) 25%, rgba(16, 20, 29, 0.88) 60%, rgba(16, 20, 29, 0.55) 100%),
+      linear-gradient(180deg, rgba(16, 20, 29, 0.3), transparent 35%, transparent 65%, rgba(16, 20, 29, 0.4));
+  }
 }
 
 /* ============ 项目 ============ */
