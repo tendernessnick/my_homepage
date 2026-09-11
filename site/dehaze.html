@@ -43,8 +43,10 @@
           在 RESIDE 与 O-HAZE 数据集上完成训练与评测。
         </p>
         <p>
-          训练完成后，模型经权重导出与逐像素一致性校验，封装为 <strong>FastAPI 推理服务</strong>，
-          以 Docker 容器部署在腾讯云 CloudBase 云托管上——就是下面这个你可以直接上传图片体验的服务。
+          训练完成后，模型最初以 <strong>PyQt6 开发了 Windows 桌面演示程序</strong>，可以在本地加载权重、
+          对任意雾图直接查看去雾效果。为了让展示不依赖安装环境、任何人点开链接就能体验，
+          我把项目迁移上云：重构为 <strong>FastAPI 推理服务</strong>，以 Docker 容器部署在腾讯云 CloudBase 云托管上——
+          就是下面这个你可以直接上传图片体验的服务。
         </p>
         <div class="t-metrics">
           <span class="pill pill--accent">PSNR 28.05</span>
@@ -140,7 +142,7 @@
         <article class="approach-card" data-reveal>
           <span class="approach-num">03</span>
           <h3>工程部署</h3>
-          <p>权重导出 → FastAPI 接口（multipart 上传，返回 PNG）→ Docker 容器 → 腾讯云 CloudBase 云托管；前端预缩放省流量，冷启动预热。</p>
+          <p>PyQt6 桌面端（Windows）起步 → 权重导出与一致性校验 → FastAPI 接口（multipart 上传，返回 PNG）→ Docker → 腾讯云 CloudBase 云托管；前端预缩放省流量，冷启动预热。</p>
         </article>
       </div>
     </section>
