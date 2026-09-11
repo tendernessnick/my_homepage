@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>林霁 · 计算机科学 · 深度学习方向</title>
+  <meta name="description" content="林霁的个人主页 —— 深度学习方向，含毕业设计图像去雾算法在线体验。" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- 滚动进度条 -->
+  <div class="progress-bar" id="progress" aria-hidden="true"></div>
+
+  <!-- ============ 导航 ============ -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="brand" href="#home" data-scroll>
+        <span class="brand-mark">霁</span>
+        <span class="brand-text">LIN JI<small>求职中 · 2026</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="主导航">
+        <a href="#home"     data-scroll data-section="home"><i>01</i>首页</a>
+        <a href="#about"    data-scroll data-section="about"><i>02</i>关于</a>
+        <a href="#journey"  data-scroll data-section="journey"><i>03</i>经历</a>
+        <a href="#projects" data-scroll data-section="projects"><i>04</i>项目</a>
+        <a href="#life"     data-scroll data-section="life"><i>05</i>生活</a>
+        <a href="#contact"  data-scroll data-section="contact"><i>06</i>联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO 首屏 ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow hero-glow--1" data-speed="0.85"></div>
+        <div class="hero-glow hero-glow--2" data-speed="1.15"></div>
+        <div class="hero-grid" data-speed="1.05"></div>
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow" data-hero="1">PORTFOLIO — 求职中 · OPEN TO WORK</p>
+        <!-- TODO: 替换为你的名字（中文 + 英文） -->
+        <h1 class="hero-name">
+          <span class="hero-name-cn"><em data-hero="2">林</em><em data-hero="3">霁</em></span>
+          <span class="hero-name-en" aria-hidden="true">LIN&nbsp;JI</span>
+        </h1>
+        <p class="hero-role" data-hero="4">
+          计算机科学与技术 · 深度学习方向<span class="dot">/</span>目标：算法工程师（图像方向）
+        </p>
+        <p class="hero-tagline" data-hero="5">
+          一句话介绍自己：把研究做进工程里，让模型在真实场景中可用。<br />
+          毕业设计做图像去雾，正在寻找下一个让算法落地的机会。
+        </p>
+        <div class="hero-cta" data-hero="6">
+          <a class="btn btn--primary" href="#journey" data-scroll>查看经历</a>
+          <!-- TODO: 替换为你的简历 PDF（assets/resume.pdf） -->
+          <a class="btn btn--ghost" href="assets/resume.pdf" target="_blank" rel="noopener">下载简历 ↓</a>
+        </div>
+      </div>
+      <div class="hero-scrollcue" aria-hidden="true">
+        <span>下滑进入</span><i></i>
+      </div>
+    </section>
+
+    <!-- ============ 数据条 ============ -->
+    <!-- TODO: 替换为你的真实量化数据 -->
+    <section class="stats-strip" id="stats" aria-label="个人数据">
+      <div class="stats-inner">
+        <div class="stat" data-reveal>
+          <strong><span data-count="4">0</span><em>+</em></strong>
+          <span class="stat-label">项目经验</span>
+        </div>
+        <div class="stat" data-reveal>
+          <strong><span data-count="2">0</span><em>段</em></strong>
+          <span class="stat-label">实习经历</span>
+        </div>
+        <div class="stat" data-reveal>
+          <strong><span data-count="28.05" data-decimal="2">0</span></strong>
+          <span class="stat-label">去雾模型 PSNR</span>
+        </div>
+        <div class="stat" data-reveal>
+          <strong><span data-count="1">0</span><em>篇</em></strong>
+          <span class="stat-label">论文在投</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 关于 ============ -->
+    <section class="section section--about" id="about">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">ABOUT</p>
+        <h2>关于我<span>· 我做事的方式</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-reveal>
+          <p>
+            <!-- TODO: 替换为你的自我介绍 -->
+            我是林霁，一名计算机专业的应届生，方向是深度学习与图像处理。
+            毕业设计围绕<strong>单幅图像去雾</strong>展开：从复现经典方法起步，
+            到设计条件生成对抗网络（SE-CGAN），再到把模型导出部署成线上推理服务——
+            我喜欢把一件事从论文里一路做到能被真实用户点开使用的程度。
+          </p>
+          <p>
+            比起"跑通模型"，我更在意<strong>问题拆解、量化验证与工程落地</strong>。
+            这个页面本身也是我的一次练习：原生 JS + GSAP 手工搭建，无框架依赖，
+            托管在腾讯云 CloudBase 上。
+          </p>
+          <div class="about-tags">
+            <span>PyTorch</span><span>图像复原</span><span>cGAN</span><span>Python</span><span>FastAPI</span><span>云部署</span>
+          </div>
+        </div>
+        <div class="approach-cards">
+          <article class="approach-card" data-reveal>
+            <span class="approach-num">01</span>
+            <h3>问题拆解</h3>
+            <p>把模糊的大目标翻译成可验证的小步骤，先定义评价指标，再动手实现。</p>
+          </article>
+          <article class="approach-card" data-reveal>
+            <span class="approach-num">02</span>
+            <h3>工程落地</h3>
+            <p>模型不是终点：容器化、接口化、压耗时，让结果能被别人真正用到。</p>
+          </article>
+          <article class="approach-card" data-reveal>
+            <span class="approach-num">03</span>
+            <h3>量化验证</h3>
+            <p>用 PSNR / SSIM 这类硬指标说话，每一次改动都要有对照实验支撑。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 教育与经历 ============ -->
+    <!-- TODO: 替换为你的真实教育/实习经历与量化成果 -->
+    <section class="section section--journey" id="journey">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">JOURNEY</p>
+        <h2>教育与经历<span>· 时间线</span></h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item" data-reveal>
+          <div class="t-era">2022 — 2026</div>
+          <div class="t-card">
+            <p class="t-kind">教育 · 本科</p>
+            <h3>XX 大学 · 计算机科学与技术</h3>
+            <p class="t-desc">主修课程占位：机器学习、计算机视觉、数据结构与算法。GPA / 排名占位。</p>
+            <div class="t-metrics">
+              <span class="pill">GPA 3.8 / 4.0</span>
+              <span class="pill">专业前 10%</span>
+            </div>
+          </div>
+        </article>
+        <article class="timeline-item" data-reveal>
+          <div class="t-era">2025.06 — 2025.09</div>
+          <div class="t-card">
+            <p class="t-kind">实习 · 算法实习生</p>
+            <h3>XX 公司 · 计算机视觉组</h3>
+            <p class="t-desc">实习内容占位：参与图像增强方向的工作，负责数据处理与模型评测。</p>
+            <div class="t-metrics">
+              <span class="pill">XX+ 数据清洗</span>
+              <span class="pill">推理耗时 -30%</span>
+              <span class="pill">独立负责 X 个模块</span>
+            </div>
+          </div>
+        </article>
+        <article class="timeline-item" data-reveal>
+          <div class="t-era">2024.11 — 至今</div>
+          <div class="t-card">
+            <p class="t-kind">毕业设计 · 在研</p>
+            <h3>基于条件生成对抗网络的图像去雾</h3>
+            <p class="t-desc">SE-CGAN 模型设计与实现，RESIDE / O-HAZE 数据集训练，并部署为在线推理服务（本页可体验）。</p>
+            <div class="t-metrics">
+              <span class="pill">PSNR 28.05</span>
+              <span class="pill">SSIM 0.9707</span>
+              <span class="pill">FastAPI 在线服务</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 项目作品 ============ -->
+    <section class="section section--projects" id="projects">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">WORKS</p>
+        <h2>项目作品<span>· Works</span></h2>
+      </div>
+
+      <!-- TODO: 替换为你的项目（第二、三张为占位卡） -->
+      <div class="project-grid">
+        <a class="project-card project-card--feature" href="#dehaze" data-scroll data-reveal>
+          <div class="project-visual project-visual--dehaze" aria-hidden="true">
+            <img src="assets/sample_hazy.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <p class="t-kind">毕业设计 · 在线可体验</p>
+            <h3>单幅图像去雾 · SE-CGAN</h3>
+            <p>条件生成对抗网络实现单幅图像去雾，Tiramisu U-Net 生成器 + PatchGAN 判别器，并封装为在线推理服务。</p>
+            <div class="t-metrics">
+              <span class="pill pill--accent">PSNR 28.05</span>
+              <span class="pill">SSIM 0.9707</span>
+              <span class="pill">PyTorch</span>
+              <span class="pill">FastAPI</span>
+            </div>
+            <span class="project-more">在本页直接体验 ↓</span>
+          </div>
+        </a>
+        <article class="project-card" data-reveal>
+          <div class="project-visual" aria-hidden="true"><span>02</span></div>
+          <div class="project-body">
+            <p class="t-kind">项目占位</p>
+            <h3>项目名称二</h3>
+            <p>一句话描述这个项目做了什么、你的角色与亮点。</p>
+            <div class="t-metrics"><span class="pill">技术栈</span><span class="pill">量化成果</span></div>
+          </div>
+        </article>
+        <article class="project-card" data-reveal>
+          <div class="project-visual" aria-hidden="true"><span>03</span></div>
+          <div class="project-body">
+            <p class="t-kind">项目占位</p>
+            <h3>项目名称三</h3>
+            <p>一句话描述这个项目做了什么、你的角色与亮点。</p>
+            <div class="t-metrics"><span class="pill">技术栈</span><span class="pill">量化成果</span></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ 去雾在线体验 ============ -->
+      <div class="dehaze-demo" id="dehaze">
+        <div class="dehaze-head" data-reveal>
+          <p class="eyebrow">LIVE DEMO — 毕业设计在线体验</p>
+          <h3>上传一张有雾的照片，看看模型怎么还它一片清晰</h3>
+          <p class="dehaze-sub">
+            模型在 CPU 上推理，输入超过 512px 会自动等比缩小；服务冷启动时首次请求约需
+            10–40 秒，之后秒级返回。图片仅在推理时临时使用，不会被保存。
+          </p>
+          <div class="t-metrics">
+            <span class="pill">SE-CGAN</span>
+            <span class="pill">O-HAZE 训练</span>
+            <span class="pill">CPU 实时推理</span>
+          </div>
+        </div>
+
+        <div class="dehaze-stage" data-reveal>
+          <!-- 上传区 -->
+          <div class="dropzone" id="dz" role="button" tabindex="0" aria-label="上传图片：点击或拖拽">
+            <input type="file" id="dzInput" accept="image/png, image/jpeg" hidden />
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 32V12m0 0l-8 8m8-8l8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 34v4a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <p><strong>拖拽图片到这里，或点击上传</strong></p>
+            <span>支持 PNG / JPG，≤ 10MB</span>
+            <button class="btn btn--ghost btn--small" id="dzSample" type="button">没有雾图？用示例图试试</button>
+          </div>
+
+          <!-- 加载态 -->
+          <div class="dehaze-loading" id="dzLoading" hidden>
+            <div class="loader" aria-hidden="true"></div>
+            <p class="loading-title" id="dzLoadingTitle">正在去雾…</p>
+            <p class="loading-sub" id="dzLoadingSub">模型启动中：首次请求需要唤醒服务器，约 10–40 秒</p>
+            <p class="loading-timer"><span id="dzTimer">0.0</span> s</p>
+          </div>
+
+          <!-- 前后对比 -->
+          <div class="compare" id="compare" hidden>
+            <div class="compare-frame" id="compareFrame">
+              <img class="compare-img compare-img--before" id="imgBefore" alt="原图（有雾）" draggable="false" />
+              <div class="compare-after" id="compareAfter">
+                <img class="compare-img" id="imgAfter" alt="去雾结果" draggable="false" />
+              </div>
+              <div class="compare-divider" id="compareDivider" aria-hidden="true"><span></span></div>
+              <span class="compare-tag compare-tag--l" id="tagBefore">原图 · 有雾</span>
+              <span class="compare-tag compare-tag--r" id="tagAfter">去雾后</span>
+            </div>
+            <div class="compare-foot">
+              <p class="compare-caption" id="compareCaption">拖动分割线对比效果</p>
+              <div class="compare-actions">
+                <button class="btn btn--ghost btn--small" id="btnRetry" type="button">再试一张</button>
+                <button class="btn btn--ghost btn--small" id="btnSample2" type="button">换张示例图</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 错误 / 提示 -->
+          <p class="dehaze-error" id="dzError" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 生活区（暖色，通栏背景） ============ -->
+    <section class="zone-warm" id="life">
+      <div class="section section--life">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">LIFE</p>
+        <h2>生活之外<span>· 下班后</span></h2>
+      </div>
+
+      <!-- TODO: 替换为你的个人介绍与照片 -->
+      <p class="life-intro" data-reveal>
+        代码之外：INFP · 坐标 XX · 相机与吉他吃灰中，最近在补的剧和书都记在下面。
+      </p>
+
+      <div class="photo-wall" id="photoWall" data-reveal aria-label="生活照片墙，可左右拖动">
+        <!-- 占位照片：替换 assets/photos/ 下的 SVG 为真实照片（同名 jpg 更佳） -->
+        <figure class="photo-tile"><img src="assets/photos/p1.svg" alt="生活照片占位 1" draggable="false" /><figcaption>富士山</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p2.svg" alt="生活照片占位 2" draggable="false" /><figcaption>夜路</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p3.svg" alt="生活照片占位 3" draggable="false" /><figcaption>海边</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p4.svg" alt="生活照片占位 4" draggable="false" /><figcaption>图书馆</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p5.svg" alt="生活照片占位 5" draggable="false" /><figcaption>天台</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p6.svg" alt="生活照片占位 6" draggable="false" /><figcaption>巷子</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p7.svg" alt="生活照片占位 7" draggable="false" /><figcaption>演唱会</figcaption></figure>
+        <figure class="photo-tile"><img src="assets/photos/p8.svg" alt="生活照片占位 8" draggable="false" /><figcaption>落日</figcaption></figure>
+      </div>
+
+      <div class="life-cols">
+        <div class="life-col" data-reveal>
+          <h4><i>WATCH</i>在看</h4>
+          <ul><li>《XX》占位</li><li>《XX》占位</li><li>《XX》占位</li></ul>
+        </div>
+        <div class="life-col" data-reveal>
+          <h4><i>READ</i>在读</h4>
+          <ul><li>《XX》占位</li><li>《XX》占位</li><li>《XX》占位</li></ul>
+        </div>
+        <div class="life-col" data-reveal>
+          <h4><i>HOBBY</i>爱好</h4>
+          <div class="about-tags">
+            <span>摄影</span><span>吉他</span><span>羽毛球</span><span>播客</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ============ 联系 ============ -->
+    <section class="section section--contact" id="contact">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">CONTACT</p>
+        <h2>聊聊机会<span>· 或者只是打个招呼</span></h2>
+      </div>
+      <!-- TODO: 替换为你的真实联系方式 -->
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:you@example.com" data-reveal>
+          <i>MAIL</i><strong>you@example.com</strong><span>最快的找到我的方式</span>
+        </a>
+        <a class="contact-card" href="https://github.com/yourname" target="_blank" rel="noopener" data-reveal>
+          <i>GITHUB</i><strong>github.com/yourname</strong><span>代码与实验记录</span>
+        </a>
+        <div class="contact-card" data-reveal>
+          <i>WECHAT</i><strong>your-wechat-id</strong><span>备注来意即可</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 林霁 · 手工打造，无框架依赖</p>
+    <p>GSAP + Lenis · 托管于腾讯云 CloudBase</p>
+  </footer>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
