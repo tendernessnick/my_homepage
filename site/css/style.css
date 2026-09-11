@@ -259,6 +259,19 @@ ul { list-style: none; }
 .approach-card p { font-size: 14px; color: var(--ink-dim); }
 
 /* ============ 时间线 ============ */
+.journey-group { margin-top: 56px; }
+.journey-group:first-of-type { margin-top: 0; }
+.journey-group-title {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 17px; font-weight: 800; letter-spacing: 0.04em;
+  margin-bottom: 26px;
+}
+.journey-group-title i {
+  font-style: normal; font-size: 11px; letter-spacing: 0.26em;
+  color: var(--accent); font-weight: 700; transform: translateY(1px);
+}
+.journey-group-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
 .timeline { position: relative; padding-left: 36px; }
 .timeline::before {
   content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px;
