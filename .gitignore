@@ -1,1 +1,13 @@
+# 会话/工具产物
 .zcode/
+.mimosa/
+
+# 用户本地素材（体积大或个人文件，不入库）
+毕业设计/
+photo/
+我的cv/
+我的证件照/
+简历参考.pdf
+
+# 后端已迁出至 F:\AICoding\dehaze-api（独立仓库），此处仅剩空壳，防误建
+dehaze-api/

@@ -2,7 +2,7 @@ my_homepage/
 │
 ├── AGENTS.md            双 AI 会话协同协议（分工 / API 契约 / 任务板 / 日志）——开工前必读
 ├── 项目结构.txt          本文件，仓库结构速览
-├── .gitignore           忽略 .zcode/
+├── .gitignore           忽略 .zcode/、.mimosa/、毕业设计/、photo/、我的cv/、我的证件照/、简历参考.pdf 及后端空壳
 ├── .zcode/              会话计划与页面截图（不入库）
 │
 ├── site/                【前端会话负责】个人主页静态站，多子页档案式布局，无构建步骤，原生 ES modules
