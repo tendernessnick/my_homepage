@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL } from "./config.js?v=22";
+import { DEHAZE_DEMO_URL } from "./config.js?v=23";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {

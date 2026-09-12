@@ -436,6 +436,18 @@ body[data-page="home"].life-mode .site-header {
 }
 .timeline-item h3 { margin: 0 0 10px; font-size: 20px; }
 .timeline-item > div > p { color: #4f5d6f; }
+.timeline-item .case-tag {
+  display: inline-block;
+  margin-bottom: 6px;
+  border: 1px solid rgba(31, 108, 136, 0.4);
+  border-radius: 999px;
+  padding: 2px 10px;
+  background: rgba(31, 108, 136, 0.08);
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.05em;
+}
 
 .mini-metrics {
   display: grid;
@@ -837,6 +849,7 @@ body[data-page="home"].life-mode .site-header {
 }
 .contact-row span { display: block; color: var(--muted); font-size: 12.5px; font-weight: 900; letter-spacing: 0.04em; }
 .contact-row strong { font-size: 17px; overflow-wrap: anywhere; }
+.contact-actions { display: flex; flex: 0 0 auto; gap: 8px; }
 .material-list { display: grid; gap: 10px; }
 .material-list a {
   display: flex;
@@ -862,6 +875,59 @@ body[data-page="home"].life-mode .site-header {
   font-size: 12px;
   background: #fff4d7;
 }
+
+/* ---------- 书影音（片单 / 书单 / 歌单） ---------- */
+.media-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
+.media-grid--books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.media-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.media-card:hover { transform: translateY(-4px); box-shadow: 0 20px 54px rgba(37, 52, 66, 0.14); }
+.media-card .media-type { color: var(--teal); font-size: 12px; font-weight: 950; letter-spacing: 0.02em; }
+.media-card strong { font-size: 16.5px; line-height: 1.4; }
+.media-card em { font-style: normal; color: var(--muted); font-size: 12.5px; font-weight: 800; }
+.media-sub { margin: 26px 0 0; }
+.media-sub .comic-label { margin-bottom: 10px; }
+
+.song-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
+.song-card {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.song-card:hover { transform: translateY(-3px); box-shadow: 0 18px 44px rgba(37, 52, 66, 0.12); }
+.song-card .song-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff4d7;
+  font-weight: 950;
+}
+.song-card strong { display: block; font-size: 15.5px; }
+.song-card span { display: block; color: var(--muted); font-size: 12.5px; font-weight: 750; }
+
+/* 宽版交友名片（生活页用，可带 CTA） */
+.friend-card.friend-card--wide { grid-template-columns: 54px minmax(0, 1fr) auto; align-items: center; }
+.friend-cta { justify-self: end; }
+.friend-fields { margin-top: 14px; }
 
 /* ---------- 页脚 / 回顶 ---------- */
 .footer {
@@ -1648,6 +1714,8 @@ body.intro-open { overflow: hidden; }
   .profile-visual { max-width: 460px; }
   .timeline-item { grid-template-columns: 1fr; padding: 18px 18px 20px 46px; gap: 6px; }
   .mini-metrics, .output-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .media-grid, .media-grid--books { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .song-grid { grid-template-columns: 1fr; }
   .cv-header { flex-direction: column; }
   .contact-stack { text-align: left; }
   .cv-row { grid-template-columns: 1fr; gap: 4px; }
@@ -1661,6 +1729,9 @@ body.intro-open { overflow: hidden; }
 @media (max-width: 560px) {
   .wx-grid { grid-template-columns: 1fr; }
   .cover-grid { grid-template-columns: 1fr; }
+  .media-grid, .media-grid--books { grid-template-columns: 1fr; }
+  .friend-card.friend-card--wide { grid-template-columns: 54px minmax(0, 1fr); }
+  .friend-card.friend-card--wide .friend-cta { grid-column: 2; justify-self: start; }
   .mini-metrics, .output-panel { grid-template-columns: 1fr; }
   .hero-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .photo-wall figure { height: 240px; }
