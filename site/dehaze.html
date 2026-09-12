@@ -52,10 +52,14 @@
           我把项目迁移上云：重构为 <strong>FastAPI 推理服务</strong>，以 Docker 容器部署在腾讯云 CloudBase 云托管上——
           就是下面这个你可以直接上传图片体验的服务。
         </p>
+        <div class="mini-metrics" aria-label="关键指标">
+          <div><strong>28.05</strong><span>SOTS 测试集 PSNR</span></div>
+          <div><strong>0.9707</strong><span>SSIM 结构相似度</span></div>
+          <div><strong>256px</strong><span>服务端推理最长边</span></div>
+          <div><strong>秒级</strong><span>预热后 CPU 推理</span></div>
+        </div>
         <div class="t-metrics">
-          <span class="pill pill--accent">PSNR 28.05</span>
-          <span class="pill">SSIM 0.9707</span>
-          <span class="pill">RESIDE / O-HAZE</span>
+          <span class="pill pill--accent">RESIDE / O-HAZE</span>
           <span class="pill">PyTorch</span>
           <span class="pill">FastAPI · Docker · CloudBase</span>
         </div>
@@ -113,6 +117,12 @@
             <h3>工程部署</h3>
             <p>PyQt6 桌面端（Windows）起步 → 权重导出与一致性校验 → FastAPI 接口（multipart 上传，返回 PNG）→ Docker → 腾讯云 CloudBase 云托管；前端预缩放省流量，冷启动预热。</p>
           </article>
+        </div>
+        <div class="output-panel" aria-label="毕业设计工程化链路">
+          <article><span>01</span><strong>桌面演示</strong><p>PyQt6 加载权重，本地直接看效果。</p></article>
+          <article><span>02</span><strong>服务化</strong><p>FastAPI 推理接口，前后端契约冻结。</p></article>
+          <article><span>03</span><strong>容器化</strong><p>Docker 打包，环境一致可迁移。</p></article>
+          <article><span>04</span><strong>上云</strong><p>CloudBase 云托管，链接即体验。</p></article>
         </div>
       </div>
     </section>
