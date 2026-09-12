@@ -25,5 +25,5 @@
   页头下新增参考站式分类锚点标签（如 网球·创作 / 片单书架 / 镜头·足迹，跳到对应 section），为缺 id 的目标 section 补 id；移动端锚点换行检查。
 - [x] **polish 5 · dehaze.html**（参考 [works 页](https://lizongqian-anime-hr.surge.sh/works.html) 的纯排版面板）
   介绍区补一组指标卡（PSNR 28.05 / SSIM 0.9707 / 输入最长边 256 / 云端 CPU 秒级推理——全部为简历与后端契约已有事实）；「技术细节」三卡下补「工程链路」`output-panel`（桌面演示→服务化→容器化→上云，文案与 experience.html Case 05 保持一致）；演示卡外链两态逻辑不动。
-- [ ] **polish 6 · works.html + 全站回归**（参考 works 页 Flagship 主推标记）
+- [x] **polish 6 · works.html + 全站回归**（参考 works 页 Flagship 主推标记）
   Flagship 01 加「主推」徽章（参考站 `Flagship 01 · 主推` 样式）；随后全站走查一遍（8 个页面 × 桌面+移动），修发现的小问题（溢出/破图/死链/版本号遗漏/书影音占位标记缺失），无问题则以页脚签名一致性检查收尾。

@@ -154,7 +154,7 @@
               <ul class="bullet-list">
                 <li><strong>【模型设计】</strong>搭建 SE-CGAN 条件生成对抗网络：Tiramisu 密集连接 U-Net 生成器重建无雾图像 + 70×70 PatchGAN 判别器，采用 L1 重建 + VGG 感知 + 对抗损失加权联合训练。</li>
                 <li><strong>【数据与评测】</strong>基于 RESIDE 合成雾图与 O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</li>
-                <li><strong>【工程部署】</strong>PyQt6 桌面演示 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，支持 CPU 实时在线推理；输入超 512px 自动等比缩放，图片仅临时使用不保存（支持 PNG / JPG ≤ 10MB）。</li>
+                <li><strong>【工程部署】</strong>PyQt6 桌面演示 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，支持 CPU 实时在线推理；服务端按最长边 256 等比缩放推理，图片仅临时使用不保存（支持 PNG / JPG ≤ 128KB）。</li>
               </ul>
               <p class="cv-link-list"><a href="dehaze.html" data-dehaze-demo>去雾在线体验</a><a href="works.html#dehaze">作品页详情</a></p>
             </div>

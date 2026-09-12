@@ -163,13 +163,13 @@
               <div class="mini-metrics">
                 <div><strong>28.05</strong><span>SOTS 测试集 PSNR</span></div>
                 <div><strong>0.9707</strong><span>SSIM</span></div>
-                <div><strong>512px</strong><span>前端预缩放最长边</span></div>
+                <div><strong>256px</strong><span>服务端推理最长边</span></div>
                 <div><strong>秒级</strong><span>预热后 CPU 推理</span></div>
               </div>
               <ul class="bullet-list">
                 <li><strong>【模型】</strong>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建、VGG 感知与对抗损失加权联合训练。</li>
                 <li><strong>【工程链路】</strong>PyQt6 桌面演示起步 → 权重导出并与训练工程逐像素一致性校验 → FastAPI 推理服务（multipart 上传、返回 PNG）→ Docker 容器化 → 腾讯云 CloudBase 云托管。</li>
-                <li><strong>【体验细节】</strong>输入超 512px 自动等比缩放省流量；Demo 滚入视口先 ping /health 预热冷启动；图片仅推理时临时使用不保存。</li>
+                <li><strong>【体验细节】</strong>在线演示由后端服务自带的演示页承载，全站入口直连跳转；服务冷启动时首次访问约需 10–40 秒，图片仅推理时临时使用不保存（支持 PNG / JPG ≤ 128KB）。</li>
                 <li><strong>【这个页面本身】</strong>个人主页也是同一条链路上的练习：原生 JS 手工搭建，静态托管在 CloudBase。</li>
               </ul>
               <div class="output-panel" aria-label="毕业设计工程化链路">
