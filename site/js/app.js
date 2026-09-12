@@ -42,11 +42,24 @@ function initIntro() {
     }
   };
 
-  // 任意滚动 / 触摸下滑即进入
-  const onWheel = (e) => { if (e.deltaY > 8) dismiss(); };
+  // 任意向下滚动即进入：触控板单次增量可能只有 1~3，需累计判断
+  let wheelSum = 0;
+  const onWheel = (e) => {
+    if (e.deltaY <= 0) return;
+    wheelSum += e.deltaY;
+    if (e.deltaY >= 2 || wheelSum >= 12) dismiss();
+  };
   window.addEventListener("wheel", onWheel, { passive: true });
   window.addEventListener("touchmove", () => dismiss(), { passive: true, once: true });
-  addEventListener("keydown", (e) => { if (e.key === "Escape" || e.key === "ArrowDown") dismiss(); });
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "ArrowDown" || e.key === " " || e.key === "Enter") dismiss();
+  });
+  // 点击遮罩空白处（非按钮）也可进入
+  intro.addEventListener("click", (e) => {
+    if (e.target.closest(".wi-btn")) return;
+    dismiss();
+  });
+  $(".wi-close", intro)?.addEventListener("click", () => dismiss());
 
   $$(".wi-btn, .wi-hint", intro).forEach((el) => {
     el.addEventListener("click", (e) => {

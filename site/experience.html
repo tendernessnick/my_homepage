@@ -118,6 +118,12 @@
               <li><strong>【技术文档统筹管理】</strong>独立承担技术文档整理工作，系统归纳项目关键参数，规范化记录接口说明，形成标准化文档体系。</li>
               <li><strong>实习成果：</strong>通过硬件测试与文档管理实践，显著提升工作严谨性，养成规范化操作与记录的职业习惯。</li>
             </ul>
+            <div class="output-panel" aria-label="嵌入式开发工作链路">
+              <article><span>01</span><strong>环境搭建</strong><p>ARM 开发板测试环境与基础功能。</p></article>
+              <article><span>02</span><strong>功能验证</strong><p>代码调试，保障硬件功能稳定。</p></article>
+              <article><span>03</span><strong>文档体系</strong><p>关键参数与接口说明规范化记录。</p></article>
+              <article><span>04</span><strong>习惯沉淀</strong><p>规范化操作与记录的职业习惯。</p></article>
+            </div>
           </div>
         </article>
 
@@ -131,9 +137,54 @@
               <li><strong>【技术文档管理】</strong>统筹归纳项目关键参数与接口说明，规范化整理技术文档。</li>
               <li><strong>实习成果：</strong>通过功能黑盒测试与技术文档分类整理，熟悉软件开发过程中的工作流程。</li>
             </ul>
+            <div class="output-panel" aria-label="政务平台测试链路">
+              <article><span>01</span><strong>代码修改</strong><p>按需求修改功能代码、整理项目文件。</p></article>
+              <article><span>02</span><strong>接口测试</strong><p>执行接口测试，定位不通过用例。</p></article>
+              <article><span>03</span><strong>黑盒验证</strong><p>模块级黑盒测试，针对性修复问题。</p></article>
+              <article><span>04</span><strong>文档沉淀</strong><p>关键参数与接口说明规范化。</p></article>
+            </div>
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>毕业设计<span>· 从桌面程序到线上服务</span></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal" id="dehaze-case">
+            <time>Case 05</time>
+            <div>
+              <h3>单幅图像去雾 · SE-CGAN｜一段「工程落地」的完整练习</h3>
+              <p>毕业设计不只停在论文和指标上：模型训完之后，我把它从 Windows 桌面演示一路迁到云端，让任何人点开链接就能上传雾图看效果。</p>
+              <div class="mini-metrics">
+                <div><strong>28.05</strong><span>SOTS 测试集 PSNR</span></div>
+                <div><strong>0.9707</strong><span>SSIM</span></div>
+                <div><strong>512px</strong><span>前端预缩放最长边</span></div>
+                <div><strong>秒级</strong><span>预热后 CPU 推理</span></div>
+              </div>
+              <ul class="bullet-list">
+                <li><strong>【模型】</strong>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建、VGG 感知与对抗损失加权联合训练。</li>
+                <li><strong>【工程链路】</strong>PyQt6 桌面演示起步 → 权重导出并与训练工程逐像素一致性校验 → FastAPI 推理服务（multipart 上传、返回 PNG）→ Docker 容器化 → 腾讯云 CloudBase 云托管。</li>
+                <li><strong>【体验细节】</strong>输入超 512px 自动等比缩放省流量；Demo 滚入视口先 ping /health 预热冷启动；图片仅推理时临时使用不保存。</li>
+                <li><strong>【这个页面本身】</strong>个人主页也是同一条链路上的练习：原生 JS 手工搭建，静态托管在 CloudBase。</li>
+              </ul>
+              <div class="output-panel" aria-label="毕业设计工程化链路">
+                <article><span>01</span><strong>桌面演示</strong><p>PyQt6 加载权重，本地直接看效果。</p></article>
+                <article><span>02</span><strong>服务化</strong><p>FastAPI 推理接口，前后端契约冻结。</p></article>
+                <article><span>03</span><strong>容器化</strong><p>Docker 打包，环境一致可迁移。</p></article>
+                <article><span>04</span><strong>上云</strong><p>CloudBase 云托管，链接即体验。</p></article>
+              </div>
+              <div class="actions">
+                <a class="btn primary" href="dehaze.html">进入在线体验</a>
+                <a class="btn" href="works.html#dehaze">看作品页详情</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
