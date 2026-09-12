@@ -5,36 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>去雾算法在线体验 · 毕业设计 — 胡睿杰</title>
   <meta name="description" content="毕业设计：基于条件生成对抗网络（SE-CGAN）的单幅图像去雾，上传雾图在线查看去雾效果。" />
+  <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=13" />
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/style.css?v=20" />
 </head>
-<body>
+<body data-page="works">
+  <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <div class="progress-bar" id="progress" aria-hidden="true"></div>
-
-  <header class="site-nav case-nav" id="siteNav">
-    <div class="nav-inner">
+  <header class="site-header">
+    <div class="nav-wrap">
       <a class="brand" href="index.html">
         <span class="brand-mark">胡</span>
-        <span class="brand-text">HU RUIJIE<small>毕业设计 · Case Study</small></span>
+        <span class="brand-text">胡睿杰<small>毕业设计 · Case Study</small></span>
       </a>
-      <nav class="nav-links" aria-label="页面导航">
-        <a href="index.html">← 返回主页</a>
+      <nav class="top-nav" aria-label="页面导航">
+        <a href="index.html" data-nav="home">← 返回主页</a>
         <a href="#try" class="nav-cta">在线体验 ↓</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="index.html" data-nav="home">← 主页</a>
+    <a href="works.html" data-nav="works">作品</a>
+    <a href="cv.html" data-nav="cv">履历</a>
+    <a href="contact.html" data-nav="contact">联系</a>
+  </nav>
+
+  <main id="main">
 
     <!-- ============ 项目介绍 ============ -->
-    <section class="section case-hero">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">GRADUATION PROJECT · 毕业设计</p>
-        <h2>单幅图像去雾<span>· Image Dehazing with SE-CGAN</span></h2>
-      </div>
-      <div class="about-text" data-reveal>
+    <section class="container case-hero">
+      <p class="eyebrow">Graduation Project · 毕业设计</p>
+      <h1 class="page-title">单幅图像去雾<span style="color:var(--muted);font-size:.5em">· Image Dehazing with SE-CGAN</span></h1>
+      <div class="about-text reveal">
         <p>
           雾霾会降低图像对比度与色彩保真度，影响视觉算法的上游输入质量。本项目实现了一套
           <strong>条件生成对抗网络（SE-CGAN）</strong>完成单幅图像去雾：
@@ -60,103 +64,111 @@
 
     <!-- ============ 在线体验 ============ -->
     <section class="section" id="try">
-      <div class="dehaze-demo">
-        <div class="dehaze-head" data-reveal>
-          <p class="eyebrow">LIVE DEMO — 在线体验</p>
-          <h3>上传一张有雾的照片，看看模型怎么还它一片清晰</h3>
-          <p class="dehaze-sub">
-            模型在 CPU 上推理，输入超过 512px 会自动等比缩小；服务冷启动时首次请求约需
-            10–40 秒，之后秒级返回。图片仅在推理时临时使用，不会被保存。
-          </p>
-          <div class="t-metrics">
-            <span class="pill">SE-CGAN</span>
-            <span class="pill">O-HAZE 训练</span>
-            <span class="pill">CPU 实时推理</span>
-          </div>
-        </div>
-
-        <div class="dehaze-stage" data-reveal>
-          <!-- 上传区 -->
-          <div class="dropzone" id="dz" role="button" tabindex="0" aria-label="上传图片：点击或拖拽">
-            <input type="file" id="dzInput" accept="image/png, image/jpeg" hidden />
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 32V12m0 0l-8 8m8-8l8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 34v4a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-            <p><strong>拖拽图片到这里，或点击上传</strong></p>
-            <span>支持 PNG / JPG，≤ 10MB</span>
-            <button class="btn btn--ghost btn--small" id="dzSample" type="button">没有雾图？用示例图试试</button>
-          </div>
-
-          <!-- 加载态 -->
-          <div class="dehaze-loading" id="dzLoading" hidden>
-            <div class="loader" aria-hidden="true"></div>
-            <p class="loading-title" id="dzLoadingTitle">正在去雾…</p>
-            <p class="loading-sub" id="dzLoadingSub">模型启动中：首次请求需要唤醒服务器，约 10–40 秒</p>
-            <p class="loading-timer"><span id="dzTimer">0.0</span> s</p>
-          </div>
-
-          <!-- 前后对比 -->
-          <div class="compare" id="compare" hidden>
-            <div class="compare-frame" id="compareFrame">
-              <img class="compare-img compare-img--before" id="imgBefore" alt="原图（有雾）" draggable="false" />
-              <div class="compare-after" id="compareAfter">
-                <img class="compare-img" id="imgAfter" alt="去雾结果" draggable="false" />
-              </div>
-              <div class="compare-divider" id="compareDivider" aria-hidden="true"><span></span></div>
-              <span class="compare-tag compare-tag--l" id="tagBefore">原图 · 有雾</span>
-              <span class="compare-tag compare-tag--r" id="tagAfter">去雾后</span>
-            </div>
-            <div class="compare-foot">
-              <p class="compare-caption" id="compareCaption">拖动分割线对比效果</p>
-              <div class="compare-actions">
-                <button class="btn btn--ghost btn--small" id="btnRetry" type="button">再试一张</button>
-                <button class="btn btn--ghost btn--small" id="btnSample2" type="button">换张示例图</button>
-              </div>
+      <div class="container">
+        <div class="dehaze-demo">
+          <div class="dehaze-head reveal">
+            <p class="eyebrow">Live Demo — 在线体验</p>
+            <h3>上传一张有雾的照片，看看模型怎么还它一片清晰</h3>
+            <p class="dehaze-sub">
+              模型在 CPU 上推理，输入超过 512px 会自动等比缩小；服务冷启动时首次请求约需
+              10–40 秒，之后秒级返回。图片仅在推理时临时使用，不会被保存。
+            </p>
+            <div class="t-metrics" style="margin-top:14px">
+              <span class="pill">SE-CGAN</span>
+              <span class="pill">O-HAZE 训练</span>
+              <span class="pill">CPU 实时推理</span>
             </div>
           </div>
 
-          <!-- 错误 / 提示 -->
-          <p class="dehaze-error" id="dzError" hidden></p>
+          <div class="dehaze-stage reveal">
+            <!-- 上传区 -->
+            <div class="dropzone" id="dz" role="button" tabindex="0" aria-label="上传图片：点击或拖拽">
+              <input type="file" id="dzInput" accept="image/png, image/jpeg" hidden />
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M24 32V12m0 0l-8 8m8-8l8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 34v4a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <p><strong>拖拽图片到这里，或点击上传</strong></p>
+              <span>支持 PNG / JPG，≤ 10MB</span>
+              <button class="small-btn" id="dzSample" type="button">没有雾图？用示例图试试</button>
+            </div>
+
+            <!-- 加载态 -->
+            <div class="dehaze-loading" id="dzLoading" hidden>
+              <div class="loader" aria-hidden="true"></div>
+              <p class="loading-title" id="dzLoadingTitle">正在去雾…</p>
+              <p class="loading-sub" id="dzLoadingSub">模型启动中：首次请求需要唤醒服务器，约 10–40 秒</p>
+              <p class="loading-timer"><span id="dzTimer">0.0</span> s</p>
+            </div>
+
+            <!-- 前后对比 -->
+            <div class="compare" id="compare" hidden>
+              <div class="compare-frame" id="compareFrame">
+                <img class="compare-img compare-img--before" id="imgBefore" alt="原图（有雾）" draggable="false" />
+                <div class="compare-after" id="compareAfter">
+                  <img class="compare-img" id="imgAfter" alt="去雾结果" draggable="false" />
+                </div>
+                <div class="compare-divider" id="compareDivider" aria-hidden="true"><span></span></div>
+                <span class="compare-tag compare-tag--l" id="tagBefore">原图 · 有雾</span>
+                <span class="compare-tag compare-tag--r" id="tagAfter">去雾后</span>
+              </div>
+              <div class="compare-foot">
+                <p class="compare-caption" id="compareCaption">拖动分割线对比效果</p>
+                <div class="compare-actions">
+                  <button class="small-btn" id="btnRetry" type="button">再试一张</button>
+                  <button class="small-btn" id="btnSample2" type="button">换张示例图</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 错误 / 提示 -->
+            <p class="dehaze-error" id="dzError" hidden></p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============ 技术细节 ============ -->
     <section class="section">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">UNDER THE HOOD</p>
-        <h2>技术细节<span>· 从论文到线上服务</span></h2>
-      </div>
-      <div class="approach-cards approach-cards--row">
-        <article class="approach-card" data-reveal>
-          <span class="approach-num">01</span>
-          <h3>模型结构</h3>
-          <p>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器；L1 重建、VGG 感知与对抗损失加权联合训练。</p>
-        </article>
-        <article class="approach-card" data-reveal>
-          <span class="approach-num">02</span>
-          <h3>数据与评测</h3>
-          <p>RESIDE 合成雾图 + O-HAZE 真实雾图训练；SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</p>
-        </article>
-        <article class="approach-card" data-reveal>
-          <span class="approach-num">03</span>
-          <h3>工程部署</h3>
-          <p>PyQt6 桌面端（Windows）起步 → 权重导出与一致性校验 → FastAPI 接口（multipart 上传，返回 PNG）→ Docker → 腾讯云 CloudBase 云托管；前端预缩放省流量，冷启动预热。</p>
-        </article>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>技术细节<span>· 从论文到线上服务</span></h2>
+        </div>
+        <div class="approach-cards">
+          <article class="approach-card reveal">
+            <span class="approach-num">01</span>
+            <h3>模型结构</h3>
+            <p>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器；L1 重建、VGG 感知与对抗损失加权联合训练。</p>
+          </article>
+          <article class="approach-card reveal">
+            <span class="approach-num">02</span>
+            <h3>数据与评测</h3>
+            <p>RESIDE 合成雾图 + O-HAZE 真实雾图训练；SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</p>
+          </article>
+          <article class="approach-card reveal">
+            <span class="approach-num">03</span>
+            <h3>工程部署</h3>
+            <p>PyQt6 桌面端（Windows）起步 → 权重导出与一致性校验 → FastAPI 接口（multipart 上传，返回 PNG）→ Docker → 腾讯云 CloudBase 云托管；前端预缩放省流量，冷启动预热。</p>
+          </article>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 胡睿杰 · <a class="footer-link" href="index.html">返回个人主页</a></p>
-    <p>GSAP + Lenis · 托管于腾讯云 CloudBase</p>
+  <footer class="footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> 胡睿杰 · <a href="index.html">返回个人主页</a></span>
+      <span>托管于腾讯云 CloudBase</span>
+    </div>
   </footer>
 
-  <script src="vendor/gsap.min.js" defer></script>
-  <script src="vendor/ScrollTrigger.min.js" defer></script>
-  <script src="vendor/lenis.min.js" defer></script>
-  <script type="module" src="js/main.js"></script>
+  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
+
+  <script type="module">
+    import './js/app.js';
+    import { initDehaze } from './js/dehaze.js';
+    initDehaze();
+  </script>
 </body>
 </html>

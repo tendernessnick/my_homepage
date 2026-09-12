@@ -1,0 +1,39 @@
+my_homepage/
+│
+├── AGENTS.md            双 AI 会话协同协议（分工 / API 契约 / 任务板 / 日志）——开工前必读
+├── 项目结构.txt          本文件，仓库结构速览
+├── .gitignore           忽略 .zcode/
+├── .zcode/              会话计划与页面截图（不入库）
+│
+├── site/                【前端会话负责】个人主页静态站，多子页档案式布局，无构建步骤，原生 ES modules
+│   ├── index.html       主页：开场遮罩 + 工作区/生活区双模式（2026-09-12 二期重构）
+│   ├── about.html       关于我
+│   ├── experience.html  经历（四段实习拆解 + 校园经历）
+│   ├── works.html       作品（3 项目 + 8 推文 + 12 证书墙）
+│   ├── cv.html          在线履历（对齐 2026 版简历）
+│   ├── life.html        生活（照片墙 + 爱好）
+│   ├── contact.html     联系
+│   ├── dehaze.html      毕业设计独立体验页（介绍 + 在线 Demo）
+│   ├── css/style.css    全部样式（浅灰纸张 + 墨色描边设计系统）
+│   ├── js/
+│   │   ├── app.js       全局交互（导航/遮罩/模式切换/拖拽墙/复制/渐显/数字跳动）
+│   │   ├── config.js    站点配置：DEHAZE_API_BASE（去雾服务地址）、SAMPLE_IMAGE
+│   │   └── dehaze.js    去雾 Demo：/health 预热 + /dehaze 上传推理
+│   └── assets/          favicon、头像/开场图、life/ 生活照、wx/ 推文封面、
+│                        certs/ 证书、sample_hazy 去雾示例、resume.docx（2026 版）
+│
+├── photo/               用户提供的相机原片（photo/ 27 张，已压缩产出 site/assets/life/，原片不入库参考）
+├── 我的cv/               用户简历源文件（2026 版 docx 为网站内容基准）
+├── 毕业设计/            【只读参考】
+│   ├── cGAN_remote_v2(ready)/   模型训练工程（checkpoints 等生产文件勿动）
+│   └── 毕业论文/                论文相关
+└── 简历参考.pdf          旧版简历参考
+
+后端仓库（本仓库之外）：F:\AICoding\dehaze-api  【后端会话负责 · 独立 git 管理】
+    SE-CGAN 去雾推理服务（FastAPI）：app.py（GET /health、POST /dehaze）、models.py、
+    export_generator.py、weights/generator_best.pth（约 19.4 MB）、Dockerfile、
+    requirements.txt、README.md（部署目标：腾讯云 CloudBase 云托管）
+    ※ 2026-09-11 迁出本仓库，本仓库内不再有 dehaze-api/ 目录。
+
+跨项目链路：site/js/dehaze.js →（DEHAZE_API_BASE）→ F:\AICoding\dehaze-api 的 /health 与 /dehaze，
+接口契约以 AGENTS.md 第三节为唯一权威版本。

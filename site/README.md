@@ -1,6 +1,6 @@
-# 林霁 · 个人主页
+# 胡睿杰 · 个人主页
 
-视差滚动式求职个人主页。纯静态 HTML/CSS/JS，无框架、无构建步骤，动效基于 GSAP + ScrollTrigger + Lenis（均已下载到 `vendor/` 本地，不依赖外网 CDN）。
+多子页档案式求职个人主页（布局参考 lizongqian-anime-hr.surge.sh）。纯静态 HTML/CSS/JS，无框架、无构建步骤，动效为原生 CSS + IntersectionObserver。
 
 ## 本地预览
 
@@ -12,31 +12,37 @@ python -m http.server 8765
 
 > 必须通过 HTTP 访问（ES Modules 不支持 file:// 直开）。
 
-## 目录结构
+## 页面结构
 
 ```
 site/
-├── index.html          # 主页（所有区块内容在这里改）
+├── index.html          # 主页：开场遮罩（外滩暮色大图）+ 工作区/生活区双模式
+├── about.html          # 关于我：做事方式 + 数据快照
+├── experience.html     # 经历：四段实习拆解 + 校园经历
+├── works.html          # 作品：3 个项目 + 8 篇推文墙 + 12 张证书墙
+├── cv.html             # 在线履历（内容与 2026 版简历一致，可打印）
+├── life.html           # 生活：照片墙 + 爱好
+├── contact.html        # 联系方式 + 快捷入口
 ├── dehaze.html         # 毕业设计独立体验页（介绍 + 在线 Demo）
-├── css/style.css       # 主题变量在 :root，双区氛围（暗色工作区 / 暖色生活区）
+├── css/style.css       # 全部样式（设计令牌在 :root）
 ├── js/
+│   ├── app.js          # 全局交互：导航/遮罩/模式切换/拖拽墙/复制/渐显
 │   ├── config.js       # ★ 去雾 API 地址等配置，部署前必改
-│   ├── main.js         # 入口
-│   ├── scroll.js       # Lenis 平滑滚动 + 锚点导航
-│   ├── animations.js   # 入场/视差/浮现/数字滚动/导航状态
-│   ├── dehaze.js       # 去雾 Demo（上传→推理→前后对比滑块）
-│   └── gallery.js      # 照片墙拖拽横滑
-├── vendor/             # gsap / ScrollTrigger / lenis 本地库
-└── assets/             # 简历(docx)、示例雾图、favicon、照片墙占位图
+│   └── dehaze.js       # 去雾 Demo（上传→推理→前后对比滑块）
+└── assets/
+    ├── profile-hero.jpg / intro-hero.jpg   # 主页头像与开场大图
+    ├── life/           # 生活照墙 life-01~12 + 随机竖照 life-p1~4
+    ├── wx/             # 推文封面 w1~w8
+    ├── certs/          # 证书原件（证件号已打码）
+    ├── sample_hazy.jpg / sample_dehazed.png  # 去雾前后示例
+    └── resume.docx     # 2026 版简历（下载按钮指向这里）
 ```
 
-## 填充真实素材（替换占位内容）
+## 内容修改
 
-文字内容（姓名/经历/项目/联系方式）已按简历填充。还需要：
-
-1. **简历 PDF**：下载按钮目前指向 `assets/resume.docx`，建议导出一份 PDF 放到 `assets/resume.pdf` 并把 `index.html` 里的链接改为 `.pdf`
-2. **照片墙**：把 `assets/photos/p1.svg ~ p8.svg` 换成真实照片（建议同名 `jpg` 并同步改 `<img>` 的 `src`），说明文字在 `figcaption`
-3. **在读/观影清单**：生活区"在动/在创作"两列如有更新直接改 `index.html`
+- 文字内容分布在各 `*.html`，按板块就近修改
+- 照片墙：替换 `assets/life/` 下同名文件即可
+- 简历：替换 `assets/resume.docx`（建议后续提供 PDF）
 
 ## 配置去雾 API（毕业设计对接）
 
@@ -48,7 +54,7 @@ export const DEHAZE_API_BASE = 'https://你的服务域名';
 
 - 接口约定：`POST /dehaze`（multipart，字段名 `image`，PNG/JPG ≤10MB，返回 PNG）+ `GET /health` 预热
 - 服务冷启动（最小实例数为 0 时）首次请求约 10–40 秒，页面已做预热（Demo 滚入视口时自动 ping `/health`）与计时提示
-- 可选的后端一行改动：`app.py` 的 CORS 中间件加 `expose_headers=["X-Processing-Time"]`，前端即可显示"推理耗时 Xs"；上线后建议把 `allow_origins` 收紧为主页域名
+- `X-Processing-Time` 响应头已由后端 expose，前端会显示"推理耗时 Xs"
 
 ## 部署
 

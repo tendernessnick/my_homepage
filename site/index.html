@@ -3,455 +3,315 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>胡睿杰 · 计算机科学与技术 · 数据分析与商业 AI</title>
-  <meta name="description" content="胡睿杰的个人主页 —— 计算科学与数据分析方向，含毕业设计图像去雾算法在线体验。" />
+  <title>胡睿杰 · 数据分析与商业 AI · 香港城市大学</title>
+  <meta name="description" content="胡睿杰的个人主页 —— 计算机科班 × 商业 AI 复合背景，四段实习横跨数据、量化与开发，含毕业设计图像去雾算法在线体验。" />
+  <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=13" />
-  <script>document.documentElement.classList.add('js');</script>
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="胡睿杰个人主页" />
+  <meta property="og:title" content="胡睿杰 · 数据分析与商业 AI" />
+  <meta property="og:description" content="把数据从「收集整理」做到「驱动决策」。四段实习 · 毕业设计在线可体验。" />
+  <meta property="og:url" content="./index.html" />
+  <meta property="og:image" content="assets/profile-hero.jpg" />
+  <link rel="preload" as="image" href="assets/intro-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/profile-hero.jpg" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
 </head>
-<body>
+<body data-page="home">
+  <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <!-- 滚动进度条 -->
-  <div class="progress-bar" id="progress" aria-hidden="true"></div>
-
-  <!-- ============ 导航 ============ -->
-  <header class="site-nav" id="siteNav">
-    <div class="nav-inner">
-      <a class="brand" href="#home" data-scroll>
+  <!-- ============ 顶部导航 ============ -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
         <span class="brand-mark">胡</span>
-        <span class="brand-text">HU RUIJIE<small>求职中 · 2026</small></span>
+        <span class="brand-text">胡睿杰<small>Data × AI · 求职中 2026</small></span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks" aria-label="主导航">
-        <a href="#home"     data-scroll data-section="home"><i>01</i>首页</a>
-        <a href="#about"    data-scroll data-section="about"><i>02</i>关于</a>
-        <a href="#journey"  data-scroll data-section="journey"><i>03</i>经历</a>
-        <a href="#honors"   data-scroll data-section="honors"><i>04</i>荣誉</a>
-        <a href="#projects" data-scroll data-section="projects"><i>05</i>项目</a>
-        <a href="#life"     data-scroll data-section="life"><i>06</i>生活</a>
-        <a href="#contact"  data-scroll data-section="contact"><i>07</i>联系</a>
+      <nav class="top-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="experience.html" data-nav="experience">Cases</a>
+        <a href="works.html" data-nav="works">Works</a>
+        <a href="cv.html" data-nav="cv">CV</a>
+        <a href="life.html" data-nav="life">Life</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="index.html" data-nav="home">首页</a>
+    <a href="about.html" data-nav="about">关于</a>
+    <a href="experience.html" data-nav="experience">经历</a>
+    <a href="works.html" data-nav="works">作品</a>
+    <a href="cv.html" data-nav="cv">履历</a>
+    <a href="life.html" data-nav="life">生活</a>
+    <a href="contact.html" data-nav="contact">联系</a>
+  </nav>
 
-    <!-- ============ HERO 首屏 ============ -->
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-glow hero-glow--1" data-speed="0.85"></div>
-        <div class="hero-glow hero-glow--2" data-speed="1.15"></div>
-        <div class="hero-grid" data-speed="1.05"></div>
-      </div>
-      <div class="hero-inner">
-        <p class="eyebrow" data-hero="1">PORTFOLIO — 求职中 · OPEN TO WORK</p>
-        <h1 class="hero-name">
-          <span class="hero-name-cn"><em data-hero="2">胡</em><em data-hero="3">睿</em><em data-hero="4">杰</em></span>
-          <span class="hero-name-en" aria-hidden="true">HU&nbsp;RUIJIE</span>
-        </h1>
-        <p class="hero-role" data-hero="5">
-          计算机科学与技术 · 数据分析与商业 AI 方向<span class="dot">/</span>坐标上海
-        </p>
-        <p class="hero-tagline" data-hero="6">
-          把数据从"收集整理"做到"驱动决策"：从数千条简历的清洗治理，到期权策略的回撤优化。<br />
-          现于香港城市大学攻读商业人工智能硕士。
-        </p>
-        <div class="hero-cta" data-hero="7">
-          <a class="btn btn--primary" href="#journey" data-scroll>查看经历</a>
-          <a class="btn btn--ghost" href="assets/resume.docx" target="_blank" rel="noopener">下载简历 ↓</a>
-        </div>
-      </div>
-      <div class="hero-scrollcue" aria-hidden="true">
-        <span>下滑进入</span><i></i>
-      </div>
-    </section>
-
-    <!-- ============ 数据条 ============ -->
-    <section class="stats-strip" id="stats" aria-label="个人数据">
-      <div class="stats-inner">
-        <div class="stat" data-reveal>
-          <strong><span data-count="3">0</span><em>段</em></strong>
-          <span class="stat-label">实习经历</span>
-        </div>
-        <div class="stat" data-reveal>
-          <strong><span data-count="4.1" data-decimal="1">0</span><em>/5</em></strong>
-          <span class="stat-label">本科 GPA</span>
-        </div>
-        <div class="stat" data-reveal>
-          <strong><span data-count="7" data-decimal="1">0</span></strong>
-          <span class="stat-label">雅思成绩</span>
-        </div>
-        <div class="stat" data-reveal>
-          <strong><span data-count="10">0</span><em>k+</em></strong>
-          <span class="stat-label">作品累计阅读</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 关于 ============ -->
-    <section class="section section--about" id="about">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">ABOUT</p>
-        <h2>关于我<span>· 我做事的方式</span></h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-text" data-reveal>
-          <p>
-            我是胡睿杰，常州大学计算机科学与技术专业毕业，<strong>现于香港城市大学攻读商业人工智能硕士</strong>。
-            三段实习横跨<strong>人力资源数据、私募量化与软件开发</strong>——
-            我习惯把一件事从"拿到原始数据"一路做到"能支撑业务决策"。
-          </p>
-          <p>
-            毕业设计把条件生成对抗网络做成<strong>在线可体验的去雾服务</strong>，这个页面本身也是我的一次练习：
-            原生 JS + GSAP 手工搭建，无框架依赖，托管在腾讯云 CloudBase 上。
-            我更在意<strong>量化验证与落地</strong>——协调 100+ 人面试、选股组合跑赢沪深 300、
-            公众号阅读 10k+，每个结论都有数字支撑。
-          </p>
-          <div class="about-tags">
-            <span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span><span>DataGrip</span><span>Kettle</span><span>Unity</span><span>Android</span>
-          </div>
-        </div>
-        <div class="approach-cards">
-          <article class="approach-card" data-reveal>
-            <span class="approach-num">01</span>
-            <h3>数据驱动</h3>
-            <p>用 Python / SQL 把原始数据变成结构化数据集，先定义指标再下结论，让结果可复现。</p>
-          </article>
-          <article class="approach-card" data-reveal>
-            <span class="approach-num">02</span>
-            <h3>快速上手</h3>
-            <p>入职半个月摸清期权期货知识并产出策略验证，实习月余融入团队并输出有效内容。</p>
-          </article>
-          <article class="approach-card" data-reveal>
-            <span class="approach-num">03</span>
-            <h3>沟通协作</h3>
-            <p>网球协会社长组织 100+ 人次活动，英文可作为工作语言（雅思 7.0），对接内外部资源。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 教育与经历 ============ -->
-    <section class="section section--journey" id="journey">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">JOURNEY</p>
-        <h2>教育与经历<span>· 时间线</span></h2>
-      </div>
-
-      <!-- 教育经历 -->
-      <div class="journey-group">
-        <h3 class="journey-group-title" data-reveal><i>EDUCATION</i>教育经历</h3>
-        <div class="timeline">
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2026.09 — 至今</div>
-            <div class="t-card">
-              <p class="t-kind">硕士在读</p>
-              <h3>香港城市大学 · 商业人工智能（MSc AIB）</h3>
-              <p class="t-desc">聚焦机器学习与商业应用场景的结合，探索 AI 技术在数据分析与业务决策中的落地。</p>
-              <div class="t-metrics">
-                <span class="pill pill--accent">在读</span>
-                <span class="pill">雅思 7.0（听 8.5 / 读 7 / 写 6 / 口 6）</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2021.10 — 2025.06</div>
-            <div class="t-card">
-              <p class="t-kind">本科</p>
-              <h3>常州大学 · 计算机科学与技术</h3>
-              <p class="t-desc">主修：数据结构与算法分析、计算机组成与体系结构、计算机网络、操作系统、数据库原理、分布式系统原理与实践等。</p>
-              <div class="t-metrics">
-                <span class="pill">GPA 4.1 / 5</span>
-                <span class="pill">英语竞赛 C 类二等奖 ×2</span>
-                <span class="pill">校综合奖学金 ×2</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- 实习经历 -->
-      <div class="journey-group">
-        <h3 class="journey-group-title" data-reveal><i>INTERNSHIPS</i>实习经历</h3>
-        <div class="timeline">
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2025.09 — 2025.12</div>
-            <div class="t-card">
-              <p class="t-kind">技术数据分析</p>
-              <h3>北京外企德科人力服务（上海）· AI 招聘数据</h3>
-              <p class="t-desc">Python + SQL 清洗数千条候选人数据并标准化；搭建漏斗模型筛选候选人，自动化脚本重命名整理简历；Power BI 输出"岗位-候选人匹配度"报表，量化招聘瓶颈。</p>
-              <div class="t-metrics">
-                <span class="pill">300+ 简历自动化整理</span>
-                <span class="pill">100+ 人面试协调</span>
-                <span class="pill">数千条数据治理</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2025.07 — 2025.08</div>
-            <div class="t-card">
-              <p class="t-kind">量化金融</p>
-              <h3>海南钰泰私募基金 · 量化研究</h3>
-              <p class="t-desc">复现 Fama-French 三因子模型验证超额收益；基于聚宽因子库构建江苏省股票打分排名选股组合；对三大股指期权交易策略进行优化验证。</p>
-              <div class="t-metrics">
-                <span class="pill">10 支选股组合跑赢沪深 300</span>
-                <span class="pill">有效降低最大回撤</span>
-                <span class="pill pill--accent">证券从业资格</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2024.01 — 2024.02</div>
-            <div class="t-card">
-              <p class="t-kind">软件开发</p>
-              <h3>江苏今点软件 · 政务平台项目</h3>
-              <p class="t-desc">参与政务平台 APP 项目：修改功能代码、执行接口测试与黑盒测试，针对性处理不通过的接口；统筹整理技术文档与接口说明。</p>
-              <div class="t-metrics">
-                <span class="pill">接口 / 黑盒测试</span>
-                <span class="pill">技术文档统筹</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- 校园经历 -->
-      <div class="journey-group">
-        <h3 class="journey-group-title" data-reveal><i>CAMPUS</i>校园经历</h3>
-        <div class="timeline">
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2023.09 — 2025.06</div>
-            <div class="t-card">
-              <p class="t-kind">学生组织 · 社长</p>
-              <h3>常州大学网球协会 · 社长</h3>
-              <p class="t-desc">制定并推进社团运营规划：新老成员入社管理、网球技术周训排班、成员技术动作学习进度跟进。从 0-1 参与策划校级网球比赛并担任裁判，负责比赛规则修订建议、场地协调与成员动态同步。</p>
-              <div class="t-metrics">
-                <span class="pill">独立组织周训 10+ 次</span>
-                <span class="pill">累计参与 100+ 人次</span>
-                <span class="pill">校级比赛 30+ 人规模</span>
-                <span class="pill">规则修订采纳率 60%</span>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <div class="t-era">2022.06 — 2024.04</div>
-            <div class="t-card">
-              <p class="t-kind">学生组织 · 部长</p>
-              <h3>华罗庚学院学生会 · 新闻部部长</h3>
-              <p class="t-desc">
-                运营学院公众号，担任多篇推文的责任编辑；同时协助学校"现代产业学院"官方公众号的内容排版（美编）。
-                统筹活动现场摄影、新闻稿撰写与发布维护，产出作品累计阅读 10k+。以下为 8 篇代表推文：
-              </p>
-              <div class="wx-grid">
-<a class="wx-card" style="--cover:url('/assets/wx/w5.jpg')" href="https://mp.weixin.qq.com/s/z9P_gwvTAOJxT_MzTmPVcQ" target="_blank" rel="noopener">
-                  <span class="wx-card-tag">文编 · 责任编辑</span>
-                    <strong>【一线华闻】以赛促学 "疫"起同行</strong>
-                    <span class="wx-card-src">常州大学华罗庚学院 · 学院官方公众号</span>
-                </a>
-<a class="wx-card wx-card--school" style="--cover:url('/assets/wx/w6.jpg')" href="https://mp.weixin.qq.com/s/NXqxCXMpqaJDm2ABzrMVFQ" target="_blank" rel="noopener">
-                  <span class="wx-card-tag wx-card-tag--school">美编</span>
-                    <strong>【典型】宁波工程学院杭州湾汽车学院案例推介</strong>
-                    <span class="wx-card-src">现代产业学院 · 教育部委托学校运营</span>
-                </a>
-<a class="wx-card wx-card--school" style="--cover:url('/assets/wx/w7.jpg')" href="https://mp.weixin.qq.com/s/Y8-2smrcAndDLQ6BBs83Aw" target="_blank" rel="noopener">
-                  <span class="wx-card-tag wx-card-tag--school">美编</span>
-                    <strong>【典型】华东理工大学现代生物医药产业联合学院案例推介</strong>
-                    <span class="wx-card-src">现代产业学院 · 教育部委托学校运营</span>
-                </a>
-<a class="wx-card wx-card--school" style="--cover:url('/assets/wx/w8.jpg')" href="https://mp.weixin.qq.com/s/2cded3dgiGJMzlz9lGpQEA" target="_blank" rel="noopener">
-                  <span class="wx-card-tag wx-card-tag--school">美编</span>
-                    <strong>【动态】南昌航空大学航空制造产业学院案例推介</strong>
-                    <span class="wx-card-src">现代产业学院 · 教育部委托学校运营</span>
-                </a>
-<a class="wx-card" style="--cover:url('/assets/wx/w1.jpg')" href="https://mp.weixin.qq.com/s/Bn4-fViV33TYLHsL8V2Tqg" target="_blank" rel="noopener">
-                  <span class="wx-card-tag">责任编辑</span>
-                    <strong>【毕业生特辑】窦海波——低头拉车，抬头看路</strong>
-                    <span class="wx-card-src">常州大学华罗庚学院 · 学院官方公众号</span>
-                </a>
-<a class="wx-card" style="--cover:url('/assets/wx/w2.jpg')" href="https://mp.weixin.qq.com/s/2otn8EKwWw6X2R6eRwSpQw" target="_blank" rel="noopener">
-                  <span class="wx-card-tag">文编 · 责任编辑</span>
-                    <strong>【篮球常大杯】新的历史，由我们创造！</strong>
-                    <span class="wx-card-src">常州大学华罗庚学院 · 学院官方公众号</span>
-                </a>
-<a class="wx-card" style="--cover:url('/assets/wx/w3.jpg')" href="https://mp.weixin.qq.com/s/0dTZe7gymjFuOjVlIfJ3vw" target="_blank" rel="noopener">
-                  <span class="wx-card-tag">责任编辑</span>
-                    <strong>【暑期加油站②】暑期实习日记</strong>
-                    <span class="wx-card-src">常州大学华罗庚学院 · 学院官方公众号</span>
-                </a>
-<a class="wx-card" style="--cover:url('/assets/wx/w4.jpg')" href="https://mp.weixin.qq.com/s/-TFmLNnZdMkgivTdldQ0sg" target="_blank" rel="noopener">
-                  <span class="wx-card-tag">责任编辑</span>
-                    <strong>【新生特辑】去看看校园吧 就在这个国庆</strong>
-                    <span class="wx-card-src">常州大学华罗庚学院 · 学院官方公众号</span>
-                </a>
-        
-              </div>
-              <div class="t-metrics">
-                <span class="pill pill--accent">累计产出近 50 篇 · 阅读 10k+</span>
-                <span class="pill">代表推文 8 篇 · 责任编辑 5 / 美编 3</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 荣誉与证书 ============ -->
-    <section class="section section--honors" id="honors">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">HONORS</p>
-        <h2>荣誉与证书<span>· 点滴证明</span></h2>
-      </div>
-      <p class="honors-intro" data-reveal>
-        按住证书左右拖动浏览（证书上的证件号码已打码）。四六级成绩单备索。
-      </p>
-      <div class="cert-wall" id="certWall" data-reveal data-drag-wall aria-label="证书墙，可左右拖动">
-        <figure class="cert-tile"><img src="assets/certs/cda.jpg" alt="CDA 数据分析师一级证书" draggable="false" loading="lazy" /><figcaption>CDA 数据分析师 · 一级</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/jisuanji3.jpg" alt="全国计算机等级考试三级（数据库技术）证书" draggable="false" loading="lazy" /><figcaption>计算机三级 · 数据库技术</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/securities_law.jpg" alt="证券市场基本法律法规成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 法律法规 62 分</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/securities_market.jpg" alt="金融市场基础知识成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 金融市场基础 64.5 分</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/ielts.jpg" alt="雅思成绩单" draggable="false" loading="lazy" /><figcaption>雅思成绩单 · 总分 7.0</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/neccs2022.jpg" alt="2022 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2022</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/neccs2023.jpg" alt="2023 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2023</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/scholarship2022.jpg" alt="2021-2022 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2021-2022</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/scholarship2024.jpg" alt="2023-2024 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2023-2024</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/advanced.jpg" alt="院学生会先进个人奖" draggable="false" loading="lazy" /><figcaption>院学生会「先进个人」</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/appointment.jpg" alt="学生会新闻部部长聘书" draggable="false" loading="lazy" /><figcaption>新闻部部长 · 聘书</figcaption></figure>
-        <figure class="cert-tile"><img src="assets/certs/putonghua.jpg" alt="普通话水平测试二级乙等证书" draggable="false" loading="lazy" /><figcaption>普通话 · 二级乙等</figcaption></figure>
-      </div>
-      <div class="cert-chips" data-reveal>
-        <span class="pill pill--accent">CDA 数据分析师 Level I</span>
-        <span class="pill">CET-6 · 552</span>
-        <span class="pill">CET-4 · 571</span>
-      </div>
-    </section>
-
-    <!-- ============ 项目作品 ============ -->
-    <section class="section section--projects" id="projects">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">WORKS</p>
-        <h2>项目作品<span>· Works</span></h2>
-      </div>
-
-      <div class="project-grid">
-        <a class="project-card project-card--feature" href="dehaze.html" data-reveal>
-          <div class="project-visual project-visual--dehaze" aria-hidden="true">
-            <img src="assets/sample_hazy.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="project-body">
-            <p class="t-kind">毕业设计 · 在线可体验</p>
-            <h3>单幅图像去雾 · SE-CGAN</h3>
-            <p>条件生成对抗网络实现单幅图像去雾，Tiramisu U-Net 生成器 + PatchGAN 判别器；PyQt6 桌面演示起步，为让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
-            <div class="t-metrics">
-              <span class="pill pill--accent">PSNR 28.05</span>
-              <span class="pill">SSIM 0.9707</span>
-              <span class="pill">PyTorch</span>
-              <span class="pill">PyQt6 → 云端</span>
-            </div>
-            <span class="project-more">进入在线体验 →</span>
-          </div>
-        </a>
-        <article class="project-card" data-reveal>
-          <div class="project-visual" aria-hidden="true"><span>02</span></div>
-          <div class="project-body">
-            <p class="t-kind">大创项目 · 2023.5 — 2024.5</p>
-            <h3>基于 VR 的青少年记忆研究</h3>
-            <p>基于 Unity 搭建虚拟现实场景，结合 N-Back 模型完成脑电数据采集，用 Python 完成数据分析并形成研究文章。</p>
-            <div class="t-metrics"><span class="pill">Unity</span><span class="pill">N-Back</span><span class="pill">Python 数据分析</span></div>
-          </div>
-        </article>
-        <article class="project-card" data-reveal>
-          <div class="project-visual" aria-hidden="true"><span>03</span></div>
-          <div class="project-body">
-            <p class="t-kind">课程设计 · 2024.5 — 2024.6</p>
-            <h3>电池管家 · Android 应用</h3>
-            <p>使用 Android Studio 与 Java 开发电量测算应用，按使用场景分类记录电量异常，SQLite 落库并形成分析报告。</p>
-            <div class="t-metrics"><span class="pill">Android Studio</span><span class="pill">Java</span><span class="pill">SQLite</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============ 生活区（暖色，通栏背景） ============ -->
-    <section class="zone-warm" id="life">
-      <div class="section section--life">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">LIFE</p>
-        <h2>生活之外<span>· 下班后</span></h2>
-      </div>
-
-      <p class="life-intro" data-reveal>
-        数据与代码之外：网球协会社长、校园公众号主理人，视频剪辑和摄影修图也都在行。坐标上海。
-      </p>
-
-      <div class="photo-wall" id="photoWall" data-reveal aria-label="生活照片墙，可左右拖动">
-        <!-- 占位照片：替换 assets/photos/ 下的 SVG 为真实照片（同名 jpg 更佳） -->
-        <figure class="photo-tile"><img src="assets/photos/p1.svg" alt="生活照片占位 1" draggable="false" /><figcaption>网球场</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p2.svg" alt="生活照片占位 2" draggable="false" /><figcaption>夜跑</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p3.svg" alt="生活照片占位 3" draggable="false" /><figcaption>上海街头</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p4.svg" alt="生活照片占位 4" draggable="false" /><figcaption>剪辑台</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p5.svg" alt="生活照片占位 5" draggable="false" /><figcaption>校园</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p6.svg" alt="生活照片占位 6" draggable="false" /><figcaption>比赛日</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p7.svg" alt="生活照片占位 7" draggable="false" /><figcaption>旅行</figcaption></figure>
-        <figure class="photo-tile"><img src="assets/photos/p8.svg" alt="生活照片占位 8" draggable="false" /><figcaption>落日</figcaption></figure>
-      </div>
-
-      <div class="life-cols">
-        <div class="life-col" data-reveal>
-          <h4><i>SPORT</i>在动</h4>
-          <ul><li>网球 · 校网球协会社长</li><li>组织训练 &amp; 校级比赛执裁</li><li>跑步 · 夜跑爱好者</li></ul>
-        </div>
-        <div class="life-col" data-reveal>
-          <h4><i>CREATE</i>在创作</h4>
-          <ul><li>视频剪辑 · PR / 剪映</li><li>摄影修图 · Lightroom / PS</li><li>推文美编 · 校园官号主理</li></ul>
-        </div>
-        <div class="life-col" data-reveal>
-          <h4><i>MORE</i>关键词</h4>
-          <div class="about-tags">
-            <span>网球</span><span>剪辑</span><span>摄影</span><span>美编</span><span>英语 · 雅思 7.0</span>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- ============ 联系 ============ -->
-    <section class="section section--contact" id="contact">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">CONTACT</p>
-        <h2>聊聊机会<span>· 或者只是打个招呼</span></h2>
-      </div>
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:921458257@qq.com" data-reveal>
-          <i>MAIL</i><strong>921458257@qq.com</strong><span>最快的找到我的方式</span>
-        </a>
-        <div class="contact-card" data-reveal>
-          <i>WECHAT</i><strong>nick921458257</strong><span>备注来意即可</span>
-        </div>
-        <a class="contact-card" href="tel:18916647173" data-reveal>
-          <i>PHONE</i><strong>18916647173</strong><span>电话 / 短信均可</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 胡睿杰 · 手工打造，无框架依赖</p>
-    <p>GSAP + Lenis · 托管于腾讯云 CloudBase</p>
-  </footer>
-
-  <!-- 回到顶部 -->
-  <button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M12 19V5m0 0l-6 6m6-6l6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <!-- 工作 / 生活模式切换 -->
+  <button class="mode-toggle" type="button" data-mode-toggle aria-pressed="false" aria-label="打开生活模式">
+    <span data-mode-label>生活模式</span>
+    <span class="mode-track" aria-hidden="true"><span></span></span>
   </button>
 
-  <script src="vendor/gsap.min.js" defer></script>
-  <script src="vendor/ScrollTrigger.min.js" defer></script>
-  <script src="vendor/lenis.min.js" defer></script>
-  <script type="module" src="js/main.js"></script>
+  <!-- ============ 开场遮罩：外滩暮色 → 主视觉 ============ -->
+  <div class="work-intro" data-work-intro role="presentation">
+    <span class="wi-sign" aria-hidden="true">Ruijie</span>
+    <div class="wi-media" aria-hidden="true">
+      <img src="assets/intro-hero.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="wi-scrim"></div>
+      <div class="wi-grain"></div>
+    </div>
+    <div class="wi-copy">
+      <p class="wi-kicker">PORTFOLIO — OPEN TO WORK</p>
+      <h1 class="wi-h1">胡睿杰</h1>
+      <p class="wi-role">香港城市大学 · 商业人工智能硕士在读</p>
+      <p class="wi-interests">对数据分析、商业 AI 与量化验证感兴趣</p>
+      <div class="wi-actions">
+        <a class="wi-btn wi-btn--primary" href="#experience">查看经历</a>
+        <a class="wi-btn" href="assets/resume.docx" download="胡睿杰-简历-2026.docx">下载简历</a>
+      </div>
+    </div>
+    <div class="wi-hint" aria-hidden="true"><span>下滑进入</span><i>↓</i></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ==================================================
+         工作区
+         ================================================== -->
+    <section class="profile-shell" data-mode-view="work" aria-hidden="false">
+      <header class="profile-hero-card">
+        <div class="profile-visual">
+          <figure class="profile-portrait">
+            <img src="assets/profile-hero.jpg" width="720" height="960" alt="胡睿杰个人照片（上海外滩）" loading="eager" fetchpriority="high" decoding="async" />
+            <figcaption><span>Target</span><strong>数据分析 × 商业 AI</strong></figcaption>
+          </figure>
+          <div class="portrait-note" aria-label="头像下说明">
+            <p>习惯把一件事从「拿到原始数据」一路做到「能支撑业务决策」，每个结论都有数字支撑。</p>
+          </div>
+        </div>
+        <div class="profile-hero-copy">
+          <p class="profile-kicker">工作区 / Data × AI</p>
+          <h1>胡睿杰</h1>
+          <p class="profile-role">计算机科学与技术本科 · 香港城市大学商业人工智能硕士在读</p>
+          <p class="profile-slogan">数据分析 · 商业 AI · 量化验证 · 坐标上海</p>
+          <p class="profile-contact">18916647173 · 921458257@qq.com · 微信 nick921458257</p>
+          <div class="profile-actions">
+            <a class="is-primary" href="cv.html">查看 CV</a>
+            <a href="experience.html">经历详情</a>
+            <a href="works.html">作品材料</a>
+            <a href="contact.html">联系我</a>
+          </div>
+          <div class="hero-proof-grid" aria-label="核心数据">
+            <article><strong><span data-count="4">0</span> 段</strong><span>实习经历</span></article>
+            <article><strong><span data-count="4.1" data-decimals="1">0</span> / 5</strong><span>本科 GPA</span></article>
+            <article><strong><span data-count="7" data-decimals="1">0</span></strong><span>雅思成绩</span></article>
+            <article><strong><span data-count="10">0</span>k+</strong><span>作品累计阅读</span></article>
+          </div>
+        </div>
+      </header>
+
+      <section class="profile-section reveal" id="section-method">
+        <h2>我做事的方式</h2>
+        <div class="profile-grid three">
+          <article class="profile-card">
+            <strong>数据驱动</strong>
+            <p>用 Python / SQL 把原始数据变成结构化数据集，先定义指标再下结论，让结果可复现。</p>
+            <div class="profile-tags"><span>Python</span><span>SQL</span><span>Power BI</span></div>
+          </article>
+          <article class="profile-card">
+            <strong>快速上手</strong>
+            <p>入职半个月摸清期权期货知识并产出策略验证，实习月余融入团队并输出有效内容。</p>
+            <div class="profile-tags"><span>半个月上手衍生品</span><span>月余融入团队</span></div>
+          </article>
+          <article class="profile-card">
+            <strong>沟通协作</strong>
+            <p>网球协会社长组织 100+ 人次活动，英文可作为工作语言（雅思 7.0），对接内外部资源。</p>
+            <div class="profile-tags"><span>社长</span><span>雅思 7.0</span><span>公众号主理</span></div>
+          </article>
+        </div>
+        <div class="career-intent">
+          <span>求职意向</span>
+          <p>数据分析 / 商业分析——把数据从「收集整理」做到「驱动决策」：从数千条简历的清洗治理，到期权策略的回撤优化。</p>
+        </div>
+        <blockquote>每个结论都有数字支撑：协调 100+ 人面试、选股组合跑赢沪深 300、公众号阅读 10k+。</blockquote>
+      </section>
+
+      <section class="profile-section reveal">
+        <h2>教育背景</h2>
+        <div class="profile-grid two">
+          <article class="profile-card">
+            <strong>香港城市大学</strong>
+            <span>商业人工智能（MSc AIB）｜硕士在读</span>
+            <small>2026.09 - 2027.06</small>
+            <p>聚焦机器学习与商业应用场景的结合，探索 AI 技术在数据分析与业务决策中的落地。</p>
+            <div class="profile-tags"><span>雅思 7.0（听 8.5 / 读 7 / 写 6 / 口 6）</span></div>
+          </article>
+          <article class="profile-card">
+            <strong>常州大学 · 华罗庚学院</strong>
+            <span>计算机科学与技术｜本科</span>
+            <small>2021.10 - 2025.06</small>
+            <p>主修数据结构与算法、计算机组成与体系结构、计算机网络、操作系统、数据库原理、分布式系统原理与实践等。</p>
+            <div class="profile-tags"><span>GPA 4.1 / 5</span><span>英语竞赛 C 类二等奖 ×2</span><span>校综合奖学金 ×2</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="profile-section reveal" id="experience">
+        <h2>实习经历</h2>
+        <div class="profile-timeline">
+          <article class="profile-card">
+            <div class="profile-card-head">
+              <div>
+                <strong>北京外企德科（上海）｜技术数据分析实习生</strong>
+                <small>2025.09 - 2025.12</small>
+              </div>
+            </div>
+            <p>Python + SQL 清洗数千条候选人数据并标准化；政务选调生项目搭建漏斗模型筛选候选人并协调 100+ 人面试；Power BI 输出「岗位-候选人匹配度」报表，量化招聘瓶颈。</p>
+            <div class="profile-tags"><span>300+ 简历自动化整理</span><span>100+ 人面试协调</span><span>数千条数据治理</span></div>
+          </article>
+          <article class="profile-card">
+            <div class="profile-card-head">
+              <div>
+                <strong>海南钰泰私募基金｜量化金融实习生</strong>
+                <small>2025.07 - 2025.08</small>
+              </div>
+            </div>
+            <p>复现 Fama-French 三因子模型验证超额收益；基于聚宽因子库构建江苏省股票打分排名选股组合；对三大股指期权交易策略进行优化验证。</p>
+            <div class="profile-tags"><span>10 支选股组合跑赢沪深 300</span><span>有效降低最大回撤</span><span>证券从业资格</span></div>
+          </article>
+          <article class="profile-card">
+            <div class="profile-card-head">
+              <div>
+                <strong>睿鑫信息科技（上海）｜嵌入式软件开发助理</strong>
+                <small>2024.12 - 2025.01</small>
+              </div>
+            </div>
+            <p>配合开发团队完成 ARM 开发板测试环境搭建与基础功能实现，负责后期代码调试与功能验证；独立承担技术文档整理，形成标准化文档体系。</p>
+            <div class="profile-tags"><span>ARM 开发板测试</span><span>代码调试</span><span>技术文档统筹</span></div>
+          </article>
+          <article class="profile-card">
+            <div class="profile-card-head">
+              <div>
+                <strong>江苏今点软件｜软件开发实习生</strong>
+                <small>2024.01 - 2024.02</small>
+              </div>
+            </div>
+            <p>参与政务平台 APP 项目：修改功能代码、执行接口测试与黑盒测试，针对性处理不通过的接口；统筹整理技术文档与接口说明。</p>
+            <div class="profile-tags"><span>接口 / 黑盒测试</span><span>技术文档统筹</span></div>
+          </article>
+        </div>
+        <a class="profile-link-card" href="experience.html" style="margin-top:14px"><em>→</em><strong>完整经历与校园故事在这里</strong><span>四段实习的拆解、网球协会与新闻部的细节，以及代表推文入口。</span></a>
+      </section>
+
+      <section class="profile-section reveal">
+        <h2>作品与材料</h2>
+        <div class="profile-grid two">
+          <a class="profile-link-card" href="dehaze.html"><em>→</em><strong>毕业设计 · 单幅图像去雾（在线可体验）</strong><span>SE-CGAN 条件生成对抗网络，上传雾图直接看效果，PSNR 28.05 / SSIM 0.9707。</span></a>
+          <a class="profile-link-card" href="works.html"><em>→</em><strong>项目作品与推文墙</strong><span>VR 青少年记忆研究、电池管家 App，以及 8 篇公众号代表推文与证书原件。</span></a>
+          <a class="profile-link-card" href="cv.html"><em>→</em><strong>在线履历 CV</strong><span>教育、实习、项目、技能与荣誉的完整版，可下载 2026 版简历。</span></a>
+          <a class="profile-link-card" href="contact.html"><em>→</em><strong>联系我</strong><span>邮箱、微信、电话都在这，备注来意即可。</span></a>
+        </div>
+      </section>
+
+      <footer class="profile-footer">把数据讲清楚，把事情做完。</footer>
+    </section>
+
+    <!-- ==================================================
+         生活区
+         ================================================== -->
+    <section class="profile-shell" data-mode-view="life" aria-hidden="true" inert hidden>
+      <header class="profile-hero-life">
+        <div class="profile-hero-copy">
+          <p class="profile-kicker">下班后 / Life</p>
+          <h1>生活里的我</h1>
+          <div class="friend-card" aria-label="交友名片">
+            <div class="friend-zodiac" aria-hidden="true"><span>🎾</span></div>
+            <div>
+              <span class="friend-label">交友名片</span>
+              <strong>网球协会社长 · 剪辑 &amp; 摄影</strong>
+              <p>白天和数据打交道，晚上在球场、剪辑台和取景框里换脑子。</p>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <a class="is-primary" href="contact.html">聊聊</a>
+            <a href="works.html">看作品</a>
+            <a href="cv.html">看履历</a>
+          </div>
+          <div class="signal-board" data-signal-board>
+            <div class="signal-tabs" role="tablist" aria-label="生活兴趣">
+              <button type="button" class="is-active" data-signal-tab data-signal-text="网球打了四年，从院队训练打到校级比赛执裁；夜跑是留给自己的放空时间。">网球</button>
+              <button type="button" data-signal-tab data-signal-text="PR / 剪映剪片子，Lightroom 和 PS 修图；公众号推文的排版美编也一直在做。">剪辑 &amp; 摄影</button>
+              <button type="button" data-signal-tab data-signal-text="坐标上海，喜欢带着相机压马路，外滩、街角和落日都拍。">街头</button>
+            </div>
+            <p data-signal-copy aria-live="polite">网球打了四年，从院队训练打到校级比赛执裁；夜跑是留给自己的放空时间。</p>
+          </div>
+          <div class="hero-proof-grid" aria-label="生活关键词">
+            <article><strong>Sport</strong><span>网球 / 夜跑</span></article>
+            <article><strong>Create</strong><span>PR 剪辑 / LR 修图</span></article>
+            <article><strong>City</strong><span>坐标上海</span></article>
+            <article><strong>Media</strong><span>公众号美编</span></article>
+          </div>
+        </div>
+        <figure class="life-portrait">
+          <img src="assets/life/life-p1.jpg" data-random-life-photo data-photo-pool="assets/life/life-p1.jpg,assets/life/life-p2.jpg,assets/life/life-p3.jpg,assets/life/life-p4.jpg" width="675" height="900" alt="随机生活照片" loading="lazy" decoding="async" />
+        </figure>
+      </header>
+
+      <section class="profile-section profile-life-gallery reveal">
+        <h2>生活照片墙</h2>
+        <p class="wall-hint life-hint">按住照片左右拖动浏览，也可以聚焦后使用键盘方向键。</p>
+        <div class="drag-wall photo-wall" data-drag-wall tabindex="0" aria-label="生活照片墙，可左右拖动">
+          <figure><img src="assets/life/life-01.jpg" alt="躺在木地板上休息" draggable="false" loading="lazy" /><figcaption>日常</figcaption></figure>
+          <figure><img src="assets/life/life-02.jpg" alt="秋日金黄的树叶" draggable="false" loading="lazy" /><figcaption>秋叶</figcaption></figure>
+          <figure><img src="assets/life/life-03.jpg" alt="银杏树下的古建长廊" draggable="false" loading="lazy" /><figcaption>银杏</figcaption></figure>
+          <figure><img src="assets/life/life-04.jpg" alt="俯瞰海岸线" draggable="false" loading="lazy" /><figcaption>海岸</figcaption></figure>
+          <figure><img src="assets/life/life-05.jpg" alt="黑白色调的海边" draggable="false" loading="lazy" /><figcaption>海边</figcaption></figure>
+          <figure><img src="assets/life/life-06.jpg" alt="日落下的剪影" draggable="false" loading="lazy" /><figcaption>日落</figcaption></figure>
+          <figure><img src="assets/life/life-07.jpg" alt="街头的气球摊" draggable="false" loading="lazy" /><figcaption>街头</figcaption></figure>
+          <figure><img src="assets/life/life-08.jpg" alt="路边遇见的猫" draggable="false" loading="lazy" /><figcaption>猫</figcaption></figure>
+          <figure><img src="assets/life/life-09.jpg" alt="街边画像师" draggable="false" loading="lazy" /><figcaption>画摊</figcaption></figure>
+          <figure><img src="assets/life/life-10.jpg" alt="行驶中的列车窗外" draggable="false" loading="lazy" /><figcaption>列车</figcaption></figure>
+          <figure><img src="assets/life/life-11.jpg" alt="夜晚街头拍摄" draggable="false" loading="lazy" /><figcaption>夜拍</figcaption></figure>
+          <figure><img src="assets/life/life-12.jpg" alt="雪场滑雪" draggable="false" loading="lazy" /><figcaption>滑雪</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="profile-section reveal">
+        <h2>爱好</h2>
+        <div class="profile-grid two">
+          <article class="profile-card">
+            <strong>在动</strong>
+            <p>网球协会社长，组织训练与校级比赛执裁；跑步，夜跑爱好者。</p>
+            <div class="profile-tags"><span>网球 · 社长</span><span>周训 10+ 次</span><span>夜跑</span></div>
+          </article>
+          <article class="profile-card">
+            <strong>在创作</strong>
+            <p>视频剪辑（PR / 剪映）、摄影修图（Lightroom / PS）、公众号推文美编主理。</p>
+            <div class="profile-tags"><span>视频剪辑</span><span>摄影修图</span><span>美编</span><span>英语 · 雅思 7.0</span></div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="profile-footer">数据之外，生活也要有留白。</footer>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> 胡睿杰 · 手工打造，无框架依赖</span>
+      <span>托管于腾讯云 CloudBase</span>
+    </div>
+  </footer>
+
+  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

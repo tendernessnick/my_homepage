@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works｜胡睿杰</title>
+  <meta name="description" content="胡睿杰的作品与材料：毕业设计图像去雾在线 Demo、VR 青少年记忆研究、电池管家 App、8 篇公众号代表推文与证书原件墙。" />
+  <meta name="theme-color" content="#f3f6f8" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
+</head>
+<body data-page="works">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">胡</span>
+        <span class="brand-text">胡睿杰<small>Data × AI · 求职中 2026</small></span>
+      </a>
+      <nav class="top-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="experience.html" data-nav="experience">Cases</a>
+        <a href="works.html" data-nav="works">Works</a>
+        <a href="cv.html" data-nav="cv">CV</a>
+        <a href="life.html" data-nav="life">Life</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="index.html" data-nav="home">首页</a>
+    <a href="about.html" data-nav="about">关于</a>
+    <a href="experience.html" data-nav="experience">经历</a>
+    <a href="works.html" data-nav="works">作品</a>
+    <a href="cv.html" data-nav="cv">履历</a>
+    <a href="life.html" data-nav="life">生活</a>
+    <a href="contact.html" data-nav="contact">联系</a>
+  </nav>
+
+  <main id="main">
+    <section class="container page-hero">
+      <p class="eyebrow">Works</p>
+      <h1 class="page-title">作品现场。</h1>
+      <p class="lead">毕业设计的在线 Demo、大创 VR 研究、Android 课程设计，还有 8 篇代表推文和一墙证书——都在这页。</p>
+      <div class="comic-strip">
+        <span class="tag">在线可体验</span><span class="tag">PyTorch</span><span class="tag">Unity</span><span class="tag">Android</span><span class="tag">公众号运营</span>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>三项代表作品</h2>
+        </div>
+
+        <article class="flagship-work reveal" id="dehaze">
+          <div class="flagship-copy">
+            <span class="comic-label">Flagship 01 · 毕业设计 · 在线可体验</span>
+            <h3>单幅图像去雾 · SE-CGAN</h3>
+            <p>条件生成对抗网络实现单幅图像去雾。从 PyQt6 桌面演示起步，为了让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
+            <div class="work-value-list">
+              <p><strong>模型</strong><span>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失加权联合训练。</span></p>
+              <p><strong>评测</strong><span>RESIDE 合成雾图 + O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</span></p>
+              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 实时在线推理。</span></p>
+            </div>
+            <div class="flagship-actions">
+              <a class="btn primary" href="dehaze.html">进入在线体验</a>
+              <a class="btn" href="experience.html">看经历页</a>
+            </div>
+          </div>
+          <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
+            <figure><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" /><figcaption>原图 · 有雾</figcaption></figure>
+            <figure><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" /><figcaption>去雾后</figcaption></figure>
+          </div>
+        </article>
+
+        <article class="flagship-work reveal" id="vr-memory">
+          <div class="flagship-copy">
+            <span class="comic-label">Flagship 02 · 大创项目 · 2023.05 - 2024.05</span>
+            <h3>基于 VR 的青少年记忆研究</h3>
+            <p>大学生创新创业训练项目：用虚拟现实场景 + 脑电数据，研究青少年工作记忆。</p>
+            <div class="work-value-list">
+              <p><strong>场景</strong><span>基于 Unity 搭建虚拟现实实验场景。</span></p>
+              <p><strong>采集</strong><span>结合 N-Back 任务模型完成被测人脑电数据采集，跑通完整采集流程。</span></p>
+              <p><strong>分析</strong><span>运用 Python 完成数据分析并形成研究文章。</span></p>
+            </div>
+            <div class="flagship-actions">
+              <a class="btn" href="cv.html#projects">看 CV 里的项目经历</a>
+            </div>
+          </div>
+          <div class="spec-panel" aria-label="VR 记忆研究流程示意">
+            <div class="spec-head"><strong>VR · N-Back · EEG</strong><em>研究流程示意</em></div>
+            <div class="spec-row"><b>场景</b><i style="--v:92%"></i><em>Unity VR</em></div>
+            <div class="spec-row"><b>任务</b><i style="--v:74%"></i><em>N-Back 模型</em></div>
+            <div class="spec-row"><b>采集</b><i style="--v:58%"></i><em>脑电数据</em></div>
+            <div class="spec-row"><b>分析</b><i style="--v:80%"></i><em>Python 报告</em></div>
+          </div>
+        </article>
+
+        <article class="flagship-work reveal" id="battery">
+          <div class="flagship-copy">
+            <span class="comic-label">Flagship 03 · 课程设计 · 2024.05 - 2024.06</span>
+            <h3>电池管家 · Android 应用</h3>
+            <p>移动互联技术课程设计：一个把「电量异常」记录成数据的手机应用。</p>
+            <div class="work-value-list">
+              <p><strong>功能</strong><span>一键省电模式、耗电分析、剩余使用时间预估。</span></p>
+              <p><strong>数据</strong><span>按使用场景分类记录电量异常，SQLite 落库并形成分析报告。</span></p>
+              <p><strong>技术</strong><span>Android Studio + Java 开发。</span></p>
+            </div>
+            <div class="flagship-actions">
+              <a class="btn" href="cv.html#projects">看 CV 里的项目经历</a>
+            </div>
+          </div>
+          <div class="spec-panel" aria-label="电池管家功能结构示意">
+            <div class="spec-head"><strong>Battery Keeper</strong><em>功能结构示意</em></div>
+            <div class="spec-row"><b>省电</b><i style="--v:88%"></i><em>一键省电模式</em></div>
+            <div class="spec-row"><b>分析</b><i style="--v:70%"></i><em>耗电分析</em></div>
+            <div class="spec-row"><b>预估</b><i style="--v:52%"></i><em>剩余时间</em></div>
+            <div class="spec-row"><b>落库</b><i style="--v:76%"></i><em>SQLite 报告</em></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tight" id="wx">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>公众号代表推文<span>· 8 篇</span></h2>
+        </div>
+        <p class="lead reveal">新闻部部长任期内累计产出近 50 篇、阅读 10k+；以下 8 篇代表作，文编 / 责任编辑 5 篇、美编 3 篇。</p>
+        <div class="wx-grid">
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/z9P_gwvTAOJxT_MzTmPVcQ" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w5.jpg" alt="【一线华闻】以赛促学 推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">文编 · 责任编辑</span></span>
+            <span class="wx-body"><strong>【一线华闻】以赛促学 "疫"起同行</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/NXqxCXMpqaJDm2ABzrMVFQ" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w6.jpg" alt="宁波工程学院杭州湾汽车学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
+            <span class="wx-body"><strong>【典型】宁波工程学院杭州湾汽车学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/Y8-2smrcAndDLQ6BBs83Aw" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w7.jpg" alt="华东理工大学现代生物医药产业联合学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
+            <span class="wx-body"><strong>【典型】华东理工大学现代生物医药产业联合学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/2cded3dgiGJMzlz9lGpQEA" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w8.jpg" alt="南昌航空大学航空制造产业学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
+            <span class="wx-body"><strong>【动态】南昌航空大学航空制造产业学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/Bn4-fViV33TYLHsL8V2Tqg" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w1.jpg" alt="毕业生特辑窦海波推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
+            <span class="wx-body"><strong>【毕业生特辑】窦海波——低头拉车，抬头看路</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/2otn8EKwWw6X2R6eRwSpQw" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w2.jpg" alt="篮球常大杯推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">文编 · 责任编辑</span></span>
+            <span class="wx-body"><strong>【篮球常大杯】新的历史，由我们创造！</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/0dTZe7gymjFuOjVlIfJ3vw" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w3.jpg" alt="暑期实习日记推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
+            <span class="wx-body"><strong>【暑期加油站②】暑期实习日记</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          </a>
+          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/-TFmLNnZdMkgivTdldQ0sg" target="_blank" rel="noopener">
+            <span class="wx-cover"><img src="assets/wx/w4.jpg" alt="新生特辑校园推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
+            <span class="wx-body"><strong>【新生特辑】去看看校园吧 就在这个国庆</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" id="certs">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>证书原件墙<span>· 点滴证明</span></h2>
+        </div>
+        <p class="wall-hint reveal">按住证书左右拖动浏览（证书上的证件号码已打码）。四六级成绩单备索。</p>
+        <div class="drag-wall cert-wall" data-drag-wall tabindex="0" aria-label="证书墙，可左右拖动">
+          <figure><img src="assets/certs/cda.jpg" alt="CDA 数据分析师一级证书" draggable="false" loading="lazy" /><figcaption>CDA 数据分析师 · 一级</figcaption></figure>
+          <figure><img src="assets/certs/jisuanji3.jpg" alt="全国计算机等级考试三级（数据库技术）证书" draggable="false" loading="lazy" /><figcaption>计算机三级 · 数据库技术</figcaption></figure>
+          <figure><img src="assets/certs/securities_law.jpg" alt="证券市场基本法律法规成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 法律法规 62 分</figcaption></figure>
+          <figure><img src="assets/certs/securities_market.jpg" alt="金融市场基础知识成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 金融市场基础 64.5 分</figcaption></figure>
+          <figure><img src="assets/certs/ielts.jpg" alt="雅思成绩单" draggable="false" loading="lazy" /><figcaption>雅思成绩单 · 总分 7.0</figcaption></figure>
+          <figure><img src="assets/certs/neccs2022.jpg" alt="2022 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2022</figcaption></figure>
+          <figure><img src="assets/certs/neccs2023.jpg" alt="2023 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2023</figcaption></figure>
+          <figure><img src="assets/certs/scholarship2022.jpg" alt="2021-2022 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2021-2022</figcaption></figure>
+          <figure><img src="assets/certs/scholarship2024.jpg" alt="2023-2024 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2023-2024</figcaption></figure>
+          <figure><img src="assets/certs/advanced.jpg" alt="院学生会先进个人奖" draggable="false" loading="lazy" /><figcaption>院学生会「先进个人」</figcaption></figure>
+          <figure><img src="assets/certs/appointment.jpg" alt="学生会新闻部部长聘书" draggable="false" loading="lazy" /><figcaption>新闻部部长 · 聘书</figcaption></figure>
+          <figure><img src="assets/certs/putonghua.jpg" alt="普通话水平测试二级乙等证书" draggable="false" loading="lazy" /><figcaption>普通话 · 二级乙等</figcaption></figure>
+        </div>
+        <div class="comic-strip reveal">
+          <span class="tag">CDA 数据分析师 Level I</span>
+          <span class="tag">CET-6 · 552</span>
+          <span class="tag">CET-4 · 571</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> 胡睿杰｜Works</span>
+      <span>项目、推文与证书。</span>
+    </div>
+  </footer>
+
+  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
