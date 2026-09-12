@@ -17,7 +17,7 @@
 
 - [x] **polish 1 · contact.html**（参考 [contact 页](https://lizongqian-anime-hr.surge.sh/contact.html)）
   PHONE/EMAIL/WECHAT 三行拆成三张独立联系方式卡（参考站为三卡结构），行内动作保留 拨打+复制 / 写信+复制；Quick Links 增加一条 GitHub 外链卡（`https://github.com/tendernessnick`，用户真实账号，git remote 可查证）；页头辅助语微调。
-- [ ] **polish 2 · cv.html**（参考 [cv 页](https://lizongqian-anime-hr.surge.sh/cv.html)）
+- [x] **polish 2 · cv.html**（参考 [cv 页](https://lizongqian-anime-hr.surge.sh/cv.html)）
   `contact-stack` 的电话加 `tel:`、邮箱加 `mailto:` 链接（参考站为纯文本，我们做成可点击更好用）；核对打印样式（@media print）下 CV 正文完整、按钮导航隐藏；「校园经历」「荣誉」两条与对应 works 锚点链接的有效性检查。
 - [ ] **polish 3 · index.html 工作区**（参考 [首页](https://lizongqian-anime-hr.surge.sh/)）
   `profile-actions` 增加「下载简历」按钮（`assets/resume.docx` + download 属性，对齐参考站 hero 的「查看经历/下载简历」双按钮结构，与开场遮罩按钮一致）；hero 数据条与「求职意向」条间距排版微调；**不动**双模式与遮罩逻辑。
