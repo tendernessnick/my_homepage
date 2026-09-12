@@ -850,6 +850,17 @@ body[data-page="home"].life-mode .site-header {
 .contact-row span { display: block; color: var(--muted); font-size: 12.5px; font-weight: 900; letter-spacing: 0.04em; }
 .contact-row strong { font-size: 17px; overflow-wrap: anywhere; }
 .contact-actions { display: flex; flex: 0 0 auto; gap: 8px; }
+.contact-cards { display: grid; gap: 14px; }
+.contact-card--single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+}
+.contact-card--single span { display: block; color: var(--muted); font-size: 12.5px; font-weight: 900; letter-spacing: 0.04em; }
+.contact-card--single strong { font-size: 17px; overflow-wrap: anywhere; }
+.contact-note { margin: 2px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
 .material-list { display: grid; gap: 10px; }
 .material-list a {
   display: flex;
