@@ -7,7 +7,7 @@
   <meta name="description" content="毕业设计：基于条件生成对抗网络（SE-CGAN）的单幅图像去雾，上传雾图在线查看去雾效果。" />
   <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=20" />
+  <link rel="stylesheet" href="css/style.css?v=22" />
 </head>
 <body data-page="works">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -62,67 +62,30 @@
       </div>
     </section>
 
-    <!-- ============ 在线体验 ============ -->
+    <!-- ============ 在线演示入口（外部服务） ============ -->
     <section class="section" id="try">
       <div class="container">
-        <div class="dehaze-demo">
-          <div class="dehaze-head reveal">
-            <p class="eyebrow">Live Demo — 在线体验</p>
+        <div class="dehaze-demo-card" data-demo-card>
+          <div class="dehaze-demo-copy">
+            <p class="eyebrow">Live Demo — 在线演示</p>
             <h3>上传一张有雾的照片，看看模型怎么还它一片清晰</h3>
-            <p class="dehaze-sub">
-              模型在 CPU 上推理，输入超过 512px 会自动等比缩小；服务冷启动时首次请求约需
-              10–40 秒，之后秒级返回。图片仅在推理时临时使用，不会被保存。
+            <p>
+              在线演示部署在腾讯云 CloudBase 云托管（Docker 容器 + CPU 推理），由去雾服务自带的演示页承载：
+              支持拖拽上传与示例图一键体验、原图/结果滑动对比、推理耗时显示与结果下载。
+              服务冷启动时首次访问约需 10–40 秒，之后秒级返回；图片仅在推理时临时使用，不会被保存。
             </p>
-            <div class="t-metrics" style="margin-top:14px">
-              <span class="pill">SE-CGAN</span>
-              <span class="pill">O-HAZE 训练</span>
-              <span class="pill">CPU 实时推理</span>
+            <div class="flagship-actions">
+              <a class="btn primary" data-demo-cta>打开在线演示 ↗</a>
+              <a class="btn" href="works.html#dehaze">看作品页详情</a>
             </div>
+            <p class="demo-note" data-demo-note hidden>
+              演示服务部署中 —— dehaze-api 部署到 CloudBase 后，把服务域名填入
+              <code>js/config.js</code> 的 <code>DEHAZE_DEMO_URL</code>，全站「在线体验」入口即自动开放并直跳演示页。
+            </p>
           </div>
-
-          <div class="dehaze-stage reveal">
-            <!-- 上传区 -->
-            <div class="dropzone" id="dz" role="button" tabindex="0" aria-label="上传图片：点击或拖拽">
-              <input type="file" id="dzInput" accept="image/png, image/jpeg" hidden />
-              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <path d="M24 32V12m0 0l-8 8m8-8l8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 34v4a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              </svg>
-              <p><strong>拖拽图片到这里，或点击上传</strong></p>
-              <span>支持 PNG / JPG，≤ 10MB</span>
-              <button class="small-btn" id="dzSample" type="button">没有雾图？用示例图试试</button>
-            </div>
-
-            <!-- 加载态 -->
-            <div class="dehaze-loading" id="dzLoading" hidden>
-              <div class="loader" aria-hidden="true"></div>
-              <p class="loading-title" id="dzLoadingTitle">正在去雾…</p>
-              <p class="loading-sub" id="dzLoadingSub">模型启动中：首次请求需要唤醒服务器，约 10–40 秒</p>
-              <p class="loading-timer"><span id="dzTimer">0.0</span> s</p>
-            </div>
-
-            <!-- 前后对比 -->
-            <div class="compare" id="compare" hidden>
-              <div class="compare-frame" id="compareFrame">
-                <img class="compare-img compare-img--before" id="imgBefore" alt="原图（有雾）" draggable="false" />
-                <div class="compare-after" id="compareAfter">
-                  <img class="compare-img" id="imgAfter" alt="去雾结果" draggable="false" />
-                </div>
-                <div class="compare-divider" id="compareDivider" aria-hidden="true"><span></span></div>
-                <span class="compare-tag compare-tag--l" id="tagBefore">原图 · 有雾</span>
-                <span class="compare-tag compare-tag--r" id="tagAfter">去雾后</span>
-              </div>
-              <div class="compare-foot">
-                <p class="compare-caption" id="compareCaption">拖动分割线对比效果</p>
-                <div class="compare-actions">
-                  <button class="small-btn" id="btnRetry" type="button">再试一张</button>
-                  <button class="small-btn" id="btnSample2" type="button">换张示例图</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- 错误 / 提示 -->
-            <p class="dehaze-error" id="dzError" hidden></p>
+          <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
+            <figure><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" /><figcaption>原图 · 有雾</figcaption></figure>
+            <figure><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" /><figcaption>去雾后</figcaption></figure>
           </div>
         </div>
       </div>
@@ -165,10 +128,6 @@
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
 
-  <script type="module">
-    import './js/app.js';
-    import { initDehaze } from './js/dehaze.js';
-    initDehaze();
-  </script>
+  <script type="module" src="js/app.js?v=22"></script>
 </body>
 </html>

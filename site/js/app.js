@@ -7,6 +7,8 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+import { DEHAZE_DEMO_URL } from "./config.js?v=22";
+
 /* ---------- 导航高亮 ---------- */
 function initNav() {
   const page = document.body.dataset.page;
@@ -243,6 +245,35 @@ function initRandomPhoto() {
   img.src = pool[Math.floor(Math.random() * pool.length)];
 }
 
+/* ---------- 去雾在线演示入口 ---------- */
+/* DEHAZE_DEMO_URL（js/config.js）已填：全站入口新标签直跳后端演示页；
+   未填：入口保持指向站内介绍页 dehaze.html，其演示卡呈「部署后开放」态。 */
+function initDemoLinks() {
+  const cta = $("[data-demo-cta]");
+
+  if (DEHAZE_DEMO_URL) {
+    const attrs = { target: "_blank", rel: "noreferrer noopener" };
+    $$("[data-dehaze-demo]").forEach((a) => {
+      a.href = DEHAZE_DEMO_URL;
+      Object.entries(attrs).forEach(([k, v]) => a.setAttribute(k, v));
+    });
+    if (cta) {
+      cta.href = DEHAZE_DEMO_URL;
+      Object.entries(attrs).forEach(([k, v]) => cta.setAttribute(k, v));
+    }
+    return;
+  }
+
+  if (cta) {
+    cta.textContent = "演示服务部署中 · 部署完成后自动开放";
+    cta.classList.add("is-pending");
+    cta.setAttribute("aria-disabled", "true");
+    cta.removeAttribute("href");
+    cta.addEventListener("click", (e) => e.preventDefault());
+    $("[data-demo-note]")?.removeAttribute("hidden");
+  }
+}
+
 /* ---------- 页脚年份 ---------- */
 function initYear() {
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
@@ -258,4 +289,5 @@ initReveal();
 initCountUp();
 initSignalTabs();
 initRandomPhoto();
+initDemoLinks();
 initYear();

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
-  <link rel="stylesheet" href="css/style.css?v=20" />
+  <link rel="stylesheet" href="css/style.css?v=22" />
 </head>
 <body data-page="works">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -68,7 +68,7 @@
               <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 实时在线推理。</span></p>
             </div>
             <div class="flagship-actions">
-              <a class="btn primary" href="dehaze.html">进入在线体验</a>
+              <a class="btn primary" href="dehaze.html" data-dehaze-demo>进入在线体验</a>
               <a class="btn" href="experience.html">看经历页</a>
             </div>
           </div>
@@ -132,7 +132,7 @@
           <h2>文档与入口<span>· 一键直达</span></h2>
         </div>
         <div class="resource-grid" aria-label="文档与在线入口">
-          <a class="resource-card reveal" href="dehaze.html">
+          <a class="resource-card reveal" href="dehaze.html" data-dehaze-demo>
             <span>Online Demo · 在线体验</span>
             <strong>去雾算法上传即用</strong>
             <em>上传一张雾图，SE-CGAN 模型直接返回去雾结果，可拖动分割线对比前后效果。</em>
@@ -226,6 +226,6 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js?v=22"></script>
 </body>
 </html>
