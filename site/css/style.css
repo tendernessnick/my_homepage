@@ -287,6 +287,8 @@ body[data-page="home"].life-mode .site-header {
 
 /* 标签条 */
 .comic-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+.section-nav .tag::before { content: "↓ "; color: var(--teal); font-weight: 950; }
 .tag, .metric-tag {
   display: inline-flex;
   align-items: center;

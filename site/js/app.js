@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL } from "./config.js?v=24";
+import { DEHAZE_DEMO_URL } from "./config.js?v=25";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -279,6 +279,19 @@ function initYear() {
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 }
 
+/* ---------- 页内锚点导览（渐进增强：scrollIntoView 顺滑且不受浏览器碎片滚动差异影响） ---------- */
+function initSectionNav() {
+  $$(".section-nav a[href^='#']").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const target = document.getElementById(a.getAttribute("href").slice(1));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+      history.replaceState(null, "", a.getAttribute("href"));
+    });
+  });
+}
+
 initNav();
 initIntro();
 initModeToggle();
@@ -291,3 +304,4 @@ initSignalTabs();
 initRandomPhoto();
 initDemoLinks();
 initYear();
+initSectionNav();
