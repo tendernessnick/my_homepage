@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=28";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=30";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -277,7 +277,7 @@ function initDemoLinks() {
 /* ---------- 外部在线入口（config 驱动：已填直跳，未填待开放） ---------- */
 function initConfigEntry(url, attr, pendingText) {
   const cta = $(`[data-${attr}-cta]`);
-  const links = $$(`[data-${attr}]`);
+  const links = $$(`[data-${attr}-app], [data-${attr}-cta]`);
 
   if (url) {
     const attrs = { target: "_blank", rel: "noreferrer noopener" };
