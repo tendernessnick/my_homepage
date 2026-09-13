@@ -904,6 +904,20 @@ body[data-page="home"].life-mode .site-header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .media-card:hover { transform: translateY(-4px); box-shadow: 0 20px 54px rgba(37, 52, 66, 0.14); }
+.media-card .media-poster {
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e8edf2;
+  margin-bottom: 10px;
+}
+.media-card .media-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.media-card:hover .media-poster img { transform: scale(1.05); }
 .media-card .media-type { color: var(--teal); font-size: 12px; font-weight: 950; letter-spacing: 0.02em; }
 .media-card strong { font-size: 16.5px; line-height: 1.4; }
 .media-card em { font-style: normal; color: var(--muted); font-size: 12.5px; font-weight: 800; }
