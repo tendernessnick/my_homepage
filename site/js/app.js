@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=31";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=32";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {

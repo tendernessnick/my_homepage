@@ -46,6 +46,12 @@ html {
   scroll-padding-top: 88px;
   overflow-x: hidden;
   max-width: 100vw;
+  scrollbar-width: none; /* Firefox：隐藏页面滚动条，滚动能力保留 */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chromium/Safari：隐藏页面滚动条 */
+  width: 0;
 }
 
 body {
