@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL } from "./config.js?v=27";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=28";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -274,17 +274,15 @@ function initDemoLinks() {
   }
 }
 
-/* ---------- 网球天气助手在线入口 ---------- */
-/* WEATHER_APP_URL（js/config.js）已填：作品页「打开在线应用」直跳 Railway 站点；
-   未填：按钮呈待开放态，提示地址待填入。 */
-function initWeatherLinks() {
-  const cta = $("[data-weather-cta]");
-  const links = $$("[data-weather-app]");
+/* ---------- 外部在线入口（config 驱动：已填直跳，未填待开放） ---------- */
+function initConfigEntry(url, attr, pendingText) {
+  const cta = $(`[data-${attr}-cta]`);
+  const links = $$(`[data-${attr}]`);
 
-  if (WEATHER_APP_URL) {
+  if (url) {
     const attrs = { target: "_blank", rel: "noreferrer noopener" };
     links.forEach((a) => {
-      a.href = WEATHER_APP_URL;
+      a.href = url;
       Object.entries(attrs).forEach(([k, v]) => a.setAttribute(k, v));
     });
     return;
@@ -292,11 +290,19 @@ function initWeatherLinks() {
 
   links.forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
   if (cta) {
-    cta.textContent = "上线地址待填入 · 见 GitHub 仓库";
+    cta.textContent = pendingText;
     cta.classList.add("is-pending");
     cta.setAttribute("aria-disabled", "true");
     cta.removeAttribute("href");
   }
+}
+
+function initWeatherLinks() {
+  initConfigEntry(WEATHER_APP_URL, "weather", "上线地址待填入 · 见 GitHub 仓库");
+}
+
+function initDataHelperLinks() {
+  initConfigEntry(DATAHELPER_DEMO_URL, "datahelper", "在线体验部署中 · 稍后开放");
 }
 
 /* ---------- 页脚年份 ---------- */
@@ -329,5 +335,6 @@ initSignalTabs();
 initRandomPhoto();
 initDemoLinks();
 initWeatherLinks();
+initDataHelperLinks();
 initYear();
 initSectionNav();
