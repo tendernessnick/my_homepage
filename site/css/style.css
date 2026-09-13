@@ -1267,7 +1267,7 @@ body.intro-open { overflow: hidden; }
   background: rgba(255, 255, 255, 0.78);
 }
 .hero-proof-grid strong { display: block; font-size: 22px; font-weight: 700; color: var(--profile-text); }
-.hero-proof-grid span { color: #6e6e73; font-size: 12.5px; font-weight: 700; }
+.hero-proof-grid article > span { color: #6e6e73; font-size: 12.5px; font-weight: 700; }
 
 /* 章节与卡片 */
 .profile-section { margin-top: 46px; }
