@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL } from "./config.js?v=26";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL } from "./config.js?v=27";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -274,6 +274,31 @@ function initDemoLinks() {
   }
 }
 
+/* ---------- 网球天气助手在线入口 ---------- */
+/* WEATHER_APP_URL（js/config.js）已填：作品页「打开在线应用」直跳 Railway 站点；
+   未填：按钮呈待开放态，提示地址待填入。 */
+function initWeatherLinks() {
+  const cta = $("[data-weather-cta]");
+  const links = $$("[data-weather-app]");
+
+  if (WEATHER_APP_URL) {
+    const attrs = { target: "_blank", rel: "noreferrer noopener" };
+    links.forEach((a) => {
+      a.href = WEATHER_APP_URL;
+      Object.entries(attrs).forEach(([k, v]) => a.setAttribute(k, v));
+    });
+    return;
+  }
+
+  links.forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
+  if (cta) {
+    cta.textContent = "上线地址待填入 · 见 GitHub 仓库";
+    cta.classList.add("is-pending");
+    cta.setAttribute("aria-disabled", "true");
+    cta.removeAttribute("href");
+  }
+}
+
 /* ---------- 页脚年份 ---------- */
 function initYear() {
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
@@ -303,5 +328,6 @@ initCountUp();
 initSignalTabs();
 initRandomPhoto();
 initDemoLinks();
+initWeatherLinks();
 initYear();
 initSectionNav();

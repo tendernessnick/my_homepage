@@ -9,6 +9,11 @@
 // 留空时入口指向站内介绍页 dehaze.html，演示卡显示「部署后开放」。
 export const DEHAZE_DEMO_URL = 'https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com';
 
+// 网球天气助手（Railway 部署）的线上地址，部署后填这里，例如：
+//   'https://weather-helper-production.up.railway.app'
+// 填好后作品页「打开在线应用」自动直跳；留空时按钮呈「待填入」待开放态。
+export const WEATHER_APP_URL = '';
+
 // 推理 API 直连地址（仅本地联调 js/dehaze.js 时使用；
 // 线上演示走后端服务自带的同源页面，不再依赖此配置）。
 export const DEHAZE_API_BASE = 'http://localhost:8000';
