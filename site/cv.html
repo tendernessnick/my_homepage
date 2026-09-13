@@ -100,26 +100,25 @@
           <h2>实习经历</h2>
           <div class="cv-row">
             <div>
-              <h3>北京外企德科人力资源服务上海有限公司｜技术数据分析实习生</h3>
+              <h3>北京外企德科人力资源服务上海有限公司｜业务数据分析实习生</h3>
               <ul class="bullet-list">
-                <li><strong>【数据清洗与治理】</strong>运用 Python + SQL 对 AI 招聘助手获取的数千条候选人原始数据进行清洗与标准化，解决数据重复、信息缺失与字段不一致问题，构建结构化数据集，为弃选率分析与招聘流程优化提供数据支撑。</li>
-                <li><strong>【漏斗模型与流程提效】</strong>政务选调生项目中结合多维度评估数据搭建候选人筛选漏斗模型，综合协调组织 100+ 人进行面试；编写自动化脚本重命名整理 300+ 份简历。</li>
-                <li><strong>【数据可视化】</strong>结合已有数据制作数据可视化报表，呈现给小组辅助工作开展。</li>
+                <li><strong>【AI 招聘数据分析】</strong>清洗 AI 招聘助手约 900 条运营明细（5 客户 / 4 平台 / 33 天），以数据透视表呈现「曝光-详情-招呼-简历」全链路转化，迭代新增转化率指标定位低效岗位。</li>
+                <li><strong>【选调漏斗与候选人管理】</strong>运营黄浦区选调生「日批制」筛选漏斗（600+ 投递、当日 16:00 截止初筛），累计 257 人面试、90 人进入二面；维护德勤审计项目 220 名候选人跟踪主表。</li>
+                <li><strong>【流程自动化与数据核对】</strong>自研 bat + Excel 公式映射的批量重命名工具链，实现简历文件批量规范化归档；完成 JLL 代收付薪资核对。</li>
               </ul>
             </div>
-            <time>上海｜2025.09 - 2025.12</time>
+            <time>上海｜2025.09 - 2025.11</time>
           </div>
           <div class="cv-row">
             <div>
-              <h3>海南钰泰私募基金管理有限公司｜量化金融实习生</h3>
+              <h3>海南钰泰私募基金管理有限公司｜投资经理助理实习生</h3>
               <ul class="bullet-list">
-                <li><strong>【金融知识与模型研究】</strong>入职半个月内快速上手期权、期货与衍生品知识；研学多因子选股模型，简单实现 Fama-French 三因子模型并以线性回归验证股票超额收益。</li>
-                <li><strong>【股票组合策略开发】</strong>基于聚宽（JoinQuant）因子库对江苏省股票进行因子打分排名选股，经数据清洗与填充筛出 10 支不同行业股票组合，收益跑赢沪深 300 指数。</li>
-                <li><strong>【期权交易策略优化】</strong>对沪深 300、上证 50、中证 1000 股指期权交易策略进行优化验证，有效降低最大回撤，年化收益较沪深 300 明显提高。</li>
-                <li><strong>实习成果：</strong>实习月余快速融入团队并适应业务协作模式，输出有效内容助力提升业务回报，展现高效学习与落地能力。</li>
+                <li><strong>【多因子选股】</strong>基于聚宽因子库对 651 只江苏股票构建排名制打分模型（8 大类因子、三种加权方案与行业分散约束），Top10 组合回测收益跑赢同期沪深 300。</li>
+                <li><strong>【期权策略回测】</strong>基于沪深 300 / 上证 50 / 中证 1000 股指期权 2020–2025 全量日行情，用 pandas 搭建 5 步自动化回测流水线，实现 Covered Call、日历效应等策略，Covered Call 历年最大回撤均低于标的指数。</li>
+                <li><strong>【量化研究与结项】</strong>复现 Fama-French 三因子模型（自建 SMB/HML 因子序列并回归验证），统计上证 50 股指期货跨期套利信号，以结项汇报向团队交付。</li>
               </ul>
             </div>
-            <time>2025.07 - 2025.08</time>
+            <time>上海｜2025.06 - 2025.08</time>
           </div>
           <div class="cv-row">
             <div>
@@ -147,10 +146,10 @@
           <h2>项目经历</h2>
           <div class="cv-row">
             <div>
-              <h3>数据分析小助手 · Data Helper｜Vibe Coding · 独立开发</h3>
+              <h3>数据分析小助手 · Data Helper｜Vibe Coding · 独立开发 · 已上线</h3>
               <ul class="bullet-list">
                 <li><strong>【产品与业务】</strong>独立开发的本地数据前置处理工作台（导入 → 数据体检 → 一键修复 / 清洗 → 可视化 → 导出）：核心体检引擎以纯本地规则输出 0-100 质量评分、六维质量雷达与结构化问题清单，每个问题带一键修复（修复契约有测试保证），可检测列间算术关系违反（如「数量 × 单价 ≠ 金额」）与函数依赖冲突。</li>
-                <li><strong>【工程与质量】</strong>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块，内存仅驻留单块，百万行秒级）；22 种清洗变换与多步版本回溯；198 项 pytest 全绿 + GitHub Actions CI，PyInstaller 打包免安装 exe，支持 MCP 协议外接 AI 客户端（数据全程不出本机）。</li>
+                <li><strong>【工程与上线】</strong>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块，内存仅驻留单块，百万行秒级）；22 种清洗变换与多步版本回溯；198 项 pytest 全绿 + GitHub Actions CI，PyInstaller 打包免安装 exe，支持 MCP 协议外接 AI 客户端（数据全程不出本机）；Docker 部署 CloudBase 云托管已上线。</li>
               </ul>
               <p class="cv-link-list"><a href="#" data-datahelper-app>在线体验</a><a href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库</a><a href="works.html#data-helper">作品页详情</a></p>
             </div>
@@ -213,8 +212,8 @@
           <h2>技能与证书</h2>
           <ul class="bullet-list">
             <li><strong>【数据能力】</strong>Python 数据分析 / SQL（DataGrip）/ Power BI 可视化 / Kettle 数据整理入库 / Excel 高级应用，熟悉数据清洗、分析到可视化全流程。</li>
-            <li><strong>【技术与办公】</strong>Android Studio（Java 应用开发）；熟练使用 AI 工具辅助工作；Office 三件套。</li>
-            <li><strong>【媒体技能】</strong>PR / 剪映视频剪辑、Lightroom / PS 图片美化、135 编辑器公众号美编。</li>
+            <li><strong>【AI 应用】</strong>熟练使用 AI 编程工具（Vibe Coding 模式），独立完成 2 个全栈项目从需求拆解、开发、测试到部署上线；掌握 LLM 应用集成（Function Calling / MCP）与提示工程。</li>
+            <li><strong>【办公与媒体】</strong>Office 三件套；媒体技能：PR / 剪映视频剪辑、Lightroom / PS 图片美化、135 编辑器公众号美编；Android Studio（Java 应用开发）。</li>
             <li><strong>【语言能力】</strong>雅思 7.0（听 8.5 / 读 7 / 写 6 / 口 6）、CET-6 552 / CET-4 571、普通话二级乙等；英语可作为工作语言。</li>
             <li><strong>【专业证书】</strong>CDA 数据分析师 Level Ⅰ、全国计算机等级考试三级 · 数据库技术、证券从业资格（金融市场基础知识 64.5 分 / 证券市场基本法律法规 62 分）。</li>
           </ul>
@@ -233,8 +232,8 @@
         <section class="cv-section">
           <h2>自我评价</h2>
           <ul class="bullet-list">
-            <li><strong>数据驱动：</strong>习惯先定义指标再下结论，从数千条数据治理到策略回撤优化，每个结论都有数字支撑。</li>
-            <li><strong>快速上手：</strong>半个月摸清期权期货知识并产出策略验证，实习月余融入团队并输出有效内容。</li>
+            <li><strong>数据驱动：</strong>习惯先定义指标再下结论，从 900 条运营明细的转化分析到策略回撤优化，每个结论都有数字支撑。</li>
+            <li><strong>快速上手：</strong>钰泰实习从多因子建模做到期权策略回测与结项汇报；两个独立项目从需求拆解做到部署上线。</li>
             <li><strong>工程落地：</strong>毕业设计从 PyQt6 桌面程序一路做到云端在线服务；个人主页原生 JS 手工搭建。</li>
             <li><strong>沟通协作：</strong>网球协会社长、新闻部部长，公众号推文累计阅读 10k+，英语可作为工作语言。</li>
           </ul>
