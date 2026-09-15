@@ -1,0 +1,3 @@
+# Surge 发布 site/ 目录时排除的文件（语法同 .gitignore）
+# 站点开发说明不需要对外公开
+README.md
