@@ -38,14 +38,15 @@ site/
     ├── certs/          # 证书原件（证件号已打码）
     ├── media/          # 片单/书架海报与歌曲封面
     ├── sample_hazy.jpg / sample_dehazed.png  # 去雾前后示例
-    └── resume.pdf      # 2026 版简历（下载按钮指向这里）
+    ├── resume.pdf      # 2026 版简历 · 中文（下载按钮指向这里）
+    └── resume-en.pdf   # 2026 版简历 · 英文（Resume 下载入口指向这里）
 ```
 
 ## 内容修改
 
 - 文字内容分布在各 `*.html`，按板块就近修改
 - 照片墙：替换 `assets/life/` 下同名文件即可
-- 简历：替换 `assets/resume.pdf`（全站 6 页 7 处下载入口的 href 与 download 文件名无需改动，除非文件名变化）
+- 简历：中文替换 `assets/resume.pdf`、英文替换 `assets/resume-en.pdf`（文件名不变则无需改 HTML，全站 5 页 11 处下载入口——中文 6 处 + 英文 5 处——自动生效）
 
 ## 配置去雾在线演示（毕业设计对接）
 
