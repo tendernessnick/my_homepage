@@ -38,15 +38,16 @@ site/
     ├── certs/          # 证书原件（证件号已打码）
     ├── media/          # 片单/书架海报与歌曲封面
     ├── sample_hazy.jpg / sample_dehazed.png  # 去雾前后示例
-    ├── resume.pdf      # 2026 版简历 · 中文（下载按钮指向这里）
-    └── resume-en.pdf   # 2026 版简历 · 英文（Resume 下载入口指向这里）
+    ├── resume.pdfx     # 2026 版简历 · 中文（实为 PDF；Surge 拦截 .pdf 扩展名，详见下）
+    └── resume-en.pdfx  # 2026 版简历 · 英文（同上）
 ```
 
 ## 内容修改
 
 - 文字内容分布在各 `*.html`，按板块就近修改
 - 照片墙：替换 `assets/life/` 下同名文件即可
-- 简历：中文替换 `assets/resume.pdf`、英文替换 `assets/resume-en.pdf`（文件名不变则无需改 HTML，全站 5 页 11 处下载入口——中文 6 处 + 英文 5 处——自动生效）
+- 简历：中文替换 `assets/resume.pdfx`、英文替换 `assets/resume-en.pdfx`（文件名不变则无需改 HTML，全站 5 页 11 处下载入口——中文 6 处 + 英文 5 处——自动生效）
+- ⚠️ **Surge 托管注意**：Surge 服务端拦截一切 `.pdf` 扩展名的文件（任何大小/命名都返回 404，与内容无关），故简历文件以 `.pdfx` 扩展名上传——页面下载按钮均带 `download` 属性，访客保存下来的文件名仍是「胡睿杰-简历-2026.pdf / HuRuijie-Resume-2026.pdf」，体验无差别。若换用其他不拦 .pdf 的托管（如 CloudBase），把文件改回 `.pdf` 并同步 HTML 里的 href 即可。
 
 ## 配置去雾在线演示（毕业设计对接）
 
