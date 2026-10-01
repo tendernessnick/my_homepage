@@ -7,7 +7,7 @@
   <meta name="description" content="毕业设计：基于条件生成对抗网络（SE-CGAN）的单幅图像去雾，上传雾图在线查看去雾效果。" />
   <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=34" />
+  <link rel="stylesheet" href="css/style.css?v=36" />
 </head>
 <body data-page="works">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -37,21 +37,10 @@
     <!-- ============ 项目介绍 ============ -->
     <section class="container case-hero">
       <p class="eyebrow">Graduation Project · 毕业设计</p>
-      <h1 class="page-title">单幅图像去雾<span style="color:var(--muted);font-size:.5em">· Image Dehazing with SE-CGAN</span></h1>
+      <h1 class="page-title">单幅图像去雾<span style="color:var(--muted);font-size:.5em">&nbsp;· Image Dehazing with SE-CGAN</span></h1>
       <div class="about-text reveal">
-        <p>
-          雾霾会降低图像对比度与色彩保真度，影响视觉算法的上游输入质量。本项目实现了一套
-          <strong>条件生成对抗网络（SE-CGAN）</strong>完成单幅图像去雾：
-          <strong>Tiramisu 密集连接 U-Net 生成器</strong>负责重建无雾图像，
-          <strong>70×70 PatchGAN 判别器</strong>配合 L1 + VGG 感知 + 对抗损失约束纹理真实性，
-          在 RESIDE 与 O-HAZE 数据集上完成训练与评测。
-        </p>
-        <p>
-          训练完成后，模型最初以 <strong>PyQt6 开发了 Windows 桌面演示程序</strong>，可以在本地加载权重、
-          对任意雾图直接查看去雾效果。为了让展示不依赖安装环境、任何人点开链接就能体验，
-          我把项目迁移上云：重构为 <strong>FastAPI 推理服务</strong>，以 Docker 容器部署在腾讯云 CloudBase 云托管上——
-          就是下面这个你可以直接上传图片体验的服务。
-        </p>
+        <p>雾霾会降低图像对比度与色彩保真度，影响视觉算法的上游输入质量。本项目实现了一套<strong>条件生成对抗网络（SE-CGAN）</strong>完成单幅图像去雾：<strong>Tiramisu 密集连接 U-Net 生成器</strong>负责重建无雾图像，<strong>70×70 PatchGAN 判别器</strong>配合 L1 + VGG 感知 + 对抗损失约束纹理真实性，在 RESIDE 与 O-HAZE 数据集上完成训练与评测。</p>
+        <p>训练完成后，模型最初以 <strong>PyQt6 开发了 Windows 桌面演示程序</strong>，可以在本地加载权重、对任意雾图直接查看去雾效果。为了让展示不依赖安装环境、任何人点开链接就能体验，我把项目迁移上云：重构为 <strong>FastAPI 推理服务</strong>，以 Docker 容器部署在腾讯云 CloudBase 云托管上——就是下面这个你可以直接上传图片体验的服务。</p>
         <div class="mini-metrics" aria-label="关键指标">
           <div><strong>28.05</strong><span>SOTS 测试集 PSNR</span></div>
           <div><strong>0.9707</strong><span>SSIM 结构相似度</span></div>
@@ -138,6 +127,6 @@
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
 
-  <script type="module" src="js/app.js?v=34"></script>
+  <script type="module" src="js/app.js?v=36"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=34";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=36";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -155,9 +155,32 @@ function initCopy() {
       }
       const old = btn.textContent;
       btn.textContent = "已复制";
-      setTimeout(() => (btn.textContent = old), 1400);
+      btn.classList.add("is-copied");
+      setTimeout(() => {
+        btn.textContent = old;
+        btn.classList.remove("is-copied");
+      }, 1400);
     });
   });
+}
+
+/* ---------- 滚动进度线 ---------- */
+function initScrollProgress() {
+  if (reducedMotion) return;
+  const bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  document.body.appendChild(bar);
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+    bar.style.transform = `scaleX(${p})`;
+  };
+  addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
 }
 
 /* ---------- 回到顶部 ---------- */
@@ -328,6 +351,7 @@ initIntro();
 initModeToggle();
 initWalls();
 initCopy();
+initScrollProgress();
 initBackTop();
 initReveal();
 initCountUp();
