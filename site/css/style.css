@@ -1156,6 +1156,59 @@ body[data-page="home"].life-mode .site-header {
   box-shadow: 3px 3px 0 rgba(31, 108, 136, 0.12);
 }
 
+/* ---------- 子页对齐批次：页头编排 / 指标卡强调线 / CV 编号 / 联系卡彩点 / 旗舰图 hover ---------- */
+/* 子页页头与主页首屏同一套入场仪式 */
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero .eyebrow, .case-hero .eyebrow { animation: hero-rise 0.6s var(--ease) 0.04s both; }
+  .page-hero .page-title, .case-hero .page-title { animation: hero-rise 0.7s var(--ease) 0.12s both; }
+  .page-hero .lead, .page-hero .page-hero-note { animation: hero-rise 0.65s var(--ease) 0.22s both; }
+  .page-hero .comic-strip, .page-hero .section-nav, .page-hero .actions { animation: hero-rise 0.65s var(--ease) 0.3s both; }
+}
+
+/* 指标卡顶部强调线：与主页数据条同款 */
+.mini-metrics > div { position: relative; overflow: hidden; }
+.mini-metrics > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  opacity: 0.85;
+}
+
+/* CV 纸面区块编号：同一计数器母题 */
+.cv-sheet { counter-reset: cv; }
+.cv-section h2::before {
+  counter-increment: cv;
+  content: "0" counter(cv);
+  margin-right: 10px;
+  color: rgba(50, 107, 255, 0.42);
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  vertical-align: 0.18em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 联系卡类型彩点：蓝 / 青 / 橙 一卡一色 */
+.contact-card--single span::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 7px;
+  background: var(--blue);
+}
+.contact-cards .contact-card--single:nth-child(2) span::before { background: var(--teal); }
+.contact-cards .contact-card--single:nth-child(3) span::before { background: var(--orange); }
+
+/* 旗舰卡示意图 hover 缓推 */
+.flagship-preview img { transition: transform 0.6s var(--ease); }
+.flagship-work:hover .flagship-preview img { transform: scale(1.02); }
+
 /* ============================================================
    主页：开场遮罩
    ============================================================ */
