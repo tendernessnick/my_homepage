@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Works｜胡睿杰</title>
-  <meta name="description" content="胡睿杰的作品与材料：毕业设计图像去雾在线 Demo、数据分析小助手与网球天气助手两个 Vibe Coding 项目、8 篇公众号代表推文与证书原件墙。" />
+  <meta name="description" content="胡睿杰的产品实验室：NoticeMe 本地待办与提醒、Data Helper 数据预处理工作台、香港网球天气助手、MailHelper 邮箱管家，以及图像去雾毕业设计。" />
   <meta name="theme-color" content="#f3f6f8" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
-  <link rel="stylesheet" href="css/style.css?v=39" />
+  <link rel="stylesheet" href="css/style.css?v=40" />
+  <link rel="stylesheet" href="css/project-previews.css?v=40" />
 </head>
 <body data-page="works">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -44,22 +45,48 @@
   <main id="main">
     <section class="container page-hero">
       <p class="eyebrow">Works</p>
-      <h1 class="page-title">作品现场。</h1>
-      <p class="lead">毕业设计的在线 Demo、三个独立开发项目（两个在线应用 + 一个 Windows / macOS 桌面应用），还有 8 篇代表推文和一墙证书——都在这页。</p>
+      <h1 class="page-title">把想法，做成能用的工具。</h1>
+      <p class="lead">记住随手想到的事、给数据做体检、替球友看天气、让校园邮件各归其位。四个独立开发项目，加上一项图像去雾毕业设计，记录从具体问题到产品落地的过程。</p>
       <div class="comic-strip">
-        <span class="tag">在线可体验</span><span class="tag">PyTorch</span><span class="tag">Vue3 · ECharts</span><span class="tag">React 19 · Tailwind 4</span><span class="tag">.NET 8 · WPF</span><span class="tag">公众号运营</span>
+        <span class="tag">在线体验 / 桌面工具</span><span class="tag">Electron · TypeScript</span><span class="tag">PyTorch</span><span class="tag">Vue3 · ECharts</span><span class="tag">React · Tailwind</span><span class="tag">WPF · Avalonia</span>
       </div>
     </section>
 
     <section class="section tight">
       <div class="container">
         <div class="section-head reveal">
-          <h2>四项代表作品</h2>
+          <h2>五项代表作品</h2>
         </div>
+
+        <article class="flagship-work reveal" id="noticeme">
+          <div class="flagship-copy">
+            <span class="comic-label">Flagship 01 · 近期更新 · Windows 已发布 · 2026.11</span>
+            <h3>NoticeMe · 待办、提醒与日记</h3>
+            <p>把随手想到的事情记下来，再在需要的时候提醒自己。一个本地优先的桌面工具，将待办、重复提醒和日记放进同一处，目前提供 Windows 版下载。</p>
+            <div class="work-value-list">
+              <p><strong>记录</strong><span>用自然语言快速记任务，支持重复任务、日记记录、托盘与快捷键，减少在不同工具之间切换。</span></p>
+              <p><strong>提醒</strong><span>置顶提醒卡、提示音与系统通知搭配使用，让提醒在桌面上有一个清晰的位置。</span></p>
+              <p><strong>工程</strong><span>Electron + React / TypeScript + Zustand，跨平台架构面向 Windows / macOS；JSON 原子写入与 7 份滚动备份。可选本地 Qwen 模型默认关闭，AI 提议先预览、确认后再写入任务。</span></p>
+            </div>
+            <div class="comic-strip" style="margin-top:16px"><span class="tag">Electron</span><span class="tag">React · TypeScript</span><span class="tag">Zustand</span><span class="tag">本地优先</span></div>
+            <div class="flagship-actions">
+              <a class="btn primary" href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noreferrer noopener">下载 Windows 版 ↗</a>
+              <a class="btn" href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
+            </div>
+          </div>
+          <figure class="preview-window preview-noticeme" aria-label="NoticeMe 真实任务界面截图节选">
+            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>NOTICEME / EVERYDAY NOTES</span></div>
+            <a class="preview-image-link" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 NoticeMe 任务界面截图节选">
+              <img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 真实应用截图节选：任务列表、快速添加和待办分类" loading="lazy" decoding="async" />
+            </a>
+            <figcaption><strong>任务界面示例</strong><span>真实应用截图节选 · 点击查看原图 ↗</span></figcaption>
+            <div class="preview-footnote">随手记录 → 到时提醒 → 完成归档</div>
+          </figure>
+        </article>
 
         <article class="flagship-work reveal" id="dehaze">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 01 · 主推 · 在线可体验</span>
+            <span class="comic-label">Flagship 02 · 图像实验 · 在线可体验</span>
             <h3>单幅图像去雾 · SE-CGAN</h3>
             <p>条件生成对抗网络实现单幅图像去雾。从 PyQt6 桌面演示起步，为了让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
             <div class="work-value-list">
@@ -81,76 +108,86 @@
 
         <article class="flagship-work reveal" id="data-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 02 · Vibe Coding · 独立开发 · 在线可体验 · 2026.09</span>
+            <span class="comic-label">Flagship 03 · 独立开发 · 在线可体验 · 2026.09</span>
             <h3>数据分析小助手 · Data Helper</h3>
-            <p>独立开发的本地数据预处理工作台：导入 → 数据体检 → 一键修复 / 清洗 → 可视化 → 导出，把干净数据交给主力分析软件——数据全程不出本机。</p>
+            <p>从一张有问题的表格开始：导入、体检、清洗、可视化，再把干净数据交给主力分析软件。桌面版在本机处理，云部署版在服务容器内处理。</p>
             <div class="work-value-list">
               <p><strong>产品</strong><span>纯本地规则体检引擎：0-100 质量评分 + 六维质量雷达 + 结构化问题清单，每个问题带一键修复；可检测列间算术关系违反与函数依赖冲突。</span></p>
               <p><strong>工程</strong><span>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块，百万行秒级）；22 种清洗变换与多步版本回溯。</span></p>
-              <p><strong>质量</strong><span>198 项 pytest 全绿 + GitHub Actions CI；PyInstaller 打包免安装 exe；支持 MCP 协议外接 AI 客户端。</span></p>
+              <p><strong>案例</strong><span>用 UCI Online Retail II 的 1,067,371 行零售交易跑通预处理：体检定位重复、格式和退货记录等问题，清洗得到 805,549 行有效销售；过程与结果随仓库公开。</span></p>
+              <p><strong>扩展</strong><span>支持 MCP 协议外接 AI 客户端；运营看板扩展分支新增 KPI 卡、环比与口径说明、转化漏斗、结果钉卡和全屏放映，独立于当前在线体验版本。</span></p>
             </div>
             <div class="comic-strip" style="margin-top:16px"><span class="tag">FastAPI</span><span class="tag">DuckDB</span><span class="tag">Parquet</span><span class="tag">Vue3 · ECharts</span><span class="tag">MCP</span></div>
             <div class="flagship-actions">
-              <a class="btn primary" data-datahelper-app data-datahelper-cta href="#">进入在线体验</a>
+              <a class="btn primary" data-datahelper-app data-datahelper-cta href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">进入在线体验</a>
               <a class="btn" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
           </div>
-          <div class="spec-panel" aria-label="数据分析小助手能力示意">
-            <div class="spec-head"><strong>Data Helper</strong><em>数据体检引擎</em></div>
-            <div class="spec-row"><b>体检</b><i style="--v:96%"></i><em>0-100 质量评分</em></div>
-            <div class="spec-row"><b>雷达</b><i style="--v:84%"></i><em>六维质量画像</em></div>
-            <div class="spec-row"><b>清洗</b><i style="--v:72%"></i><em>22 种变换操作</em></div>
-            <div class="spec-row"><b>测试</b><i style="--v:100%"></i><em>198 项 pytest 全绿</em></div>
-          </div>
+          <figure class="preview-window preview-data" aria-label="Data Helper 真实工作台截图">
+            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>DATA HELPER / WORKBENCH</span></div>
+            <a class="preview-image-link" href="assets/previews/data-workbench.png" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 Data Helper 工作台完整截图">
+              <img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据表、数据清洗侧栏和底部 SQL 控制台" loading="lazy" decoding="async" />
+            </a>
+            <figcaption><strong>真实工作台</strong><span>示例销售数据 · 点击查看原图 ↗</span></figcaption>
+            <div class="preview-footnote">导入 → 体检 → 修复 → 分析 → 导出</div>
+          </figure>
         </article>
 
         <article class="flagship-work reveal" id="weather-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 03 · Vibe Coding · 独立开发 · 已上线 · 2026.09</span>
+            <span class="comic-label">Flagship 04 · 独立开发 · 已上线 · 2026.09</span>
             <h3>网球天气助手（香港）· Weather Helper</h3>
             <p>面向全港 57 个公共网球场的降雨决策 PWA：在官方预报之上做二次评价，回答「这个球场的预报今天信不信」。</p>
             <div class="work-value-list">
-              <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议。</span></p>
+              <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议；「去哪打」按时段找更干燥的球场，雨团地图查看降雨位置与走向。</span></p>
               <p><strong>闭环</strong><span>球友到场众包上报实况（地理围栏 + 冷却防刷），与天文台测站双轨验证各预报源准确率（漏报 / 误报 / Brier）。</span></p>
               <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 部署 Railway 已上线。</span></p>
             </div>
             <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · Railway</span></div>
             <div class="flagship-actions">
-              <a class="btn primary" data-weather-app data-weather-cta href="#">打开在线应用 ↗</a>
+              <a class="btn primary" data-weather-app data-weather-cta href="https://weatherhelper-production.up.railway.app/" target="_blank" rel="noreferrer noopener">打开在线应用 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
           </div>
-          <div class="spec-panel" aria-label="网球天气助手功能示意">
-            <div class="spec-head"><strong>Weather Helper</strong><em>降雨决策 PWA</em></div>
-            <div class="spec-row"><b>球场</b><i style="--v:90%"></i><em>全港 57 个公共场</em></div>
-            <div class="spec-row"><b>融合</b><i style="--v:76%"></i><em>0-6h 降雨概率</em></div>
-            <div class="spec-row"><b>上报</b><i style="--v:62%"></i><em>到场众包实况</em></div>
-            <div class="spec-row"><b>推送</b><i style="--v:80%"></i><em>开打前下雨提醒</em></div>
+          <div class="preview-window preview-weather" role="img" aria-label="Weather Helper 界面示意：维多利亚公园网球场，按时段查看降雨风险；画面为示例数据，不是实时预报">
+            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>WEATHER HELPER / HONG KONG</span></div>
+            <div class="preview-weather-main">
+              <span class="preview-eyebrow">一场球，从看天气开始</span>
+              <div class="preview-court-heading"><strong>维多利亚公园</strong><span>网球场 · 香港</span></div>
+              <div class="preview-court" aria-hidden="true"><div class="preview-court-line"></div><i class="preview-ball"></i><span>22°16′ N / 114°11′ E</span></div>
+              <div class="preview-weather-hours"><span><small>现在</small><b>20%</b></span><span><small>+2 小时</small><b>45%</b></span><span><small>+4 小时</small><b>85%</b></span></div>
+              <div class="preview-weather-decision"><span class="preview-status-dot"></span><strong>时段变化，看得见</strong><span>球场预报 / 去哪打 / 雨团地图</span></div>
+            </div>
+            <div class="preview-footnote">界面示意 · 示例数据，非实时天气</div>
           </div>
         </article>
 
         <article class="flagship-work reveal" id="mail-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 04 · Vibe Coding · 独立开发 · 已发布 · 2026.10</span>
+            <span class="comic-label">Flagship 05 · 独立开发 · 双平台已发布 · 2026.10</span>
             <h3>邮箱管家 · MailHelper</h3>
-            <p>面向港校学生的 Windows / macOS 邮件管家：直读本机经典版 Outlook 里已登录的学校账户，把每学期几百封校园邮件自动分好类、标好轻重——不用 OAuth 授权，也不用找学校 IT 开权限。</p>
+            <p>从港校学生每天面对的校园邮件出发，做了一个 Windows / macOS 桌面管家：通过已登录的经典版 Outlook 同步邮件，自动分好类、标好轻重，重要通知不再淹没在收件箱里。</p>
             <div class="work-value-list">
               <p><strong>产品</strong><span>七类自动分类（课程 / 职业发展 / 校园事务 / 财务缴费 / 通知 / 订阅 / 其他），分不准进「待确认」不默默分错；P0-P3 重要度标注，缴费截止与面试邀约一眼可见；改分一封，同发件人以后自动归对。</span></p>
-              <p><strong>通知</strong><span>P0 每封单独弹窗、P1 三封起合并摘要、P2/P3 不打扰，支持勿扰时段；关窗缩到托盘继续同步，图标带未读数，可开机自启；主题 / 发件人 / 正文全文搜索。</span></p>
-              <p><strong>工程</strong><span>.NET 8 / WPF + CommunityToolkit.Mvvm + EF Core (SQLite) + WebView2；GitHub Actions CI，210 项测试全绿，Releases 正式版 + 应用内静默自更新；分类全本机完成、无遥测、不存凭据，阅读窗格外链不可点（防钓鱼）。</span></p>
+              <p><strong>日程</strong><span>从 Canvas 模板化通知邮件识别作业截止时间，按今天、未来 7 天等分组并提供临期提醒；分级邮件通知、全文搜索与每 5 分钟增量同步一起服务日常整理。</span></p>
+              <p><strong>工程</strong><span>.NET 8 共享核心，Windows WPF + macOS Avalonia 双界面，EF Core / SQLite 本地存储；GitHub Actions CI 与双平台发布。分类在本机完成，不存邮箱凭据；支持自写分类规则和保存前试跑。</span></p>
             </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">.NET 8 · WPF</span><span class="tag">EF Core · SQLite</span><span class="tag">WebView2</span><span class="tag">GitHub Actions</span><span class="tag">Inno Setup</span></div>
+            <div class="comic-strip" style="margin-top:16px"><span class="tag">.NET 8</span><span class="tag">WPF · Avalonia</span><span class="tag">EF Core · SQLite</span><span class="tag">GitHub Actions</span><span class="tag">Windows · macOS</span></div>
             <div class="flagship-actions">
               <a class="btn primary" href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noreferrer noopener">下载最新版 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
           </div>
-          <div class="spec-panel" aria-label="邮箱管家功能示意">
-            <div class="spec-head"><strong>MailHelper</strong><em>校园邮件分类引擎</em></div>
-            <div class="spec-row"><b>分类</b><i style="--v:88%"></i><em>七类自动归档</em></div>
-            <div class="spec-row"><b>轻重</b><i style="--v:80%"></i><em>P0-P3 四级标注</em></div>
-            <div class="spec-row"><b>规则</b><i style="--v:74%"></i><em>改一封学会一个发件人</em></div>
-            <div class="spec-row"><b>质量</b><i style="--v:100%"></i><em>210 项测试全绿</em></div>
+          <div class="preview-window preview-mail" role="img" aria-label="MailHelper 界面示意：匿名样例邮件按课程、职业发展和缴费归类，Canvas 截止时间进入日程">
+            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>MAILHELPER / INBOX</span></div>
+            <div class="preview-mail-main">
+              <div class="preview-mail-heading"><strong>各归其位。</strong><span>校园邮件 / 本地整理</span></div>
+              <div class="preview-mail-row"><span class="preview-priority preview-priority--urgent">P0</span><div><b>缴费截止提醒</b><small>财务缴费 · 样例邮件</small></div><span class="preview-mail-category">缴费</span></div>
+              <div class="preview-mail-row"><span class="preview-priority">P1</span><div><b>实习面试邀请</b><small>职业发展 · 样例邮件</small></div><span class="preview-mail-category">职业</span></div>
+              <div class="preview-mail-row"><span class="preview-priority">P1</span><div><b>Canvas 作业通知</b><small>课程学习 · 样例邮件</small></div><span class="preview-mail-category">课程</span></div>
+              <div class="preview-schedule"><span>DDL / 日程</span><strong>作业截止时间 → 临期提醒</strong><small>仅识别 Canvas 模板化通知</small></div>
+            </div>
+            <div class="preview-footnote">界面示意 · 全部使用匿名样例</div>
           </div>
         </article>
       </div>
@@ -170,8 +207,8 @@
           </a>
           <a class="resource-card reveal" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">
             <span>Resume · 2026 版</span>
-            <strong>下载最新简历</strong>
-            <em>与在线履历同源更新：四段实习、项目经历、技能证书与荣誉完整版。</em>
+            <strong>下载通用简历</strong>
+            <em>包含五段实习（含在岗）、项目经历、技能证书与荣誉的通用版本。</em>
           </a>
           <a class="resource-card reveal" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">
             <span>Resume · English</span>
@@ -181,12 +218,12 @@
           <a class="resource-card reveal" href="cv.html">
             <span>CV · 在线履历</span>
             <strong>完整履历一页看完</strong>
-            <em>教育背景、四段实习、三个项目、技能证书与荣誉的在线版本。</em>
+            <em>教育背景、五段实习、四个自研项目、技能证书与荣誉的在线版本。</em>
           </a>
           <a class="resource-card reveal" href="experience.html">
             <span>Cases · 经历拆解</span>
-            <strong>五段经历的完整拆解</strong>
-            <em>四段实习与毕业设计上云，每段配数据带与工作链路。</em>
+            <strong>实习与项目的逐段记录</strong>
+            <em>和宏在岗实习的职责方向，四段已结束实习与毕业设计的具体过程。</em>
           </a>
           <a class="resource-card reveal" href="works.html#wx">
             <span>WeChat · 公众号</span>
@@ -282,6 +319,6 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=39"></script>
+  <script type="module" src="js/app.js?v=40"></script>
 </body>
 </html>

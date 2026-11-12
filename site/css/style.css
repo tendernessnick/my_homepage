@@ -2078,6 +2078,11 @@ body.intro-open { overflow: hidden; }
 
 /* ---------- 渐显动画 ---------- */
 .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.reveal-ready:not(.is-revealed) {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.7s var(--ease),
@@ -2086,7 +2091,7 @@ body.intro-open { overflow: hidden; }
 .reveal.is-revealed { opacity: 1; transform: none; }
 
 /* 网格子元素错峰入场：跟随所在块的 reveal 依次浮现 */
-.reveal > :is(.profile-grid, .profile-timeline, .grid, .wx-grid, .media-grid,
+.reveal.reveal-ready > :is(.profile-grid, .profile-timeline, .grid, .wx-grid, .media-grid,
   .cover-grid, .song-grid, .approach-cards, .resource-grid, .hobby-grid,
   .mini-metrics, .output-panel, .paper-stack, .timeline) > * {
   opacity: 0;
@@ -2114,8 +2119,8 @@ body.intro-open { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .reveal > :is(.profile-grid, .profile-timeline, .grid, .wx-grid, .media-grid,
+  .reveal, .reveal.reveal-ready:not(.is-revealed) { opacity: 1; transform: none; transition: none; }
+  .reveal.reveal-ready:not(.is-revealed) > :is(.profile-grid, .profile-timeline, .grid, .wx-grid, .media-grid,
     .cover-grid, .song-grid, .approach-cards, .resource-grid, .hobby-grid,
     .mini-metrics, .output-panel, .paper-stack, .timeline) > * {
     opacity: 1; transform: none; transition: none;

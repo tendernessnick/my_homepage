@@ -1,6 +1,6 @@
 # 胡睿杰 · 个人主页
 
-多子页档案式求职个人主页（布局参考 lizongqian-anime-hr.surge.sh）。纯静态 HTML/CSS/JS，无框架、无构建步骤，动效为原生 CSS + IntersectionObserver。
+个人观察手记与产品实验室，多子页求职主页。纯静态 HTML/CSS/JS，无框架、无构建步骤，动效为原生 CSS + IntersectionObserver。
 
 ## 本地预览
 
@@ -16,11 +16,11 @@ python -m http.server 8765
 
 ```
 site/
-├── index.html          # 主页：开场遮罩（外滩暮色大图）+ 工作区/生活区双模式
+├── index.html          # 主页：去雾签名交互 + 四产品实验台 + 工作/生活双模式
 ├── about.html          # 关于我：做事方式 + 数据快照
-├── experience.html     # 经历：四段实习拆解 + 校园经历
-├── works.html          # 作品：3 个项目 + 8 篇推文墙 + 12 张证书墙
-├── cv.html             # 在线履历（内容与 2026 版简历一致，可打印）
+├── experience.html     # 经历：五段实习（含在岗职责方向）+ 校园经历
+├── works.html          # 作品：四个自研产品 + 去雾毕业设计 + 8 篇推文 + 12 张证书
+├── cv.html             # 在线履历（新版通用简历 + 用户补充项目，可打印）
 ├── life.html           # 生活：照片墙 + 爱好
 ├── contact.html        # 联系方式 + 快捷入口
 ├── dehaze.html         # 毕业设计独立体验页（介绍 + 在线 Demo）
@@ -63,27 +63,33 @@ export const DEHAZE_DEMO_URL = 'https://你的服务域名';
 - `DEHAZE_API_BASE` 仅本地联调 `js/dehaze.js`（契约参考实现）时使用，线上不依赖
 - 接口契约（`POST /dehaze`、`GET /health`）见仓库根目录 `AGENTS.md` 第三节
 
-## 部署
+## 部署：CloudBase
 
-### Surge（免费子域名，https://surge.sh）
+当前仅更新腾讯云 CloudBase，Surge 自 2026-11-12 起暂停更新。
 
-发布的是**执行命令时所在的目录**——请务必先进入 `site/`，不要在仓库根目录执行（否则会把整个仓库传上去）：
+- 发布内容目录：`site/`；无依赖安装、无构建步骤，入口为 `index.html`。
+- 如果使用 Git 来源，选择本仓库 `master` 分支，发布目录填写 `site`；如果手动上传，上传 `site/` 内的网页与资源，确保部署根目录直接包含 `index.html`。
+- 不要上传仓库根目录的本地素材、毕业设计或工具文件。
+- 发布后重点检查首页去雾滑杆、NoticeMe 作品与下载入口、手机布局、中英文简历下载。
+- `CNAME` 和 `.surgeignore` 保留为历史兼容文件，不执行 Surge 发布，不影响 CloudBase 的静态页面内容。
+
+## Git 版本与回退
+
+改版前的 v39 已保存为远程标签 `frontend-v39-backup-20261112`，对应提交 `bffd93559e1f582ef6901e6119522a6578b061db`。该标签包含改版前完整的 `site/`，不混入新版未提交内容。
+
+如需单独检查旧版，可创建独立检视分支（先保存当前工作区）：
 
 ```bash
-cd site
-npx surge
+git switch -c codex/review-frontend-v39 frontend-v39-backup-20261112
 ```
 
-1. 首次运行按提示**注册/登录**（邮箱 + 密码，免费；也可先在 surge.sh 网页注册，账号通用）
-2. 确认项目路径为当前目录（`site/`）
-3. 输入子域名（先到先得，例如 `huruijie-home.surge.sh`），回车完成发布
-4. 打开 `https://<你的子域名>.surge.sh` 验证（surge.sh 子域名自带 HTTPS）
+若要让发布分支撤销本轮改版，使用本轮改版提交的 `git revert <提交号>` 生成回退提交，再推送并在 CloudBase 发布。不要重置或强推共享分支历史。
 
-- **后续更新**：改完内容重跑 `cd site && npx surge --domain <你的子域名>.surge.sh` 即覆盖发布
-- **上传范围**：只有 `site/` 目录（约 7MB，全部为网页本体的图片/简历/代码）；仓库根的 `毕业设计/`、`photo/`、`我的cv/` 等本地素材不在其中
-- `.surgeignore` 会把 `README.md` 排除在发布之外；`404.html` 由 Surge 自动承接所有不存在路径
-- 想绑自定义域名：在 `site/` 放一个内容为域名的 `CNAME` 文件再发布，并到域名服务商配 DNS；免费版自定义域名仅 HTTP，HTTPS 需 Surge Pro
+## 2026-11-12 首页改版（v40）
 
-### 腾讯云 CloudBase 静态托管（国内访问更快）
-
-把 `site/` 目录整体上传（控制台"静态网站托管"或 `cloudbase framework deploy`），默认域名即可访问，可作为国内主站与 Surge 并存。
+- 新增 `css/studio.css`：暖纸底、墨色排版、电蓝强调的首页设计；新增 `css/project-previews.css`：作品页真实截图与界面示意。
+- 新增 `js/studio.js`：去雾滑杆、清洗样例、天气时段、邮件归类；示例均为本地交互，天气不是实时预报，去雾为预生成真实结果。
+- `assets/previews/` 保存 Data Helper 真实工作台和 NoticeMe 演示任务截图节选；不包含真实邮件或用户任务。NoticeMe 当前入口为 Windows 版下载与源码。
+- 最新中英文通用 PDF 沿用 `resume.pdfx` / `resume-en.pdfx` URL，保存名仍为 `.pdf`；在线履历额外包含用户本轮提供的 NoticeMe。
+- 五段实习包含和宏在岗经历，职责方向不作为已完成成果。四个独立产品包含两在线应用、MailHelper 和 NoticeMe，图像去雾作为毕业设计单列。
+- 主体内容默认可读，脚本就绪后才增强滚动入场；两个模式分别保留阅读位置，支持减少动态效果偏好。

@@ -42,3 +42,12 @@ my_homepage/
 
 跨项目链路（2026-09-12 起为外链模式）：静态站「在线体验」入口 →（config.js 的 DEHAZE_DEMO_URL）→ dehaze-api 服务根路径自带演示页（同源调用 /dehaze）；
 接口契约以 AGENTS.md 第三节为唯一权威版本。
+
+【2026-11-12 追加 · v40 结构与内容更新，以上历史描述以本条为准】
+- site/index.html：个人观察手记/产品实验室；去雾签名交互、四产品预览、五段实习、生活入口；移除覆盖式开场。
+- site/css/studio.css：新版首页；site/css/project-previews.css：作品页截图/界面示意。
+- site/js/studio.js：四组本地样例交互；app.js：模式位置恢复、渐进增强。
+- site/assets/previews/：data-workbench.png、noticeme-tasks.webp（真实演示截图节选）。
+- works/cv/about/experience 同步 NoticeMe、新版CV五段实习与产品功能；中英文resume.pdfx更新。
+
+【2026-11-12 发布方式追加】当前仅更新CloudBase，发布内容为site/；Surge暂停更新。旧版Git回退标签：frontend-v39-backup-20261112（bffd935）。CNAME/.surgeignore为保留的历史兼容文件。

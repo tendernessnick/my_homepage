@@ -1,5 +1,5 @@
 // ============================================================
-// 全站交互：导航高亮 / 开场遮罩 / 工作生活模式 / 拖拽墙 /
+// 全站交互：导航高亮 / 工作生活模式 / 拖拽墙 /
 //          复制按钮 / 回到顶部 / 滚动渐显 / 数字跳动
 // ============================================================
 
@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=39";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=40";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -18,64 +18,6 @@ function initNav() {
   });
 }
 
-/* ---------- 主页开场遮罩 ---------- */
-function initIntro() {
-  const intro = $("[data-work-intro]");
-  if (!intro) return;
-
-  const seen = sessionStorage.getItem("hr-intro-seen");
-  const hasHash = !!location.hash;
-  if (seen || hasHash || reducedMotion) {
-    intro.remove();
-    return;
-  }
-
-  document.body.classList.add("intro-open");
-  let done = false;
-  const dismiss = (scrollTarget) => {
-    if (done) return;
-    done = true;
-    sessionStorage.setItem("hr-intro-seen", "1");
-    intro.classList.add("is-done");
-    document.body.classList.remove("intro-open");
-    setTimeout(() => intro.remove(), 750);
-    if (scrollTarget) {
-      document.getElementById(scrollTarget)?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // 任意向下滚动即进入：触控板单次增量可能只有 1~3，需累计判断
-  let wheelSum = 0;
-  const onWheel = (e) => {
-    if (e.deltaY <= 0) return;
-    wheelSum += e.deltaY;
-    if (e.deltaY >= 2 || wheelSum >= 12) dismiss();
-  };
-  window.addEventListener("wheel", onWheel, { passive: true });
-  window.addEventListener("touchmove", () => dismiss(), { passive: true, once: true });
-  addEventListener("keydown", (e) => {
-    if (e.key === "Escape" || e.key === "ArrowDown" || e.key === " " || e.key === "Enter") dismiss();
-  });
-  // 点击遮罩空白处（非按钮）也可进入
-  intro.addEventListener("click", (e) => {
-    if (e.target.closest(".wi-btn")) return;
-    dismiss();
-  });
-  $(".wi-close", intro)?.addEventListener("click", () => dismiss());
-
-  $$(".wi-btn, .wi-hint", intro).forEach((el) => {
-    el.addEventListener("click", (e) => {
-      const href = el.getAttribute("href") || "";
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        dismiss(href.slice(1));
-      } else {
-        dismiss();
-      }
-    });
-  });
-}
-
 /* ---------- 工作 / 生活模式切换 ---------- */
 function initModeToggle() {
   const btn = $("[data-mode-toggle]");
@@ -83,25 +25,64 @@ function initModeToggle() {
   const life = $('[data-mode-view="life"]');
   if (!btn || !work || !life) return;
 
-  const lifeLinks = $$('[data-life-link]');
+  const lifeLinks = $$("[data-life-link]");
+  const positions = { work: window.scrollY, life: 0 };
+  let mode = document.body.classList.contains("life-mode") ? "life" : "work";
 
-  const apply = (isLife) => {
-    document.body.classList.toggle("life-mode", isLife);
+  const updateControls = () => {
+    const isLife = mode === "life";
     btn.setAttribute("aria-pressed", String(isLife));
-    $("[data-mode-label]").textContent = isLife ? "工作模式" : "生活模式";
+    btn.setAttribute("aria-label", isLife ? "返回工作模式" : "打开生活模式");
+    const label = $("[data-mode-label]", btn);
+    if (label) label.textContent = isLife ? "工作模式" : "生活模式";
+    lifeLinks.forEach((a) => a.setAttribute("tabindex", isLife ? "0" : "-1"));
+  };
+
+  const apply = (nextMode, target) => {
+    if (nextMode === mode) return;
+    positions[mode] = window.scrollY;
+    mode = nextMode;
+    const isLife = mode === "life";
+    document.body.classList.toggle("life-mode", isLife);
     const show = isLife ? life : work;
     const hide = isLife ? work : life;
+    // 隐藏当前视图前，将焦点移到始终可见的模式按钮。
+    if (hide.contains(document.activeElement)) btn.focus({ preventScroll: true });
     show.hidden = false;
     show.removeAttribute("inert");
     show.setAttribute("aria-hidden", "false");
     hide.hidden = true;
     hide.setAttribute("inert", "");
     hide.setAttribute("aria-hidden", "true");
-    lifeLinks.forEach((a) => a.setAttribute("tabindex", isLife ? "0" : "-1"));
-    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    updateControls();
+    // 视图高度不同；直接恢复位置，避免页面级 smooth 把恢复变成一段长距离动画。
+    if (target) target.scrollIntoView({ behavior: "instant" });
+    else window.scrollTo({ top: positions[mode], behavior: "instant" });
   };
 
-  btn.addEventListener("click", () => apply(!document.body.classList.contains("life-mode")));
+  btn.addEventListener("click", () => apply(mode === "life" ? "work" : "life"));
+  $$("[data-open-mode]").forEach((trigger) => {
+    const nextMode = trigger.dataset.openMode;
+    if (nextMode !== "work" && nextMode !== "life") return;
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      apply(nextMode);
+    });
+  });
+
+  const revealHashTarget = () => {
+    if (!location.hash) return;
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); }
+    catch { return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    if (work.contains(target)) apply("work", target);
+    else if (life.contains(target)) apply("life", target);
+  };
+  updateControls();
+  revealHashTarget();
+  addEventListener("hashchange", revealHashTarget);
 }
 
 /* ---------- 拖拽横向滚动（照片墙 / 证书墙） ---------- */
@@ -203,18 +184,36 @@ function initReveal() {
     els.forEach((el) => el.classList.add("is-revealed"));
     return;
   }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          en.target.classList.add("is-revealed");
-          io.unobserve(en.target);
-        }
-      });
-    },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-  );
-  els.forEach((el) => io.observe(el));
+  let io;
+  try {
+    io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.classList.add("is-revealed");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -32px 0px", threshold: 0.01 }
+    );
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      // 先成功注册观察，再启用隐藏态。首屏与已读区域始终直接显示。
+      if (!el.getClientRects().length || rect.top >= window.innerHeight) {
+        io.observe(el);
+        el.classList.add("reveal-ready");
+      } else {
+        el.classList.add("is-revealed");
+      }
+    });
+  } catch {
+    io?.disconnect();
+    els.forEach((el) => {
+      el.classList.remove("reveal-ready");
+      el.classList.add("is-revealed");
+    });
+  }
 }
 
 /* ---------- 数字跳动 ---------- */
@@ -245,15 +244,20 @@ function initCountUp() {
   els.forEach((el) => io.observe(el));
 }
 
-/* ---------- 生活区兴趣标签页 ---------- */
+/* ---------- 生活区兴趣按钮组 ---------- */
 function initSignalTabs() {
   const board = $("[data-signal-board]");
   if (!board) return;
   const tabs = $$("[data-signal-tab]", board);
   const copy = $("[data-signal-copy]", board);
+  if (!copy) return;
   tabs.forEach((tab) => {
+    tab.setAttribute("aria-pressed", String(tab.classList.contains("is-active")));
     tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+      tabs.forEach((t) => {
+        t.classList.toggle("is-active", t === tab);
+        t.setAttribute("aria-pressed", String(t === tab));
+      });
       copy.textContent = tab.dataset.signalText;
     });
   });
@@ -335,19 +339,22 @@ function initYear() {
 
 /* ---------- 页内锚点导览（渐进增强：scrollIntoView 顺滑且不受浏览器碎片滚动差异影响） ---------- */
 function initSectionNav() {
-  $$(".section-nav a[href^='#']").forEach((a) => {
+  $$(".section-nav a[href^='#'], a[data-section-jump][href^='#']").forEach((a) => {
     a.addEventListener("click", (e) => {
       const target = document.getElementById(a.getAttribute("href").slice(1));
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+      target.scrollIntoView({ behavior: a.hasAttribute("data-section-jump") ? "instant" : reducedMotion ? "auto" : "smooth" });
+      if (a.hasAttribute("data-section-jump")) {
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+      }
       history.replaceState(null, "", a.getAttribute("href"));
     });
   });
 }
 
 initNav();
-initIntro();
 initModeToggle();
 initWalls();
 initCopy();
