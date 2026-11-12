@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Works｜胡睿杰</title>
   <meta name="description" content="胡睿杰的产品实验室：NoticeMe 本地待办与提醒、Data Helper 数据预处理工作台、香港网球天气助手、MailHelper 邮箱管家，以及图像去雾毕业设计。" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
-  <link rel="stylesheet" href="css/project-previews.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/project-previews.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/folio-records.css?v=41" />
 </head>
-<body data-page="works">
+<body data-page="works" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -43,36 +46,44 @@
   </nav>
 
   <main id="main">
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>03 / WORKS</span></div>
     <section class="container page-hero">
-      <p class="eyebrow">Works</p>
-      <h1 class="page-title">把想法，做成能用的工具。</h1>
-      <p class="lead">记住随手想到的事、给数据做体检、替球友看天气、让校园邮件各归其位。四个独立开发项目，加上一项图像去雾毕业设计，记录从具体问题到产品落地的过程。</p>
-      <div class="comic-strip">
-        <span class="tag">在线体验 / 桌面工具</span><span class="tag">Electron · TypeScript</span><span class="tag">PyTorch</span><span class="tag">Vue3 · ECharts</span><span class="tag">React · Tailwind</span><span class="tag">WPF · Avalonia</span>
+      <p class="eyebrow">Works / 产品实验室</p>
+      <h1 class="page-title">从一个问题，到一个工具。</h1>
+      <p class="lead">四个独立产品，一项图像研究。先看看它们解决什么问题，再打开应用、下载体验，或者展开实现记录。</p>
+      <div class="work-index" aria-label="作品目录">
+        <a href="#noticeme" data-section-jump><span>01 / 桌面工具</span><strong>NoticeMe</strong><small>待办、提醒与日记 ↗</small></a>
+        <a href="#data-helper" data-section-jump><span>02 / 数据工作台</span><strong>Data Helper</strong><small>体检、清洗与分析 ↗</small></a>
+        <a href="#weather-helper" data-section-jump><span>03 / 球场决策</span><strong>Weather Helper</strong><small>香港网球天气 ↗</small></a>
+        <a href="#mail-helper" data-section-jump><span>04 / 桌面工具</span><strong>MailHelper</strong><small>校园邮件与日程 ↗</small></a>
+        <a href="#dehaze" data-section-jump><span>05 / 毕业设计</span><strong>SE-CGAN</strong><small>图像去雾研究 ↗</small></a>
       </div>
+      <nav class="section-nav work-material-nav" aria-label="材料目录"><a href="#docs" data-section-jump>下载与入口 ↓</a><a href="#wx" data-section-jump>公众号作品 ↓</a><a href="#certs" data-section-jump>证书档案 ↓</a></nav>
     </section>
 
     <section class="section tight">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <h2>五项代表作品</h2>
         </div>
 
         <article class="flagship-work reveal" id="noticeme">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 01 · 近期更新 · Windows 已发布 · 2026.11</span>
+            <span class="comic-label">01 / NoticeMe · Windows 已发布 · 2026.11</span>
             <h3>NoticeMe · 待办、提醒与日记</h3>
             <p>把随手想到的事情记下来，再在需要的时候提醒自己。一个本地优先的桌面工具，将待办、重复提醒和日记放进同一处，目前提供 Windows 版下载。</p>
-            <div class="work-value-list">
-              <p><strong>记录</strong><span>用自然语言快速记任务，支持重复任务、日记记录、托盘与快捷键，减少在不同工具之间切换。</span></p>
-              <p><strong>提醒</strong><span>置顶提醒卡、提示音与系统通知搭配使用，让提醒在桌面上有一个清晰的位置。</span></p>
-              <p><strong>工程</strong><span>Electron + React / TypeScript + Zustand，跨平台架构面向 Windows / macOS；JSON 原子写入与 7 份滚动备份。可选本地 Qwen 模型默认关闭，AI 提议先预览、确认后再写入任务。</span></p>
-            </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">Electron</span><span class="tag">React · TypeScript</span><span class="tag">Zustand</span><span class="tag">本地优先</span></div>
             <div class="flagship-actions">
               <a class="btn primary" href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noreferrer noopener">下载 Windows 版 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
+            <details class="work-notes"><summary>功能与实现 <span>任务记录、提醒与本地 AI</span></summary>
+              <div class="work-value-list">
+              <p><strong>记录</strong><span>用自然语言快速记任务，支持重复任务、日记记录、托盘与快捷键，减少在不同工具之间切换。</span></p>
+              <p><strong>提醒</strong><span>置顶提醒卡、提示音与系统通知搭配使用，让提醒在桌面上有一个清晰的位置。</span></p>
+              <p><strong>工程</strong><span>Electron + React / TypeScript + Zustand，跨平台架构面向 Windows / macOS；JSON 原子写入与 7 份滚动备份。可选本地 Qwen 模型默认关闭，AI 提议先预览、确认后再写入任务。</span></p>
+            </div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">Electron</span><span class="tag">React · TypeScript</span><span class="tag">Zustand</span><span class="tag">本地优先</span></div>
+            </details>
           </div>
           <figure class="preview-window preview-noticeme" aria-label="NoticeMe 真实任务界面截图节选">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>NOTICEME / EVERYDAY NOTES</span></div>
@@ -84,44 +95,24 @@
           </figure>
         </article>
 
-        <article class="flagship-work reveal" id="dehaze">
-          <div class="flagship-copy">
-            <span class="comic-label">Flagship 02 · 图像实验 · 在线可体验</span>
-            <h3>单幅图像去雾 · SE-CGAN</h3>
-            <p>条件生成对抗网络实现单幅图像去雾。从 PyQt6 桌面演示起步，为了让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
-            <div class="work-value-list">
-              <p><strong>模型</strong><span>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失加权联合训练。</span></p>
-              <p><strong>评测</strong><span>RESIDE 合成雾图 + O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</span></p>
-              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 实时在线推理。</span></p>
-            </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">CloudBase</span><span class="tag">PSNR 28.05</span></div>
-            <div class="flagship-actions">
-              <a class="btn primary" href="dehaze.html" data-dehaze-demo>进入在线体验</a>
-              <a class="btn" href="experience.html">看经历页</a>
-            </div>
-          </div>
-          <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
-            <figure><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" /><figcaption>原图 · 有雾</figcaption></figure>
-            <figure><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" /><figcaption>去雾后</figcaption></figure>
-          </div>
-        </article>
-
         <article class="flagship-work reveal" id="data-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 03 · 独立开发 · 在线可体验 · 2026.09</span>
+            <span class="comic-label">02 / Data Helper · 在线应用 · 2026.09</span>
             <h3>数据分析小助手 · Data Helper</h3>
             <p>从一张有问题的表格开始：导入、体检、清洗、可视化，再把干净数据交给主力分析软件。桌面版在本机处理，云部署版在服务容器内处理。</p>
-            <div class="work-value-list">
+            <div class="flagship-actions">
+              <a class="btn primary" data-datahelper-app data-datahelper-cta href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">进入在线体验</a>
+              <a class="btn" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
+            </div>
+            <details class="work-notes"><summary>功能与实现 <span>体检规则、公开案例与看板扩展</span></summary>
+              <div class="work-value-list">
               <p><strong>产品</strong><span>纯本地规则体检引擎：0-100 质量评分 + 六维质量雷达 + 结构化问题清单，每个问题带一键修复；可检测列间算术关系违反与函数依赖冲突。</span></p>
               <p><strong>工程</strong><span>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块，百万行秒级）；22 种清洗变换与多步版本回溯。</span></p>
               <p><strong>案例</strong><span>用 UCI Online Retail II 的 1,067,371 行零售交易跑通预处理：体检定位重复、格式和退货记录等问题，清洗得到 805,549 行有效销售；过程与结果随仓库公开。</span></p>
               <p><strong>扩展</strong><span>支持 MCP 协议外接 AI 客户端；运营看板扩展分支新增 KPI 卡、环比与口径说明、转化漏斗、结果钉卡和全屏放映，独立于当前在线体验版本。</span></p>
             </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">FastAPI</span><span class="tag">DuckDB</span><span class="tag">Parquet</span><span class="tag">Vue3 · ECharts</span><span class="tag">MCP</span></div>
-            <div class="flagship-actions">
-              <a class="btn primary" data-datahelper-app data-datahelper-cta href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">进入在线体验</a>
-              <a class="btn" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
-            </div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">FastAPI</span><span class="tag">DuckDB</span><span class="tag">Parquet</span><span class="tag">Vue3 · ECharts</span><span class="tag">MCP</span></div>
+            </details>
           </div>
           <figure class="preview-window preview-data" aria-label="Data Helper 真实工作台截图">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>DATA HELPER / WORKBENCH</span></div>
@@ -135,19 +126,21 @@
 
         <article class="flagship-work reveal" id="weather-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 04 · 独立开发 · 已上线 · 2026.09</span>
+            <span class="comic-label">03 / Weather Helper · 在线应用 · 2026.09</span>
             <h3>网球天气助手（香港）· Weather Helper</h3>
             <p>面向全港 57 个公共网球场的降雨决策 PWA：在官方预报之上做二次评价，回答「这个球场的预报今天信不信」。</p>
-            <div class="work-value-list">
-              <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议；「去哪打」按时段找更干燥的球场，雨团地图查看降雨位置与走向。</span></p>
-              <p><strong>闭环</strong><span>球友到场众包上报实况（地理围栏 + 冷却防刷），与天文台测站双轨验证各预报源准确率（漏报 / 误报 / Brier）。</span></p>
-              <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 部署 Railway 已上线。</span></p>
-            </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · Railway</span></div>
             <div class="flagship-actions">
               <a class="btn primary" data-weather-app data-weather-cta href="https://weatherhelper-production.up.railway.app/" target="_blank" rel="noreferrer noopener">打开在线应用 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
+            <details class="work-notes"><summary>功能与实现 <span>预报融合、实况验证与工程</span></summary>
+              <div class="work-value-list">
+              <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议；「去哪打」按时段找更干燥的球场，雨团地图查看降雨位置与走向。</span></p>
+              <p><strong>闭环</strong><span>球友到场众包上报实况（地理围栏 + 冷却防刷），与天文台测站双轨验证各预报源准确率（漏报 / 误报 / Brier）。</span></p>
+              <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 部署 Railway 已上线。</span></p>
+            </div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · Railway</span></div>
+            </details>
           </div>
           <div class="preview-window preview-weather" role="img" aria-label="Weather Helper 界面示意：维多利亚公园网球场，按时段查看降雨风险；画面为示例数据，不是实时预报">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>WEATHER HELPER / HONG KONG</span></div>
@@ -164,19 +157,21 @@
 
         <article class="flagship-work reveal" id="mail-helper">
           <div class="flagship-copy">
-            <span class="comic-label">Flagship 05 · 独立开发 · 双平台已发布 · 2026.10</span>
+            <span class="comic-label">04 / MailHelper · 双平台桌面工具 · 2026.10</span>
             <h3>邮箱管家 · MailHelper</h3>
             <p>从港校学生每天面对的校园邮件出发，做了一个 Windows / macOS 桌面管家：通过已登录的经典版 Outlook 同步邮件，自动分好类、标好轻重，重要通知不再淹没在收件箱里。</p>
-            <div class="work-value-list">
-              <p><strong>产品</strong><span>七类自动分类（课程 / 职业发展 / 校园事务 / 财务缴费 / 通知 / 订阅 / 其他），分不准进「待确认」不默默分错；P0-P3 重要度标注，缴费截止与面试邀约一眼可见；改分一封，同发件人以后自动归对。</span></p>
-              <p><strong>日程</strong><span>从 Canvas 模板化通知邮件识别作业截止时间，按今天、未来 7 天等分组并提供临期提醒；分级邮件通知、全文搜索与每 5 分钟增量同步一起服务日常整理。</span></p>
-              <p><strong>工程</strong><span>.NET 8 共享核心，Windows WPF + macOS Avalonia 双界面，EF Core / SQLite 本地存储；GitHub Actions CI 与双平台发布。分类在本机完成，不存邮箱凭据；支持自写分类规则和保存前试跑。</span></p>
-            </div>
-            <div class="comic-strip" style="margin-top:16px"><span class="tag">.NET 8</span><span class="tag">WPF · Avalonia</span><span class="tag">EF Core · SQLite</span><span class="tag">GitHub Actions</span><span class="tag">Windows · macOS</span></div>
             <div class="flagship-actions">
               <a class="btn primary" href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noreferrer noopener">下载最新版 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
+            <details class="work-notes"><summary>功能与实现 <span>分类规则、Canvas 日程与双端</span></summary>
+              <div class="work-value-list">
+              <p><strong>产品</strong><span>七类自动分类（课程 / 职业发展 / 校园事务 / 财务缴费 / 通知 / 订阅 / 其他），分不准进「待确认」不默默分错；P0-P3 重要度标注，缴费截止与面试邀约一眼可见；改分一封，同发件人以后自动归对。</span></p>
+              <p><strong>日程</strong><span>从 Canvas 模板化通知邮件识别作业截止时间，按今天、未来 7 天等分组并提供临期提醒；分级邮件通知、全文搜索与每 5 分钟增量同步一起服务日常整理。</span></p>
+              <p><strong>工程</strong><span>.NET 8 共享核心，Windows WPF + macOS Avalonia 双界面，EF Core / SQLite 本地存储；GitHub Actions CI 与双平台发布。分类在本机完成，不存邮箱凭据；支持自写分类规则和保存前试跑。</span></p>
+            </div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">.NET 8</span><span class="tag">WPF · Avalonia</span><span class="tag">EF Core · SQLite</span><span class="tag">GitHub Actions</span><span class="tag">Windows · macOS</span></div>
+            </details>
           </div>
           <div class="preview-window preview-mail" role="img" aria-label="MailHelper 界面示意：匿名样例邮件按课程、职业发展和缴费归类，Canvas 截止时间进入日程">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>MAILHELPER / INBOX</span></div>
@@ -190,15 +185,39 @@
             <div class="preview-footnote">界面示意 · 全部使用匿名样例</div>
           </div>
         </article>
+
+        <article class="flagship-work reveal" id="dehaze">
+          <div class="flagship-copy">
+            <span class="comic-label">05 / SE-CGAN · 毕业设计 · 在线演示</span>
+            <h3>单幅图像去雾 · SE-CGAN</h3>
+            <p>条件生成对抗网络实现单幅图像去雾。从 PyQt6 桌面演示起步，为了让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
+            <div class="flagship-actions">
+              <a class="btn primary" href="dehaze.html" data-dehaze-demo>进入在线体验</a>
+              <a class="btn" href="experience.html">看经历页</a>
+            </div>
+            <details class="work-notes"><summary>功能与实现 <span>模型结构、评测与服务化</span></summary>
+              <div class="work-value-list">
+              <p><strong>模型</strong><span>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失加权联合训练。</span></p>
+              <p><strong>评测</strong><span>RESIDE 合成雾图 + O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</span></p>
+              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 实时在线推理。</span></p>
+            </div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">CloudBase</span><span class="tag">PSNR 28.05</span></div>
+            </details>
+          </div>
+          <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
+            <figure><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" /><figcaption>原图 · 有雾</figcaption></figure>
+            <figure><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" /><figcaption>去雾后</figcaption></figure>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section tight" id="docs">
+    <section class="section tight records-materials" id="docs">
       <div class="container">
         <div class="section-head reveal">
-          <h2>文档与入口<span>· 一键直达</span></h2>
+          <h2>材料与入口<span>· 继续了解</span></h2>
         </div>
-        <p class="lead reveal">在线 Demo、简历、在线履历、推文和证书，一次打开。</p>
+        <p class="lead reveal">需要完整履历或原始材料时，可以从这里继续。</p>
         <div class="resource-grid" aria-label="文档与在线入口">
           <a class="resource-card reveal" href="dehaze.html" data-dehaze-demo>
             <span>Online Demo · 在线体验</span>
@@ -239,7 +258,7 @@
       </div>
     </section>
 
-    <section class="section tight" id="wx">
+    <section class="section tight records-publications" id="wx">
       <div class="container">
         <div class="section-head reveal">
           <h2>公众号代表推文<span>· 8 篇</span></h2>
@@ -282,7 +301,7 @@
       </div>
     </section>
 
-    <section class="section tight" id="certs">
+    <section class="section tight records-certificates" id="certs">
       <div class="container">
         <div class="section-head reveal">
           <h2>证书原件墙<span>· 点滴证明</span></h2>
@@ -309,16 +328,18 @@
         </div>
       </div>
     </section>
+    <nav class="container folio-pagination" aria-label="继续浏览"><a href="experience.html"><span><small>上一页</small><strong>实习与案例</strong></span><b aria-hidden="true">←</b></a><a href="cv.html"><span><small>继续看看</small><strong>在线履历</strong></span><b aria-hidden="true">↗</b></a></nav>
   </main>
 
   <footer class="footer">
     <div class="container">
       <span>© <span data-year>2026</span> 胡睿杰｜Works</span>
-      
+
     </div>
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=40"></script>
+  <script type="module" src="js/app.js?v=41"></script>
+  <script type="module" src="js/folio.js?v=41"></script>
 </body>
 </html>

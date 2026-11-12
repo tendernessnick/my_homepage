@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cases｜胡睿杰</title>
   <meta name="description" content="胡睿杰的五段实习与项目经历：和宏战略与投资部在岗实习、外企德科数据分析、钰泰量化研究、嵌入式与软件开发，以及毕业设计和校园故事。" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/folio-records.css?v=41" />
 </head>
-<body data-page="experience">
+<body data-page="experience" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -41,22 +44,18 @@
   </nav>
 
   <main id="main">
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>02 / EXPERIENCE</span></div>
     <section class="container page-hero">
-      <p class="eyebrow">Cases</p>
-      <h1 class="page-title">五段实习，把分析放进不同场景。</h1>
+      <p class="eyebrow">Cases / 经历档案</p>
+      <h1 class="page-title">经历，放回真实场景。</h1>
       <p class="lead">从运营数据、量化研究到软件开发，目前在和宏战略与投资部继续积累行业研究经验。已完成的项目与在岗实习的职责方向，分别记录在下面。</p>
-      <div class="comic-strip">
-        <span class="metric-tag">900 条运营明细清洗分析</span>
-        <span class="metric-tag">257 人面试协调</span>
-        <span class="metric-tag">Top10 组合跑赢沪深 300</span>
-        <span class="metric-tag">PSNR 28.05</span>
-      </div>
+      <nav class="section-nav" aria-label="经历目录"><a href="#hehong" data-section-jump>在岗实习 ↓</a><a href="#completed-cases" data-section-jump>四段实习记录 ↓</a><a href="#dehaze-case" data-section-jump>项目落地 ↓</a><a href="#campus" data-section-jump>校园经历 ↓</a></nav>
     </section>
 
-    <section class="section tight">
-      <div class="container timeline">
-
-        <article class="timeline-item reveal" id="hehong">
+    <section class="section tight case-current" aria-labelledby="current-title">
+      <div class="container">
+        <div class="case-section-intro"><span class="case-eyebrow">CURRENT / 正在经历</span><h2 id="current-title">把分析方法，延伸到行业研究。</h2><p>在岗实习先记录职责方向，实际成果按后续进展补充。</p></div>
+        <article class="timeline-item case-current-item" id="hehong">
           <time><span class="case-tag">Current · 在岗</span>2026.10 - 至今</time>
           <div>
             <h3>深圳市和宏实业股份有限公司｜战略与投资部 · 战略实习生</h3>
@@ -69,6 +68,14 @@
             <div class="comic-strip"><span class="tag">消费电子产业链</span><span class="tag">竞品对标</span><span class="tag">市场测算</span><span class="tag">职责方向 · 进行中</span></div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="section tight case-archive" id="completed-cases">
+      <div class="container"><div class="section-head"><h2>四段已完成的实习</h2><p>2024—2025 / 数据、量化与开发</p></div></div>
+      <div class="container timeline">
+
+
 
         <article class="timeline-item reveal" id="waifuyuan">
           <time><span class="case-tag">Case 01</span>2025.09 - 2025.12</time>
@@ -81,17 +88,19 @@
               <div><strong>90 人</strong><span>进入二面</span></div>
               <div><strong>220 名</strong><span>候选人跟踪主表</span></div>
             </div>
-            <ul class="bullet-list">
+            <details class="case-notes"><summary>工作内容与链路<span>展开完整记录</span></summary>
+              <ul class="bullet-list">
               <li><strong>【AI 招聘数据分析】</strong>清洗 AI 招聘助手约 900 条运营明细（5 客户 / 4 平台 / 33 天），以数据透视表呈现「曝光-详情-招呼-简历」全链路转化，迭代新增转化率指标定位低效岗位。</li>
               <li><strong>【选调漏斗与候选人管理】</strong>运营黄浦区选调生「日批制」筛选漏斗（600+ 投递、当日 16:00 截止初筛），累计 257 人面试、90 人进入二面；维护德勤审计项目 220 名候选人跟踪主表。</li>
               <li><strong>【流程自动化与数据核对】</strong>自研 bat + Excel 公式映射的批量重命名工具链，实现简历文件批量规范化归档；完成 JLL 代收付薪资核对。</li>
             </ul>
-            <div class="output-panel" aria-label="外企德科工作链路">
+              <div class="output-panel" aria-label="外企德科工作链路">
               <article><span>01</span><strong>转化分析</strong><p>数据透视表呈现「曝光-详情-招呼-简历」全链路转化。</p></article>
               <article><span>02</span><strong>漏斗运营</strong><p>选调生「日批制」筛选漏斗，600+ 投递当日初筛。</p></article>
               <article><span>03</span><strong>候选人管理</strong><p>257 人面试、90 人二面，维护 220 名候选人主表。</p></article>
               <article><span>04</span><strong>流程自动化</strong><p>批量重命名工具链规范归档，JLL 薪资核对。</p></article>
             </div>
+            </details>
           </div>
         </article>
 
@@ -106,17 +115,19 @@
               <div><strong>Top10</strong><span>组合跑赢沪深 300</span></div>
               <div><strong>5 步</strong><span>期权回测自动化流水线</span></div>
             </div>
-            <ul class="bullet-list">
+            <details class="case-notes"><summary>工作内容与链路<span>展开完整记录</span></summary>
+              <ul class="bullet-list">
               <li><strong>【多因子选股】</strong>基于聚宽因子库对 651 只江苏股票构建排名制打分模型（8 大类因子、三种加权方案与行业分散约束），Top10 组合回测收益跑赢同期沪深 300。</li>
               <li><strong>【期权策略回测】</strong>基于沪深 300 / 上证 50 / 中证 1000 股指期权 2020–2025 全量日行情，用 pandas 搭建 5 步自动化回测流水线，实现 Covered Call、日历效应等策略，Covered Call 历年最大回撤均低于标的指数。</li>
               <li><strong>【量化研究与结项】</strong>复现 Fama-French 三因子模型（自建 SMB/HML 因子序列并回归验证），统计上证 50 股指期货跨期套利信号，以结项汇报向团队交付。</li>
             </ul>
-            <div class="output-panel" aria-label="量化研究链路">
+              <div class="output-panel" aria-label="量化研究链路">
               <article><span>01</span><strong>因子建模</strong><p>聚宽因子库，651 只江苏股票排名制打分。</p></article>
               <article><span>02</span><strong>组合回测</strong><p>三种加权 + 行业分散约束，Top10 跑赢沪深 300。</p></article>
               <article><span>03</span><strong>策略回测</strong><p>pandas 5 步流水线，Covered Call / 日历效应。</p></article>
               <article><span>04</span><strong>研究结项</strong><p>三因子复现回归验证，结项汇报交付。</p></article>
             </div>
+            </details>
           </div>
         </article>
 
@@ -125,16 +136,19 @@
           <div>
             <h3>睿鑫信息科技（上海）｜嵌入式软件开发助理实习生</h3>
             <p>从硬件测试环境搭建到代码调试，把「严谨」和「规范记录」变成习惯。</p>
-            <ul class="bullet-list">
+            <p class="case-keywords">ARM 开发板 / 功能调试 / 技术文档</p>
+            <details class="case-notes"><summary>工作内容与链路<span>展开完整记录</span></summary>
+              <ul class="bullet-list">
               <li><strong>【硬件测试与开发协作】</strong>与开发团队紧密配合，完成 ARM 开发板测试环境搭建及基础功能实现，负责后期代码调试与功能验证，保障硬件功能稳定性。</li>
               <li><strong>【技术文档统筹管理】</strong>独立承担技术文档整理工作，系统归纳项目关键参数，规范化记录接口说明，形成标准化文档体系。</li>
             </ul>
-            <div class="output-panel" aria-label="嵌入式开发工作链路">
+              <div class="output-panel" aria-label="嵌入式开发工作链路">
               <article><span>01</span><strong>环境搭建</strong><p>ARM 开发板测试环境与基础功能。</p></article>
               <article><span>02</span><strong>功能验证</strong><p>代码调试，保障硬件功能稳定。</p></article>
               <article><span>03</span><strong>文档体系</strong><p>关键参数与接口说明规范化记录。</p></article>
               <article><span>04</span><strong>习惯沉淀</strong><p>规范化操作与记录的职业习惯。</p></article>
             </div>
+            </details>
           </div>
         </article>
 
@@ -143,16 +157,19 @@
           <div>
             <h3>江苏今点软件｜软件开发实习生</h3>
             <p>政务平台 APP 项目里做功能修改与测试，第一次把「测试思维」用在真实交付上。</p>
-            <ul class="bullet-list">
+            <p class="case-keywords">功能修改 / 接口测试 / 黑盒验证</p>
+            <details class="case-notes"><summary>工作内容与链路<span>展开完整记录</span></summary>
+              <ul class="bullet-list">
               <li><strong>【功能与接口测试】</strong>参与政务平台 APP 项目，协助整理项目文件、修改相关功能代码，执行接口测试；对部分模块开展黑盒测试，针对性处理测试不通过的接口问题。</li>
               <li><strong>【技术文档管理】</strong>统筹归纳项目关键参数与接口说明，规范化整理技术文档。</li>
             </ul>
-            <div class="output-panel" aria-label="政务平台测试链路">
+              <div class="output-panel" aria-label="政务平台测试链路">
               <article><span>01</span><strong>代码修改</strong><p>按需求修改功能代码、整理项目文件。</p></article>
               <article><span>02</span><strong>接口测试</strong><p>执行接口测试，定位不通过用例。</p></article>
               <article><span>03</span><strong>黑盒验证</strong><p>模块级黑盒测试，针对性修复问题。</p></article>
               <article><span>04</span><strong>文档沉淀</strong><p>关键参数与接口说明规范化。</p></article>
             </div>
+            </details>
           </div>
         </article>
 
@@ -162,7 +179,7 @@
     <section class="section tight">
       <div class="container">
         <div class="section-head reveal">
-          <h2>毕业设计<span>· 从桌面程序到线上服务</span></h2>
+          <h2>项目落地<span>· 从桌面到线上服务</span></h2>
         </div>
         <div class="timeline">
           <article class="timeline-item reveal" id="dehaze-case">
@@ -176,6 +193,7 @@
                 <div><strong>256px</strong><span>服务端推理最长边</span></div>
                 <div><strong>秒级</strong><span>预热后 CPU 推理</span></div>
               </div>
+              <details class="case-notes"><summary>模型与工程记录<span>展开完整记录</span></summary>
               <ul class="bullet-list">
                 <li><strong>【模型】</strong>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建、VGG 感知与对抗损失加权联合训练。</li>
                 <li><strong>【工程链路】</strong>PyQt6 桌面演示起步 → 权重导出并与训练工程逐像素一致性校验 → FastAPI 推理服务（multipart 上传、返回 PNG）→ Docker 容器化 → 腾讯云 CloudBase 云托管。</li>
@@ -188,6 +206,7 @@
                 <article><span>03</span><strong>容器化</strong><p>Docker 打包，环境一致可迁移。</p></article>
                 <article><span>04</span><strong>上云</strong><p>CloudBase 云托管，链接即体验。</p></article>
               </div>
+            </details>
               <div class="actions">
                 <a class="btn primary" href="dehaze.html" data-dehaze-demo>进入在线体验</a>
                 <a class="btn" href="works.html#dehaze">看作品页详情</a>
@@ -198,13 +217,13 @@
       </div>
     </section>
 
-    <section class="section tight" id="campus">
+    <section class="section tight case-campus" id="campus">
       <div class="container">
         <div class="section-head reveal">
           <h2>校园经历<span>· 组织与表达</span></h2>
         </div>
         <div class="timeline">
-          <article class="timeline-item reveal">
+          <article class="timeline-item reveal" id="tennis-association">
             <time>2023.09 - 2025.06</time>
             <div>
               <h3>常州大学网球协会｜社长</h3>
@@ -220,7 +239,7 @@
               </ul>
             </div>
           </article>
-          <article class="timeline-item reveal">
+          <article class="timeline-item reveal" id="campus-media">
             <time>2022.06 - 2024.04</time>
             <div>
               <h3>华罗庚学院学生会新闻部｜部长</h3>
@@ -249,16 +268,18 @@
         </div>
       </div>
     </section>
+    <nav class="container folio-pagination" aria-label="继续浏览"><a href="about.html"><span><small>上一页</small><strong>关于我</strong></span><b aria-hidden="true">←</b></a><a href="works.html"><span><small>继续看看</small><strong>产品实验室</strong></span><b aria-hidden="true">↗</b></a></nav>
   </main>
 
   <footer class="footer">
     <div class="container">
       <span>© <span data-year>2026</span> 胡睿杰｜Cases</span>
-      
+
     </div>
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=40"></script>
+  <script type="module" src="js/app.js?v=41"></script>
+  <script type="module" src="js/folio.js?v=41"></script>
 </body>
 </html>

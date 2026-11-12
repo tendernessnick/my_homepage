@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV｜胡睿杰</title>
   <meta name="description" content="胡睿杰在线履历：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，四个独立开发项目，附中英双语简历下载。" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/folio-records.css?v=41" />
 </head>
-<body data-page="cv">
+<body data-page="cv" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -41,22 +44,31 @@
   </nav>
 
   <main id="main">
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>04 / RESUME</span></div>
     <section class="container page-hero">
-      <p class="eyebrow">Online CV</p>
-      <h1 class="page-title">先看在线履历，再下载文件。</h1>
-      <p class="lead">求职意向：业务 / 战略 / 商业 / 数据分析。计算机科班 × 商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发。</p>
+      <p class="eyebrow">Résumé / 在线履历</p>
+      <h1 class="page-title">胡睿杰 · 在线履历</h1>
+      <p class="lead">计算机科学 × 商业人工智能。五段实习、四个独立产品，以及从研究到交付的具体记录。</p>
       <div class="actions">
         <a class="btn primary" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载 2026 版简历</a>
         <a class="btn" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">英文简历 Resume</a>
-        <a class="btn" href="contact.html">联系我</a>
+        <button class="btn" type="button" data-print-cv disabled>打印 / 存为 PDF</button>
       </div>
     </section>
 
-    <section class="section tight">
-      <article class="container cv-sheet">
+    <section class="section tight resume-section">
+      <div class="container resume-layout">
+        <aside class="resume-index" aria-label="履历目录">
+          <span class="resume-index-label">READ THE RECORD / 目录</span>
+          <nav class="section-nav resume-section-nav" aria-label="履历区块">
+            <a href="#resume-intent" data-section-jump>01 求职意向</a><a href="#education" data-section-jump>02 教育背景</a><a href="#internships" data-section-jump>03 实习经历</a><a href="#projects" data-section-jump>04 项目经历</a><a href="#campus" data-section-jump>05 校园经历</a><a href="#skills" data-section-jump>06 技能与证书</a><a href="#honors" data-section-jump>07 荣誉</a><a href="#approach" data-section-jump>08 工作方式</a>
+          </nav>
+          <p>点击目录直接定位。<br>文件版可从页首下载。</p>
+        </aside>
+        <article class="cv-sheet">
         <header class="cv-header">
           <div class="cv-intro">
-            <h1>胡睿杰</h1>
+            <p class="resume-name">胡睿杰</p>
             <p style="margin:0;color:#4f5d6f;font-weight:700">计算机科学与技术 · 数据分析与商业 AI 方向 · 香港城市大学商业人工智能硕士在读</p>
             <div class="cv-highlight-grid" aria-label="个人标签">
               <article class="cv-highlight"><span>背景</span><strong>计算机科班 × 商业 AI 复合背景</strong></article>
@@ -74,12 +86,12 @@
           </div>
         </header>
 
-        <section class="cv-section">
+        <section class="cv-section" id="resume-intent">
           <h2>求职意向</h2>
           <div class="comic-strip" style="margin-top:4px"><span class="tag">数据分析</span><span class="tag">商业分析</span><span class="tag">战略研究</span><span class="tag">商业 AI 落地</span><span class="tag">量化验证</span></div>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="education">
           <h2>教育背景</h2>
           <div class="cv-row">
             <div>
@@ -97,7 +109,7 @@
           </div>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="internships">
           <h2>实习经历</h2>
           <div class="cv-row">
             <div>
@@ -226,7 +238,7 @@
           </div>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="campus">
           <h2>校园经历</h2>
           <div class="cv-row">
             <div>
@@ -245,7 +257,7 @@
           </div>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="skills">
           <h2>技能与证书</h2>
           <ul class="bullet-list">
             <li><strong>【数据能力】</strong>Python 数据分析 / SQL（DataGrip）/ Power BI 可视化 / Kettle 数据整理入库 / Excel 高级应用，熟悉数据清洗、分析到可视化全流程。</li>
@@ -256,7 +268,7 @@
           </ul>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="honors">
           <h2>荣誉</h2>
           <ul class="bullet-list">
             <li>2022 / 2023 年　全国大学生英语竞赛 C 类二等奖（连续两年获奖）</li>
@@ -266,7 +278,7 @@
           <p class="cv-link-list"><a href="works.html#certs">证书原件墙（12 张，证件号已打码）</a></p>
         </section>
 
-        <section class="cv-section">
+        <section class="cv-section" id="approach">
           <h2>自我评价</h2>
           <ul class="bullet-list">
             <li><strong>数据驱动：</strong>习惯先定义指标再下结论，从 900 条运营明细的转化分析到策略回撤优化，每个结论都有数字支撑。</li>
@@ -276,18 +288,21 @@
           </ul>
           <div class="comic-strip"><span class="tag">数据分析</span><span class="tag">商业 AI</span><span class="tag">Python / SQL</span><span class="tag">Power BI</span><span class="tag">量化验证</span><span class="tag">公众号运营</span><span class="tag">英语工作语言</span></div>
         </section>
-      </article>
+        </article>
+      </div>
     </section>
+    <nav class="container folio-pagination" aria-label="继续浏览"><a href="works.html"><span><small>上一页</small><strong>产品实验室</strong></span><b aria-hidden="true">←</b></a><a href="life.html"><span><small>继续看看</small><strong>摄影与生活</strong></span><b aria-hidden="true">↗</b></a></nav>
   </main>
 
   <footer class="footer">
     <div class="container">
       <span>© <span data-year>2026</span> 胡睿杰｜CV</span>
-      
+
     </div>
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=40"></script>
+  <script type="module" src="js/app.js?v=41"></script>
+  <script type="module" src="js/folio.js?v=41"></script>
 </body>
 </html>

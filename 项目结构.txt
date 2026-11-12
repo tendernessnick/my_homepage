@@ -51,3 +51,9 @@ my_homepage/
 - works/cv/about/experience 同步 NoticeMe、新版CV五段实习与产品功能；中英文resume.pdfx更新。
 
 【2026-11-12 发布方式追加】当前仅更新CloudBase，发布内容为site/；Surge暂停更新。旧版Git回退标签：frontend-v39-backup-20261112（bffd935）。CNAME/.surgeignore为保留的历史兼容文件。
+
+【2026-11-13 追加 · v41 子页统一】
+- About/经历/Works/CV/Life/Contact/去雾/404使用folio-page共同框架、页内目录与上下篇入口。
+- site/css/folio.css：子页公共设计；folio-profile.css：关于/联系；folio-records.css：作品/经历/CV；folio-life.css：生活/相册。
+- site/js/folio.js：目录当前态、打印入口、折叠锚点定位；gallery.js：原生dialog大图浏览，保留原图fallback。
+- Life12张照片去重编排、10项书影音/3首歌保留；去雾页复用studio.js对比滑杆；CV原PDF保持不变。

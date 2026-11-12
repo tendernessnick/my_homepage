@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact｜胡睿杰</title>
   <meta name="description" content="联系胡睿杰：邮箱、微信、电话，以及简历下载与各版块快捷入口。" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/folio-profile.css?v=41" />
 </head>
-<body data-page="contact">
+<body data-page="contact" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -41,53 +44,53 @@
   </nav>
 
   <main id="main">
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>06 / CONTACT</span></div>
     <section class="container page-hero">
-      <p class="eyebrow">Contact</p>
-      <h1 class="page-title">聊聊机会，或者只是打个招呼。</h1>
-      <p class="lead">求职方向是数据分析 / 商业分析。</p>
-      <p class="page-hero-note">不限于工作话题，交流想法也欢迎，备注来意即可。</p>
+      <p class="eyebrow">Contact / 联系</p>
+      <h1 class="page-title">聊一件具体的事。</h1>
+      <p class="lead">数据分析、业务与战略研究、商业 AI 的机会，或一个想交流的产品想法。不限于工作话题，网球和摄影也欢迎。</p>
     </section>
 
-    <section class="section tight">
-      <div class="container contact-board">
-        <div class="contact-cards">
-          <article class="contact-card contact-card--single reveal">
-            <div><span>PHONE</span><strong>18916647173</strong></div>
-            <div class="contact-actions">
-              <a class="small-btn" href="tel:18916647173">拨打</a>
-              <button class="small-btn" type="button" data-copy="18916647173">复制</button>
-            </div>
-          </article>
-          <article class="contact-card contact-card--single reveal">
-            <div><span>EMAIL</span><strong>921458257@qq.com</strong></div>
-            <div class="contact-actions">
-              <a class="small-btn" href="mailto:921458257@qq.com">写信</a>
-              <button class="small-btn" type="button" data-copy="921458257@qq.com">复制</button>
-            </div>
-          </article>
-          <article class="contact-card contact-card--single reveal">
-            <div><span>WECHAT</span><strong>nick921458257</strong></div>
-            <div class="contact-actions">
-              <button class="small-btn" type="button" data-copy="nick921458257">复制</button>
-            </div>
-          </article>
-          <p class="contact-note">电话 / 短信均可；邮件是最快找到我的方式。</p>
+    <section class="section tight" aria-labelledby="reach-email-title">
+      <div class="container reach-address-book">
+        <div class="reach-mail">
+          <span class="reach-overline">01 / EMAIL</span>
+          <h2 id="reach-email-title">从一封邮件开始。</h2>
+          <a class="reach-email-address" href="mailto:921458257@qq.com">921458257@qq.com<span aria-hidden="true">↗</span></a>
+          <p>可以简单写下来意，附上岗位信息、项目链接或想讨论的问题。</p>
+          <div class="reach-mail-actions"><a class="btn primary" href="mailto:921458257@qq.com">写一封邮件 ↗</a><button class="btn" type="button" data-copy="921458257@qq.com" aria-live="polite">复制邮箱</button></div>
         </div>
-        <aside class="note-panel reveal">
-          <span class="comic-label">Quick Links</span>
-          <div class="material-list">
-            <a href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf"><span>下载 2026 版简历</span><strong>PDF</strong></a>
-            <a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf"><span>下载英文简历 Resume</span><strong>EN</strong></a>
-            <a href="cv.html"><span>浏览在线履历</span><strong>CV</strong></a>
-            <a href="experience.html"><span>看五段实习拆解</span><strong>Cases</strong></a>
-            <a href="dehaze.html" data-dehaze-demo><span>毕业设计去雾在线体验</span><strong>Demo</strong></a>
-            <a href="works.html"><span>项目、推文与证书</span><strong>Works</strong></a>
-            <a href="life.html"><span>下班后</span><strong>Life</strong></a>
-            <a href="https://github.com/tendernessnick" target="_blank" rel="noreferrer noopener"><span>GitHub · 项目与代码仓库</span><strong>GitHub</strong></a>
-          </div>
-        </aside>
+        <div class="reach-other">
+          <article class="reach-contact-row"><div><span class="reach-overline">02 / PHONE</span><h3>电话 / 短信</h3><a class="reach-contact-value" href="tel:18916647173">18916647173</a></div><div class="reach-contact-actions"><a class="reach-plain-button" href="tel:18916647173">拨打 ↗</a><button class="reach-plain-button" type="button" data-copy="18916647173" aria-live="polite">复制号码</button></div></article>
+          <article class="reach-contact-row"><div><span class="reach-overline">03 / WECHAT</span><h3>微信</h3><span class="reach-contact-value">nick921458257</span></div><div class="reach-contact-actions"><button class="reach-plain-button" type="button" data-copy="nick921458257" aria-live="polite">复制微信号</button></div></article>
+          <p class="reach-note">添加微信时备注来意，方便我知道怎样接上话题。</p>
+        </div>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="reach-topic-title">
+      <div class="container">
+        <div class="section-head"><h2 id="reach-topic-title">可以从这些话题聊起</h2></div>
+        <div class="reach-topics">
+          <article><span class="reach-overline">OPPORTUNITIES</span><h3>工作与机会</h3><p>数据分析、商业分析、业务与战略研究。岗位方向和具体问题，能让交流更直接。</p><a href="cv.html" class="reach-text-link">先看在线履历 ↗</a></article>
+          <article><span class="reach-overline">PRODUCTS</span><h3>产品与实现</h3><p>桌面提醒、数据工作台、天气决策、校园邮件，以及把模型做成在线服务的过程。</p><a href="works.html" class="reach-text-link">先看看作品 ↗</a></article>
+          <article><span class="reach-overline">OFF THE CLOCK</span><h3>网球与摄影</h3><p>约球、聊剪辑、交换拍摄想法，或者聊聊带着相机压马路时遇到的风景。</p><a href="life.html" class="reach-text-link">翻开生活档案 ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" aria-labelledby="reach-resource-title">
+      <div class="container reach-resources">
+        <div><span class="reach-overline">TAKE A LOOK</span><h2 id="reach-resource-title">把需要的材料带走。</h2><p>五段实习（含在岗）与四个独立产品的在线记录。</p></div>
+        <div class="reach-resource-links">
+          <div><span>简历</span><a href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">中文 PDF ↓</a><a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English PDF ↓</a></div>
+          <div><span>经历</span><a href="cv.html">在线履历 ↗</a><a href="experience.html">实习与案例 ↗</a></div>
+          <div><span>作品</span><a href="works.html">项目与推文 ↗</a><a href="dehaze.html" data-dehaze-demo>去雾在线体验 ↗</a></div>
+          <div><span>代码</span><a href="https://github.com/tendernessnick" target="_blank" rel="noreferrer noopener">GitHub / tendernessnick ↗</a></div>
+        </div>
+      </div>
+    </section>
+    <nav class="container folio-pagination" aria-label="继续浏览"><a href="life.html"><span><small>上一页</small><strong>摄影与生活</strong></span><b aria-hidden="true">←</b></a><a href="index.html"><span><small>继续看看</small><strong>回到主页</strong></span><b aria-hidden="true">↗</b></a></nav>
   </main>
 
   <footer class="footer">
@@ -98,6 +101,7 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=40"></script>
+  <script type="module" src="js/app.js?v=41"></script>
+  <script type="module" src="js/folio.js?v=41"></script>
 </body>
 </html>

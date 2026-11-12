@@ -7,14 +7,17 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=40";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=41";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
   const page = document.body.dataset.page;
   if (!page) return;
   $$("[data-nav]").forEach((a) => {
-    if (a.dataset.nav === page) a.classList.add("is-active");
+    if (a.dataset.nav === page) {
+      a.classList.add("is-active");
+      a.setAttribute("aria-current", "page");
+    }
   });
 }
 
@@ -344,6 +347,11 @@ function initSectionNav() {
       const target = document.getElementById(a.getAttribute("href").slice(1));
       if (!target) return;
       e.preventDefault();
+      let ancestor = target;
+      while (ancestor) {
+        if (ancestor.tagName === "DETAILS") ancestor.open = true;
+        ancestor = ancestor.parentElement;
+      }
       target.scrollIntoView({ behavior: a.hasAttribute("data-section-jump") ? "instant" : reducedMotion ? "auto" : "smooth" });
       if (a.hasAttribute("data-section-jump")) {
         target.setAttribute("tabindex", "-1");

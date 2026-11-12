@@ -6,11 +6,13 @@
   <title>404｜胡睿杰</title>
   <meta name="description" content="页面不存在或尚未建出，返回胡睿杰的个人主页。" />
   <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
 </head>
-<body data-page="error">
+<body data-page="error" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -20,29 +22,30 @@
         <span class="brand-text">胡睿杰</span>
       </a>
       <nav class="top-nav" aria-label="主导航">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="experience.html">Cases</a>
-        <a href="works.html">Works</a>
-        <a href="cv.html">CV</a>
-        <a href="life.html">Life</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="experience.html" data-nav="experience">Cases</a>
+        <a href="works.html" data-nav="works">Works</a>
+        <a href="cv.html" data-nav="cv">CV</a>
+        <a href="life.html" data-nav="life">Life</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
     </div>
   </header>
 
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="index.html" data-nav="home">首页</a>
+    <a href="about.html" data-nav="about">关于</a>
+    <a href="experience.html" data-nav="experience">经历</a>
+    <a href="works.html" data-nav="works">作品</a>
+    <a href="cv.html" data-nav="cv">履历</a>
+    <a href="life.html" data-nav="life">生活</a>
+    <a href="contact.html" data-nav="contact">联系</a>
+  </nav>
+
   <main id="main">
-    <section class="container page-hero">
-      <p class="eyebrow">Error 404 · Not Found</p>
-      <h1 class="page-title">这一页走丢了，先回主页吧。</h1>
-      <p class="lead">你要找的页面不存在，或者还没有被建出来。</p>
-      <p class="page-hero-note">可能是链接打错了，也可能是我还没来得及写这一页——下面任一按钮都能带你回到正题。</p>
-      <div class="actions">
-        <a class="btn primary" href="index.html">返回主页</a>
-        <a class="btn" href="works.html">看看作品</a>
-        <a class="btn" href="contact.html">联系我</a>
-      </div>
-    </section>
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>404 / PAGE NOT FOUND</span></div>
+    <section class="container error-sheet" aria-labelledby="error-title"><div class="error-mark" aria-hidden="true">404</div><div><p class="eyebrow">No entry / 页面未找到</p><h1 class="page-title" id="error-title">这一页走丢了。<br>换个方向看看。</h1><p class="lead">这个链接没有对应的页面。可以回到主页，或直接打开作品与联系入口。</p><div class="actions"><a class="btn primary" href="index.html">回到主页 ↗</a><a class="btn" href="works.html">看看作品 ↗</a><a class="btn" href="contact.html">联系我 ↗</a></div></div></section>
   </main>
 
   <footer class="footer">

@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About｜胡睿杰</title>
   <meta name="description" content="胡睿杰：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，独立开发四个实用工具。" />
-  <meta name="theme-color" content="#f3f6f8" />
+  <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css?v=40" />
+
+  <link rel="stylesheet" href="css/style.css?v=41" />
+  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/folio-profile.css?v=41" />
 </head>
-<body data-page="about">
+<body data-page="about" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -41,83 +44,56 @@
   </nav>
 
   <main id="main">
-    <section class="container page-hero">
-      <p class="eyebrow">About Me</p>
-      <h1 class="page-title">把数据从「收集整理」做到「驱动决策」。</h1>
-      <p class="lead">我是胡睿杰，常州大学计算机科学与技术专业毕业，现于香港城市大学攻读商业人工智能硕士。五段实习覆盖战略行研、人力资源数据、私募量化、嵌入式与软件开发；目前在深圳和宏战略与投资部实习。</p>
-      <div class="comic-strip">
-        <span class="tag">数据分析</span><span class="tag">战略行研</span><span class="tag">商业 AI</span><span class="tag">量化验证</span><span class="tag">全流程落地</span>
+    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>01 / ABOUT</span></div>
+    <section class="container page-hero bio-intro" aria-labelledby="bio-title">
+      <div class="bio-intro-copy">
+        <p class="eyebrow">About / 关于我</p>
+        <h1 class="page-title" id="bio-title">从代码出发，<br>走近业务。</h1>
+        <p class="lead">我是胡睿杰，计算机科学与技术本科毕业，现于香港城市大学攻读商业人工智能硕士。实习走过人力资源数据、私募量化、嵌入式与软件开发，现在也在接触消费电子与战略研究。</p>
+        <p class="bio-current"><span aria-hidden="true"></span>上海出发 · 现于深圳和宏战略与投资部实习</p>
+        <div class="bio-intro-links"><a class="btn primary" href="works.html">看看我做的工具 ↗</a><a class="bio-text-link" href="cv.html">完整履历 ↗</a></div>
       </div>
+      <figure class="bio-portrait">
+        <img src="assets/profile-hero.jpg" width="720" height="960" alt="胡睿杰个人照片" fetchpriority="high" decoding="async" />
+        <figcaption><span>RUIJIE HU / 2026</span><strong aria-hidden="true">Ruijie</strong></figcaption>
+      </figure>
     </section>
 
-    <section class="section tight">
-      <div class="container grid three">
-        <article class="card reveal"><span class="comic-label">数据驱动</span><p>用 Python / SQL 把原始数据变成结构化数据集，先定义指标再下结论，让结果可复现。</p></article>
-        <article class="card reveal"><span class="comic-label">快速上手</span><p>钰泰实习从多因子建模做到期权策略回测与结项汇报；独立开发四个工具，覆盖数据、天气、校园邮件和日常提醒。</p></article>
-        <article class="card reveal"><span class="comic-label">沟通协作</span><p>网球协会社长组织 100+ 人次活动，英文可作为工作语言（雅思 7.0），对接内外部资源。</p></article>
-      </div>
+    <section class="container bio-evidence" aria-label="个人经历与学习记录">
+      <div><strong><span data-count="5">5</span><small>段</small></strong><p>实习经历<span>含战略与投资部在岗实习</span></p></div>
+      <div><strong><span data-count="4">4</span><small>个</small></strong><p>独立产品<span>两个在线应用与两个桌面工具</span></p></div>
+      <div><strong><span data-count="4.1" data-decimals="1">4.1</span><small>/ 5</small></strong><p>本科 GPA<span>常州大学 · 华罗庚学院</span></p></div>
+      <div><strong><span data-count="7" data-decimals="1">7.0</span></strong><p>雅思成绩<span>英语可作为工作语言</span></p></div>
     </section>
 
-    <section class="section">
-      <div class="container grid two">
-        <aside class="comic-board reveal" aria-label="数据快照">
-          <span class="comic-label">数据快照</span>
-          <div class="paper-stack">
-            <p><strong><span data-count="5">5</span> 段</strong><span>实习经历 · 含战略与投资部在岗实习</span></p>
-            <p><strong><span data-count="4.1" data-decimals="1">4.1</span> / 5</strong><span>本科 GPA</span></p>
-            <p><strong><span data-count="7" data-decimals="1">7.0</span></strong><span>雅思 · 英语工作语言</span></p>
-            <p><strong><span data-count="4">4</span> 个</strong><span>自研项目 · 两个在线应用与两个桌面工具</span></p>
-          </div>
-          <p class="speech-bubble">有数字，也有真实做过的流程。</p>
-        </aside>
-        <div class="note-panel reveal">
-          <span class="comic-label">我希望被记住的点</span>
-          <ul class="bullet-list">
-            <li><strong>复合背景：</strong>计算机科班 + 商业人工智能硕士，能写代码，也看得懂业务指标。</li>
-            <li><strong>多场景积累：</strong>做过人力资源数据治理、私募量化研究与软件开发，目前将分析方法延伸到消费电子产业链和战略研究。</li>
-            <li><strong>工程落地：</strong>毕业设计把条件生成对抗网络做成在线可体验的去雾服务；这个主页本身也是原生 JS 手工搭建的练习，托管在腾讯云 CloudBase。</li>
-            <li><strong>组织与表达：</strong>网球协会社长、新闻部部长，公众号推文累计阅读 10k+。</li>
-          </ul>
-          <div class="comic-strip">
-            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">DataGrip</span><span class="tag">Kettle</span><span class="tag">Android</span><span class="tag">PR / 剪映</span><span class="tag">Lightroom / PS</span>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="experience.html">看经历</a>
-            <a class="btn" href="life.html">看生活</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section tight">
+    <section class="section" id="approach" aria-labelledby="approach-title">
       <div class="container">
-        <div class="section-head reveal">
-          <h2>我的工具箱<span>· 按场景分组</span></h2>
-        </div>
-        <div class="grid three">
-          <article class="card reveal">
-            <span class="comic-label">数据</span>
-            <p>Python 数据分析 / SQL（DataGrip）/ Power BI 可视化 / Kettle 数据整理入库 / Excel 高级应用，覆盖清洗、分析到可视化的全流程。</p>
-            <div class="comic-strip" style="margin-top:14px">
-              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Kettle</span><span class="tag">Excel</span>
-            </div>
-          </article>
-          <article class="card reveal">
-            <span class="comic-label">开发</span>
-            <p>独立开发四个实用工具：NoticeMe 待办与提醒（Electron + React / TypeScript）、数据分析工作台（FastAPI + DuckDB + Vue3 / ECharts，另有运营看板扩展模块）、香港网球天气 PWA，以及港校邮箱管家 MailHelper（Windows WPF / macOS Avalonia，共享 .NET 核心）。用 Function Calling / MCP 接入 LLM 能力，也用 PyTorch 完成过去雾模型训练和服务化部署。</p>
-            <div class="comic-strip" style="margin-top:14px">
-              <span class="tag">Electron · TypeScript</span><span class="tag">Vue3 · ECharts</span><span class="tag">React · Tailwind</span><span class="tag">WPF · Avalonia</span><span class="tag">FastAPI · DuckDB</span><span class="tag">Function Calling / MCP</span><span class="tag">PyTorch</span>
-            </div>
-          </article>
-          <article class="card reveal">
-            <span class="comic-label">媒体</span>
-            <p>PR / 剪映视频剪辑，Lightroom / PS 图片美化，135 编辑器公众号排版美编（可对格式代码做轻度修改）——新闻部部长的日常手艺。</p>
-            <div class="comic-strip" style="margin-top:14px">
-              <span class="tag">PR / 剪映</span><span class="tag">Lightroom</span><span class="tag">Photoshop</span><span class="tag">135 编辑器</span>
-            </div>
-          </article>
+        <div class="section-head"><h2 id="approach-title">我怎样做一件事</h2><p>数据 → 工具 → 业务</p></div>
+        <div class="bio-methods">
+          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">01</span><div><span class="bio-overline">UNDERSTAND / 理解</span><h3>先把数据讲清楚。</h3></div><div><p>用 Python / SQL 整理原始数据，先定义指标，再看结果。外企德科实习中的 900 条运营明细转化分析，以及 Data Helper 的数据体检，都从这一步开始。</p><a class="bio-text-link" href="experience.html">看业务数据分析经历 ↗</a></div></article>
+          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">02</span><div><span class="bio-overline">BUILD / 动手</span><h3>把重复动作做成工具。</h3></div><div><p>从批量归档简历的 bat + Excel 工具链，到处理表格、天气、校园邮件和日常提醒的四个独立产品；毕业设计也从模型训练继续做到在线去雾服务。</p><a class="bio-text-link" href="works.html">打开产品实验室 ↗</a></div></article>
+          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">03</span><div><span class="bio-overline">EXPLAIN / 解释</span><h3>让结论有来路。</h3></div><div><p>在钰泰实习中，从 651 只股票的多因子打分做到期权策略回测与结项汇报。目前在和宏的岗位职责方向，则延伸到消费电子产业链、竞品与市场数据整理。</p><a class="bio-text-link" href="experience.html">看研究与实习记录 ↗</a></div></article>
         </div>
       </div>
     </section>
+
+    <section class="section tight" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="container">
+        <div class="section-head"><h2 id="toolbox-title">工具随问题来</h2><p>按使用场景，而非熟练度打分</p></div>
+        <dl class="bio-toolbox">
+          <div class="bio-tool-row reveal"><dt><span>01 / DATA</span>整理、分析与呈现</dt><dd><p>Python 数据分析、SQL（DataGrip）、Power BI 可视化、Kettle 数据整理入库、Excel 高级应用，覆盖清洗、分析到可视化。</p><ul class="bio-tool-list" aria-label="数据工具"><li>Python</li><li>SQL / DataGrip</li><li>Power BI</li><li>Kettle</li><li>Excel</li></ul></dd></div>
+          <div class="bio-tool-row reveal"><dt><span>02 / BUILD</span>产品与工程</dt><dd><p>NoticeMe 用 Electron / React / TypeScript 做桌面提醒；Data Helper 结合 FastAPI、DuckDB、Vue3 / ECharts，另有运营看板扩展。天气助手采用 React / Tailwind，MailHelper 用 WPF / Avalonia 共享 .NET 核心。</p><p>也用 Function Calling / MCP 接入 LLM 能力、PyTorch 训练去雾模型；有 Android 开发与软件测试经历。这个主页使用原生 JavaScript 搭建，托管于 CloudBase。</p><ul class="bio-tool-list" aria-label="开发方向"><li>Web / Desktop</li><li>Function Calling / MCP</li><li>PyTorch</li><li>Android</li></ul></dd></div>
+          <div class="bio-tool-row reveal"><dt><span>03 / CREATE</span>影像与表达</dt><dd><p>用 PR / 剪映剪片子，Lightroom / Photoshop 修图；用 135 编辑器做公众号排版与美编，也能轻度调整格式代码。这些来自新闻部工作和日常创作。</p><ul class="bio-tool-list" aria-label="媒体工具"><li>PR / 剪映</li><li>Lightroom / Photoshop</li><li>135 编辑器</li></ul></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="bio-outside-title">
+      <div class="container bio-outside">
+        <div><span class="bio-overline">BEYOND THE SCREEN</span><h2 id="bio-outside-title">也在球场和取景框里，<br>练习另一种观察。</h2><p>做过校网球协会社长，组织 100+ 人次活动；也担任新闻部部长，参与公众号内容与美编，累计推文阅读 10k+。协调人与事、把信息说清楚，都是这些经历留下的练习。</p><a class="bio-text-link" href="life.html">翻开生活档案 ↗</a></div><div class="bio-outside-note"><span>SPORT / CREATE / OBSERVE</span><p>网球 · 摄影 · 剪辑</p><strong aria-hidden="true">Ruijie</strong></div>
+      </div>
+    </section>
+    <nav class="container folio-pagination" aria-label="继续浏览"><a href="index.html"><span><small>上一页</small><strong>回到主页</strong></span><b aria-hidden="true">←</b></a><a href="experience.html"><span><small>继续看看</small><strong>实习与案例</strong></span><b aria-hidden="true">↗</b></a></nav>
   </main>
 
   <footer class="footer">
@@ -128,6 +104,7 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=40"></script>
+  <script type="module" src="js/app.js?v=41"></script>
+  <script type="module" src="js/folio.js?v=41"></script>
 </body>
 </html>
