@@ -124,6 +124,15 @@
   .folio-page[data-page="cv"] .contact-stack { text-align:left; grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:900px) {
+  /* 固定宽度与下一张的局部露出提示横滑，目录不再占据多行首屏。 */
+  .work-index { grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:154px; grid-template-rows:1fr; max-width:100%; margin-top:22px; padding-bottom:7px; overflow-x:auto; overflow-y:hidden; overscroll-behavior-inline:contain; scroll-snap-type:x proximity; scroll-padding-inline:8px; scrollbar-width:thin; scrollbar-color:#a8b4a5 transparent; }
+  .work-index::-webkit-scrollbar { height:4px; }
+  .work-index::-webkit-scrollbar-thumb { border-radius:2px; background:#a8b4a5; }
+  .work-index a { gap:6px; min-height:88px; padding:10px 12px; scroll-snap-align:start; }
+  .work-index a:first-child { padding-left:12px; }
+  .work-index a:focus-visible { outline-offset:-3px; }
+  .work-index strong { font-size:15px; white-space:nowrap; overflow-wrap:normal; }
+  .work-index small { font-size:11px; white-space:nowrap; }
   .folio-page[data-page="works"] .flagship-work { grid-template-columns:1fr; gap:24px; padding-block:30px 38px; }
   .folio-page[data-page="works"] .flagship-copy h3 { font-size:27px; }
   .folio-page[data-page="works"] .records-publications .wx-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -138,13 +147,19 @@
   .folio-page[data-page="cv"] .contact-stack { grid-template-columns:1fr; }
 }
 @media (max-width:600px) {
-  .work-index { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:26px; }
-  .work-index a { padding:15px 12px; min-height:121px; border-bottom:1px solid #d9d9d1; }
-  .work-index a:first-child { padding-left:12px; }
-  .work-index a:nth-child(even) { border-right:0; }
-  .work-index a:last-child { grid-column:1/-1; min-height:100px; border-bottom:0; }
-  .work-index strong { font-size:18px; }
-  .work-index small { font-size:11px; }
+  .folio-page[data-page="works"] .folio-context { padding-top:16px; }
+  .folio-page[data-page="works"] .page-hero { padding-top:18px; padding-bottom:20px; }
+  .folio-page[data-page="works"] .page-hero .eyebrow { margin-bottom:12px; }
+  .folio-page[data-page="works"] .page-title { margin-bottom:12px; }
+  .folio-page[data-page="works"] .page-hero .lead { margin-bottom:10px; }
+  .work-index { margin-top:18px; }
+  .work-index a:last-child { grid-column:auto; min-height:88px; border-bottom:0; }
+  .folio-page[data-page="works"] .work-material-nav { flex-wrap:nowrap; gap:4px; margin-top:12px; }
+  .folio-page[data-page="works"] .work-material-nav a { flex:1; min-width:0; justify-content:center; padding:8px 7px; font-size:12.5px; text-align:center; text-wrap:balance; }
+  .folio-page[data-page="works"] .section.tight { padding-top:8px; }
+  .folio-page[data-page="works"] .section-head { padding-top:12px; margin-bottom:14px; }
+  .folio-page[data-page="works"] .section-head h2 { font-size:23px; }
+  .folio-page[data-page="works"] .flagship-work { padding-top:20px; }
   .work-notes > summary,.case-notes > summary { gap:10px; flex-wrap:wrap; }
   .work-notes > summary span,.case-notes > summary span { font-size:10px; }
   .folio-page[data-page="works"] .records-materials .resource-grid { grid-template-columns:1fr; }

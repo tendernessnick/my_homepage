@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#f4f2ed" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-  <link rel="stylesheet" href="css/style.css?v=41" />
-  <link rel="stylesheet" href="css/folio.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
+  <link rel="stylesheet" href="css/folio.css?v=42" />
 </head>
 <body data-page="works" class="folio-page" data-article="dehaze">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -54,13 +54,13 @@
       </div>
       <figure class="case-compare" data-focus-lab>
         <div class="compare-head"><span>01 / PREGENERATED SAMPLE</span><span>SE-CGAN</span></div>
-        <div class="compare-image">
-          <img src="assets/sample_hazy.jpg" width="1024" height="1024" alt="有雾的林间道路与色卡，作为去雾模型输入" fetchpriority="high" decoding="async" />
-          <img class="compare-result" src="assets/sample_dehazed.png" width="1024" height="1024" alt="同一张林间道路图像经 SE-CGAN 处理后的结果" fetchpriority="high" decoding="async" />
+        <div class="compare-image" data-focus-surface>
+          <picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="有雾的林间道路与色卡，作为去雾模型输入" fetchpriority="high" decoding="async" width="1024" height="1024" /></picture>
+          <picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img class="compare-result" src="assets/sample_dehazed.png" alt="同一张林间道路图像经 SE-CGAN 处理后的结果" fetchpriority="high" decoding="async" width="512" height="512" /></picture>
           <div class="compare-divider" aria-hidden="true"></div><div class="compare-labels" aria-hidden="true"><span>去雾结果</span><span>原始雾图</span></div>
         </div>
-        <div class="compare-control"><label for="dehaze-compare">调整处理前后的对比分界</label><output for="dehaze-compare" data-focus-value>50%</output><input id="dehaze-compare" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
-        <figcaption>既有模型的预生成真实结果；拖动仅切换展示，不触发在线推理。</figcaption>
+        <div class="compare-control"><label for="dehaze-compare">拖动画面或滑杆，比较处理前后</label><output for="dehaze-compare" data-focus-value>50%</output><input id="dehaze-compare" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
+        <figcaption>预生成真实结果；网页使用压缩预览。<a href="assets/sample_hazy.jpg" target="_blank" rel="noopener">原始雾图 ↗</a> · <a href="assets/sample_dehazed.png" target="_blank" rel="noopener">原始结果 ↗</a>。</figcaption>
       </figure>
     </section>
 
@@ -90,8 +90,8 @@
 
   <footer class="footer"><div class="container"><span>© <span data-year>2026</span> 胡睿杰｜图像去雾</span></div></footer>
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=41"></script>
-  <script type="module" src="js/studio.js?v=41"></script>
-  <script type="module" src="js/folio.js?v=41"></script>
+  <script type="module" src="js/app.js?v=42"></script>
+  <script type="module" src="js/studio.js?v=42"></script>
+  <script type="module" src="js/folio.js?v=42"></script>
 </body>
 </html>

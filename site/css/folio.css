@@ -158,17 +158,20 @@
   .case-method { gap: 25px; }
 }
 @media (max-width: 900px) {
+  .folio-page { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
   .folio-page .nav-wrap { min-height: 64px; }
+  .folio-page .brand { min-height: 44px; }
   .folio-page .back-top { bottom: 84px; right: 16px; }
-  .folio-page .mobile-nav { border-radius: 12px; border-color: var(--folio-rule); box-shadow: 0 4px 20px #18232515; }
-  .folio-page .mobile-nav a { border-radius: 7px; }
+  .folio-page .mobile-nav { bottom: calc(10px + env(safe-area-inset-bottom, 0px)); border-radius: 12px; border-color: var(--folio-rule); box-shadow: 0 4px 20px #18232515; }
+  .folio-page .mobile-nav a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 2px; border-radius: 7px; font-size: 12px; }
 }
 @media (max-width: 760px) {
   .folio-page .container, .folio-page .nav-wrap { width: calc(100% - 40px); }
   .folio-context { padding-top: 20px; font-size: 9px; }
   .folio-page .page-hero, .folio-page .case-hero { padding-top: 27px; padding-bottom: 27px; }
   .folio-page .page-title { font-size: 34px; }
-  .folio-page .lead { font-size: 14px; line-height: 1.9; }
+  .folio-page .lead { font-size: 15px; line-height: 1.9; }
+  .folio-page .btn, .folio-page .small-btn, .folio-page .section-nav a { font-size: 13px; }
   .folio-page .section { padding-block: 30px; }
   .folio-page .section.tight { padding-top: 15px; }
   .folio-page .section-head { margin-bottom: 20px; }

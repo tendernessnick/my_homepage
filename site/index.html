@@ -14,8 +14,9 @@
   <meta property="og:description" content="看清问题，把想法做成工具。数据与商业 AI、四个独立产品，还有摄影与网球。" />
   <meta property="og:url" content="./index.html" />
   <meta property="og:image" content="assets/profile-hero.jpg" />
-  <link rel="stylesheet" href="css/style.css?v=41" />
-  <link rel="stylesheet" href="css/studio.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
+  <link rel="stylesheet" href="css/studio.css?v=42" />
+  <link rel="stylesheet" href="css/life-preview.css?v=42" />
 </head>
 <body data-page="home" class="studio-home">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -75,13 +76,13 @@
         </div>
         <div class="focus-lab" data-focus-lab aria-label="SE-CGAN 去雾结果交互对比">
           <div class="focus-top"><span>EXPERIMENT 01 / DEHAZE</span><span>SE-CGAN</span></div>
-          <div class="focus-image">
-            <img src="assets/sample_hazy.jpg" width="512" height="512" alt="真实雾图样例中的林间道路与色卡" fetchpriority="high" decoding="async" />
-            <img class="focus-clear" src="assets/sample_dehazed.png" width="512" height="512" alt="同一图像经 SE-CGAN 处理后的去雾结果" fetchpriority="high" decoding="async" />
+          <div class="focus-image" data-focus-surface>
+            <picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 520px) calc(100vw - 66px), (max-width: 760px) 454px, (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="真实雾图样例中的林间道路与色卡" fetchpriority="high" decoding="async" width="1024" height="1024" /></picture>
+            <picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 520px) calc(100vw - 66px), (max-width: 760px) 454px, (max-width: 1080px) 42vw, 480px" /><img class="focus-clear" src="assets/sample_dehazed.png" alt="同一图像经 SE-CGAN 处理后的去雾结果" fetchpriority="high" decoding="async" width="512" height="512" /></picture>
             <div class="focus-corner" aria-hidden="true"></div><div class="focus-divider" aria-hidden="true"></div>
             <span class="focus-image-label focus-image-label--left">去雾结果</span><span class="focus-image-label focus-image-label--right">原始雾图</span>
           </div>
-          <div class="focus-control"><label for="focus-range">拖动滑杆，让画面清晰一点</label><output for="focus-range" data-focus-value>50%</output><input id="focus-range" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
+          <div class="focus-control"><label for="focus-range">拖动画面或滑杆，比较处理前后</label><output for="focus-range" data-focus-value>50%</output><input id="focus-range" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
           <div class="focus-note"><span>预生成真实结果 · 无需等待推理</span><a href="dehaze.html">看看这个项目 ↗</a></div>
         </div>
       </header>
@@ -144,205 +145,19 @@
     </section>
 
 
-    <!-- ==================================================
-         生活区
-         ================================================== -->
-    <section class="profile-shell" data-mode-view="life" aria-hidden="true" inert hidden>
-      <header class="profile-hero-life">
-        <div class="profile-hero-copy">
-          <p class="profile-kicker">下班后 / Life</p>
-          <h1>生活里的我</h1>
-          <div class="friend-card" aria-label="交友名片">
-            <div class="friend-zodiac" aria-hidden="true"><span>🎾</span></div>
-            <div>
-              <span class="friend-label">交友名片</span>
-              <strong>网球协会社长 · 剪辑 &amp; 摄影</strong>
-              <p>白天和数据打交道，晚上在球场、剪辑台和取景框里换脑子。</p>
-            </div>
-          </div>
-          <div class="profile-actions">
-            <a class="is-primary" href="contact.html">聊聊</a>
-            <a href="works.html">看作品</a>
-            <a href="cv.html">看履历</a>
-          </div>
-          <div class="signal-board" data-signal-board>
-            <div class="signal-tabs" role="group" aria-label="生活兴趣">
-              <button type="button" class="is-active" data-signal-tab data-signal-text="网球打了四年，从院队训练打到校级比赛执裁，球场是留给自己的换脑时间。">网球</button>
-              <button type="button" data-signal-tab data-signal-text="PR / 剪映剪片子，Lightroom 和 PS 修图；公众号推文的排版美编也一直在做。">剪辑 &amp; 摄影</button>
-              <button type="button" data-signal-tab data-signal-text="坐标上海，喜欢带着相机压马路，外滩、街角和落日都拍。">街头</button>
-            </div>
-            <p data-signal-copy aria-live="polite">网球打了四年，从院队训练打到校级比赛执裁，球场是留给自己的换脑时间。</p>
-          </div>
-          <div class="hero-proof-grid" aria-label="生活关键词">
-            <article><strong>Sport</strong><span>网球</span></article>
-            <article><strong>Create</strong><span>PR 剪辑 / LR 修图</span></article>
-            <article><strong>City</strong><span>坐标上海</span></article>
-            <article><strong>Media</strong><span>公众号美编</span></article>
-          </div>
+    <!-- 首页仅保留生活精选，完整相册与书影音统一在 life.html。 -->
+    <section class="profile-shell studio-shell life-preview" data-mode-view="life" aria-hidden="true" id="life-preview" inert hidden>
+      <header class="life-preview-hero">
+        <div class="life-preview-copy"><p class="studio-eyebrow"><span class="studio-dot"></span> FIELD NOTES / AFTER HOURS</p><p class="studio-name">胡睿杰 <span>Ruijie Hu</span></p><h1>换一种视角，<br><em>继续观察。</em></h1><p class="life-preview-lead">球场、街头、剪辑台。数据之外，我也用镜头和运动记录日常；有时，一个身边的小问题，又会变成下一个工具的起点。</p><p class="life-preview-location">上海出发 · 现于深圳实习</p><div class="studio-actions"><a class="studio-button studio-button--primary" href="life.html">翻开完整生活档案 <span aria-hidden="true">↗</span></a><button class="studio-button" type="button" data-open-mode="work">回到工作页 <span aria-hidden="true">↖</span></button></div></div>
+        <div class="life-preview-photos" aria-label="生活摄影精选">
+          <figure class="life-preview-main"><a href="life.html#gallery" aria-label="进入相册，查看街头等十二张生活照片"><img src="assets/life/life-07.jpg" width="600" height="800" alt="街头的气球摊" loading="lazy" decoding="async" /></a><figcaption><span>01 / 街头</span><span aria-hidden="true">↗</span></figcaption></figure>
+          <figure><a href="life.html#gallery" aria-label="进入完整相册查看日落照片"><img src="assets/life/life-06.jpg" width="600" height="800" alt="日落下的剪影" loading="lazy" decoding="async" /></a><figcaption><span>02 / 日落</span><span aria-hidden="true">↗</span></figcaption></figure>
+          <figure><a href="life.html#gallery" aria-label="进入完整相册查看秋叶照片"><img src="assets/life/life-02.jpg" width="600" height="800" alt="秋日金黄的树叶" loading="lazy" decoding="async" /></a><figcaption><span>03 / 秋叶</span><span aria-hidden="true">↗</span></figcaption></figure>
         </div>
-        <figure class="life-portrait">
-          <img src="assets/life/life-p1.jpg" data-random-life-photo data-photo-pool="assets/life/life-p1.jpg,assets/life/life-p2.jpg,assets/life/life-p3.jpg,assets/life/life-p4.jpg" width="675" height="900" alt="随机生活照片" loading="lazy" decoding="async" />
-        </figure>
       </header>
-
-      <div class="ticker ticker--life" aria-hidden="true">
-        <div class="ticker-track">
-          <span>网球</span><i>✦</i><span>剪辑</span><i>✦</i><span>摄影</span><i>✦</i><span>街头</span><i>✦</i><span>落日</span><i>✦</i><span>雪场</span><i>✦</i><span>上海</span><i>✦</i><span>公众号美编</span><i>✦</i><span>三体</span><i>✦</i><span>F1</span><i>✦</i>
-          <span>网球</span><i>✦</i><span>剪辑</span><i>✦</i><span>摄影</span><i>✦</i><span>街头</span><i>✦</i><span>落日</span><i>✦</i><span>雪场</span><i>✦</i><span>上海</span><i>✦</i><span>公众号美编</span><i>✦</i><span>三体</span><i>✦</i><span>F1</span><i>✦</i>
-        </div>
-      </div>
-
-      <section class="profile-section profile-life-gallery reveal">
-        <h2>生活照片墙</h2>
-        <p class="wall-hint life-hint">按住照片左右拖动浏览，也可以聚焦后使用键盘方向键。</p>
-        <div class="drag-wall photo-wall" data-drag-wall tabindex="0" aria-label="生活照片墙，可左右拖动">
-          <figure><img src="assets/life/life-01.jpg" alt="躺在木地板上休息" draggable="false" loading="lazy" /><figcaption>日常</figcaption></figure>
-          <figure><img src="assets/life/life-02.jpg" alt="秋日金黄的树叶" draggable="false" loading="lazy" /><figcaption>秋叶</figcaption></figure>
-          <figure><img src="assets/life/life-03.jpg" alt="银杏树下的古建长廊" draggable="false" loading="lazy" /><figcaption>银杏</figcaption></figure>
-          <figure><img src="assets/life/life-04.jpg" alt="俯瞰海岸线" draggable="false" loading="lazy" /><figcaption>海岸</figcaption></figure>
-          <figure><img src="assets/life/life-05.jpg" alt="黑白色调的海边" draggable="false" loading="lazy" /><figcaption>海边</figcaption></figure>
-          <figure><img src="assets/life/life-06.jpg" alt="日落下的剪影" draggable="false" loading="lazy" /><figcaption>日落</figcaption></figure>
-          <figure><img src="assets/life/life-07.jpg" alt="街头的气球摊" draggable="false" loading="lazy" /><figcaption>街头</figcaption></figure>
-          <figure><img src="assets/life/life-08.jpg" alt="路边遇见的猫" draggable="false" loading="lazy" /><figcaption>猫</figcaption></figure>
-          <figure><img src="assets/life/life-09.jpg" alt="街边画像师" draggable="false" loading="lazy" /><figcaption>画摊</figcaption></figure>
-          <figure><img src="assets/life/life-10.jpg" alt="行驶中的列车窗外" draggable="false" loading="lazy" /><figcaption>列车</figcaption></figure>
-          <figure><img src="assets/life/life-11.jpg" alt="夜晚街头拍摄" draggable="false" loading="lazy" /><figcaption>夜拍</figcaption></figure>
-          <figure><img src="assets/life/life-12.jpg" alt="雪场滑雪" draggable="false" loading="lazy" /><figcaption>滑雪</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="profile-section reveal">
-        <h2>爱好</h2>
-        <div class="profile-grid two">
-          <article class="profile-card">
-            <strong>在动</strong>
-            <p>网球协会社长，组织训练与校级比赛执裁，从 0-1 参与策划校级比赛。</p>
-            <div class="profile-tags"><span>网球 · 社长</span><span>周训 10+ 次</span><span>校级比赛执裁</span></div>
-          </article>
-          <article class="profile-card">
-            <strong>在创作</strong>
-            <p>视频剪辑（PR / 剪映）、摄影修图（Lightroom / PS）、公众号推文美编。</p>
-            <div class="profile-tags"><span>视频剪辑</span><span>摄影修图</span><span>美编</span><span>英语 · 雅思 7.0</span></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="profile-section reveal">
-        <h2>镜头里的</h2>
-        <p style="margin:0 0 14px;color:#4f5d6f;font-size:14.5px">取景框常去的几类地方：街头、秋天、海边、夜色和雪场。</p>
-        <div class="cover-grid">
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-07.jpg" alt="街头气球摊" loading="lazy" /></span>
-            <span class="cover-label">街头</span><strong>人间烟火</strong><em>气球摊</em>
-          </figure>
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-02.jpg" alt="秋日金黄树叶" loading="lazy" /></span>
-            <span class="cover-label">自然</span><strong>秋叶</strong><em>季节感</em>
-          </figure>
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-04.jpg" alt="俯瞰海岸线" loading="lazy" /></span>
-            <span class="cover-label">远方</span><strong>海岸</strong><em>远眺</em>
-          </figure>
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-11.jpg" alt="夜晚街头" loading="lazy" /></span>
-            <span class="cover-label">城市</span><strong>夜色</strong><em>夜拍</em>
-          </figure>
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-10.jpg" alt="列车窗外" loading="lazy" /></span>
-            <span class="cover-label">旅途</span><strong>列车</strong><em>在路上</em>
-          </figure>
-          <figure class="cover-card">
-            <span class="cover-art"><img src="assets/life/life-12.jpg" alt="雪场滑雪" loading="lazy" /></span>
-            <span class="cover-label">冬天</span><strong>雪场</strong><em>滑雪</em>
-          </figure>
-        </div>
-      </section>
-
-      <section class="profile-section reveal">
-        <h2>片单和书架</h2>
-        <p style="margin:0 0 14px;color:#4f5d6f;font-size:14.5px">片单和书架里常出现的几个名字，剪辑找灵感时也会翻。</p>
-        <div class="media-grid">
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/wandering-earth.jpg" alt="《流浪地球》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">电影 / 科幻</span><strong>《流浪地球》</strong><em>带着家流浪</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/f1.jpg" alt="《F1：狂飙飞车》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">电影 / 运动</span><strong>《F1：狂飙飞车》</strong><em>极速热血</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/oppenheimer.jpg" alt="《奥本海默》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">电影 / 传记</span><strong>《奥本海默》</strong><em>传记史诗</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/dragon-restaurant.jpg" alt="《欢迎来龙餐馆》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">电影 / 战争</span><strong>《欢迎来龙餐馆》</strong><em>战火与烟火</em>
-          </article>
-        </div>
-        <div class="media-sub"><span class="comic-label">番剧口味</span></div>
-        <div class="media-grid media-grid--books">
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/attack-on-titan.jpg" alt="《进击的巨人》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">热血 / 神作</span><strong>《进击的巨人》</strong><em>自由与墙</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/frieren.jpg" alt="《葬送的芙莉莲》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">治愈 / 奇幻</span><strong>《葬送的芙莉莲》</strong><em>旅途与时间</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/scissor-seven.jpg" alt="《刺客伍六七》海报" loading="lazy" decoding="async" /></span>
-            <span class="media-type">搞笑 / 热血</span><strong>《刺客伍六七》</strong><em>无厘头温柔</em>
-          </article>
-        </div>
-        <div class="media-sub"><span class="comic-label">阅读清单</span></div>
-        <div class="media-grid media-grid--books">
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/three-body.jpg" alt="《三体》封面" loading="lazy" decoding="async" /></span>
-            <span class="media-type">刘慈欣</span><strong>《三体》</strong><em>宏大叙事</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/baiyexing.jpg" alt="《白夜行》封面" loading="lazy" decoding="async" /></span>
-            <span class="media-type">东野圭吾</span><strong>《白夜行》</strong><em>罪与守望</em>
-          </article>
-          <article class="media-card">
-            <span class="media-poster"><img src="assets/media/linhai-xueyuan.jpg" alt="《林海雪原》封面" loading="lazy" decoding="async" /></span>
-            <span class="media-type">曲波</span><strong>《林海雪原》</strong><em>剿匪传奇</em>
-          </article>
-        </div>
-      </section>
-
-      <section class="profile-section reveal">
-        <h2>正在听</h2>
-        <p style="margin:0 0 14px;color:#4f5d6f;font-size:14.5px">歌单里会反复点开的几首。</p>
-        <div class="song-grid">
-          <article class="song-card">
-            <img class="song-cover" src="assets/media/wedonttalkanymore.jpg" alt="We Don't Talk Anymore 单曲封面" width="300" height="300" loading="lazy" decoding="async" />
-            <div><strong>We Don't Talk Anymore · Charlie Puth</strong><span>旋律一响就上头的一首。</span></div>
-          </article>
-          <article class="song-card">
-            <img class="song-cover" src="assets/media/baby.jpg" alt="Baby 单曲封面" width="300" height="300" loading="lazy" decoding="async" />
-            <div><strong>Baby · Justin Bieber</strong><span>前奏一响就回到学生时代。</span></div>
-          </article>
-          <article class="song-card">
-            <img class="song-cover" src="assets/media/aicuo.jpg" alt="王力宏《改变自己》专辑封面" width="300" height="300" loading="lazy" decoding="async" />
-            <div><strong>爱错 · 王力宏</strong><span>专辑里最耐听的一首。</span></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="profile-section reveal">
-        <h2>去过的地方</h2>
-        <p style="margin:0 0 14px;color:#4f5d6f;font-size:14.5px">镜头跟着通勤、假期和心情走——压马路、追秋天、去海边、上雪场。</p>
-        <div class="career-intent">
-          <span>出发地</span>
-          <p>上海 —— 外滩的落日、古镇的园林、海岸线和冬天的雪场。</p>
-        </div>
-        <div class="profile-tags" style="margin-top:14px">
-          <span>上海 · 外滩</span><span>古镇园林</span><span>海岸线</span><span>雪场</span><span>街头巷尾</span><span>列车窗外</span>
-        </div>
-      </section>
-
-      <footer class="profile-footer">数据之外，生活也要有留白。</footer>
+      <div class="life-preview-bottom"><p>三帧精选，完整十二帧在生活档案里。</p><a href="life.html#gallery">打开相册 ↗</a></div>
+      <div class="life-preview-topics" aria-label="生活档案入口"><a href="life.html#friend"><span>01 / ON COURT</span><h2>去球场换换脑子。</h2><p>网球训练、比赛执裁，以及由此生长的天气助手。</p><b aria-hidden="true">↗</b></a><a href="life.html#media"><span>02 / ON THE SHELF</span><h2>留一点时间给故事。</h2><p>喜欢的电影、番剧、书和歌，集中放在一处。</p><b aria-hidden="true">↗</b></a><a href="life.html#places"><span>03 / IN THE FRAME</span><h2>镜头跟着日常走。</h2><p>街角、海岸、列车窗外，和偶然遇见的片刻。</p><b aria-hidden="true">↗</b></a></div>
+      <section class="studio-contact" aria-labelledby="life-contact-title"><div><h2 id="life-contact-title">从一个共同话题开始。</h2><p>约球、聊摄影和剪辑，或者交流一个产品想法。</p></div><a class="studio-button studio-button--primary" href="contact.html">打个招呼 <span aria-hidden="true">↗</span></a></section>
     </section>
   </main>
 
@@ -354,7 +169,7 @@
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
 
-  <script type="module" src="js/app.js?v=41"></script>
-  <script type="module" src="js/studio.js?v=41"></script>
+  <script type="module" src="js/app.js?v=42"></script>
+  <script type="module" src="js/studio.js?v=42"></script>
 </body>
 </html>

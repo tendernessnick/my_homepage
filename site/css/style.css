@@ -52,6 +52,13 @@
 * { box-sizing: border-box; }
 *::before, *::after { box-sizing: border-box; }
 
+/* 预生成对比图支持横向拖动，同时保留触屏纵向滚动与缩放。 */
+[data-focus-surface] { touch-action: pan-y pinch-zoom; }
+[data-focus-surface] img { user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
+.is-focus-ready [data-focus-surface], [data-focus-surface].is-focus-ready { cursor: ew-resize; }
+.is-focus-ready .focus-divider::after, .is-focus-ready .compare-divider::after { width: 42px; height: 42px; }
+.is-focus-dragging [data-focus-surface], [data-focus-surface].is-focus-dragging { cursor: grabbing; }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
@@ -2191,6 +2198,12 @@ body.intro-open { overflow: hidden; }
   .mobile-nav { gap: 1px; padding: 6px; }
   .mobile-nav a { font-size: 11px; }
   .brand-text small { display: none; }
+}
+
+/* 极窄屏保留七个入口，每个目标仍有至少44px横向空间。 */
+@media (max-width: 350px) {
+  body.studio-home .mobile-nav, body.folio-page .mobile-nav { left: 2px; right: 2px; padding: 2px; gap: 0; }
+  body.studio-home .mobile-nav a, body.folio-page .mobile-nav a { min-width: 44px; }
 }
 
 /* 打印：只保留 CV 正文 */

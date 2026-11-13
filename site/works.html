@@ -9,10 +9,10 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
 
-  <link rel="stylesheet" href="css/style.css?v=41" />
-  <link rel="stylesheet" href="css/project-previews.css?v=41" />
-  <link rel="stylesheet" href="css/folio.css?v=41" />
-  <link rel="stylesheet" href="css/folio-records.css?v=41" />
+  <link rel="stylesheet" href="css/style.css?v=42" />
+  <link rel="stylesheet" href="css/project-previews.css?v=42" />
+  <link rel="stylesheet" href="css/folio.css?v=42" />
+  <link rel="stylesheet" href="css/folio-records.css?v=42" />
 </head>
 <body data-page="works" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -205,8 +205,8 @@
             </details>
           </div>
           <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
-            <figure><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" /><figcaption>原图 · 有雾</figcaption></figure>
-            <figure><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" /><figcaption>去雾后</figcaption></figure>
+            <figure><picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" width="1024" height="1024" /></picture><figcaption>原图 · 有雾</figcaption></figure>
+            <figure><picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" width="512" height="512" /></picture><figcaption>去雾后</figcaption></figure>
           </div>
         </article>
       </div>
@@ -339,7 +339,7 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=41"></script>
-  <script type="module" src="js/folio.js?v=41"></script>
+  <script type="module" src="js/app.js?v=42"></script>
+  <script type="module" src="js/folio.js?v=42"></script>
 </body>
 </html>

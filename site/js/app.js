@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=41";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=42";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -54,6 +54,8 @@ function initModeToggle() {
     show.hidden = false;
     show.removeAttribute("inert");
     show.setAttribute("aria-hidden", "false");
+    // 生活预览只有三张精选图，在用户切入时立即加载，避免隐藏区延迟观察。
+    if (isLife) show.querySelectorAll('img[loading="lazy"]').forEach((image) => { image.loading = "eager"; });
     hide.hidden = true;
     hide.setAttribute("inert", "");
     hide.setAttribute("aria-hidden", "true");
@@ -123,27 +125,78 @@ function initWalls() {
 }
 
 /* ---------- 复制按钮 ---------- */
+function copyTextFallback(text) {
+  const active = document.activeElement;
+  const scroll = { left: window.scrollX, top: window.scrollY };
+  const selection = window.getSelection?.();
+  const ranges = [];
+  for (let index = 0; selection && index < selection.rangeCount; index += 1) {
+    ranges.push(selection.getRangeAt(index).cloneRange());
+  }
+  const inputSelection = active && typeof active.selectionStart === "number"
+    ? { start: active.selectionStart, end: active.selectionEnd, direction: active.selectionDirection }
+    : null;
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.readOnly = true;
+  field.tabIndex = -1;
+  field.style.cssText = "position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;font-size:16px";
+  let copied = false;
+  try {
+    document.body.appendChild(field);
+    field.focus({ preventScroll: true });
+    field.select();
+    copied = typeof document.execCommand === "function" && document.execCommand("copy") === true;
+  } catch {
+    copied = false;
+  } finally {
+    field.remove();
+    if (active?.isConnected) active.focus?.({ preventScroll: true });
+    try {
+      if (inputSelection) active.setSelectionRange(inputSelection.start, inputSelection.end, inputSelection.direction);
+      else if (selection && ranges.length) {
+        selection.removeAllRanges();
+        ranges.forEach((range) => selection.addRange(range));
+      }
+    } catch { /* 原来的选择范围可能已随其他交互失效。 */ }
+    if (window.scrollX !== scroll.left || window.scrollY !== scroll.top) window.scrollTo({ ...scroll, behavior: "instant" });
+  }
+  return copied;
+}
+
 function initCopy() {
   $$("[data-copy]").forEach((btn) => {
+    const originalLabel = btn.textContent;
+    let timer;
+    let revision = 0;
+    if (!btn.hasAttribute("aria-live")) btn.setAttribute("aria-live", "polite");
+    btn.setAttribute("aria-atomic", "true");
     btn.addEventListener("click", async () => {
+      const request = ++revision;
+      clearTimeout(timer);
       const text = btn.dataset.copy;
+      btn.textContent = "正在复制…";
+      btn.classList.remove("is-copied", "is-copy-failed");
+      let copied = false;
       try {
-        await navigator.clipboard.writeText(text);
+        if (typeof navigator.clipboard?.writeText === "function") {
+          await navigator.clipboard.writeText(text);
+          copied = true;
+        } else copied = copyTextFallback(text);
       } catch {
-        const ta = document.createElement("textarea");
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
+        // 过期请求不再抢焦点或覆盖后来一次点击的反馈。
+        if (request !== revision) return;
+        copied = copyTextFallback(text);
       }
-      const old = btn.textContent;
-      btn.textContent = "已复制";
-      btn.classList.add("is-copied");
-      setTimeout(() => {
-        btn.textContent = old;
-        btn.classList.remove("is-copied");
-      }, 1400);
+      if (request !== revision) return;
+      btn.textContent = copied ? "已复制" : "复制失败，请手动选择";
+      btn.classList.toggle("is-copied", copied);
+      btn.classList.toggle("is-copy-failed", !copied);
+      timer = setTimeout(() => {
+        if (request !== revision) return;
+        btn.textContent = originalLabel;
+        btn.classList.remove("is-copied", "is-copy-failed");
+      }, 1800);
     });
   });
 }

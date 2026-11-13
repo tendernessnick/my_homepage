@@ -1,0 +1,50 @@
+/* 首页生活模式是档案的精选入口；完整内容与相册只在 life.html 维护。 */
+body.studio-home.life-mode { background:var(--studio-paper); color:var(--studio-ink); }
+.studio-home.life-mode .site-header { background:#f4f2edf2; }
+.life-preview-hero { display:grid; grid-template-columns:1fr 1fr; gap:65px; padding:60px 0 28px; align-items:center; }
+.life-preview-copy h1 { margin:0 0 25px; font-size:clamp(38px,4.15vw,57px); line-height:1.3; letter-spacing:-.055em; }
+.life-preview-copy h1 em { color:var(--studio-blue); font-style:normal; }
+.life-preview-copy .studio-name { margin-bottom:15px; }
+.life-preview-lead { max-width:34em; font-size:15px; line-height:1.95; color:var(--studio-muted); }
+.life-preview-location { margin:22px 0; color:var(--studio-muted); font-size:12px; }
+.life-preview .studio-button { cursor:pointer; font-family:inherit; }
+.life-preview-photos { display:grid; grid-template-columns:1.3fr 1fr; grid-template-rows:1fr 1fr; gap:20px 15px; }
+.life-preview-photos figure { display:flex; flex-direction:column; margin:0; min-width:0; }
+.life-preview-main { grid-row:1 / 3; }
+.life-preview-photos a { display:block; overflow:hidden; position:relative; aspect-ratio:1.25; background:#e6e6dc; }
+.life-preview-main a { flex:1; aspect-ratio:auto; min-height:360px; }
+.life-preview-photos img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .45s var(--ease); }
+.life-preview-photos a:hover img { transform:scale(1.035); }
+.life-preview-photos figcaption { display:flex; justify-content:space-between; padding-top:9px; color:var(--studio-muted); font-size:11px; }
+.life-preview-bottom { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:8px 0 25px; border-bottom:1px solid var(--studio-rule); }
+.life-preview-bottom p { margin:0; color:var(--studio-muted); font-size:12px; }.life-preview-bottom a { display:inline-flex; align-items:center; min-height:44px; font-size:13px; }
+.life-preview-bottom a:hover { color:var(--studio-blue); }
+.life-preview-topics { display:grid; grid-template-columns:repeat(3,1fr); gap:35px; margin:34px 0 40px; }
+.life-preview-topics a { position:relative; padding-top:20px; border-top:1px solid var(--studio-rule); min-width:0; }
+.life-preview-topics span { color:var(--studio-muted); font:10px Consolas,monospace; letter-spacing:.07em; }
+.life-preview-topics h2 { font-size:22px; line-height:1.5; letter-spacing:-.035em; margin:13px 0 10px; }
+.life-preview-topics p { font-size:14px; line-height:1.8; color:var(--studio-muted); margin:0 0 28px; max-width:22em; }
+.life-preview-topics b { position:absolute; right:0; bottom:0; font-size:19px; font-weight:400; color:var(--studio-blue); transition:transform .2s; }
+.life-preview-topics a:hover b { transform:translate(3px,-3px); }
+.life-preview-topics a:hover h2 { color:var(--studio-blue); }
+@media (max-width:1080px) { .life-preview-hero { gap:35px; }.life-preview-main a { min-height:320px; } }
+@media (max-width:760px) {
+  .life-preview-hero { grid-template-columns:1fr; padding-top:36px; gap:28px; }
+  .life-preview-copy h1 { font-size:clamp(35px,7vw,48px); }
+  .life-preview-copy .studio-eyebrow { margin-bottom:20px; }
+  .life-preview-copy .studio-name { font-size:24px; }
+  .life-preview-photos { gap:14px 12px; }
+  .life-preview-main a { min-height:290px; }
+  .life-preview-bottom { gap:15px; padding-bottom:18px; }.life-preview-bottom p { font-size:12px; max-width:18em; }
+  .life-preview-bottom a { font-size:12px; white-space:nowrap; }
+  .life-preview-topics { grid-template-columns:1fr; gap:24px; margin:28px 0; }
+  .life-preview-topics a { padding-top:16px; }.life-preview-topics h2 { font-size:21px; margin-block:9px; }
+  .life-preview-topics p { max-width:100%; padding-right:24px; margin-bottom:12px; }
+}
+@media (max-width:380px) { .life-preview-copy h1 { font-size:32px; }.life-preview-main a { min-height:250px; }.life-preview-photos figcaption { font-size:10px; } }
+@media (prefers-reduced-motion:reduce) { .life-preview-photos img,.life-preview-topics b { transition:none; } }
+
+@media (prefers-reduced-motion:no-preference) {
+  .studio-home .life-preview:not([hidden]) { animation:life-preview-in .3s var(--ease) both; }
+}
+@keyframes life-preview-in { from { transform:translateY(8px); } to { transform:none; } }

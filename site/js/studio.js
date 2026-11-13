@@ -9,6 +9,7 @@ function initFocusLabs() {
     if (!range) return;
     const update = () => {
       const value = Math.round(Math.min(100, Math.max(0, Number(range.value) || 0)));
+      range.value = String(value);
       lab.style.setProperty("--focus-position", `${value}%`);
       range.setAttribute("aria-valuetext", `对比分界 ${value}%`);
       if (output) output.textContent = `${value}%`;
@@ -17,6 +18,66 @@ function initFocusLabs() {
     range.addEventListener("change", update);
     update();
     range.disabled = false;
+
+    // 原生 range 仍负责键盘与读屏；画面只是同一数值的指针操作区域。
+    const surface = $("[data-focus-surface], .focus-image, .compare-image", lab);
+    if (!surface || !("PointerEvent" in window)) return;
+    let pointer = null;
+
+    const setFromPoint = (clientX) => {
+      const bounds = surface.getBoundingClientRect();
+      if (bounds.width <= 0) return;
+      range.value = String(Math.round(Math.min(100, Math.max(0, (clientX - bounds.left) / bounds.width * 100))));
+      update();
+    };
+    const endDrag = (event, cancelled = false) => {
+      if (!pointer || event.pointerId !== pointer.id) return;
+      const previous = pointer;
+      pointer = null;
+      // 轻点也可定位；已判定为纵向滚动或被系统取消的手势不改值。
+      if (!cancelled && previous.axis !== "vertical") setFromPoint(event.clientX);
+      lab.classList.remove("is-focus-dragging");
+      surface.classList.remove("is-focus-dragging");
+      try {
+        if (surface.hasPointerCapture?.(previous.id)) surface.releasePointerCapture(previous.id);
+      } catch { /* 指针可能已由浏览器滚动或页面切换释放。 */ }
+    };
+
+    $$("img", surface).forEach((image) => { image.draggable = false; });
+    surface.addEventListener("dragstart", (event) => event.preventDefault());
+    surface.addEventListener("pointerdown", (event) => {
+      if (pointer || event.isPrimary === false || event.button !== 0) return;
+      const isTouch = event.pointerType === "touch";
+      pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, axis: isTouch ? null : "horizontal" };
+      try { surface.setPointerCapture(event.pointerId); } catch { /* 无捕获能力时仍可在画面内操作。 */ }
+      if (!isTouch) {
+        event.preventDefault();
+        lab.classList.add("is-focus-dragging");
+        surface.classList.add("is-focus-dragging");
+        setFromPoint(event.clientX);
+      }
+    });
+    surface.addEventListener("pointermove", (event) => {
+      if (!pointer || event.pointerId !== pointer.id) return;
+      if (!pointer.axis) {
+        const dx = Math.abs(event.clientX - pointer.x);
+        const dy = Math.abs(event.clientY - pointer.y);
+        if (Math.max(dx, dy) < 6) return;
+        pointer.axis = dx > dy ? "horizontal" : "vertical";
+        if (pointer.axis === "horizontal") {
+          lab.classList.add("is-focus-dragging");
+          surface.classList.add("is-focus-dragging");
+        }
+      }
+      if (pointer.axis !== "horizontal") return;
+      if (event.cancelable) event.preventDefault();
+      setFromPoint(event.clientX);
+    }, { passive: false });
+    surface.addEventListener("pointerup", (event) => endDrag(event));
+    surface.addEventListener("pointercancel", (event) => endDrag(event, true));
+    surface.addEventListener("lostpointercapture", (event) => endDrag(event, true));
+    lab.classList.add("is-focus-ready");
+    surface.classList.add("is-focus-ready");
   });
 }
 

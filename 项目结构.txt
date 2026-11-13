@@ -57,3 +57,8 @@ my_homepage/
 - site/css/folio.css：子页公共设计；folio-profile.css：关于/联系；folio-records.css：作品/经历/CV；folio-life.css：生活/相册。
 - site/js/folio.js：目录当前态、打印入口、折叠锚点定位；gallery.js：原生dialog大图浏览，保留原图fallback。
 - Life12张照片去重编排、10项书影音/3首歌保留；去雾页复用studio.js对比滑杆；CV原PDF保持不变。
+
+【2026-11-13 追加 · v42 体验完善】
+- site/index.html生活模式收敛为3图精选，完整相册/书影音集中Life；css/life-preview.css为精选入口样式。
+- site/assets/dehaze/：hazy-480.webp、hazy-960.webp、clear-480.webp、clear-512.webp；原始图片不变。
+- studio.js支持对比画面Pointer横拖与原生range，app.js修复复制并发/失败反馈；手机版字号/作品目录/触控目标同步优化。
