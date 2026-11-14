@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=42";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=43";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -27,6 +27,7 @@ function initModeToggle() {
   const work = $('[data-mode-view="work"]');
   const life = $('[data-mode-view="life"]');
   if (!btn || !work || !life) return;
+  btn.disabled = false;
 
   const lifeLinks = $$("[data-life-link]");
   const positions = { work: window.scrollY, life: 0 };

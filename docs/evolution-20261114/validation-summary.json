@@ -1,0 +1,84 @@
+{
+  "batch": "v43",
+  "checkedAtUTC": "2026-11-14T05:43:49.468Z",
+  "layout": {
+    "combinations": 55,
+    "overflow": 0,
+    "clipped": 0,
+    "broken": 0,
+    "scriptErrors": 0
+  },
+  "accessibility": {
+    "defaultPages": 11,
+    "defaultViolations": 0,
+    "states": 12,
+    "stateViolations": 0
+  },
+  "flows": [
+    {
+      "name": "首页单一可见h1与签名slider键盘",
+      "pass": true
+    },
+    {
+      "name": "去雾原生鼠标拖动、输出同步",
+      "pass": true
+    },
+    {
+      "name": "搜索CtrlK、过滤、方向键、Esc、阅读位置",
+      "pass": true
+    },
+    {
+      "name": "搜索无结果与Enter导航",
+      "pass": true
+    },
+    {
+      "name": "相册键盘、关闭回焦",
+      "pass": true
+    },
+    {
+      "name": "作品筛选默认4、web2、desktop2",
+      "pass": true
+    },
+    {
+      "name": "清洗/天气/邮件样例真实状态切换",
+      "pass": true
+    },
+    {
+      "name": "生活模式hidden/inert、可见h1、原生点击返回阅读位置",
+      "pass": true
+    },
+    {
+      "name": "中英文简历下载保存名",
+      "pass": true
+    },
+    {
+      "name": "新案例可见h1、数据记录与虚构示意分开",
+      "pass": true
+    },
+    {
+      "name": "CV打印控件与打印样式",
+      "pass": true
+    },
+    {
+      "name": "禁用JS基本内容可读与无死控件",
+      "pass": true
+    }
+  ],
+  "lighthouse": {
+    "version": "13.6.0",
+    "fetchTime": "2026-11-14T05:41:36.036Z",
+    "environment": "localhost Python HTTP server; Lighthouse default mobile lab simulation, not deployed CloudBase",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": "2.0 s",
+      "largest-contentful-paint": "2.0 s",
+      "total-blocking-time": "0 ms",
+      "cumulative-layout-shift": "0.001"
+    }
+  }
+}

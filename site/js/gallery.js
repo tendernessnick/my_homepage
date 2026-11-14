@@ -9,8 +9,8 @@ if (links.length && typeof HTMLDialogElement !== "undefined" &&
   dialog.setAttribute("aria-describedby", "gallery-help");
   dialog.innerHTML = `
     <div class="gallery-content">
-      <div class="gallery-toolbar"><span>FIELD NOTES / RUIJIE HU</span><button class="gallery-close" type="button" aria-label="关闭大图">关闭 <span aria-hidden="true">ESC</span></button></div>
-      <figure class="gallery-view"><img class="gallery-image" alt="" /><p class="gallery-error" role="status" hidden>这张照片暂时未能加载，可关闭后打开原图链接重试。</p></figure>
+      <div class="gallery-toolbar"><span>FIELD NOTES / RUIJIE HU</span><button class="gallery-close" type="button" aria-label="关闭 ESC — 返回照片墙">关闭 <span aria-hidden="true">ESC</span></button></div>
+      <figure class="gallery-view" tabindex="0" aria-label="照片大图，可使用上下方向键滚动"><img class="gallery-image" alt="" /><p class="gallery-error" role="status" hidden>这张照片暂时未能加载，可关闭后打开原图链接重试。</p></figure>
       <div class="gallery-caption" aria-live="polite" aria-atomic="true"><div><strong class="gallery-title"></strong><small class="gallery-description"></small></div><span class="gallery-counter"></span></div>
       <div class="gallery-controls"><button class="gallery-step gallery-prev" type="button" aria-label="上一张照片"><span aria-hidden="true">←</span> 上一张</button><p id="gallery-help">左右方向键翻看<br>Esc 返回照片墙</p><button class="gallery-step gallery-next" type="button" aria-label="下一张照片">下一张 <span aria-hidden="true">→</span></button></div>
     </div>`;

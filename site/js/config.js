@@ -9,10 +9,10 @@
 // 留空时入口指向站内介绍页 dehaze.html，演示卡显示「部署后开放」。
 export const DEHAZE_DEMO_URL = 'https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com';
 
-// 网球天气助手（Railway 部署）的线上地址，部署后填这里，例如：
-//   'https://weather-helper-production.up.railway.app'
+// 网球天气助手（CloudBase 云托管）的线上地址。
+// 2026-11-14 据产品仓库迁移记录回填；主页与 /api/health 均已核验 200。
 // 填好后作品页「打开在线应用」自动直跳；留空时按钮呈「待填入」待开放态。
-export const WEATHER_APP_URL = 'https://weatherhelper-production.up.railway.app/';
+export const WEATHER_APP_URL = 'https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/';
 
 // 数据分析小助手（CloudBase 云托管，data_helper 仓库 webview 分支）的线上地址，
 // 部署后填这里；可带 ?home=<主页地址> 让应用顶栏出现「🏠 主页」回跳按钮：

@@ -62,3 +62,12 @@ my_homepage/
 - site/index.html生活模式收敛为3图精选，完整相册/书影音集中Life；css/life-preview.css为精选入口样式。
 - site/assets/dehaze/：hazy-480.webp、hazy-960.webp、clear-480.webp、clear-512.webp；原始图片不变。
 - studio.js支持对比画面Pointer横拖与原生range，app.js修复复制并发/失败反馈；手机版字号/作品目录/触控目标同步优化。
+
+【2026-11-14 追加 · v43 个人信号观察站】
+- site/css/evolution.css、evolution-pages.css：全站共同设计与子页编辑排版；js/evolution.js：搜索、语言导航增强、首页作品筛选与阅读定位。
+- site/data-case.html、css/evolution-case.css、js/evolution-case.js：真实留存电商记录的解释案例与虚构字段投影示意，聚合事实在assets/cases/data-helper-case.json。
+- site/en.html、css/evolution-en.css：精炼英文入口，身份、产品、经历、教育、联系；全文深度材料仍在中文页。
+- site/assets/og-cover.png：横版分享封面；avatar-96.webp与previews响应式WebP为新增预览，原始PDF/去雾源图保持不变。
+- site/assets/previews/weather-current.webp：真实公开首页静态截图，采集时间与边界见docs/evolution-20261114/Weather真实界面采集记录.md。
+- docs/evolution-20261114/：设计研究、案例证据、素材补充清单、后续内容路线、招聘路径审查、验收与回退说明。
+- Weather线上入口随迁移更新到CloudBase；静态发布仍site/，不发布Surge，API契约/独立后端不变。

@@ -6,17 +6,30 @@
   <title>胡睿杰 · 数据分析与商业 AI · 香港城市大学</title>
   <meta name="description" content="胡睿杰的个人主页 —— 计算机科班 × 商业 AI 复合背景，五段实习横跨数据、战略、量化与开发，四个独立产品与图像去雾交互体验。" />
   <meta name="theme-color" content="#f4f2ed" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰个人主页" />
-  <meta property="og:title" content="胡睿杰 · 数据分析与商业 AI" />
-  <meta property="og:description" content="看清问题，把想法做成工具。数据与商业 AI、四个独立产品，还有摄影与网球。" />
-  <meta property="og:url" content="./index.html" />
-  <meta property="og:image" content="assets/profile-hero.jpg" />
-  <link rel="stylesheet" href="css/style.css?v=42" />
-  <link rel="stylesheet" href="css/studio.css?v=42" />
-  <link rel="stylesheet" href="css/life-preview.css?v=42" />
+  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
+  <meta property="og:title" content="胡睿杰 · 数据分析与商业 AI · 香港城市大学" />
+  <meta property="og:description" content="胡睿杰的个人主页 —— 计算机科班 × 商业 AI 复合背景，五段实习横跨数据、战略、量化与开发，四个独立产品与图像去雾交互体验。" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+
+  <link rel="icon" href="assets/favicon.svg?v=43" type="image/svg+xml" />
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="css/style.css?v=43" />
+  <link rel="stylesheet" href="css/studio.css?v=43" />
+  <link rel="stylesheet" href="css/life-preview.css?v=43" />
+  <link rel="stylesheet" href="css/evolution.css?v=43" />
 </head>
 <body data-page="home" class="studio-home">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -28,6 +41,10 @@
         <span class="brand-mark">胡</span>
         <span class="brand-text">胡睿杰</span>
       </a>
+  <button class="mode-toggle header-mode-toggle" type="button" disabled data-mode-toggle aria-pressed="false" aria-label="打开生活模式">
+    <span data-mode-label>生活模式</span>
+    <span class="mode-track" aria-hidden="true"><span></span></span>
+  </button>
       <nav class="top-nav" aria-label="主导航">
         <a href="index.html" data-nav="home">Home</a>
         <a href="about.html" data-nav="about">About</a>
@@ -37,6 +54,7 @@
         <a href="life.html" data-nav="life">Life</a>
         <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
+          <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
     </div>
   </header>
 
@@ -50,31 +68,26 @@
     <a href="contact.html" data-nav="contact">联系</a>
   </nav>
 
-  <!-- 工作 / 生活模式切换 -->
-  <button class="mode-toggle" type="button" data-mode-toggle aria-pressed="false" aria-label="打开生活模式">
-    <span data-mode-label>生活模式</span>
-    <span class="mode-track" aria-hidden="true"><span></span></span>
-  </button>
-
   <main id="main">
 
     <!-- ==================================================
          工作区
          ================================================== -->
     <section class="profile-shell studio-shell" data-mode-view="work" aria-hidden="false">
-      <header class="studio-hero">
+      <div class="edition-line"><span>RUIJIE HU / 胡睿杰</span><span>数据 · 产品 · 日常观察</span><span>PERSONAL EDITION — 2026</span></div>
+      <header class="studio-hero" id="intro">
         <div class="studio-hero-copy">
-          <p class="studio-eyebrow"><span class="studio-dot"></span> PERSONAL FIELD NOTES / VOL. 2026</p>
-          <p class="studio-name"><img src="assets/profile-hero.jpg" width="42" height="42" alt="" />胡睿杰 <span>Ruijie Hu</span></p>
-          <h1 class="studio-title">看清问题，<br><em>把想法做成工具。</em></h1>
-          <p class="studio-desc">计算机科学 × 商业人工智能。<br>在香港城市大学读书，也在数据、产品和真实业务之间寻找连接。最近，在深圳做战略实习。</p>
+          <p class="studio-eyebrow"><span class="studio-dot"></span> FROM SIGNAL TO SOMETHING USEFUL</p>
+          <p class="studio-name"><img src="assets/avatar-96.webp" width="42" height="42" alt="" />胡睿杰 <span>Ruijie Hu</span></p>
+          <h1 class="studio-title">把复杂的事，<br>做得<em>清楚。</em></h1>
+          <p class="studio-desc">计算机科学 × 商业人工智能。<br>我是胡睿杰，在数据里找线索，把日常问题做成工具。<br>香港城市大学硕士在读，现于深圳做战略实习。</p>
           <div class="studio-actions">
             <a class="studio-button studio-button--primary" href="#selected-work" data-section-jump>探索我的作品 <span aria-hidden="true">↗</span></a>
             <a class="studio-button" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载简历 <span aria-hidden="true">↓</span></a>
           </div>
           <div class="studio-secondary"><a href="cv.html">在线履历 ↗</a><a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English CV ↓</a><a href="contact.html">联系我 ↗</a></div>
         </div>
-        <div class="focus-lab" data-focus-lab aria-label="SE-CGAN 去雾结果交互对比">
+        <div class="hero-experiment"><div class="experiment-caption"><span>毕业设计 / SE-CGAN</span><span>真实模型输出 · 拖动对比 ↙</span></div><div class="focus-lab" data-focus-lab aria-label="SE-CGAN 去雾结果交互对比">
           <div class="focus-top"><span>EXPERIMENT 01 / DEHAZE</span><span>SE-CGAN</span></div>
           <div class="focus-image" data-focus-surface>
             <picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 520px) calc(100vw - 66px), (max-width: 760px) 454px, (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="真实雾图样例中的林间道路与色卡" fetchpriority="high" decoding="async" width="1024" height="1024" /></picture>
@@ -85,62 +98,76 @@
           <div class="focus-control"><label for="focus-range">拖动画面或滑杆，比较处理前后</label><output for="focus-range" data-focus-value>50%</output><input id="focus-range" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
           <div class="focus-note"><span>预生成真实结果 · 无需等待推理</span><a href="dehaze.html">看看这个项目 ↗</a></div>
         </div>
+        </div>
+        <div class="hero-bottom"><span>DATA THINKING. PRODUCT MAKING.</span><a href="#selected-work" data-section-jump>向下探索 <span aria-hidden="true">↓</span></a></div>
       </header>
       <div class="studio-meta" aria-label="个人概况"><span><strong>05</strong> 段实习 · 含在职</span><span><strong>04</strong> 个独立产品</span><span><strong>CS × AI</strong> 复合背景</span><span>上海出发 · 现于深圳实习</span></div>
 
       <section class="studio-section" id="selected-work" aria-labelledby="selected-title">
-        <div class="studio-section-head"><div><span class="studio-label"><b>01</b> SELECTED WORK / 亲手做的工具</span><h2 id="selected-title">想法，落在真实场景里。</h2></div><p>从一张不太干净的表，到一场怕下雨的网球。<br>先试试下面的小样，再打开完整产品。</p></div>
+        <div class="studio-section-head"><div><span class="studio-label"><b>01</b> SELECTED WORK / 亲手做的工具</span><h2 id="selected-title">四个问题，四种解法。</h2></div><p>从身边的困扰开始，让工具自己说话。<br>这里的小样可操作，完整产品也可以打开。</p></div>
+        <div class="project-filter" role="group" aria-label="筛选首页作品" hidden><button type="button" data-project-filter="all" aria-pressed="true">全部作品 <span>04</span></button><button type="button" data-project-filter="web" aria-pressed="false">在线应用 <span>02</span></button><button type="button" data-project-filter="desktop" aria-pressed="false">桌面工具 <span>02</span></button><span class="filter-note" data-project-count role="status">4 件作品 / SELECTED 2026</span></div>
         <div class="project-grid">
-          <article class="studio-project">
+          <article class="studio-project" data-project-type="desktop" aria-label="NoticeMe">
             <div class="project-window project-window--notice">
               <div class="window-bar"><i></i><i></i><i></i><span>NOTICEME / TODAY</span><small class="sample-tag">真实应用截图节选</small></div>
-              <a class="data-screen" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noopener" aria-label="放大查看 NoticeMe 任务界面示例"><img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 任务界面，包含季度报表、弹窗提醒与回复邮件等演示任务" loading="lazy" decoding="async" /></a>
+              <a class="data-screen" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noopener" aria-label="放大查看 NoticeMe 任务界面示例"><picture><source type="image/webp" srcset="assets/previews/noticeme-tasks-640.webp 640w, assets/previews/noticeme-tasks.webp 1440w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 650px" /><img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 任务界面，包含季度报表、弹窗提醒与回复邮件等演示任务" loading="lazy" decoding="async" /></picture></a>
               <div class="notice-caption"><span>任务 · 提醒 · 日记<br>本地存储 / 可选本机 AI</span><strong>Remember the little things.</strong></div>
             </div>
-            <div class="project-info"><span class="project-number">01 / NEW · A LITTLE LESS TO REMEMBER</span><h3>记下来，让提醒真正到达。</h3><p>NoticeMe · 本地优先的待办、提醒与日记工具。自然语言快速记任务、置顶提醒卡与重复任务，让重要的小事有处安放。</p><div class="project-links"><a href="works.html#noticeme">项目详情 ↗</a><a href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noopener noreferrer">下载 Windows 版 ↗</a><a href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="project-info"><p class="project-product-name">NoticeMe</p><span class="project-number">01 / NEW · A LITTLE LESS TO REMEMBER</span><h3>记下来，让提醒真正到达。</h3><p>NoticeMe · 本地优先的待办、提醒与日记工具。自然语言快速记任务、置顶提醒卡与重复任务，让重要的小事有处安放。</p><details class="project-choice"><summary><span>一个设计取舍</span>把提醒调度与 AI 分开。<b aria-hidden="true">+</b></summary><p>自然语言辅助与本地调度分开；任务由你确认后再创建。</p></details><div class="project-links"><a href="works.html#noticeme">项目详情 ↗</a><a href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noopener noreferrer">下载 Windows 版 ↗</a><a href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
-          <article class="studio-project">
+          <article class="studio-project" data-project-type="web" aria-label="Data Helper">
             <div class="project-window project-window--data" data-clean-lab>
               <div class="window-bar"><i></i><i></i><i></i><span>DATA HELPER</span><small class="sample-tag">真实界面 + 交互样例</small></div>
-              <a class="data-screen" href="assets/previews/data-workbench.png" target="_blank" rel="noopener" aria-label="放大查看 Data Helper 真实工作台截图"><img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据、体检报告和 SQL 控制台" loading="lazy" decoding="async" /></a>
+              <a class="data-screen" href="assets/previews/data-workbench.png" target="_blank" rel="noopener" aria-label="放大查看 Data Helper 真实工作台截图"><picture><source type="image/webp" srcset="assets/previews/data-workbench-640.webp 640w, assets/previews/data-workbench-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 570px" /><img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据、体检报告和 SQL 控制台" loading="lazy" decoding="async" /></picture></a>
               <table class="mini-table" aria-label="本地修复示例，按订单号去重并以指定值填充城市"><thead><tr><th scope="col">订单</th><th scope="col">城市</th><th scope="col">金额</th></tr></thead><tbody><tr><td>S-001</td><td>上海</td><td>240</td></tr><tr><td>S-002</td><td data-clean-missing>—</td><td>180</td></tr><tr data-clean-duplicate><td>S-002</td><td>上海</td><td>180</td></tr></tbody></table>
               <div class="lab-toolbar"><p><strong data-clean-issues>2 个问题</strong><br><span data-clean-status role="status">发现缺失值与重复行</span></p><button class="lab-button" type="button" data-clean-toggle disabled>修复样例 ↗</button></div>
               <p class="weather-disclaimer">本地演示：按订单号去重，并将缺失城市填为上海。</p>
             </div>
-            <div class="project-info"><span class="project-number">02 / DATA &amp; DECISIONS</span><h3>让数据先变得好用。</h3><p>Data Helper · 从导入、体检到清洗与可视化的数据工作台。另有运营看板扩展，把分析结果留在可复用的视图里。</p><div class="project-links"><a href="works.html#data-helper">项目详情 ↗</a><a href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" data-datahelper-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a><a href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="project-info"><p class="project-product-name">Data Helper</p><span class="project-number">02 / DATA &amp; DECISIONS</span><h3>让数据先变得好用。</h3><p>Data Helper · 从导入、体检到清洗与可视化的数据工作台。另有运营看板扩展，把分析结果留在可复用的视图里。</p><details class="project-choice"><summary><span>一个设计取舍</span>先讲清口径，再解释分数。<b aria-hidden="true">+</b></summary><p>一份销售数据，让通用体检与业务判断有了不同答案。</p></details><div class="project-links"><a href="works.html#data-helper">项目详情 ↗</a><a href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" data-datahelper-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a><a href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
-          <article class="studio-project">
+          <article class="studio-project" data-project-type="web" aria-label="Weather Helper">
             <div class="project-window" data-weather-lab data-level="now">
               <div class="window-bar"><i></i><i></i><i></i><span>WEATHER HELPER</span><small class="sample-tag">交互示意</small></div>
               <div class="weather-stage"><div class="tennis-court" aria-hidden="true"><span class="court-ball"></span></div><div class="weather-reading"><span>降雨概率 / 示例</span><strong data-weather-value>20%</strong><p data-weather-verdict role="status">适合出发</p></div></div>
               <div class="weather-slots" role="group" aria-label="切换天气示例时段"><button type="button" data-weather-slot="now" data-weather-rain="20" data-weather-verdict="适合出发" aria-pressed="true" disabled>现在</button><button type="button" data-weather-slot="later" data-weather-rain="45" data-weather-verdict="留意变化" aria-pressed="false" disabled>两小时后</button><button type="button" data-weather-slot="evening" data-weather-rain="85" data-weather-verdict="考虑改期" aria-pressed="false" disabled>傍晚</button></div>
               <p class="weather-disclaimer">固定样例数据，非实时预报；实际建议请打开应用查看。</p>
             </div>
-            <div class="project-info"><span class="project-number">03 / BUILT FOR THE COURT</span><h3>今天，去哪打球？</h3><p>Weather Helper · 面向香港 57 个公共网球场的降雨决策工具。把多源预报变成出发建议，也能按时段寻找更适合打球的球场。</p><div class="project-links"><a href="works.html#weather-helper">项目详情 ↗</a><a href="https://weatherhelper-production.up.railway.app/" data-weather-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a><a href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="project-info"><p class="project-product-name">Weather Helper</p><span class="project-number">03 / BUILT FOR THE COURT</span><h3>今天，去哪打球？</h3><p>Weather Helper · 面向香港 57 个公共网球场的降雨决策工具。把多源预报变成出发建议，也能按时段寻找更适合打球的球场。</p><details class="project-choice"><summary><span>一个设计取舍</span>保留预测发生时的那一刻。<b aria-hidden="true">+</b></summary><p>冻结开打前的预报，再对照实况检验，避免事后更新掩盖误差。</p></details><div class="project-links"><a href="works.html#weather-helper">项目详情 ↗</a><a href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" data-weather-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a><a href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
-          <article class="studio-project">
+          <article class="studio-project" data-project-type="desktop" aria-label="MailHelper">
             <div class="project-window project-window--mail" data-mail-lab>
               <div class="window-bar"><i></i><i></i><i></i><span>MAILHELPER / INBOX</span><small class="sample-tag">匿名虚构样例</small></div>
               <div class="mail-list"><div class="sample-mail"><span class="mail-avatar" aria-hidden="true">$</span><p>学费缴纳提醒<span>截止日期临近 · P0</span></p><span class="mail-category" data-mail-category="财务缴费">未分类</span></div><div class="sample-mail"><span class="mail-avatar" aria-hidden="true">C</span><p>Canvas 作业通知<span>课程与作业 · P1</span></p><span class="mail-category" data-mail-category="课程">未分类</span></div><div class="sample-mail"><span class="mail-avatar" aria-hidden="true">N</span><p>本周校园通讯<span>订阅摘要 · P3</span></p><span class="mail-category" data-mail-category="订阅">未分类</span></div></div>
               <div class="lab-toolbar"><p data-mail-status role="status">等待归类</p><button class="lab-button" type="button" data-mail-toggle disabled>整理样例 ↗</button></div>
             </div>
-            <div class="project-info"><span class="project-number">04 / LESS NOISE, MORE FOCUS</span><h3>重要的邮件，先看到。</h3><p>MailHelper · Windows / macOS 校园邮件管家。七类归档、分级提醒，并识别 Canvas 模板通知中的作业截止日期。</p><div class="project-links"><a href="works.html#mail-helper">项目详情 ↗</a><a href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noopener noreferrer">下载应用 ↗</a><a href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="project-info"><p class="project-product-name">MailHelper</p><span class="project-number">04 / LESS NOISE, MORE FOCUS</span><h3>重要的邮件，先看到。</h3><p>MailHelper · Windows / macOS 校园邮件管家。七类归档、分级提醒，并识别 Canvas 模板通知中的作业截止日期。</p><details class="project-choice"><summary><span>一个设计取舍</span>让课业通知，变成可处理的信息。<b aria-hidden="true">+</b></summary><p>从 Canvas 模板里识别截止日期，再按类型与重要度呈现。</p></details><div class="project-links"><a href="works.html#mail-helper">项目详情 ↗</a><a href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noopener noreferrer">下载应用 ↗</a><a href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
         </div>
         <p class="studio-project-note">还有一个从论文走向服务的项目：<a href="dehaze.html">SE-CGAN 图像去雾 ↗</a> · 首屏即可拖动对比，<a href="dehaze.html" data-dehaze-demo>也能体验完整推理 ↗</a>。</p>
       </section>
 
-      <section class="studio-story" aria-labelledby="story-title"><div><span class="studio-label"><b>02</b> WHY I BUILD</span><h2 id="story-title">先遇到一个问题，<br>再动手做点什么。</h2><p>打网球时关心的，往往是“到了球场会不会下雨”。天气助手把这个具体问题，变成了预报融合、决策建议与实况反馈的产品链路。</p><a class="studio-text-link" href="works.html#weather-helper">看看网球天气助手 ↗</a></div><div class="story-steps"><div><span>OBSERVE / 观察</span><strong>先找真实场景</strong><p>约球前，要知道球场和时段。</p></div><div><span>BUILD / 动手</span><strong>把信息变成工具</strong><p>让多源天气数据服务于一次出发。</p></div><div><span>REFINE / 验证</span><strong>让反馈回到产品</strong><p>用实况上报与测站数据检验预报。</p></div></div></section>
+      <section class="field-note" id="field-note" aria-labelledby="field-note-title">
+        <div class="field-note-heading"><span class="studio-label">FIELD NOTE / 项目观察 001</span><span class="field-note-kind">数据判断 · 留存示例记录</span></div>
+        <div class="field-note-grid">
+          <div><p class="field-note-kicker">A NUMBER IS A QUESTION.</p><h2 id="field-note-title">清洗之后，<br>评分为什么反而低了？</h2><p class="field-note-desc">Data Helper 的一份电商样例里，缺失值降到了零，质量评分却下降了。先解释样本与字段的变化，再判断哪些重复需要处理。</p><a class="field-note-link" href="data-case.html">看看这次数据记录 <span aria-hidden="true">↗</span></a></div>
+          <div class="field-note-figure" aria-label="留存记录评分：原始83.4，筛选与字段变换后77.5；两次数据口径不同">
+            <div class="field-note-score"><span>原始数据</span><strong>83.4<small>/100</small></strong><p>1,067,371 行 · 8 列</p></div><span class="field-note-arrow" aria-hidden="true">↘</span><div class="field-note-score"><span>筛选与字段变换后</span><strong>77.5<small>/100</small></strong><p>805,549 行 · 7 列</p></div>
+            <p class="field-note-footnote">两次口径不同，不能直接用分差判断清洗好坏。<br>来源：UCI Online Retail II · 仓库留存示例，本轮未重跑。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="studio-story" aria-labelledby="story-title"><div><span class="studio-label"><b>02</b> WHY I BUILD</span><h2 id="story-title">先遇到一个问题，<br>再动手做点什么。</h2><p>打网球时关心的，往往是“到了球场会不会下雨”。天气助手把这个具体问题，变成了预报融合、决策建议与实况反馈的产品链路。</p><a class="studio-text-link" href="works.html#weather-helper">看看网球天气助手 ↗</a></div><div class="story-steps"><div><span>OBSERVE / 观察</span><strong>先找真实场景</strong><p>约球前，要知道球场和时段。</p></div><div><span>BUILD / 动手</span><strong>把信息变成工具</strong><p>让多源天气数据服务于一次出发。</p></div><div><span>REFINE / 验证</span><strong>让反馈回到产品</strong><p>用实况上报与测站数据检验预报。</p></div></div></section>
 
       <section class="studio-section" id="experience" aria-labelledby="experience-title"><div class="studio-section-head"><div><span class="studio-label"><b>03</b> EXPERIENCE / 在真实业务里学习</span><h2 id="experience-title">从数据到业务，再往前一步。</h2></div><a class="studio-text-link" href="experience.html">完整经历 ↗</a></div><div class="studio-timeline">
-        <article class="studio-experience"><time>2026.10 — 至今</time><div><h3>深圳市和宏实业 · 战略与投资部</h3><p>战略实习生。消费电子行业研究、竞品资料与市场数据整理方向；此处为岗位职责范围。</p></div><span class="experience-tag">正在经历</span></article>
+        <article class="studio-experience"><time>2026.10 — 至今</time><div><h3>深圳市和宏实业 · 战略与投资部</h3><p>战略实习生，职责方向为消费电子行业研究、竞品资料与市场数据整理。</p></div><span class="experience-tag">正在经历</span></article>
         <article class="studio-experience"><time>2025.09 — 2025.12</time><div><h3>北京外企德科 · 业务数据分析</h3><p>900 条运营明细转化分析、257 人面试协调，以及批量归档工具链。</p></div><span class="experience-tag">数据 / 运营</span></article>
         <article class="studio-experience"><time>2025.06 — 2025.08</time><div><h3>海南钰泰私募基金 · 投资经理助理</h3><p>651 只股票的多因子建模、期权策略回测与五步自动化研究流水线。</p></div><span class="experience-tag">量化 / 研究</span></article>
         <article class="studio-experience"><time>2024.12 — 2025.01</time><div><h3>睿鑫信息科技 · 嵌入式软件开发</h3><p>ARM 开发板测试、代码调试与技术文档整理。</p></div><span class="experience-tag">开发 / 测试</span></article>
         <article class="studio-experience"><time>2024.01 — 2024.02</time><div><h3>江苏今点软件 · 软件开发</h3><p>政务平台 APP 功能修改、接口与黑盒测试、接口文档整理。</p></div><span class="experience-tag">开发 / 协作</span></article>
       </div><div class="studio-education"><p><strong>香港城市大学 · 商业人工智能硕士在读</strong>2026.09 — 2027.06 · 生成式 AI、商业分析、数据可视化</p><p><strong>常州大学 · 计算机科学与技术本科</strong>2021.10 — 2025.06 · GPA 4.1 / 5 · 雅思 7.0</p></div></section>
 
-      <section class="studio-life" aria-labelledby="life-title"><div class="studio-photo-stack"><figure><img src="assets/life/life-07.jpg" alt="街头的气球摊" width="600" height="800" loading="lazy" decoding="async" /><figcaption>01 / on the street</figcaption></figure><figure><img src="assets/life/life-06.jpg" alt="日落下的剪影" width="600" height="800" loading="lazy" decoding="async" /><figcaption>02 / after hours</figcaption></figure></div><div><span class="studio-label"><b>04</b> OFF THE CLOCK</span><h2 id="life-title">数据之外，也有留白。</h2><p>网球、摄影、剪辑，还有带着相机压马路。换一种视角观察日常，偶尔也从中生出下一个工具的想法。</p><button class="studio-mode-button" type="button" data-open-mode="life">翻到生活那一页 ↗</button> <a class="studio-text-link" href="life.html">摄影与生活档案 ↗</a></div></section>
+      <section id="off-clock" class="studio-life" aria-labelledby="life-title"><div class="studio-photo-stack"><figure><img src="assets/life/life-07.jpg" alt="街头的气球摊" width="600" height="800" loading="lazy" decoding="async" /><figcaption>01 / on the street</figcaption></figure><figure><img src="assets/life/life-06.jpg" alt="日落下的剪影" width="600" height="800" loading="lazy" decoding="async" /><figcaption>02 / after hours</figcaption></figure></div><div><span class="studio-label"><b>04</b> OFF THE CLOCK</span><h2 id="life-title">数据之外，也有留白。</h2><p>网球、摄影、剪辑，还有带着相机压马路。换一种视角观察日常，偶尔也从中生出下一个工具的想法。</p><button class="studio-mode-button" type="button" data-open-mode="life">翻到生活那一页 ↗</button> <a class="studio-text-link" href="life.html">摄影与生活档案 ↗</a></div></section>
       <section class="studio-contact" aria-labelledby="contact-title"><div><h2 id="contact-title">聊一个想法，或一个机会。</h2><p>数据分析、商业 AI、产品实践，或者约一场网球。</p></div><a class="studio-button studio-button--primary" href="contact.html">与我联系 <span aria-hidden="true">↗</span></a></section>
     </section>
 
@@ -169,7 +196,8 @@
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
 
-  <script type="module" src="js/app.js?v=42"></script>
-  <script type="module" src="js/studio.js?v=42"></script>
+  <script type="module" src="js/app.js?v=43"></script>
+  <script type="module" src="js/studio.js?v=43"></script>
+  <script type="module" src="js/evolution.js?v=43"></script>
 </body>
 </html>

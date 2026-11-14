@@ -6,11 +6,23 @@
   <title>CV｜胡睿杰</title>
   <meta name="description" content="胡睿杰在线履历：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，四个独立开发项目，附中英双语简历下载。" />
   <meta name="theme-color" content="#f4f2ed" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
+  <meta property="og:title" content="CV｜胡睿杰" />
+  <meta property="og:description" content="胡睿杰在线履历：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，四个独立开发项目，附中英双语简历下载。" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg?v=43" type="image/svg+xml" />
 
-  <link rel="stylesheet" href="css/style.css?v=42" />
-  <link rel="stylesheet" href="css/folio.css?v=42" />
-  <link rel="stylesheet" href="css/folio-records.css?v=42" />
+  <link rel="stylesheet" href="css/style.css?v=43" />
+  <link rel="stylesheet" href="css/folio.css?v=43" />
+  <link rel="stylesheet" href="css/folio-records.css?v=43" />
+  <link rel="stylesheet" href="css/evolution-pages.css?v=43" />
+  <link rel="stylesheet" href="css/evolution.css?v=43" />
 </head>
 <body data-page="cv" class="folio-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -30,6 +42,7 @@
         <a href="life.html" data-nav="life">Life</a>
         <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
+          <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
     </div>
   </header>
 
@@ -45,8 +58,8 @@
 
   <main id="main">
     <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>04 / RESUME</span></div>
-    <section class="container page-hero">
-      <p class="eyebrow">Résumé / 在线履历</p>
+    <section class="container page-hero ep-resume-hero">
+      <p class="eyebrow">Résumé / 在线履历</p><span class="ep-resume-edition" aria-hidden="true">CV<span>2026</span></span>
       <h1 class="page-title">胡睿杰 · 在线履历</h1>
       <p class="lead">计算机科学 × 商业人工智能。五段实习、四个独立产品，以及从研究到交付的具体记录。</p>
       <div class="actions">
@@ -54,6 +67,7 @@
         <a class="btn" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">英文简历 Resume</a>
         <button class="btn" type="button" data-print-cv disabled>打印 / 存为 PDF</button>
       </div>
+      <p class="resume-version-note">在线履历包含后续项目更新；文件版为现有通用简历。</p>
     </section>
 
     <section class="section tight resume-section">
@@ -209,9 +223,9 @@
               <h3>网球天气助手（香港）· Weather Helper｜Vibe Coding · 独立开发 · 已上线</h3>
               <ul class="bullet-list">
                 <li><strong>【产品与数据】</strong>面向全港 57 个公共网球场的降雨决策 PWA：融合天文台 SWIRLS 临近预报、Open-Meteo 概率与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议；新增「去哪打」时段球场推荐与雨团地图；球友实况和天文台测站双轨验证预报表现。</li>
-                <li><strong>【工程与上线】</strong>FastAPI + SQLAlchemy + SQLite 定时调度 + React 19 / Vite / Tailwind 4，Web Push 开打前下雨提醒；地理围栏 + 冷却 + 位移校验防刷；80 项 pytest；Docker 部署 Railway 已上线。</li>
+                <li><strong>【工程与上线】</strong>FastAPI + SQLAlchemy + SQLite 定时调度 + React 19 / Vite / Tailwind 4，Web Push 开打前下雨提醒；地理围栏 + 冷却 + 位移校验防刷；80 项 pytest；Docker 云端部署，当前入口为 CloudBase。</li>
               </ul>
-              <p class="cv-link-list"><a href="https://weatherhelper-production.up.railway.app/" data-weather-app target="_blank" rel="noreferrer noopener">在线体验</a><a href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库</a><a href="works.html#weather-helper">作品页详情</a></p>
+              <p class="cv-link-list"><a href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" data-weather-app target="_blank" rel="noreferrer noopener">在线体验</a><a href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库</a><a href="works.html#weather-helper">作品页详情</a></p>
             </div>
             <time>2026.09</time>
           </div>
@@ -221,7 +235,7 @@
               <ul class="bullet-list">
                 <li><strong>【模型设计】</strong>搭建 SE-CGAN 条件生成对抗网络：Tiramisu 密集连接 U-Net 生成器重建无雾图像 + 70×70 PatchGAN 判别器，采用 L1 重建 + VGG 感知 + 对抗损失加权联合训练。</li>
                 <li><strong>【数据与评测】</strong>基于 RESIDE 合成雾图与 O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</li>
-                <li><strong>【工程部署】</strong>PyQt6 桌面演示 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，支持 CPU 实时在线推理；服务端按最长边 256 等比缩放推理，图片仅临时使用不保存（支持 PNG / JPG ≤ 128KB）。</li>
+                <li><strong>【工程部署】</strong>PyQt6 桌面演示 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，支持 CPU 在线推理；服务端按最长边 256 等比缩放推理，图片仅临时使用不保存（支持 PNG / JPG ≤ 128KB）。</li>
               </ul>
               <p class="cv-link-list"><a href="dehaze.html" data-dehaze-demo>去雾在线体验</a><a href="works.html#dehaze">作品页详情</a></p>
             </div>
@@ -302,7 +316,8 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=42"></script>
-  <script type="module" src="js/folio.js?v=42"></script>
+  <script type="module" src="js/app.js?v=43"></script>
+  <script type="module" src="js/folio.js?v=43"></script>
+  <script type="module" src="js/evolution.js?v=43"></script>
 </body>
 </html>

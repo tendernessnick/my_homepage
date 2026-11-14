@@ -6,15 +6,27 @@
   <title>Works｜胡睿杰</title>
   <meta name="description" content="胡睿杰的产品实验室：NoticeMe 本地待办与提醒、Data Helper 数据预处理工作台、香港网球天气助手、MailHelper 邮箱管家，以及图像去雾毕业设计。" />
   <meta name="theme-color" content="#f4f2ed" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
+  <meta property="og:title" content="Works｜胡睿杰" />
+  <meta property="og:description" content="胡睿杰的产品实验室：NoticeMe 本地待办与提醒、Data Helper 数据预处理工作台、香港网球天气助手、MailHelper 邮箱管家，以及图像去雾毕业设计。" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg?v=43" type="image/svg+xml" />
   <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
 
-  <link rel="stylesheet" href="css/style.css?v=42" />
-  <link rel="stylesheet" href="css/project-previews.css?v=42" />
-  <link rel="stylesheet" href="css/folio.css?v=42" />
-  <link rel="stylesheet" href="css/folio-records.css?v=42" />
+  <link rel="stylesheet" href="css/style.css?v=43" />
+  <link rel="stylesheet" href="css/project-previews.css?v=43" />
+  <link rel="stylesheet" href="css/folio.css?v=43" />
+  <link rel="stylesheet" href="css/folio-records.css?v=43" />
+  <link rel="stylesheet" href="css/evolution-pages.css?v=43" />
+  <link rel="stylesheet" href="css/evolution.css?v=43" />
 </head>
-<body data-page="works" class="folio-page">
+<body data-page="works" class="folio-page works-page">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
   <header class="site-header">
@@ -32,6 +44,7 @@
         <a href="life.html" data-nav="life">Life</a>
         <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
+          <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
     </div>
   </header>
 
@@ -47,10 +60,9 @@
 
   <main id="main">
     <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>03 / WORKS</span></div>
-    <section class="container page-hero">
-      <p class="eyebrow">Works / 产品实验室</p>
-      <h1 class="page-title">从一个问题，到一个工具。</h1>
-      <p class="lead">四个独立产品，一项图像研究。先看看它们解决什么问题，再打开应用、下载体验，或者展开实现记录。</p>
+    <section class="container page-hero ep-works-hero">
+      <div class="ep-work-heading"><div><p class="eyebrow">Works / 产品实验室</p><h1 class="page-title">从一个问题，<br>到一个工具。</h1></div><div class="ep-work-summary" aria-label="四个独立产品，一项图像研究"><div><strong>04</strong><span>独立产品 / PRODUCTS</span></div><div><strong>01</strong><span>图像研究 / RESEARCH</span></div><p>Built around everyday questions.</p></div></div>
+      <p class="lead">四个独立产品，一项图像研究。打开体验，或展开实现记录。</p>
       <div class="work-index" aria-label="作品目录">
         <a href="#noticeme" data-section-jump><span>01 / 桌面工具</span><strong>NoticeMe</strong><small>待办、提醒与日记 ↗</small></a>
         <a href="#data-helper" data-section-jump><span>02 / 数据工作台</span><strong>Data Helper</strong><small>体检、清洗与分析 ↗</small></a>
@@ -63,11 +75,12 @@
 
     <section class="section tight">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head work-products-heading">
           <h2>五项代表作品</h2>
         </div>
 
         <article class="flagship-work reveal" id="noticeme">
+          <div class="ep-project-rail"><span aria-hidden="true">01</span><p>本地记录与提醒</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
           <div class="flagship-copy">
             <span class="comic-label">01 / NoticeMe · Windows 已发布 · 2026.11</span>
             <h3>NoticeMe · 待办、提醒与日记</h3>
@@ -88,7 +101,7 @@
           <figure class="preview-window preview-noticeme" aria-label="NoticeMe 真实任务界面截图节选">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>NOTICEME / EVERYDAY NOTES</span></div>
             <a class="preview-image-link" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 NoticeMe 任务界面截图节选">
-              <img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 真实应用截图节选：任务列表、快速添加和待办分类" loading="lazy" decoding="async" />
+              <picture><source type="image/webp" srcset="assets/previews/noticeme-tasks-640.webp 640w, assets/previews/noticeme-tasks.webp 1440w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 650px" /><img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 真实应用截图节选：任务列表、快速添加和待办分类" loading="lazy" decoding="async" /></picture>
             </a>
             <figcaption><strong>任务界面示例</strong><span>真实应用截图节选 · 点击查看原图 ↗</span></figcaption>
             <div class="preview-footnote">随手记录 → 到时提醒 → 完成归档</div>
@@ -96,6 +109,7 @@
         </article>
 
         <article class="flagship-work reveal" id="data-helper">
+          <div class="ep-project-rail"><span aria-hidden="true">02</span><p>让数据变得可用</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
           <div class="flagship-copy">
             <span class="comic-label">02 / Data Helper · 在线应用 · 2026.09</span>
             <h3>数据分析小助手 · Data Helper</h3>
@@ -103,12 +117,13 @@
             <div class="flagship-actions">
               <a class="btn primary" data-datahelper-app data-datahelper-cta href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">进入在线体验</a>
               <a class="btn" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
+              <a class="btn" href="data-case.html">读数据案例 ↗</a>
             </div>
             <details class="work-notes"><summary>功能与实现 <span>体检规则、公开案例与看板扩展</span></summary>
               <div class="work-value-list">
               <p><strong>产品</strong><span>纯本地规则体检引擎：0-100 质量评分 + 六维质量雷达 + 结构化问题清单，每个问题带一键修复；可检测列间算术关系违反与函数依赖冲突。</span></p>
-              <p><strong>工程</strong><span>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块，百万行秒级）；22 种清洗变换与多步版本回溯。</span></p>
-              <p><strong>案例</strong><span>用 UCI Online Retail II 的 1,067,371 行零售交易跑通预处理：体检定位重复、格式和退货记录等问题，清洗得到 805,549 行有效销售；过程与结果随仓库公开。</span></p>
+              <p><strong>工程</strong><span>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块）；22 种清洗变换与多步版本回溯。</span></p>
+              <p><strong>案例</strong><span>用 UCI Online Retail II 的 1,067,371 行零售交易跑通预处理：体检定位重复、格式和退货记录等问题，按本案例销售口径筛选得到 805,549 行记录；过程与结果随仓库公开。</span></p>
               <p><strong>扩展</strong><span>支持 MCP 协议外接 AI 客户端；运营看板扩展分支新增 KPI 卡、环比与口径说明、转化漏斗、结果钉卡和全屏放映，独立于当前在线体验版本。</span></p>
             </div>
               <div class="comic-strip" style="margin-top:16px"><span class="tag">FastAPI</span><span class="tag">DuckDB</span><span class="tag">Parquet</span><span class="tag">Vue3 · ECharts</span><span class="tag">MCP</span></div>
@@ -117,7 +132,7 @@
           <figure class="preview-window preview-data" aria-label="Data Helper 真实工作台截图">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>DATA HELPER / WORKBENCH</span></div>
             <a class="preview-image-link" href="assets/previews/data-workbench.png" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 Data Helper 工作台完整截图">
-              <img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据表、数据清洗侧栏和底部 SQL 控制台" loading="lazy" decoding="async" />
+              <picture><source type="image/webp" srcset="assets/previews/data-workbench-640.webp 640w, assets/previews/data-workbench-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 570px" /><img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据表、数据清洗侧栏和底部 SQL 控制台" loading="lazy" decoding="async" /></picture>
             </a>
             <figcaption><strong>真实工作台</strong><span>示例销售数据 · 点击查看原图 ↗</span></figcaption>
             <div class="preview-footnote">导入 → 体检 → 修复 → 分析 → 导出</div>
@@ -125,37 +140,36 @@
         </article>
 
         <article class="flagship-work reveal" id="weather-helper">
+          <div class="ep-project-rail"><span aria-hidden="true">03</span><p>为了下一场网球</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
           <div class="flagship-copy">
             <span class="comic-label">03 / Weather Helper · 在线应用 · 2026.09</span>
             <h3>网球天气助手（香港）· Weather Helper</h3>
             <p>面向全港 57 个公共网球场的降雨决策 PWA：在官方预报之上做二次评价，回答「这个球场的预报今天信不信」。</p>
             <div class="flagship-actions">
-              <a class="btn primary" data-weather-app data-weather-cta href="https://weatherhelper-production.up.railway.app/" target="_blank" rel="noreferrer noopener">打开在线应用 ↗</a>
+              <a class="btn primary" data-weather-app data-weather-cta href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">打开在线应用 ↗</a>
               <a class="btn" href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
             </div>
             <details class="work-notes"><summary>功能与实现 <span>预报融合、实况验证与工程</span></summary>
               <div class="work-value-list">
               <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时融合概率与「放心 / 边缘 / 别赌」决策建议；「去哪打」按时段找更干燥的球场，雨团地图查看降雨位置与走向。</span></p>
               <p><strong>闭环</strong><span>球友到场众包上报实况（地理围栏 + 冷却防刷），与天文台测站双轨验证各预报源准确率（漏报 / 误报 / Brier）。</span></p>
-              <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 部署 Railway 已上线。</span></p>
+              <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 云端部署，当前入口为 CloudBase。</span></p>
             </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · Railway</span></div>
+              <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · CloudBase</span></div>
             </details>
           </div>
-          <div class="preview-window preview-weather" role="img" aria-label="Weather Helper 界面示意：维多利亚公园网球场，按时段查看降雨风险；画面为示例数据，不是实时预报">
+          <figure class="preview-window preview-weather preview-weather--real" aria-label="Weather Helper 真实首页截图节选，历史界面记录而非实时天气">
             <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>WEATHER HELPER / HONG KONG</span></div>
-            <div class="preview-weather-main">
-              <span class="preview-eyebrow">一场球，从看天气开始</span>
-              <div class="preview-court-heading"><strong>维多利亚公园</strong><span>网球场 · 香港</span></div>
-              <div class="preview-court" aria-hidden="true"><div class="preview-court-line"></div><i class="preview-ball"></i><span>22°16′ N / 114°11′ E</span></div>
-              <div class="preview-weather-hours"><span><small>现在</small><b>20%</b></span><span><small>+2 小时</small><b>45%</b></span><span><small>+4 小时</small><b>85%</b></span></div>
-              <div class="preview-weather-decision"><span class="preview-status-dot"></span><strong>时段变化，看得见</strong><span>球场预报 / 去哪打 / 雨团地图</span></div>
-            </div>
-            <div class="preview-footnote">界面示意 · 示例数据，非实时天气</div>
-          </div>
+            <a class="preview-image-link" href="assets/previews/weather-current.webp" target="_blank" rel="noopener noreferrer" aria-label="放大查看网球天气助手真实首页记录">
+              <img src="assets/previews/weather-current.webp" width="768" height="708" alt="网球天气助手真实首页：57个公共网球场入口与采集时刻的历史概览；图中天气数值不是实时预报" loading="lazy" decoding="async" />
+            </a>
+            <figcaption><strong>真实首页记录</strong><span>2026-11-14 13:09 HKT · 静态截图节选</span></figcaption>
+            <div class="preview-footnote">历史界面，非实时天气。首次打开应用可能有平台访问提示。</div>
+          </figure>
         </article>
 
         <article class="flagship-work reveal" id="mail-helper">
+          <div class="ep-project-rail"><span aria-hidden="true">04</span><p>让重要信息先到达</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
           <div class="flagship-copy">
             <span class="comic-label">04 / MailHelper · 双平台桌面工具 · 2026.10</span>
             <h3>邮箱管家 · MailHelper</h3>
@@ -187,6 +201,7 @@
         </article>
 
         <article class="flagship-work reveal" id="dehaze">
+          <div class="ep-project-rail"><span aria-hidden="true">05</span><p>从图像研究到服务</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
           <div class="flagship-copy">
             <span class="comic-label">05 / SE-CGAN · 毕业设计 · 在线演示</span>
             <h3>单幅图像去雾 · SE-CGAN</h3>
@@ -199,7 +214,7 @@
               <div class="work-value-list">
               <p><strong>模型</strong><span>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失加权联合训练。</span></p>
               <p><strong>评测</strong><span>RESIDE 合成雾图 + O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</span></p>
-              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 实时在线推理。</span></p>
+              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 在线推理。</span></p>
             </div>
               <div class="comic-strip" style="margin-top:16px"><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">CloudBase</span><span class="tag">PSNR 28.05</span></div>
             </details>
@@ -339,7 +354,8 @@
   </footer>
 
   <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=42"></script>
-  <script type="module" src="js/folio.js?v=42"></script>
+  <script type="module" src="js/app.js?v=43"></script>
+  <script type="module" src="js/folio.js?v=43"></script>
+  <script type="module" src="js/evolution.js?v=43"></script>
 </body>
 </html>

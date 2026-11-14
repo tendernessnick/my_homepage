@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "data-helper-retail-ii",
+  "title": "清洗后，体检分数为什么降低了？",
+  "checkedAt": "2026-11-14",
+  "evidenceStatus": "公开仓库留存的实际后端计算示例；本轮核对 JSON 与复现脚本，未重新运行。",
+  "dataset": {
+    "name": "Online Retail II",
+    "creator": "Daqing Chen",
+    "attribution": "Chen, D. (2012). Online Retail II [Dataset]. UCI Machine Learning Repository.",
+    "url": "https://archive.ics.uci.edu/dataset/502/online+retail+ii",
+    "doi": "https://doi.org/10.24432/C5CG6D",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "sourcePeriod": "2009-12-01 / 2011-12-09"
+  },
+  "before": {
+    "rows": 1067371,
+    "columns": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "Price",
+      "CustomerID",
+      "Country"
+    ],
+    "columnCount": 8,
+    "qualityScore": 83.4,
+    "findings": 15,
+    "duplicateRows": 34335,
+    "duplicatePercentComputed": 3.22,
+    "duplicatePenaltyStored": 1.6,
+    "missingCells": 247389
+  },
+  "after": {
+    "rows": 805549,
+    "columns": [
+      "InvoiceNo",
+      "CustomerID",
+      "InvoiceDate",
+      "Quantity",
+      "Price",
+      "Country",
+      "Amount"
+    ],
+    "columnCount": 7,
+    "qualityScore": 77.5,
+    "findings": 11,
+    "duplicateRows": 314891,
+    "duplicatePercentComputed": 39.09,
+    "duplicatePenaltyStored": 15,
+    "missingCells": 0
+  },
+  "transformation": {
+    "purpose": "构建本案例定义的有效销售明细，不是所有业务场景的通用清洗标准。",
+    "filter": "\"CustomerID\" IS NOT NULL AND \"Quantity\" > 0 AND \"InvoiceNo\" NOT LIKE 'C%' AND \"Price\" > 0",
+    "droppedColumns": [
+      "StockCode",
+      "Description"
+    ],
+    "derivedColumn": {
+      "name": "Amount",
+      "expression": "ROUND(\"Quantity\" * \"Price\", 2)"
+    },
+    "otherChanges": [
+      "CustomerID 先转整数，再转字符串",
+      "保留每一条通过筛选的明细，没有执行 DISTINCT 或 drop_duplicates"
+    ],
+    "duplicatePercentFormula": "duplicateRows / rows * 100，四舍五入保留两位小数"
+  },
+  "interpretation": [
+    "筛选改变了样本与列集合。移除商品字段后，原先不同的记录可能在输出列上相同，不能把完全重复行数直接理解为重复交易增加。",
+    "输出中的重复惩罚增加，导致通用体检总分下降。分数需结合分析口径阅读，不能机械追求最高分。",
+    "现有聚合结果不足以证明所有相同行都应该保留或删除；先解释口径，再判断是否去重。"
+  ],
+  "limits": [
+    "不是本轮性能测试，不声明所有百万行数据都能秒级处理。",
+    "不是用户使用统计，不声明节省时间、商业收益或准确率提升。",
+    "前后缺失单元格、重复数和总分不来自完全相同的行列集合，不能单独用来证明整体数据质量改善。",
+    "质量评分及扣分项为当时规则引擎输出；存储扣分项有舍入，不用于精确重算总分。"
+  ],
+  "sources": {
+    "caseReadme": "https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/README.md",
+    "inputMetadata": "https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/00_upload_meta.json",
+    "beforeResult": "https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/01_health_check_raw.json",
+    "afterResult": "https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/02_health_check_clean.json",
+    "pipeline": "https://github.com/tendernessnick/data-helper/blob/master/scripts/run_ecommerce_analysis.py",
+    "datasetFetch": "https://github.com/tendernessnick/data-helper/blob/master/scripts/fetch_dataset.py"
+  }
+}
