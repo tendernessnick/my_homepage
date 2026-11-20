@@ -71,3 +71,13 @@ my_homepage/
 - site/assets/previews/weather-current.webp：真实公开首页静态截图，采集时间与边界见docs/evolution-20261114/Weather真实界面采集记录.md。
 - docs/evolution-20261114/：设计研究、案例证据、素材补充清单、后续内容路线、招聘路径审查、验收与回退说明。
 - Weather线上入口随迁移更新到CloudBase；静态发布仍site/，不发布Surge，API契约/独立后端不变。
+
+
+【2026-11-20 追加 · v50 高定出版物 × 光学取景器全站改版】
+- 清理 12 个历史层叠旧 CSS 文件，重构为 `site/css/monograph.css` 与 `site/css/pages.css` 两份独立无冲突样式表，全站 11 页资源统一为 `?v=50`。
+- 更新 `site/assets/favicon.svg` 匹配深松绿印章风格；保留全部 11 页 URL、锚点、JS 交互模块、双语 `.pdfx` 二进制与 `js/dehaze.js` 契约参考实现。
+- 设计决策、重构清单与验证记录见 `docs/gemini-redesign-20261120/README.md`；发布根仍为 `site/`，无构建步骤，独立后端与 API 契约不变。
+
+【2026-11-20 追加 · v51 第二轮首页主视觉与节奏重塑】
+- `site/index.html` 重构为人物大画幅封面主视觉（桌面右栏 432×540 人像、手机左栏 3:4 肖像锁组）+ 分级 Bento 作品区 + 独立暗房 SE-CGAN 去雾舞台（`#dehaze-stage`）+ 双数据案例洞察区 + 三帧生活摄影接触印样；全站资源版本统一 `?v=51`。
+- 实测样式原始字节：`site/css/monograph.css`（30,141B）+ `site/css/pages.css`（110,806B）合计 140,947B（原 12 个旧 CSS 在 HEAD 合计 271,303B）。详见 `docs/gemini-redesign-20261120/README.md`。

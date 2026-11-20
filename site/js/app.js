@@ -7,7 +7,7 @@ const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL } from "./config.js?v=43";
+import { DEHAZE_DEMO_URL, WEATHER_APP_URL, DATAHELPER_DEMO_URL, TAXI_TABLEAU_URL } from "./config.js?v=51";
 
 /* ---------- 导航高亮 ---------- */
 function initNav() {
@@ -389,6 +389,29 @@ function initDataHelperLinks() {
   initConfigEntry(DATAHELPER_DEMO_URL, "datahelper", "在线体验部署中 · 稍后开放");
 }
 
+/* ---------- IS6335：Tableau 完成后接入，同步所有语言的入口 ---------- */
+function initTaxiDashboardLinks() {
+  const url = TAXI_TABLEAU_URL.trim();
+  $$("[data-taxi-dashboard]").forEach((link) => {
+    if (url) {
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noreferrer noopener";
+      link.classList.remove("is-pending");
+      link.removeAttribute("aria-disabled");
+      link.textContent = link.dataset.readyLabel;
+    } else {
+      link.removeAttribute("href");
+      link.classList.add("is-pending");
+      link.setAttribute("aria-disabled", "true");
+      link.textContent = link.dataset.pendingLabel;
+    }
+  });
+  $$("[data-taxi-dashboard-status]").forEach((status) => {
+    status.textContent = url ? status.dataset.readyLabel : status.dataset.pendingLabel;
+  });
+}
+
 /* ---------- 页脚年份 ---------- */
 function initYear() {
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
@@ -429,5 +452,6 @@ initRandomPhoto();
 initDemoLinks();
 initWeatherLinks();
 initDataHelperLinks();
+initTaxiDashboardLinks();
 initYear();
 initSectionNav();

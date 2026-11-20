@@ -20,6 +20,11 @@ export const WEATHER_APP_URL = 'https://weather-helper-312215-10-1477032709.sh.r
 // 填好后作品页「进入在线体验」自动直跳；留空时按钮呈「部署中」待开放态。
 export const DATAHELPER_DEMO_URL = 'https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/';
 
+// IS6335 纽约出租车项目的 Tableau Public 或独立展示页地址。
+// 完成交互可视化并确认可公开访问后填入完整 https:// 地址；
+// 留空时，中英文作品介绍和在线 CV 中的交互入口保持「待接入」。
+export const TAXI_TABLEAU_URL = '';
+
 // 推理 API 直连地址（仅本地联调 js/dehaze.js 时使用；
 // 线上演示走后端服务自带的同源页面，不再依赖此配置）。
 export const DEHAZE_API_BASE = 'http://localhost:8000';

@@ -44,7 +44,7 @@ function initSearch() {
     { title:'首页 / 胡睿杰', desc:'个人概况、四个产品与交互小样', href:'index.html', keys:'home ruijie hu 首页 主页' },
     { title:'关于我', desc:'计算机科学 × 商业人工智能，做事方式与工具', href:'about.html', keys:'about 关于 城大 香港城市大学 背景' },
     { title:'实习与案例', desc:'五段实习，数据、量化、战略与开发', href:'experience.html', keys:'cases experience 实习 研究 和宏 德科 钰泰 量化' },
-    { title:'作品集', desc:'四个独立产品与去雾毕业设计', href:'works.html', keys:'work projects 作品 项目 产品' },
+    { title:'作品集', desc:'四个独立产品、去雾毕业设计与纽约出租车数据分析', href:'works.html', keys:'work projects 作品 项目 产品' },
     { title:'NoticeMe', desc:'本地优先的待办、提醒与日记工具', href:'works.html#noticeme', keys:'noticeme 提醒 待办 日记 桌面 本地' },
     { title:'Data Helper', desc:'导入、体检、清洗、SQL 与可视化', href:'works.html#data-helper', keys:'data helper 数据 表格 清洗 分析 SQL 图表 看板' },
     { title:'Weather Helper', desc:'香港 57 个公共网球场的降雨决策', href:'works.html#weather-helper', keys:'weather helper 天气 网球 球场 下雨 香港' },
@@ -55,13 +55,14 @@ function initSearch() {
     { title:'摄影与生活', desc:'十二帧生活照片、网球与书影音', href:'life.html', keys:'life photo 生活 相册 摄影 照片 网球 电影 音乐 书' },
     { title:'联系我', desc:'邮箱、电话、微信与 GitHub', href:'contact.html', keys:'contact 联系 邮箱 电话 微信 email github' },
     { title:'English overview / 英文入口', desc:'A quick introduction, projects, experience and contact', href:'en.html', keys:'en english 英文 英语 国际 overview' },
+    { title:'纽约出租车运营分析与数据可视化', desc:'独立完成的 IS6335 项目：R 分析 380.2 万条有效行程，研究需求、客流与收入', href:'works.html#nyc-taxi', keys:'nyc taxi tlc is6335 tableau R 纽约 出租车 黄车 客流 机场 数据分析 可视化' },
   ];
   if (english) {
     const translations = [
       ['Home / Ruijie Hu','Chinese homepage and interactive product samples'],
       ['About','Background, working methods and tools (Chinese)'],
       ['Experience','Five internships across data, research and development (Chinese)'],
-      ['Projects','Four independent products and a dehazing research project (Chinese)'],
+      ['Projects','Four products, dehazing research and NYC taxi analysis (Chinese)'],
       ['NoticeMe','Local-first tasks, reminders and journaling (Chinese detail page)'],
       ['Data Helper','Import, inspect, clean, query and visualize data (Chinese detail page)'],
       ['Weather Helper','Rain decisions for 57 Hong Kong tennis courts (Chinese detail page)'],
@@ -72,6 +73,7 @@ function initSearch() {
       ['Photography & life','Twelve photos, tennis, books, films and music (Chinese)'],
       ['Contact','Email, phone, WeChat and GitHub (Chinese page)'],
       ['English overview','Introduction, selected projects, experience and contact'],
+      ['NYC Taxi Operations Analysis','Independent IS6335 project: R analysis of 3.80 million valid trips, demand, flows and revenue (Chinese)'],
     ];
     pages.forEach((page,index) => { [page.title,page.desc] = translations[index]; });
   }
@@ -185,6 +187,7 @@ function initSearch() {
 
 function initProjectFilter() {
   const group = $('.project-filter');
+  const grid = $('[data-project-grid]') || $('.project-grid');
   const projects = $$('.studio-project[data-project-type]');
   if (!group || !projects.length) return;
   const buttons = $$('[data-project-filter]', group);
@@ -196,6 +199,7 @@ function initProjectFilter() {
       project.hidden = filter !== 'all' && project.dataset.projectType !== filter;
       if (!project.hidden) count++;
     });
+    if (grid) grid.classList.toggle('is-filtered', filter !== 'all');
     buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     $('[data-project-count]', group).textContent = `${count} 件作品 / SELECTED 2026`;
   }));
@@ -203,7 +207,14 @@ function initProjectFilter() {
 
 function initReadingRail() {
   if (!document.body.classList.contains('studio-home')) return;
-  const entries = [ ['intro','开场'], ['selected-work','作品'], ['experience','经历'], ['off-clock','生活'] ];
+  const entries = [
+    ['intro','人物'],
+    ['selected-work','作品'],
+    ['dehaze-stage','去雾'],
+    ['field-note','洞察'],
+    ['experience','经历'],
+    ['off-clock','生活']
+  ];
   const nav = document.createElement('nav');
   nav.className = 'e-section-rail';
   nav.setAttribute('aria-label', '首页段落目录');
@@ -238,12 +249,12 @@ function initFooter() {
   if (!footer) return;
   const top = document.createElement('div');
   top.className = 'e-footer-top';
-  top.innerHTML = `<span>GOOD QUESTIONS. USEFUL THINGS.</span><a href="${english ? 'en.html#contact' : 'contact.html'}">${language('从一个想法开始 ↗','Start with an idea ↗')}</a>`;
-  const name = document.createElement('span');
-  name.className = 'e-footer-name';
-  name.textContent = 'RUIJIE HU';
-  name.setAttribute('aria-hidden', 'true');
-  footer.prepend(top, name);
+  top.innerHTML = `<span>GOOD QUESTIONS. USEFUL THINGS.</span><a href="${english ? 'en.html#contact' : 'contact.html'}">${language('从一个具体问题聊起 ↗','Start with a specific question ↗')}</a>`;
+  const banner = document.createElement('div');
+  banner.className = 'e-footer-banner';
+  banner.setAttribute('aria-hidden', 'true');
+  banner.innerHTML = `<span class="e-footer-name">RUIJIE HU</span><span class="e-footer-sig">Ruijie</span>`;
+  footer.prepend(top, banner);
   const bottom = document.createElement('div');
   bottom.className = 'e-footer-bottom';
   bottom.innerHTML = `<span>${language('数据 · 产品 · 日常观察','DATA · PRODUCTS · EVERYDAY CURIOSITY')}</span><a href="https://github.com/tendernessnick" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="${english ? 'en.html' : 'index.html'}">BACK TO INDEX ↑</a>`;
