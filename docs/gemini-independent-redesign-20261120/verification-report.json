@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-11-20T13:05:20.814Z",
+  "routesChecked": 11,
+  "viewportsChecked": [
+    "desktop-1440",
+    "tablet-768",
+    "mobile-390",
+    "narrow-320"
+  ],
+  "layoutIssues": [],
+  "consoleErrors": [],
+  "brokenImages": [],
+  "local404s": [],
+  "interactiveChecks": {
+    "homeLensSwitcher": true,
+    "commandPalette": true,
+    "worksFilter": true,
+    "dehazeComparator": true,
+    "dataCaseProjectionSim": true,
+    "lifeLightbox": true,
+    "contactCopyFeedback": true
+  },
+  "noJsChecks": {
+    "index.html": {
+      "readable": true,
+      "textLen": 4452
+    },
+    "cv.html": {
+      "readable": true,
+      "textLen": 5229
+    },
+    "data-case.html": {
+      "readable": true,
+      "textLen": 2823
+    },
+    "dehaze.html": {
+      "readable": true,
+      "textLen": 1609
+    },
+    "en.html": {
+      "readable": true,
+      "textLen": 6444
+    }
+  },
+  "tableauConfigCheck": {
+    "emptyPendingOnWorks": true,
+    "populatedActivatesCnAndEn": true
+  }
+}

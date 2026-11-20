@@ -1,124 +1,271 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About｜胡睿杰</title>
-  <meta name="description" content="胡睿杰：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，独立开发四个实用工具。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="About｜胡睿杰" />
-  <meta property="og:description" content="胡睿杰：计算机科班与商业 AI 复合背景，五段实习覆盖战略行研、数据、量化与开发，独立开发四个实用工具。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>关于我 · 胡睿杰 HU RUIJIE</title>
+  <meta name="description" content="了解胡睿杰的教育背景、工作方式、按使用场景组织的工具箱以及网球、摄影与内容创作经历。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="about" class="folio-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html" aria-label="返回胡睿杰首页">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html" aria-current="page">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="about.html" aria-current="page"><span>关于我</span><span class="mono">01</span></a>
+        <a class="mobile-drawer__link" href="experience.html"><span>实习与校园经历</span><span class="mono">02</span></a>
+        <a class="mobile-drawer__link" href="works.html"><span>作品与研究</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="life.html"><span>摄影与生活</span><span class="mono">05</span></a>
+        <a class="mobile-drawer__link" href="contact.html"><span>联系我</span><span class="mono">06</span></a>
+        <a class="mobile-drawer__link" href="en.html" lang="en"><span>English Brief</span><span class="mono">EN</span></a>
+      </nav>
+      <div class="mobile-drawer__meta">
+        <a class="btn btn--primary" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载中文简历 PDF ↓</a>
+      </div>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>01 / ABOUT</span></div>
-    <section class="container page-hero bio-intro" aria-labelledby="bio-title">
-      <div class="bio-intro-copy">
-        <p class="ep-person-name" aria-hidden="true">RUIJIE HU<span>人物 / 01</span></p>
-        <p class="eyebrow">About / 关于我</p>
-        <h1 class="page-title" id="bio-title">从代码出发，<br>走近业务。</h1>
-        <p class="lead">我是胡睿杰，计算机科学与技术本科毕业，现于香港城市大学攻读商业人工智能硕士。实习走过人力资源数据、私募量化、嵌入式与软件开发，现在也在接触消费电子与战略研究。</p>
-        <p class="bio-current"><span aria-hidden="true"></span>上海出发 · 现于深圳和宏战略与投资部实习</p>
-        <div class="bio-intro-links"><a class="btn primary" href="works.html">看看我做的工具 ↗</a><a class="bio-text-link" href="cv.html">完整履历 ↗</a></div>
-      </div>
-      <figure class="bio-portrait">
-        <span class="ep-portrait-coordinate" aria-hidden="true">A PERSON, IN PROGRESS.</span>
-        <img src="assets/profile-hero.jpg" width="720" height="960" alt="胡睿杰个人照片" fetchpriority="high" decoding="async" />
-        <figcaption><span>RUIJIE HU / 2026</span><strong aria-hidden="true">Ruijie</strong></figcaption>
-      </figure>
-    </section>
-
-    <div class="container ep-identity-rail" aria-label="学习与实践路径"><span>计算机科学</span><b aria-hidden="true">→</b><span>商业人工智能</span><b aria-hidden="true">→</b><span>把想法做成工具</span></div>
-
-    <section class="container bio-evidence" aria-label="个人经历与学习记录">
-      <div><strong><span data-count="5">5</span><small>段</small></strong><p>实习经历<span>含战略与投资部在岗实习</span></p></div>
-      <div><strong><span data-count="4">4</span><small>个</small></strong><p>独立产品<span>两个在线应用与两个桌面工具</span></p></div>
-      <div><strong><span data-count="4.1" data-decimals="1">4.1</span><small>/ 5</small></strong><p>本科 GPA<span>常州大学 · 华罗庚学院</span></p></div>
-      <div><strong><span data-count="7" data-decimals="1">7.0</span></strong><p>雅思成绩<span>英语可作为工作语言</span></p></div>
-    </section>
-
-    <section class="section" id="approach" aria-labelledby="approach-title">
+    <section class="page-hero">
       <div class="container">
-        <div class="section-head"><h2 id="approach-title">我怎样做一件事</h2><p>数据 → 工具 → 业务</p></div>
-        <div class="bio-methods">
-          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">01</span><div><span class="bio-overline">UNDERSTAND / 理解</span><h3>先把数据讲清楚。</h3></div><div><p>用 Python / SQL 整理原始数据，先定义指标，再看结果。外企德科实习中的 900 条运营明细转化分析，以及 Data Helper 的数据体检，都从这一步开始。</p><a class="bio-text-link" href="experience.html">看业务数据分析经历 ↗</a></div></article>
-          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">02</span><div><span class="bio-overline">BUILD / 动手</span><h3>把重复动作做成工具。</h3></div><div><p>从批量归档简历的 bat + Excel 工具链，到处理表格、天气、校园邮件和日常提醒的四个独立产品；毕业设计也从模型训练继续做到在线去雾服务。</p><a class="bio-text-link" href="works.html">打开产品实验室 ↗</a></div></article>
-          <article class="bio-method reveal"><span class="bio-method-no" aria-hidden="true">03</span><div><span class="bio-overline">EXPLAIN / 解释</span><h3>让结论有来路。</h3></div><div><p>在钰泰实习中，从 651 只股票的多因子打分做到期权策略回测与结项汇报。目前在和宏的岗位职责方向，则延伸到消费电子产业链、竞品与市场数据整理。</p><a class="bio-text-link" href="experience.html">看研究与实习记录 ↗</a></div></article>
+        <div class="page-hero__grid page-hero__grid--split">
+          <div>
+            <span class="eyebrow">01 / ABOUT · 人物档案</span>
+            <h1 class="page-hero__title" id="bio-title">从代码出发，走近业务。</h1>
+            <p class="page-hero__lead">
+              我是胡睿杰，常州大学华罗庚学院计算机科学与技术本科毕业（GPA 4.1/5），现于香港城市大学攻读商业人工智能硕士（MSc in Artificial Intelligence in Business，2026.09–2027.06）。上海出发，目前在深圳和宏战略与投资部实习。
+            </p>
+            <p class="card__body" style="margin-top:0.85rem;max-width:60ch;">
+              过去几段实习走过人力资源业务数据、私募量化研究、嵌入式与软件开发，现在正把分析习惯延伸至消费电子产业链与战略研究。相比停留在概念，我更习惯用真实数据、可核对的口径和可以打开使用的工具来回答问题。
+            </p>
+            <div class="jump-pills">
+              <a class="jump-pill" href="#approach">工作方法 ↓</a>
+              <a class="jump-pill" href="#toolbox">按场景组织的工具箱 ↓</a>
+              <a class="jump-pill" href="#bio-outside-title">屏幕之外 ↓</a>
+              <a class="jump-pill" href="cv.html">完整在线履历 ↗</a>
+            </div>
+          </div>
+
+          <div class="dossier-portrait">
+            <div class="dossier-portrait__frame">
+              <img src="assets/profile-hero.jpg" alt="胡睿杰个人照片" width="720" height="960" loading="eager" />
+            </div>
+            <div class="dossier-portrait__sheet">
+              <div class="dossier-portrait__row"><span class="dossier-portrait__k">本科 GPA</span><span class="dossier-portrait__v">4.1 / 5</span></div>
+              <div class="dossier-portrait__row"><span class="dossier-portrait__k">雅思成绩</span><span class="dossier-portrait__v">7.0（可作为工作语言）</span></div>
+              <div class="dossier-portrait__row"><span class="dossier-portrait__k">实习记录</span><span class="dossier-portrait__v">5 段（含战略与投资部在岗）</span></div>
+              <div class="dossier-portrait__row"><span class="dossier-portrait__k">AI 辅助产品</span><span class="dossier-portrait__v">4 个（2 在线 + 2 桌面）</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section tight" id="toolbox" aria-labelledby="toolbox-title">
+    <!-- Working Approach -->
+    <section class="section" id="approach" aria-labelledby="approach-title">
       <div class="container">
-        <div class="section-head"><h2 id="toolbox-title">工具随问题来</h2><p>按使用场景，而非熟练度打分</p></div>
-        <dl class="bio-toolbox">
-          <div class="bio-tool-row reveal"><dt><span>01 / DATA</span>整理、分析与呈现</dt><dd><p>Python 数据分析、SQL（DataGrip）、Power BI 可视化、Kettle 数据整理入库、Excel 高级应用，覆盖清洗、分析到可视化。</p><ul class="bio-tool-list" aria-label="数据工具"><li>Python</li><li>SQL / DataGrip</li><li>Power BI</li><li>Kettle</li><li>Excel</li></ul></dd></div>
-          <div class="bio-tool-row reveal"><dt><span>02 / BUILD</span>产品与工程</dt><dd><p>NoticeMe 用 Electron / React / TypeScript 做桌面提醒；Data Helper 结合 FastAPI、DuckDB、Vue3 / ECharts，另有运营看板扩展。天气助手采用 React / Tailwind，MailHelper 用 WPF / Avalonia 共享 .NET 核心。</p><p>也用 Function Calling / MCP 接入 LLM 能力、PyTorch 训练去雾模型；有 Android 开发与软件测试经历。这个主页使用原生 JavaScript 搭建，托管于 CloudBase。</p><ul class="bio-tool-list" aria-label="开发方向"><li>Web / Desktop</li><li>Function Calling / MCP</li><li>PyTorch</li><li>Android</li></ul></dd></div>
-          <div class="bio-tool-row reveal"><dt><span>03 / CREATE</span>影像与表达</dt><dd><p>用 PR / 剪映剪片子，Lightroom / Photoshop 修图；用 135 编辑器做公众号排版与美编，也能轻度调整格式代码。这些来自新闻部工作和日常创作。</p><ul class="bio-tool-list" aria-label="媒体工具"><li>PR / 剪映</li><li>Lightroom / Photoshop</li><li>135 编辑器</li></ul></dd></div>
-        </dl>
+        <div class="section-head">
+          <span class="eyebrow">HOW I WORK · 数据 → 工具 → 业务</span>
+          <h2 class="section-title" id="approach-title">我怎样做一件事</h2>
+          <p class="section-lead">在数据分析、工具开发与行业研究之间，我尽量保持同一套可追溯的工作秩序。</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="eyebrow">01 / UNDERSTAND</span>
+            <h3 class="card__title">先把数据与口径讲清楚</h3>
+            <p class="card__body">
+              用 Python / SQL 整理原始数据时，先定义一行记录代表什么、指标口径是什么，再看结果。外企德科实习中 900 条运营明细的转化拆解，以及 Data Helper 对百万行电商数据的体检复核，都从这一步开始。
+            </p>
+            <div class="card__foot">
+              <a href="experience.html#waifuyuan">看业务数据分析经历 ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">02 / BUILD</span>
+            <h3 class="card__title">把重复动作做成工具</h3>
+            <p class="card__body">
+              从批量归档简历的 bat + Excel 工具链，到处理表格、天气、校园邮件和日常提醒的四个 AI 辅助独立产品；本科毕业设计也从 PyTorch 训练继续做成 FastAPI 在线去雾服务。
+            </p>
+            <div class="card__foot">
+              <a href="works.html">看看我做的工具 ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">03 / EXPLAIN</span>
+            <h3 class="card__title">让结论有来路、有边界</h3>
+            <p class="card__body">
+              在钰泰实习中，从 651 只股票的多因子打分做到股指期权策略回测与结项汇报；目前在和宏的岗位职责方向则延伸到消费电子产业链、竞品与市场数据整理。报告结论时，明确区分事实、假设与边界。
+            </p>
+            <div class="card__foot">
+              <a href="experience.html">看研究与实习记录 ↗</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="bio-outside-title">
-      <div class="container bio-outside">
-        <div><span class="bio-overline">BEYOND THE SCREEN</span><h2 id="bio-outside-title">也在球场和取景框里，<br>练习另一种观察。</h2><p>做过校网球协会社长，组织 100+ 人次活动；也担任新闻部部长，参与公众号内容与美编，累计推文阅读 10k+。协调人与事、把信息说清楚，都是这些经历留下的练习。</p><a class="bio-text-link" href="life.html">翻开生活档案 ↗</a></div><div class="bio-outside-note"><span>SPORT / CREATE / OBSERVE</span><p>网球 · 摄影 · 剪辑</p><strong aria-hidden="true">Ruijie</strong></div>
+    <!-- Toolbox by Scenario -->
+    <section class="section section--bordered surface-subtle" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">TOOLKIT · 按使用场景，而非熟练度打分</span>
+          <h2 class="section-title" id="toolbox-title">工具随问题而来</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="eyebrow">01 / DATA · 整理、分析与呈现</span>
+            <h3 class="card__title">数据与分析</h3>
+            <p class="card__body">
+              Python 数据分析、R（ggplot2 / sf / igraph）、SQL（DataGrip / DuckDB）、Power BI 可视化、Kettle 数据整理入库、Excel 高级应用，覆盖从清洗、复核到可视化表达的完整流程。
+            </p>
+            <div class="badge-row">
+              <span class="badge">Python</span>
+              <span class="badge">SQL / DuckDB</span>
+              <span class="badge">R</span>
+              <span class="badge">Power BI</span>
+              <span class="badge">Kettle</span>
+              <span class="badge">Excel</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">02 / BUILD · 产品与工程落地</span>
+            <h3 class="card__title">AI 应用与开发</h3>
+            <p class="card__body">
+              NoticeMe 使用 Electron / React / TypeScript；Data Helper 结合 FastAPI、DuckDB 与 Vue3 / ECharts；天气助手采用 React / Tailwind；MailHelper 用 WPF / Avalonia 共享 .NET 8 核心。另熟悉 Function Calling / MCP 接入 LLM、PyTorch 训练模型，并有 Android 与软件测试经历。
+            </p>
+            <div class="badge-row">
+              <span class="badge">FastAPI</span>
+              <span class="badge">Function Calling / MCP</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">Web / Desktop</span>
+              <span class="badge">Android</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">03 / CREATE · 影像与表达</span>
+            <h3 class="card__title">媒体与内容排版</h3>
+            <p class="card__body">
+              使用 PR / 剪映剪辑视频，Lightroom / Photoshop 修图，135 编辑器完成公众号排版与美编（并能轻度调整格式代码）。这些工具积累自学院新闻部运营工作与日常创作。
+            </p>
+            <div class="badge-row">
+              <span class="badge">PR / 剪映</span>
+              <span class="badge">Lightroom / PS</span>
+              <span class="badge">135 编辑器</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="index.html"><span><small>上一页</small><strong>回到主页</strong></span><b aria-hidden="true">←</b></a><a href="experience.html"><span><small>继续看看</small><strong>实习与案例</strong></span><b aria-hidden="true">↗</b></a></nav>
+
+    <!-- Beyond the Screen -->
+    <section class="section" aria-labelledby="bio-outside-title">
+      <div class="container">
+        <div class="card">
+          <div class="split-asymmetric">
+            <div>
+              <span class="eyebrow">BEYOND THE SCREEN · SPORT / CREATE / OBSERVE</span>
+              <h2 class="section-title" id="bio-outside-title" style="margin-top:0.65rem;">也在球场和取景框里，练习另一种观察。</h2>
+              <p class="card__body" style="margin-top:0.9rem;">
+                本科担任常州大学网球协会社长，独立组织 10+ 次周常训练、累计 100+ 人次参与，并参与策划校级比赛与执裁；也担任华罗庚学院学生会新闻部部长，统筹官方公众号内容与美编，累计产出近 50 篇推文、阅读量 10k+。协调人与事、把信息说清楚，都是这些经历留下的长期练习。
+              </p>
+              <div class="btn-group" style="margin-top:1.35rem;">
+                <a class="btn btn--primary" href="life.html">翻开生活与摄影档案 ↗</a>
+                <a class="btn btn--secondary" href="works.html#wx">查看 8 篇代表推文</a>
+              </div>
+            </div>
+            <div class="grid-2" style="gap:0.75rem;">
+              <div class="media-frame" style="aspect-ratio:3/4;">
+                <img src="assets/life/life-p1.jpg" alt="背着相机走在林荫小路上" width="675" height="900" loading="lazy" />
+              </div>
+              <div class="media-frame" style="aspect-ratio:3/4;">
+                <img src="assets/life/life-p3.jpg" alt="雪场手持相机观察风景" width="675" height="900" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="index.html">
+          <span class="pager-card__kicker">← 上一页</span>
+          <span class="pager-card__title">回到主页</span>
+        </a>
+        <a class="pager-card pager-card--next" href="experience.html">
+          <span class="pager-card__kicker">继续阅读 →</span>
+          <span class="pager-card__title">实习与校园经历</span>
+        </a>
+      </div>
+    </nav>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© <span data-year>2026</span> 胡睿杰｜About</span>
-      
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <div class="btn-group">
+          <a href="cv.html">在线简历</a>
+          <a href="works.html">全部作品</a>
+          <a href="contact.html">联系我</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/folio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <script type="module" src="js/main.js?v=20261120"></script>
 </body>
 </html>

@@ -1,446 +1,615 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>胡睿杰 · 数据分析与商业 AI · 香港城市大学</title>
-  <meta name="description" content="胡睿杰的个人主页 —— 计算机科班 × 商业 AI 复合背景，五段实习横跨数据、战略、量化与开发，四个独立产品、纽约出租车分析与图像去雾交互体验。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="胡睿杰 · 数据分析与商业 AI · 香港城市大学" />
-  <meta property="og:description" content="胡睿杰的个人主页 —— 计算机科班 × 商业 AI 复合背景，五段实习横跨数据、战略、量化与开发，四个独立产品、纽约出租车分析与图像去雾交互体验。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>胡睿杰 · HU RUIJIE｜业务、战略与数据分析个人主页</title>
+  <meta name="description" content="胡睿杰（HU RUIJIE）个人主页：计算机科学本科（GPA 4.1/5）× 香港城市大学商业人工智能硕士在读，面向业务、战略、商业与数据分析岗位，呈现五段实习经历、四个 AI 辅助独立开发产品、真实数据判断案例与生活影像。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="home" class="studio-home">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
-  <!-- ============ 顶部导航 ============ -->
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html" aria-label="胡睿杰首页">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <button class="mode-toggle header-mode-toggle" type="button" disabled data-mode-toggle aria-pressed="false" aria-label="打开生活模式">
-        <span data-mode-label>生活模式</span>
-        <span class="mode-track" aria-hidden="true"><span></span></span>
-      </button>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html" aria-current="page">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en" aria-label="Switch to English overview">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close aria-label="关闭菜单">关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html" aria-current="page"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="about.html"><span>关于我</span><span class="mono">01</span></a>
+        <a class="mobile-drawer__link" href="experience.html"><span>实习与校园经历</span><span class="mono">02</span></a>
+        <a class="mobile-drawer__link" href="works.html"><span>作品与研究</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="life.html"><span>摄影与生活</span><span class="mono">05</span></a>
+        <a class="mobile-drawer__link" href="contact.html"><span>联系我</span><span class="mono">06</span></a>
+        <a class="mobile-drawer__link" href="data-case.html"><span>数据判断案例</span><span class="mono">CASE</span></a>
+        <a class="mobile-drawer__link" href="dehaze.html"><span>SE-CGAN 去雾</span><span class="mono">LAB</span></a>
+        <a class="mobile-drawer__link" href="en.html" lang="en"><span>English Brief</span><span class="mono">EN</span></a>
+      </nav>
+      <div class="mobile-drawer__meta">
+        <a class="btn btn--primary" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载中文简历 PDF ↓</a>
+        <a class="btn btn--secondary" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English CV PDF ↓</a>
+      </div>
+    </div>
+  </div>
 
   <main id="main">
-
-    <!-- ==================================================
-         工作区：人物主视觉 → 精选作品 → 去雾光学台 → 数据洞察 → 经历 → 生活
-         ================================================== -->
-    <section class="profile-shell studio-shell" data-mode-view="work" aria-hidden="false">
-
-      <!-- 00 / 人物主视觉封面 -->
-      <header class="studio-hero hero-cover" id="intro">
-        <div class="hero-lead-col">
-          <p class="studio-eyebrow"><span class="studio-dot"></span><span class="nowrap">2026 PORTFOLIO</span><span aria-hidden="true">·</span><span class="nowrap">上海出发</span><span aria-hidden="true">·</span><span class="nowrap">深圳战略实习中</span></p>
-          <div class="hero-name-row">
-            <strong class="hero-person-zh">胡睿杰</strong>
-            <span class="hero-person-en">Ruijie Hu</span>
-          </div>
-          <p class="hero-role-line">计算机科学本科 × 香港城市大学商业人工智能硕士（MSc AIB）在读</p>
-        </div>
-
-        <figure class="hero-portrait-plate">
-          <div class="hero-portrait-stage">
-            <img src="assets/profile-hero.jpg" width="720" height="960" alt="胡睿杰半身肖像，穿黑色衬衫靠在暖木墙面旁" fetchpriority="high" decoding="async" />
-            <span class="plate-tick plate-tick--tl" aria-hidden="true"></span>
-            <span class="plate-tick plate-tick--br" aria-hidden="true"></span>
-          </div>
-          <figcaption class="hero-plate-caption">
-            <span>PORTRAIT / PROFILE</span>
-            <strong aria-hidden="true">Ruijie</strong>
-          </figcaption>
-        </figure>
-
-        <div class="hero-statement-col">
-          <h1 class="studio-title">把复杂的事，<br>做得<em>清楚</em>。</h1>
-          <p class="studio-desc">习惯在数据里找线索，也把日常问题做成可用工具；实习覆盖战略行研、业务数据、私募量化与软件开发。</p>
-          <div class="studio-actions">
-            <a class="studio-button studio-button--primary" href="#selected-work" data-section-jump>查看精选作品 <span aria-hidden="true">↗</span></a>
-            <a class="studio-button" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载中文简历 <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="studio-secondary">
-            <a href="cv.html">在线履历 ↗</a>
-            <a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English CV ↓</a>
-            <a href="#dehaze-stage" data-section-jump>去雾交互 ↓</a>
-            <a href="contact.html">联系我 ↗</a>
-          </div>
-          <div class="hero-proof-strip" aria-label="核心背景概况">
-            <div><strong>05</strong><span>段实习 · 含在岗</span></div>
-            <div><strong>04</strong><span>个独立产品</span></div>
-            <div><strong>CS × AI</strong><span>GPA 4.1 / 5 · 雅思 7.0</span></div>
-          </div>
-        </div>
-      </header>
-
-      <!-- 01 / 精选独立产品（分级视觉权重：两大真实截图展开 + 两小可玩实验卡并排） -->
-      <section class="studio-section" id="selected-work" aria-labelledby="selected-title">
-        <div class="studio-section-head">
+    <!-- Hero Dossier -->
+    <section class="home-hero" id="intro" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="home-hero__grid">
           <div>
-            <span class="studio-label"><b>01</b> SELECTED WORK / 亲手做的工具</span>
-            <h2 id="selected-title">四个问题，四种解法。</h2>
-          </div>
-          <p>独立开发、AI 辅助，从身边真实困扰出发。<br>这里的小样可操作，完整产品与代码也可以直接打开。</p>
-        </div>
+            <div class="badge-row">
+              <span class="badge badge--court"><span class="status-dot" aria-hidden="true"></span>深圳 · 和宏战略与投资部在岗实习</span>
+              <span class="badge badge--cobalt">求职方向：业务 / 战略 / 商业 / 数据分析</span>
+            </div>
 
-        <div class="project-filter" role="group" aria-label="筛选首页作品" hidden>
-          <button type="button" data-project-filter="all" aria-pressed="true">全部作品 <span>04</span></button>
-          <button type="button" data-project-filter="web" aria-pressed="false">在线应用 <span>02</span></button>
-          <button type="button" data-project-filter="desktop" aria-pressed="false">桌面工具 <span>02</span></button>
-          <span class="filter-note" data-project-count role="status">4 件作品 / SELECTED 2026</span>
-        </div>
+            <h1 class="home-hero__name" id="hero-title">
+              胡睿杰<span class="home-hero__name-en">HU RUIJIE</span>
+            </h1>
 
-        <div class="project-grid" data-project-grid>
-          <!-- Flagship Feature 01: Data Helper -->
-          <article class="studio-project studio-project--feature" data-project-type="web" aria-label="Data Helper">
-            <div class="project-window project-window--data" data-clean-lab>
-              <div class="window-bar"><i></i><i></i><i></i><span>DATA HELPER / WORKBENCH</span><small class="sample-tag">真实工作台 + 本地交互样例</small></div>
-              <a class="data-screen" href="assets/previews/data-workbench.png" target="_blank" rel="noopener" aria-label="放大查看 Data Helper 真实工作台截图">
-                <picture><source type="image/webp" srcset="assets/previews/data-workbench-640.webp 640w, assets/previews/data-workbench-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 64px), 620px" /><img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据、体检报告和 SQL 控制台" loading="lazy" decoding="async" /></picture>
-              </a>
-              <table class="mini-table" aria-label="本地修复示例，按订单号去重并以指定值填充城市">
-                <thead><tr><th scope="col">订单</th><th scope="col">城市</th><th scope="col">金额</th></tr></thead>
-                <tbody>
-                  <tr><td>S-001</td><td>上海</td><td>240</td></tr>
-                  <tr><td>S-002</td><td data-clean-missing>—</td><td>180</td></tr>
-                  <tr data-clean-duplicate><td>S-002</td><td>上海</td><td>180</td></tr>
-                </tbody>
-              </table>
-              <div class="lab-toolbar">
-                <p><strong data-clean-issues>2 个问题</strong><br><span data-clean-status role="status">发现缺失值与重复行</span></p>
-                <button class="lab-button" type="button" data-clean-toggle disabled>修复样例 ↗</button>
-              </div>
-              <p class="weather-disclaimer">本地示意：按订单号去重并将缺失城市填为上海（非真实交易记录）。</p>
-            </div>
-            <div class="project-info">
-              <p class="project-product-name">Data Helper · 在线应用</p>
-              <span class="project-number">01 / DATA WORKBENCH · 106.7 万行公开零售口径验证</span>
-              <h3>让脏数据先变得好用。</h3>
-              <p>面向 Excel / CSV 分析前处理的规则体检工作台：导入、诊断、先预览后应用清洗、多步撤销回溯与 DuckDB SQL 查询。</p>
-              <dl class="project-beats">
-                <div><dt>案例</dt><dd>106.7 万行公开零售明细按业务销售口径筛选至 80.6 万行，完整记录步骤与复检。</dd></div>
-                <div><dt>边界</dt><dd>口径筛选服务于特定分析目标，不等同于清洗准确率或质量提升。</dd></div>
-              </dl>
-              <details class="project-choice">
-                <summary><span>一个设计取舍</span>先讲清口径，再解释分数。<b aria-hidden="true">+</b></summary>
-                <p>一份销售数据让通用规则分与业务判断给出了不同答案——工具暴露问题，由人确认口径。</p>
-              </details>
-              <div class="project-links">
-                <a href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" data-datahelper-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a>
-                <a href="data-case.html">读数据案例 ↗</a>
-                <a href="works.html#data-helper">项目详情 ↗</a>
-                <a href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              </div>
-            </div>
-          </article>
+            <p class="home-hero__claim">
+              把模糊问题拆成可核对的口径，把重复工作做成可用的工具。<strong>计算机科学与技术本科（GPA 4.1/5）</strong>，现于<strong>香港城市大学攻读商业人工智能硕士（MSc in Artificial Intelligence in Business）</strong>；经历覆盖战略研究、业务数据分析、私募量化与软件开发，独立完成四个 AI 辅助工具产品与多项数据实证项目。
+            </p>
 
-          <!-- Flagship Feature 02: NoticeMe -->
-          <article class="studio-project studio-project--feature studio-project--flip" data-project-type="desktop" aria-label="NoticeMe">
-            <div class="project-window project-window--notice">
-              <div class="window-bar"><i></i><i></i><i></i><span>NOTICEME / TODAY</span><small class="sample-tag">真实应用截图节选</small></div>
-              <a class="data-screen" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noopener" aria-label="放大查看 NoticeMe 任务界面示例">
-                <picture><source type="image/webp" srcset="assets/previews/noticeme-tasks-640.webp 640w, assets/previews/noticeme-tasks.webp 1440w" sizes="(max-width: 900px) calc(100vw - 64px), 620px" /><img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 任务界面，包含季度报表、弹窗提醒与回复邮件等演示任务" loading="lazy" decoding="async" /></picture>
-              </a>
-              <div class="notice-caption">
-                <span>任务 · 重复提醒 · 日记 · 本地存储 / 可选本机 AI</span>
-                <strong>Remember the little things.</strong>
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-product-name">NoticeMe · Windows 已发布</p>
-              <span class="project-number">02 / LOCAL-FIRST DESKTOP · 2026.11</span>
-              <h3>记下来，让提醒真正到达。</h3>
-              <p>本地优先的待办、提醒与日记桌面工具。用自然语言随手记任务，配合置顶提醒卡与未处理循环提醒，让重要的小事有处安放。</p>
-              <dl class="project-beats">
-                <div><dt>安全</dt><dd>数据保存在本机，JSON 原子写入与 7 份滚动备份。</dd></div>
-                <div><dt>克制</dt><dd>可选本地 AI 默认关闭，所有 AI 提议先预览确认再入库。</dd></div>
-              </dl>
-              <details class="project-choice">
-                <summary><span>一个设计取舍</span>把提醒调度与 AI 分开。<b aria-hidden="true">+</b></summary>
-                <p>提醒调度不依赖模型，AI 只做可选辅助；任务由你确认后创建。</p>
-              </details>
-              <div class="project-links">
-                <a href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noopener noreferrer">下载 Windows 版 ↗</a>
-                <a href="works.html#noticeme">项目详情 ↗</a>
-                <a href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Interactive Lab 03: Weather Helper -->
-          <article class="studio-project studio-project--lab" data-project-type="web" aria-label="Weather Helper">
-            <div class="project-window" data-weather-lab data-level="now">
-              <div class="window-bar"><i></i><i></i><i></i><span>WEATHER HELPER · HK</span><small class="sample-tag">固定样例 · 非实时</small></div>
-              <div class="weather-stage">
-                <div class="tennis-court" aria-hidden="true"><span class="court-ball"></span></div>
-                <div class="weather-reading">
-                  <span>启发式降雨风险 / 固定样例</span>
-                  <strong data-weather-value>20%</strong>
-                  <p data-weather-verdict role="status">适合出发</p>
-                </div>
-              </div>
-              <div class="weather-slots" role="group" aria-label="切换天气示例时段">
-                <button type="button" data-weather-slot="now" data-weather-rain="20" data-weather-verdict="适合出发" aria-pressed="true" disabled>现在</button>
-                <button type="button" data-weather-slot="later" data-weather-rain="45" data-weather-verdict="留意变化" aria-pressed="false" disabled>两小时后</button>
-                <button type="button" data-weather-slot="evening" data-weather-rain="85" data-weather-verdict="考虑改期" aria-pressed="false" disabled>傍晚</button>
-              </div>
-              <p class="weather-disclaimer">固定样例数据与启发式风险指数，非实时预报；实况请打开应用。</p>
-            </div>
-            <div class="project-info">
-              <p class="project-product-name">Weather Helper · 在线应用</p>
-              <span class="project-number">03 / 57 PUBLIC TENNIS COURTS</span>
-              <h3>今天，去哪打球？</h3>
-              <p>覆盖香港 57 个公共网球场，按开打时段给出降雨风险与选场建议，保留事前预报快照并与测站/球友实况对照检验。</p>
-              <details class="project-choice">
-                <summary><span>一个设计取舍</span>冻结开打前的预报快照。<b aria-hidden="true">+</b></summary>
-                <p>保留预测发生时的那一刻再对照实况，避免事后覆盖掩盖漏报与误报。</p>
-              </details>
-              <div class="project-links">
-                <a href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" data-weather-app target="_blank" rel="noopener noreferrer">打开应用 ↗</a>
-                <a href="works.html#weather-helper">项目详情 ↗</a>
-                <a href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Interactive Lab 04: MailHelper -->
-          <article class="studio-project studio-project--lab" data-project-type="desktop" aria-label="MailHelper">
-            <div class="project-window project-window--mail" data-mail-lab>
-              <div class="window-bar"><i></i><i></i><i></i><span>MAILHELPER / INBOX</span><small class="sample-tag">匿名虚构样例</small></div>
-              <div class="mail-list">
-                <div class="sample-mail"><span class="mail-avatar" aria-hidden="true">$</span><p>学费缴纳提醒<span>截止日期临近 · P0</span></p><span class="mail-category" data-mail-category="财务缴费">未分类</span></div>
-                <div class="sample-mail"><span class="mail-avatar" aria-hidden="true">C</span><p>Canvas 作业通知<span>课程与作业 · P1</span></p><span class="mail-category" data-mail-category="课程">未分类</span></div>
-                <div class="sample-mail"><span class="mail-avatar" aria-hidden="true">N</span><p>本周校园通讯<span>订阅摘要 · P3</span></p><span class="mail-category" data-mail-category="订阅">未分类</span></div>
-              </div>
-              <div class="lab-toolbar">
-                <p data-mail-status role="status">等待归类</p>
-                <button class="lab-button" type="button" data-mail-toggle disabled>整理样例 ↗</button>
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-product-name">MailHelper · Win / macOS</p>
-              <span class="project-number">04 / CAMPUS MAIL TRIAGE</span>
-              <h3>重要的邮件，先看到。</h3>
-              <p>七类归档、P0–P3 分级提醒，不确定邮件进「待确认」支持纠错沉淀规则，并从 Canvas 模板通知提取作业截止事项。</p>
-              <details class="project-choice">
-                <summary><span>一个设计取舍</span>分不准就进「待确认」。<b aria-hidden="true">+</b></summary>
-                <p>宁可留给用户一次纠错并自动记住同发件人规则，也不悄悄把重要通知归错箱。</p>
-              </details>
-              <div class="project-links">
-                <a href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noopener noreferrer">下载应用 ↗</a>
-                <a href="works.html#mail-helper">项目详情 ↗</a>
-                <a href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 02 / 独立光学暗房舞台：SE-CGAN 毕业设计真实去雾交互 -->
-      <section class="dehaze-band" id="dehaze-stage" aria-labelledby="dehaze-stage-title">
-        <div class="dehaze-band-inner">
-          <div class="dehaze-band-copy">
-            <span class="studio-label studio-label--dark"><b>02</b> RESEARCH TO SERVICE / 毕业设计</span>
-            <h2 id="dehaze-stage-title">让有雾的画面，<br><em>多一点清晰</em>。</h2>
-            <p class="dehaze-band-desc">SE-CGAN 单幅图像去雾。不只停留在论文和指标：从 Tiramisu 生成器训练起步，走过 PyQt6 桌面演示、FastAPI 服务化与 Docker 容器化，最终部署到 CloudBase 供直接上传体验。</p>
-            <div class="dehaze-band-specs" aria-label="离线评测与线上服务规格">
-              <div><strong>28.05</strong><span>SOTS 离线 PSNR</span></div>
-              <div><strong>0.9707</strong><span>SOTS 离线 SSIM</span></div>
-              <div><strong>256px</strong><span>线上推理最长边</span></div>
-              <div><strong>128KB</strong><span>PNG / JPG 上限</span></div>
-            </div>
-            <p class="dehaze-band-note">离线评测与线上演示规格分开记录；右侧对比为预生成真实模型输出，无需等待推理。</p>
-            <div class="studio-actions">
-              <a class="studio-button studio-button--light" href="dehaze.html" data-dehaze-demo>打开独立推理演示 <span aria-hidden="true">↗</span></a>
-              <a class="studio-button studio-button--dark-ghost" href="dehaze.html">查看完整实验记录 <span aria-hidden="true">↗</span></a>
+            <div class="btn-group home-hero__actions">
+              <a class="btn btn--primary" href="cv.html">阅读在线简历 ↗</a>
+              <a class="btn btn--secondary" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载中文简历 PDF ↓</a>
+              <a class="btn btn--ghost" href="works.html">浏览全部作品</a>
+              <a class="btn btn--ghost" href="contact.html">联系我</a>
             </div>
           </div>
 
-          <div class="focus-lab focus-lab--stage" data-focus-lab aria-label="SE-CGAN 去雾结果交互对比">
-            <div class="focus-top"><span>OPTICAL BENCH / SE-CGAN</span><span>真实模型输出 · 拖动对比</span></div>
-            <div class="focus-image" data-focus-surface>
-              <picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 64px), 520px" /><img src="assets/sample_hazy.jpg" alt="真实雾图样例中的林间道路与色卡" loading="lazy" decoding="async" width="1024" height="1024" /></picture>
-              <picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 760px) calc(100vw - 64px), 520px" /><img class="focus-clear" src="assets/sample_dehazed.png" alt="同一图像经 SE-CGAN 处理后的去雾结果" loading="lazy" decoding="async" width="512" height="512" /></picture>
-              <div class="focus-corner" aria-hidden="true"></div><div class="focus-divider" aria-hidden="true"></div>
-              <span class="focus-image-label focus-image-label--left">去雾结果</span><span class="focus-image-label focus-image-label--right">原始雾图</span>
+          <aside class="dossier-portrait" aria-label="面试官速览档案">
+            <div class="dossier-portrait__frame">
+              <img src="assets/profile-hero.jpg" alt="胡睿杰半身肖像，穿黑色衬衫靠在暖木墙面旁" width="720" height="960" loading="eager" fetchpriority="high" />
             </div>
-            <div class="focus-control">
-              <label for="focus-range">拖动画面或滑杆，比较处理前后</label>
-              <output for="focus-range" data-focus-value>50%</output>
-              <input id="focus-range" type="range" min="0" max="100" value="50" data-focus-range disabled />
+            <div class="dossier-portrait__sheet">
+              <div class="dossier-portrait__row">
+                <span class="dossier-portrait__k">研究生</span>
+                <span class="dossier-portrait__v">香港城市大学 · MSc AIB (2026–2027)</span>
+              </div>
+              <div class="dossier-portrait__row">
+                <span class="dossier-portrait__k">本科</span>
+                <span class="dossier-portrait__v">常州大学华罗庚学院 · 计科 GPA 4.1/5</span>
+              </div>
+              <div class="dossier-portrait__row">
+                <span class="dossier-portrait__k">语言 / 证书</span>
+                <span class="dossier-portrait__v">雅思 7.0 · CDA 一级 · 证券从业</span>
+              </div>
+              <div class="dossier-portrait__row">
+                <span class="dossier-portrait__k">地点</span>
+                <span class="dossier-portrait__v">上海出发 · 现于深圳实习</span>
+              </div>
             </div>
-            <div class="focus-note"><span>预生成真实结果 · 支持键盘与触控拖动</span><a href="experience.html#dehaze-case">工程化链路 ↗</a></div>
+          </aside>
+        </div>
+
+        <!-- Executive Fact Ledger -->
+        <div class="ledger" style="margin-top: clamp(2rem, 4vw, 3.25rem);" aria-label="核心履历指标">
+          <div class="ledger__cell">
+            <span class="ledger__label">EDUCATION</span>
+            <span class="ledger__value">CS × AI</span>
+            <span class="ledger__note">计算机科班 + 商业 AI 硕士在读</span>
+          </div>
+          <div class="ledger__cell">
+            <span class="ledger__label">INTERNSHIPS</span>
+            <span class="ledger__value">5 段</span>
+            <span class="ledger__note">战略行研 / 业务数据 / 量化 / 软件开发</span>
+          </div>
+          <div class="ledger__cell">
+            <span class="ledger__label">PRODUCTS</span>
+            <span class="ledger__value">4 个</span>
+            <span class="ledger__note">AI 辅助独立开发：2 在线应用 + 2 桌面工具</span>
+          </div>
+          <div class="ledger__cell">
+            <span class="ledger__label">PROOF &amp; RIGOR</span>
+            <span class="ledger__value">380.2 万 / 80.6 万</span>
+            <span class="ledger__note">纽约行程与零售数据口径清洗复核</span>
           </div>
         </div>
-      </section>
-
-      <!-- 03 / 数据思考双案例：Field Note 001 + CityU IS6335 NYC Taxi -->
-      <section class="studio-section analytical-section" id="field-note" aria-labelledby="field-note-title">
-        <div class="studio-section-head">
-          <div>
-            <span class="studio-label"><b>03</b> ANALYTICAL PROOF / 数据分析与判断</span>
-            <h2>数字本身不是结论，口径才是。</h2>
-          </div>
-          <p>两份真实数据观察：一份追问评分变化背后的数据口径，一份从四百万条行程记录中拆解城市运营线索。</p>
-        </div>
-
-        <div class="analytical-duo">
-          <!-- Left: Deep Pine Field Note 001 -->
-          <article class="field-note-card">
-            <div class="field-note-heading">
-              <span class="studio-label">FIELD NOTE 001</span>
-              <span class="field-note-kind">Data Helper · UCI 留存示例</span>
-            </div>
-            <h3 id="field-note-title">清洗之后，评分为什么反而低了？</h3>
-            <p class="field-note-desc">缺失值降为零、问题项减少，规则体检总分却从 83.4 变成 77.5。字段从 8 列投影为 7 列后，「完全重复行」的定义也变了——先解释口径，再决定是否去重。</p>
-            <div class="field-note-figure" aria-label="留存记录评分：原始83.4，筛选与字段变换后77.5；两次数据口径不同">
-              <div class="field-note-score"><span>原始数据</span><strong>83.4<small>/100</small></strong><p>1,067,371 行 · 8 列</p></div>
-              <span class="field-note-arrow" aria-hidden="true">↘</span>
-              <div class="field-note-score"><span>筛选与字段变换后</span><strong>77.5<small>/100</small></strong><p>805,549 行 · 7 列</p></div>
-              <p class="field-note-footnote">两次样本与字段口径不同，不能将分差直接判为质量好坏。</p>
-            </div>
-            <a class="field-note-link" href="data-case.html">阅读完整数据手记 <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <!-- Right: CityU IS6335 NYC Taxi -->
-          <article class="taxi-spotlight-card" aria-labelledby="taxi-spotlight-title">
-            <div class="taxi-spotlight-head">
-              <span class="studio-label">DATA CASE 002 · CITYU IS6335</span>
-              <span class="taxi-badge">独立完成 · AI 辅助</span>
-            </div>
-            <h3 id="taxi-spotlight-title">纽约出租车运营分析与数据可视化</h3>
-            <p class="taxi-spotlight-desc">用 R 清洗纽约 TLC 2025 年 3 月 4,145,257 条黄车行程至 3,801,542 条有效记录，并比较五个代表年份的 20 个月度记录数观测，结合 ggplot2 / sf / igraph 与 Python 复核分析时段、OD 客流与机场业务。</p>
-            <div class="taxi-key-figures" aria-label="纽约出租车关键指标">
-              <div><strong>380.2 万</strong><span>有效行程（原 414.5 万）</span></div>
-              <div><strong>2.73% / 10.12%</strong><span>JFK 固定价：行程占比 / 票面毛收入占比</span></div>
-            </div>
-            <p class="taxi-caveat">票面毛收入按 fare_amount 汇总，不代表净利润；<span data-taxi-dashboard-status data-pending-label="Tableau 交互展示待接入。" data-ready-label="Tableau 交互展示已接入，可从项目页进入。">Tableau 交互展示待接入。</span></p>
-            <div class="project-links">
-              <a href="works.html#nyc-taxi">阅读案例细节 ↗</a>
-              <a href="cv.html#projects">查看履历条目 ↗</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 04 / 工作方式 + 五段实习与教育 -->
-      <section class="studio-section" id="experience" aria-labelledby="experience-title">
-        <div class="studio-section-head">
-          <div>
-            <span class="studio-label"><b>04</b> EXPERIENCE / 在真实业务里学习</span>
-            <h2 id="experience-title">从数据到业务，再往前一步。</h2>
-          </div>
-          <a class="studio-text-link" href="experience.html">查看完整实习拆解 ↗</a>
-        </div>
-
-        <div id="approach" class="approach-strip" aria-label="做事方式三步">
-          <div><span>01 / OBSERVE</span><strong>先找真实场景</strong><p>从具体问题出发，如约球前先明确球场与时段。</p></div>
-          <div><span>02 / BUILD</span><strong>把信息变成工具</strong><p>把重复整理、核对与判断固化成可复用链路。</p></div>
-          <div><span>03 / REFINE</span><strong>让反馈回到产品</strong><p>用实况、回测与口径复核验证每一步结论。</p></div>
-        </div>
-
-        <div class="studio-timeline">
-          <article class="studio-experience"><time>2026.10 — 至今</time><div><h3>深圳市和宏实业 · 战略与投资部</h3><p>战略实习生，职责方向为消费电子行业研究、竞品资料与市场数据整理。</p></div><span class="experience-tag">在岗 · 职责方向</span></article>
-          <article class="studio-experience"><time>2025.09 — 2025.12</time><div><h3>北京外企德科 · 业务数据分析</h3><p>900 条运营明细转化分析、257 人面试协调，以及批量归档工具链。</p></div><span class="experience-tag">数据 / 运营</span></article>
-          <article class="studio-experience"><time>2025.06 — 2025.08</time><div><h3>海南钰泰私募基金 · 投资经理助理</h3><p>651 只股票的多因子建模、期权策略回测与五步自动化研究流水线。</p></div><span class="experience-tag">量化 / 研究</span></article>
-          <article class="studio-experience"><time>2024.12 — 2025.01</time><div><h3>睿鑫信息科技 · 嵌入式软件开发</h3><p>ARM 开发板测试、代码调试与技术文档整理。</p></div><span class="experience-tag">开发 / 测试</span></article>
-          <article class="studio-experience"><time>2024.01 — 2024.02</time><div><h3>江苏今点软件 · 软件开发</h3><p>政务平台 APP 功能修改、接口与黑盒测试、接口文档整理。</p></div><span class="experience-tag">开发 / 协作</span></article>
-        </div>
-
-        <div class="studio-education">
-          <p><strong>香港城市大学 · 商业人工智能硕士在读</strong>2026.09 — 2027.06 · MSc in Artificial Intelligence in Business</p>
-          <p><strong>常州大学 · 计算机科学与技术本科</strong>2021.10 — 2025.06 · 华罗庚学院 · GPA 4.1 / 5 · 雅思 7.0</p>
-        </div>
-      </section>
-
-      <!-- 05 / 数据之外：摄影三帧接触印样 + 生活模式入口 -->
-      <section id="off-clock" class="studio-life" aria-labelledby="life-title">
-        <div class="studio-life-gallery" aria-label="生活摄影三帧预览">
-          <figure class="life-frame-tall"><img src="assets/life/life-07.jpg" alt="街头的气球摊" width="600" height="800" loading="lazy" decoding="async" /><figcaption>01 / on the street</figcaption></figure>
-          <figure><img src="assets/life/life-06.jpg" alt="日落下的剪影" width="600" height="800" loading="lazy" decoding="async" /><figcaption>02 / after hours</figcaption></figure>
-          <figure><img src="assets/life/life-02.jpg" alt="秋日金黄的银杏与古塔" width="600" height="800" loading="lazy" decoding="async" /><figcaption>03 / autumn frame</figcaption></figure>
-        </div>
-        <div class="studio-life-copy">
-          <span class="studio-label"><b>05</b> OFF THE CLOCK</span>
-          <h2 id="life-title">数据之外，<br>也有留白。</h2>
-          <p>打网球（曾任校网球协会社长）、带着相机压马路，也剪片子、做过校园公众号。换一种视角观察日常，很多时候下一个工具的点子就在球场边或街角里冒出来。</p>
-          <div class="studio-life-actions">
-            <button class="studio-mode-button" type="button" data-open-mode="life">翻到生活那一页 ↗</button>
-            <a class="studio-text-link" href="life.html">查看 12 帧摄影与生活档案 ↗</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="studio-contact" aria-labelledby="contact-title">
-        <div>
-          <h2 id="contact-title">聊一个想法，或一个机会。</h2>
-          <p>数据分析、商业 AI、战略研究、产品实践，或者约一场网球。</p>
-        </div>
-        <a class="studio-button studio-button--primary" href="contact.html">与我联系 <span aria-hidden="true">↗</span></a>
-      </section>
+      </div>
     </section>
 
-    <!-- 首页仅保留生活精选，完整相册与书影音统一在 life.html。 -->
-    <section class="profile-shell studio-shell life-preview" data-mode-view="life" aria-hidden="true" id="life-preview" inert hidden>
-      <header class="life-preview-hero">
-        <div class="life-preview-copy"><p class="studio-eyebrow"><span class="studio-dot"></span> FIELD NOTES / AFTER HOURS</p><p class="studio-name">胡睿杰 <span>Ruijie Hu</span></p><h1>换一种视角，<br><em>继续观察。</em></h1><p class="life-preview-lead">球场、街头、剪辑台。数据之外，我也用镜头和运动记录日常；有时，一个身边的小问题，又会变成下一个工具的起点。</p><p class="life-preview-location">上海出发 · 现于深圳实习</p><div class="studio-actions"><a class="studio-button studio-button--primary" href="life.html">翻开完整生活档案 <span aria-hidden="true">↗</span></a><button class="studio-button" type="button" data-open-mode="work">回到工作页 <span aria-hidden="true">↖</span></button></div></div>
-        <div class="life-preview-photos" aria-label="生活摄影精选">
-          <figure class="life-preview-main"><a href="life.html#gallery" aria-label="进入相册，查看街头等十二张生活照片"><img src="assets/life/life-07.jpg" width="600" height="800" alt="街头的气球摊" loading="lazy" decoding="async" /></a><figcaption><span>01 / 街头</span><span aria-hidden="true">↗</span></figcaption></figure>
-          <figure><a href="life.html#gallery" aria-label="进入完整相册查看日落照片"><img src="assets/life/life-06.jpg" width="600" height="800" alt="日落下的剪影" loading="lazy" decoding="async" /></a><figcaption><span>02 / 日落</span><span aria-hidden="true">↗</span></figcaption></figure>
-          <figure><a href="life.html#gallery" aria-label="进入完整相册查看秋叶照片"><img src="assets/life/life-02.jpg" width="600" height="800" alt="秋日金黄的树叶" loading="lazy" decoding="async" /></a><figcaption><span>03 / 秋叶</span><span aria-hidden="true">↗</span></figcaption></figure>
+    <!-- Editorial Lens Switcher (Work + Life) -->
+    <div class="lens-bar" aria-label="首页阅读视角切换">
+      <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.85rem;">
+        <div class="filter-bar" data-filter-group data-filter-target="[data-home-lane]" data-filter-status="#home-lens-note" role="group" aria-label="切换展示内容">
+          <button type="button" class="filter-btn" data-filter-value="all" aria-pressed="true">完整全貌</button>
+          <button type="button" class="filter-btn" data-filter-value="work" aria-pressed="false">工作 · 分析与产品</button>
+          <button type="button" class="filter-btn" data-filter-value="life" aria-pressed="false">生活 · 球场与影像</button>
         </div>
-      </header>
-      <div class="life-preview-bottom"><p>三帧精选，完整十二帧在生活档案里。</p><a href="life.html#gallery">打开相册 ↗</a></div>
-      <div class="life-preview-topics" aria-label="生活档案入口"><a href="life.html#friend"><span>01 / ON COURT</span><h2>去球场换换脑子。</h2><p>网球训练、比赛执裁，以及由此生长的天气助手。</p><b aria-hidden="true">↗</b></a><a href="life.html#media"><span>02 / ON THE SHELF</span><h2>留一点时间给故事。</h2><p>喜欢的电影、番剧、书和歌，集中放在一处。</p><b aria-hidden="true">↗</b></a><a href="life.html#places"><span>03 / IN THE FRAME</span><h2>镜头跟着日常走。</h2><p>街角、海岸、列车窗外，和偶然遇见的片刻。</p><b aria-hidden="true">↗</b></a></div>
-      <section class="studio-contact" aria-labelledby="life-contact-title"><div><h2 id="life-contact-title">从一个共同话题开始。</h2><p>约球、聊摄影和剪辑，或者交流一个产品想法。</p></div><a class="studio-button studio-button--primary" href="contact.html">打个招呼 <span aria-hidden="true">↗</span></a></section>
+        <span class="lens-bar__note" id="home-lens-note" data-template="当前呈现 {n} 个主页章节 · 亦可直接下滑完整阅读">
+          默认完整呈现工作与生活两类内容；点击上方按钮可聚焦单一视角
+        </span>
+      </div>
+    </div>
+
+    <!-- 01. Selected AI-Assisted Products -->
+    <section class="section" id="selected-work" data-home-lane data-category="work" aria-labelledby="selected-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">01 / SELECTED PRODUCTS · 独立开发 · AI 辅助</span>
+            <h2 class="section-title" id="selected-title">从具体困扰出发，把判断固化为可用工具</h2>
+          </div>
+          <p class="section-lead">
+            四个工具均在 AI 编程工具辅助下独立完成需求拆解、实现与交付。重点不在于堆叠功能，而在于把真实使用场景里的边界条件和人工复核机制做清楚。
+          </p>
+        </div>
+
+        <div class="work-showcase">
+          <!-- Data Helper (Lead) -->
+          <article class="card card--interactive work-showcase__lead">
+            <div class="card__meta">
+              <span>01 / DATA WORKBENCH · 2026.09</span>
+              <span class="badge badge--court">已上线 · 在线应用</span>
+            </div>
+            <h3 class="card__title">Data Helper · 数据分析小助手</h3>
+            <p class="card__body">
+              面向 Excel / CSV 分析前处理的规则体检工作台：识别缺失、重复、格式与列间关系异常，提供证据样本与修复入口；清洗先预览后确认，支持多步撤销、版本回溯与 DuckDB SQL 复检。以 UCI Online Retail II 的 1,067,371 行交易明细验证业务销售口径筛选（保留 805,549 行），完整记录步骤与复检边界。
+            </p>
+            <div class="preview-thumb">
+              <img src="assets/previews/data-workbench-1280.webp" alt="Data Helper 真实工作台界面：示例销售数据、数据清洗侧栏与 DuckDB SQL 控制台" width="1280" height="720" loading="lazy" />
+            </div>
+            <div class="card__foot">
+              <div class="btn-group">
+                <span data-service-slot="DATAHELPER_DEMO_URL" data-active-label="打开在线应用 ↗" data-pending-label="应用维护中" data-link-class="btn btn--primary btn--sm">
+                  <a class="btn btn--primary btn--sm" href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noopener noreferrer">打开在线应用 ↗</a>
+                </span>
+                <a class="btn btn--secondary btn--sm" href="data-case.html">阅读评分下降案例 ↗</a>
+                <a class="btn btn--ghost btn--sm" href="works.html#data-helper">产品详情</a>
+              </div>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">FastAPI · DuckDB · Vue3</span>
+            </div>
+          </article>
+
+          <!-- NoticeMe (Side) -->
+          <article class="card card--interactive work-showcase__side">
+            <div class="card__meta">
+              <span>02 / LOCAL-FIRST DESKTOP · 2026.11</span>
+              <span class="badge badge--cobalt">Windows 版已发布</span>
+            </div>
+            <h3 class="card__title">NoticeMe · 待办、提醒与日记</h3>
+            <p class="card__body">
+              整合任务清单、今日计划、重复提醒与日记的本机优先工具（JSON 原子写入与 7 份滚动备份）。支持规则式自然语言快速记任务、置顶提醒卡与未处理循环提醒；可选本地 AI 默认关闭，所有 AI 提议须预览确认后才保存，提醒调度不依赖模型。
+            </p>
+            <div class="preview-thumb">
+              <img src="assets/previews/noticeme-tasks.webp" alt="NoticeMe 真实任务界面节选：今日任务列表、自然语言快速添加栏与提醒项" width="1280" height="620" loading="lazy" />
+            </div>
+            <div class="card__foot">
+              <div class="btn-group">
+                <a class="btn btn--primary btn--sm" href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noopener noreferrer">下载 Windows 版 ↗</a>
+                <a class="btn btn--ghost btn--sm" href="works.html#noticeme">详情与仓库</a>
+              </div>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">Electron · React · TS</span>
+            </div>
+          </article>
+
+          <!-- Weather Helper -->
+          <article class="card card--interactive work-showcase__half">
+            <div class="card__meta">
+              <span>03 / 57 HK PUBLIC COURTS · 2026.09</span>
+              <span class="badge badge--court">已上线 · Web PWA</span>
+            </div>
+            <h3 class="card__title">Weather Helper · 香港网球天气助手</h3>
+            <p class="card__body">
+              围绕“这场球会不会被雨打断”，覆盖香港 57 个公共网球场，按开打时间与 1/2/3 小时场次输出 0–100 启发式降雨风险指数、时段选场、雨团地图与开打前提醒。冻结事前预报快照并与天文台测站、球友众包实况双轨验证；对过期、缺失或覆盖不足数据明确提示“无法判断”。
+            </p>
+            <div class="callout callout--clay">
+              <strong>口径边界：</strong>0–100 启发式降雨风险指数不是已验证的真实降雨概率，单小时峰值不等于整场降雨概率，亦不宣称准确率提升。
+            </div>
+            <div class="card__foot">
+              <div class="btn-group">
+                <span data-service-slot="WEATHER_APP_URL" data-active-label="打开天气应用 ↗" data-pending-label="应用维护中" data-link-class="btn btn--primary btn--sm">
+                  <a class="btn btn--primary btn--sm" href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noopener noreferrer">打开天气应用 ↗</a>
+                </span>
+                <a class="btn btn--ghost btn--sm" href="works.html#weather-helper">详情与历史截图</a>
+              </div>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">React · FastAPI · Web Push</span>
+            </div>
+          </article>
+
+          <!-- MailHelper -->
+          <article class="card card--interactive work-showcase__half">
+            <div class="card__meta">
+              <span>04 / CAMPUS MAIL TRIAGE · 2026.10</span>
+              <span class="badge badge--cobalt">Win / macOS 已发布</span>
+            </div>
+            <h3 class="card__title">MailHelper · 校园邮件管家</h3>
+            <p class="card__body">
+              面向港校学生日常邮件：自动归入七类、标注 P0–P3 重要度，不确定邮件进入「待确认」支持人工纠正并自动沉淀同发件人规则；从已有 Canvas 模板化通知提取作业截止事项，合并重复通知并同步截止变更。
+            </p>
+            <div class="mail-mockup" aria-label="MailHelper 匿名示意界面">
+              <div class="mono" style="font-size:0.7rem;color:var(--ink-muted);display:flex;justify-content:space-between;">
+                <span>示意界面 · 全部使用匿名样例（非真实用户截图）</span>
+                <span>本地规则分拣</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--p0">P0</span>
+                <span>学费缴纳提醒 · 财务缴费</span>
+                <span class="mono" style="color:var(--accent-clay);">临期提醒</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--p1">P1</span>
+                <span>Canvas 作业通知 · 模板化 DDL 提取</span>
+                <span class="mono">课程学习</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--review">待确认</span>
+                <span>未命中高置信规则 → 人工纠错后记住发件人</span>
+                <span class="mono">反馈闭环</span>
+              </div>
+            </div>
+            <div class="card__foot">
+              <div class="btn-group">
+                <a class="btn btn--primary btn--sm" href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noopener noreferrer">下载最新版 ↗</a>
+                <a class="btn btn--ghost btn--sm" href="works.html#mail-helper">详情与边界说明</a>
+              </div>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">.NET 8 · WPF / Avalonia</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. Analytical Proof (Data Case + NYC Taxi IS6335) -->
+    <section class="section section--bordered surface-subtle" id="field-note" data-home-lane data-category="work" aria-labelledby="field-note-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">02 / ANALYTICAL PROOF · 数据口径与业务判断</span>
+            <h2 class="section-title" id="field-note-title">数字本身不是结论，口径与边界才是</h2>
+          </div>
+          <p class="section-lead">
+            两份可核对的真实数据分析记录：一份追问“清洗之后评分为什么反而下降”，一份从四百万条纽约出租车行程中拆解时段需求、OD 客流与机场业务线索。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Case 01: Data Helper UCI -->
+          <article class="card">
+            <div class="card__meta">
+              <span>CASE 01 · DATA HELPER / UCI ONLINE RETAIL II</span>
+              <span class="badge badge--clay">口径判断深度手记</span>
+            </div>
+            <h3 class="card__title">清洗之后，体检评分为什么从 83.4 降到 77.5？</h3>
+            <div class="proof-stat">
+              <span class="proof-stat__num">1,067,371</span>
+              <span class="proof-stat__arrow">→</span>
+              <span class="proof-stat__num">805,549 行</span>
+              <span class="mono" style="font-size:0.78rem;color:var(--ink-muted);">8 列 → 7 列 · 缺失 247,389 → 0</span>
+            </div>
+            <p class="card__body">
+              按本次有效销售业务口径筛选并移除 <code>StockCode</code>、<code>Description</code>、派生 <code>Amount</code> 后，缺失单元格清零，但按全部输出列判定的完全重复行占比升至 39.09%，规则总分随之下降。样本与列集合同时改变，不能将分差直接判为质量改善或退步——先解释口径，再决定是否去重。
+            </p>
+            <div class="card__foot">
+              <a class="btn btn--primary btn--sm" href="data-case.html">阅读完整数据案例 ↗</a>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">UCI CC BY 4.0 · 留存结果核对</span>
+            </div>
+          </article>
+
+          <!-- Case 02: NYC Taxi IS6335 -->
+          <article class="card">
+            <div class="card__meta">
+              <span>CASE 02 · CITYU IS6335 · 2026.11</span>
+              <span class="badge badge--cobalt">独立完成 · AI 辅助</span>
+            </div>
+            <h3 class="card__title" id="taxi-spotlight-title">纽约出租车运营分析与数据可视化</h3>
+            <div class="proof-stat">
+              <span class="proof-stat__num">2.73%</span>
+              <span style="font-size:0.85rem;color:var(--ink-secondary);">有效行程占比</span>
+              <span class="proof-stat__arrow">/</span>
+              <span class="proof-stat__num">10.12%</span>
+              <span style="font-size:0.85rem;color:var(--ink-secondary);">票面毛收入占比</span>
+            </div>
+            <p class="card__body">
+              使用 R 清洗纽约 TLC 2025 年 3 月 4,145,257 条黄车行程至 3,801,542 条有效记录，并整理 2015 / 2019 / 2021 / 2023 / 2025 五个代表年份各 3/6/9/12 月共 20 个月度观测（非连续、非全年），结合 ggplot2 / sf / igraph 与 Python 独立复核。JFK 固定价单（<code>RatecodeID == 2</code>）票面毛收入按 <code>fare_amount</code> 汇总，不等同于净利润，仍需等待时间与空驶成本验证。
+            </p>
+            <div class="card__foot">
+              <div class="btn-group">
+                <a class="btn btn--secondary btn--sm" href="works.html#nyc-taxi">查看项目细节 ↗</a>
+                <span data-service-slot="TAXI_TABLEAU_URL" data-active-label="打开 Tableau 交互展示 ↗" data-pending-label="Tableau 交互展示待接入" data-link-class="btn btn--primary btn--sm">
+                  <span class="service-pending" aria-disabled="true">Tableau 交互展示待接入</span>
+                </span>
+              </div>
+              <span class="mono" style="font-size:0.74rem;color:var(--ink-muted);">R · sf · igraph · Python 复核</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Optical Proof Darkroom (SE-CGAN Dehaze) -->
+    <section class="section surface-dark" id="dehaze-stage" data-home-lane data-category="work" aria-labelledby="dehaze-stage-title">
+      <div class="container">
+        <div class="split-asymmetric">
+          <div>
+            <span class="eyebrow">03 / RESEARCH TO SERVICE · 本科毕业设计</span>
+            <h2 class="section-title" id="dehaze-stage-title" style="margin-top:0.65rem;">
+              SE-CGAN 单幅图像去雾：从模型训练到云端可访问服务
+            </h2>
+            <p class="section-lead" style="margin-top:1rem;">
+              不只是论文与离线指标：基于 Tiramisu 密集连接 U-Net 生成器与 70×70 PatchGAN 判别器完成训练，从 PyQt6 Windows 桌面演示出发，经过权重导出一致性校验、FastAPI 推理接口封装与 Docker 容器化，最终部署至 CloudBase 独立演示服务。
+            </p>
+
+            <div class="ledger" style="margin-top:1.5rem;">
+              <div class="ledger__cell">
+                <span class="ledger__label">SOTS 离线 PSNR</span>
+                <span class="ledger__value">28.05</span>
+                <span class="ledger__note">离线测试集记录</span>
+              </div>
+              <div class="ledger__cell">
+                <span class="ledger__label">SOTS 离线 SSIM</span>
+                <span class="ledger__value">0.9707</span>
+                <span class="ledger__note">与在线规格分开说明</span>
+              </div>
+              <div class="ledger__cell">
+                <span class="ledger__label">在线推理规格</span>
+                <span class="ledger__value">256px / ≤128KB</span>
+                <span class="ledger__note">独立演示页等比缩放推理</span>
+              </div>
+            </div>
+
+            <p style="margin-top:1.15rem;font-size:var(--text-xs);color:var(--ink-on-dark-muted);">
+              右侧为预生成的真实模型输出对比，仅展示该张样例图片的去雾效果，不代表所有真实场景图片均会获得同等改善；上传与实时推理在独立演示服务完成。
+            </p>
+
+            <div class="btn-group" style="margin-top:1.5rem;">
+              <span data-service-slot="DEHAZE_DEMO_URL" data-active-label="打开独立在线演示 ↗" data-pending-label="在线演示暂未开放" data-link-class="btn btn--primary">
+                <a class="btn btn--primary" href="https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com" target="_blank" rel="noopener noreferrer">打开独立在线演示 ↗</a>
+              </span>
+              <a class="btn btn--secondary" href="dehaze.html">查看模型与接口契约</a>
+              <a class="btn btn--secondary" href="experience.html#dehaze-case">工程落地路径</a>
+            </div>
+          </div>
+
+          <div data-compare-root>
+            <div class="compare-stage" data-compare-stage>
+              <img class="compare-stage__img" src="assets/dehaze/clear-512.webp" alt="同一张林间道路图像经 SE-CGAN 去雾处理后的真实结果" width="512" height="512" loading="lazy" />
+              <img class="compare-stage__img compare-stage__before" src="assets/dehaze/hazy-960.webp" alt="有雾的林间道路与色卡，作为去雾模型输入" width="960" height="960" loading="lazy" />
+              <div class="compare-stage__divider" aria-hidden="true"></div>
+              <div class="compare-stage__knob" aria-hidden="true">↔</div>
+              <span class="compare-stage__tag compare-stage__tag--left">原始雾图</span>
+              <span class="compare-stage__tag compare-stage__tag--right">SE-CGAN 去雾结果</span>
+            </div>
+            <div class="compare-controls">
+              <label for="focus-range" class="sr-only">拖动或使用方向键调整原始雾图与去雾结果的对比分割线</label>
+              <input id="focus-range" class="compare-range" type="range" min="0" max="100" value="50" data-compare-range aria-label="去雾前后对比百分比" />
+              <div class="compare-readout">
+                <span data-compare-readout>对比分割线 50%</span>
+                <span>支持鼠标/触屏拖动与键盘 ← →（预生成真实结果）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Experience Overview & Approach -->
+    <section class="section" id="experience" data-home-lane data-category="work" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">04 / EXPERIENCE · 在真实业务与工程场景里积累</span>
+            <h2 class="section-title" id="experience-title">五段实习与我的工作方法</h2>
+          </div>
+          <div style="justify-self:start;">
+            <a class="btn btn--secondary" href="experience.html">查看完整实习拆解与校园经历 ↗</a>
+          </div>
+        </div>
+
+        <div class="exp-list">
+          <div class="exp-row">
+            <div>
+              <div class="exp-row__time">2026.10 — 至今</div>
+              <span class="badge badge--court" style="margin-top:0.35rem;">在岗 · 职责方向</span>
+            </div>
+            <div>
+              <div class="exp-row__org">深圳市和宏实业股份有限公司</div>
+              <div class="exp-row__role">战略与投资部 · 战略实习生（深圳）</div>
+            </div>
+            <p class="card__body">
+              2026.10.09 入职，当前展示岗位职责方向与拟参与工作：消费电子产业链动态跟踪、竞品对标与行业简报整理；出货量与市场份额数据整理及市场容量测算；协助战略研讨、经营复盘与新品赛道专题资料工作。
+            </p>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row__time">2025.09 — 2025.12</div>
+            <div>
+              <div class="exp-row__org">北京外企德科人力服务（上海）</div>
+              <div class="exp-row__role">业务数据分析实习生（上海）</div>
+            </div>
+            <p class="card__body">
+              清洗 AI 招聘助手约 900 条运营明细（5 客户 / 4 平台 / 33 天），构建全链路转化分析定位低效岗位；运营黄浦区选调生筛选漏斗（600+ 投递、257 人面试、90 人二面），维护德勤项目 220 名候选人主表，并自研 bat + Excel 批量归档工具链。
+            </p>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row__time">2025.06 — 2025.08</div>
+            <div>
+              <div class="exp-row__org">海南钰泰私募基金管理有限公司</div>
+              <div class="exp-row__role">投资经理助理实习生（上海）</div>
+            </div>
+            <p class="card__body">
+              基于聚宽因子库对 651 只江苏股票构建排名制打分模型；用 pandas 搭建股指期权 2020–2025 历史日行情 5 步自动化回测流水线（Covered Call、日历效应等）；复现 Fama-French 三因子模型并以结项汇报交付。（研究回测工作，不作实盘收益推论）
+            </p>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-row__time">2024.12 — 2025.01<br />2024.01 — 2024.02</div>
+            <div>
+              <div class="exp-row__org">睿鑫信息科技 · 江苏今点软件</div>
+              <div class="exp-row__role">嵌入式开发助理 / 软件开发实习生</div>
+            </div>
+            <p class="card__body">
+              在睿鑫完成 ARM 开发板测试环境搭建、功能调试与标准化技术文档整理；在今点参与政务平台 APP 功能修改、接口测试与黑盒测试，打下工程协作与规范记录基础。
+            </p>
+          </div>
+        </div>
+
+        <!-- Working Method Strip -->
+        <div class="grid-3" id="approach" style="margin-top:2.25rem;">
+          <div class="card card--flat">
+            <span class="eyebrow">01 / DEFINE</span>
+            <h3 style="font-size:var(--text-lg);">先定口径，再看结论</h3>
+            <p class="card__body">从外企德科 900 条明细转化到 Data Helper 规则评分与纽约出租车指标复核，先明确分子分母与业务边界，不让数字脱离上下文。</p>
+          </div>
+          <div class="card card--flat">
+            <span class="eyebrow">02 / BUILD</span>
+            <h3 style="font-size:var(--text-lg);">把重复动作做成工具</h3>
+            <p class="card__body">从批处理归档脚本到四个 AI 辅助独立工具，以及把毕业设计模型部署上云，倾向用最小可验证成品直接解决真实问题。</p>
+          </div>
+          <div class="card card--flat">
+            <span class="eyebrow">03 / VERIFY</span>
+            <h3 style="font-size:var(--text-lg);">留存证据与人工确认</h3>
+            <p class="card__body">天气助手保留事前快照做双轨验证，邮件管家设置“待确认”纠错闭环，待办工具默认先预览再入库——系统辅助判断，最终结论可追溯。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Off the Clock / Life Preview -->
+    <section class="section section--bordered surface-subtle" id="off-clock" data-home-lane data-category="life" aria-labelledby="life-title">
+      <div class="container" id="life-preview">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">05 / OFF THE CLOCK · 数据之外的观察</span>
+            <h2 class="section-title" id="life-title">球场、镜头与日常留白</h2>
+          </div>
+          <p class="section-lead">
+            曾任校网球协会社长与学院新闻部部长（产出近 50 篇推文、累计阅读 10k+）。数据之外，也喜欢打网球、带着相机压马路、剪辑视频，并把喜欢的电影、番剧、书籍和歌集中收在生活档案里。
+          </p>
+        </div>
+
+        <div class="triptych">
+          <figure class="triptych__item">
+            <div class="triptych__img">
+              <img src="assets/life/life-02.jpg" alt="秋日金黄的银杏与古塔" width="1400" height="788" loading="lazy" />
+            </div>
+            <figcaption class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">01 / 秋叶与古塔</figcaption>
+          </figure>
+
+          <figure class="triptych__item">
+            <div class="triptych__img">
+              <img src="assets/life/life-06.jpg" alt="日落下的剪影" width="1400" height="933" loading="lazy" />
+            </div>
+            <figcaption class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">02 / 日落剪影</figcaption>
+          </figure>
+
+          <figure class="triptych__item triptych__item--tall">
+            <div class="triptych__img">
+              <img src="assets/life/life-07.jpg" alt="街头的气球摊" width="933" height="1400" loading="lazy" />
+            </div>
+            <figcaption class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">03 / 街头气球摊</figcaption>
+          </figure>
+        </div>
+
+        <div class="card" style="margin-top:1.75rem;" id="life-contact-title">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;">
+            <div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-xl);" id="contact-title">想聊一个岗位、一份分析，或约一场网球？</h3>
+              <p class="card__body" style="margin-top:0.35rem;">
+                完整 12 帧摄影与书影音在生活档案里；招聘沟通、岗位交流或简历取用，欢迎直接联系。
+              </p>
+            </div>
+            <div class="btn-group">
+              <a class="btn btn--primary" href="contact.html">查看联系方式 ↗</a>
+              <a class="btn btn--secondary" href="life.html">翻开完整生活档案</a>
+              <a class="btn btn--ghost" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">中文简历 PDF ↓</a>
+              <a class="btn btn--ghost" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English CV ↓</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© <span data-year>2026</span> 胡睿杰</span>
+      <div class="footer-grid">
+        <div>
+          <div class="brand-mark__name" style="font-size:1.05rem;">胡睿杰 · HU RUIJIE</div>
+          <p class="card__body" style="margin-top:0.6rem;max-width:40ch;">
+            计算机科学与技术本科（GPA 4.1/5）× 香港城市大学商业人工智能硕士（MSc AIB）在读。面向业务、战略、商业与数据分析。
+          </p>
+          <p class="mono" style="margin-top:0.75rem;font-size:var(--text-xs);color:var(--ink-muted);">
+            921458257@qq.com · 18916647173 · WeChat: nick921458257
+          </p>
+        </div>
+        <div>
+          <div class="footer-col__title">站点分组</div>
+          <ul class="footer-links">
+            <li><a href="about.html">关于我 · About</a></li>
+            <li><a href="experience.html">实习与校园经历 · Experience</a></li>
+            <li><a href="works.html">作品、推文与证书 · Works</a></li>
+            <li><a href="cv.html">在线简历 · CV</a></li>
+            <li><a href="life.html">摄影与生活档案 · Life</a></li>
+            <li><a href="contact.html">联系方式 · Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col__title">专题与下载</div>
+          <ul class="footer-links">
+            <li><a href="data-case.html">Data Helper 数据判断案例</a></li>
+            <li><a href="dehaze.html">SE-CGAN 单幅图像去雾实验</a></li>
+            <li><a href="en.html" lang="en">English Executive Brief</a></li>
+            <li><a href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">下载中文简历 PDF（最新版）</a></li>
+            <li><a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">下载英文简历 PDF（通用版）</a></li>
+            <li><a href="https://github.com/tendernessnick" target="_blank" rel="noopener noreferrer">GitHub / tendernessnick ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 胡睿杰 HU RUIJIE · 静态托管个人主页</span>
+        <span>中文 PDF 含四个工具项目与 IS6335 更新；英文 PDF 为原有通用版本</span>
+      </div>
     </div>
   </footer>
 
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/studio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <script type="module" src="js/main.js?v=20261120"></script>
+  <script type="module" src="js/compare.js?v=20261120"></script>
 </body>
 </html>

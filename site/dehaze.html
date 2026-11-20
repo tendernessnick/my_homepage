@@ -1,109 +1,287 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>图像去雾 · 毕业设计｜胡睿杰</title>
-  <meta name="description" content="SE-CGAN 单幅图像去雾毕业设计：拖动真实样例对比，了解模型训练、离线评测与在线部署，进入独立服务上传图片体验。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="图像去雾 · 毕业设计｜胡睿杰" />
-  <meta property="og:description" content="SE-CGAN 单幅图像去雾毕业设计：拖动真实样例对比，了解模型训练、离线评测与在线部署，进入独立服务上传图片体验。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SE-CGAN 单幅图像去雾实验 · 胡睿杰 HU RUIJIE</title>
+  <meta name="description" content="胡睿杰本科毕业设计 SE-CGAN 单幅图像去雾：预生成真实雾图/去雾拖动对比、模型架构、离线评测与独立在线推理服务契约说明。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="works" class="folio-page" data-article="dehaze">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
+
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html" aria-current="page">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
-
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="works.html"><span>作品目录</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="dehaze.html" aria-current="page"><span>SE-CGAN 去雾</span><span class="mono">LAB</span></a>
+        <a class="mobile-drawer__link" href="data-case.html"><span>数据判断案例</span><span class="mono">CASE</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="contact.html"><span>联系我</span><span class="mono">06</span></a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>EXPERIMENT / DEHAZE</span></div>
-    <section class="container dehaze-case-hero" id="result" aria-labelledby="dehaze-title">
-      <div>
-        <p class="eyebrow">Image experiment / 图像实验</p>
-        <p class="ep-experiment-name" aria-hidden="true">SEE<br><span>CLEAR.</span></p>
-        <h1 class="page-title" id="dehaze-title">让有雾的画面，<br><em>多一点清晰。</em></h1>
-        <p class="dehaze-case-sub">SE-CGAN / 单幅图像去雾</p>
-        <p class="lead">一次从模型训练走向在线服务的毕业设计。先拖动滑杆看处理前后，再打开独立演示页，试试你自己的图片。</p>
-        <div class="actions"><a class="btn primary" href="#try" data-section-jump>试试在线演示 ↗</a><a class="btn" href="#method" data-section-jump>看看实现思路 ↓</a></div>
-      </div>
-      <figure class="case-compare" data-focus-lab>
-        <div class="compare-head"><span>01 / PREGENERATED SAMPLE</span><span>SE-CGAN</span></div>
-        <div class="compare-image" data-focus-surface>
-          <picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="有雾的林间道路与色卡，作为去雾模型输入" fetchpriority="high" decoding="async" width="1024" height="1024" /></picture>
-          <picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img class="compare-result" src="assets/sample_dehazed.png" alt="同一张林间道路图像经 SE-CGAN 处理后的结果" fetchpriority="high" decoding="async" width="512" height="512" /></picture>
-          <div class="compare-divider" aria-hidden="true"></div><div class="compare-labels" aria-hidden="true"><span>去雾结果</span><span>原始雾图</span></div>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">EXPERIMENT / DEHAZE · 本科毕业设计</span>
+        <h1 class="page-hero__title" id="dehaze-title">SE-CGAN 单幅图像去雾</h1>
+        <p class="page-hero__lead">
+          一次从模型训练走向独立在线推理服务的完整工程练习。先在下方拖动对比预生成的真实模型样例，再前往独立演示服务上传图片体验。
+        </p>
+        <div class="btn-group" style="margin-top:1.35rem;">
+          <span data-service-slot="DEHAZE_DEMO_URL" data-active-label="打开独立在线演示 ↗" data-pending-label="在线演示暂未开放" data-link-class="btn btn--primary">
+            <a class="btn btn--primary" href="https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com" target="_blank" rel="noopener noreferrer">打开独立在线演示 ↗</a>
+          </span>
+          <a class="btn btn--secondary" href="#method">看看实现思路 ↓</a>
+          <a class="btn btn--ghost" href="#try">服务规格与 API 契约 ↓</a>
         </div>
-        <div class="compare-control"><label for="dehaze-compare">拖动画面或滑杆，比较处理前后</label><output for="dehaze-compare" data-focus-value>50%</output><input id="dehaze-compare" type="range" min="0" max="100" value="50" data-focus-range disabled /></div>
-        <figcaption>预生成真实结果；网页使用压缩预览。<a href="assets/sample_hazy.jpg" target="_blank" rel="noopener">原始雾图 ↗</a> · <a href="assets/sample_dehazed.png" target="_blank" rel="noopener">原始结果 ↗</a>。</figcaption>
-      </figure>
+      </div>
     </section>
 
-    <section class="container case-snapshot" aria-label="离线评测与线上演示规格">
-      <div class="mini-metrics"><div><strong>28.05</strong><span>SOTS 离线评测 · PSNR</span></div><div><strong>0.9707</strong><span>SOTS 离线评测 · SSIM</span></div><div><strong>256px</strong><span>在线推理 · 输入最长边</span></div><div><strong>128KB</strong><span>在线上传 · PNG / JPG 上限</span></div></div>
-      <p class="case-measure-note">评测数字来自既有训练实验记录；在线演示会等比缩放输入，展示规格与离线评测口径分开说明。</p>
+    <!-- Optical Comparator Stage -->
+    <section class="section surface-dark" id="result" aria-labelledby="compare-heading">
+      <div class="container">
+        <div class="split-asymmetric">
+          <div id="dehaze-compare" data-compare-root>
+            <div class="compare-stage" data-compare-stage>
+              <img class="compare-stage__img" src="assets/dehaze/clear-512.webp" alt="同一张林间道路图像经 SE-CGAN 处理后的结果" width="512" height="512" loading="eager" />
+              <img class="compare-stage__img compare-stage__before" src="assets/dehaze/hazy-960.webp" alt="有雾的林间道路与色卡，作为去雾模型输入" width="960" height="960" loading="eager" />
+              <div class="compare-stage__divider" aria-hidden="true"></div>
+              <div class="compare-stage__knob" aria-hidden="true">↔</div>
+              <span class="compare-stage__tag compare-stage__tag--left">原始雾图</span>
+              <span class="compare-stage__tag compare-stage__tag--right">SE-CGAN 去雾结果</span>
+            </div>
+            <div class="compare-controls">
+              <label for="dehaze-range" class="sr-only">拖动或使用方向键控制对比位置</label>
+              <input id="dehaze-range" class="compare-range" type="range" min="0" max="100" value="50" data-compare-range aria-label="去雾对比分割百分比" />
+              <div class="compare-readout">
+                <span data-compare-readout>对比分割线 50%</span>
+                <span>0–100% · 支持键盘 ← → 与触屏水平拖动</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="eyebrow">01 / PREGENERATED SAMPLE</span>
+            <h2 class="section-title" id="compare-heading" style="margin-top:0.5rem;">先把真实样例看清楚</h2>
+            <p class="section-lead" style="margin-top:0.85rem;">
+              网页采用压缩预览以加快加载；你也可以直接查看未压缩原始输入与模型输出文件。
+            </p>
+            <div class="btn-group" style="margin-top:1.1rem;">
+              <a class="btn btn--secondary btn--sm" href="assets/sample_hazy.jpg" target="_blank" rel="noopener noreferrer">查看原始雾图 ↗</a>
+              <a class="btn btn--secondary btn--sm" href="assets/sample_dehazed.png" target="_blank" rel="noopener noreferrer">查看原始去雾结果 ↗</a>
+            </div>
+
+            <div class="ledger" style="margin-top:1.5rem;">
+              <div class="ledger__cell">
+                <span class="ledger__label">SOTS 离线 PSNR</span>
+                <span class="ledger__value">28.05</span>
+                <span class="ledger__note">离线测试集评测</span>
+              </div>
+              <div class="ledger__cell">
+                <span class="ledger__label">SOTS 离线 SSIM</span>
+                <span class="ledger__value">0.9707</span>
+                <span class="ledger__note">离线测试集评测</span>
+              </div>
+              <div class="ledger__cell">
+                <span class="ledger__label">在线上传上限</span>
+                <span class="ledger__value">128KB</span>
+                <span class="ledger__note">PNG / JPG 格式</span>
+              </div>
+              <div class="ledger__cell">
+                <span class="ledger__label">在线推理尺寸</span>
+                <span class="ledger__value">256px</span>
+                <span class="ledger__note">服务端按最长边等比缩放</span>
+              </div>
+            </div>
+
+            <p style="margin-top:1.1rem;font-size:var(--text-xs);color:var(--ink-on-dark-muted);">
+              口径边界：上方对比展示的是这一张样例图片的模型输出；离线指标来自 SOTS 测试集实验记录，不代表每一张真实场景图片都会获得同等程度的改善，离线评测与在线推理规格分开交代。
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Method -->
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">METHOD · 从图像问题到模型实现</span>
+          <h2 class="section-title" id="method-title">模型结构与训练评测</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="eyebrow">01 / PROBLEM</span>
+            <h3 class="card__title">图像去雾目标</h3>
+            <p class="card__body">雾霾会显著降低图像的对比度与色彩保真度，并影响下游视觉算法输入质量。目标是从单幅有雾图像重建更清晰、细节更自然的无雾图像。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">02 / MODEL</span>
+            <h3 class="card__title">SE-CGAN 网络设计</h3>
+            <p class="card__body">采用 Tiramisu 密集连接 U-Net 生成器重建图像，配合 70×70 PatchGAN 判别器约束局部纹理，使用 L1 重建损失、VGG 感知损失与对抗损失加权联合训练。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">03 / EVALUATION</span>
+            <h3 class="card__title">数据集与一致性校验</h3>
+            <p class="card__body">基于 RESIDE 合成雾图与 O-HAZE 真实雾图训练评测，记录 SOTS 离线指标 PSNR 28.05 / SSIM 0.9707，并校验导出推理权重与训练工程的一致性。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Delivery -->
+    <section class="section section--bordered surface-subtle" id="delivery" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">DELIVERY · 让研究结果可以被打开</span>
+          <h2 class="section-title" id="delivery-title">从 PyQt6 桌面端到 CloudBase 独立演示服务</h2>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <span class="eyebrow">01 / DESKTOP</span>
+            <h3 style="font-size:var(--text-lg);">PyQt6 桌面演示</h3>
+            <p class="card__body">最初用于本地加载模型权重，直观对比处理前后效果。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">02 / SERVICE</span>
+            <h3 style="font-size:var(--text-lg);">FastAPI 推理接口</h3>
+            <p class="card__body">将权重、推理与前端展示解耦，按固定契约对外提供 HTTP 服务。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">03 / CONTAINER</span>
+            <h3 style="font-size:var(--text-lg);">Docker 容器化</h3>
+            <p class="card__body">固化 Python 与模型运行依赖，确保迁移与启动行为一致。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">04 / ONLINE</span>
+            <h3 style="font-size:var(--text-lg);">CloudBase 云托管</h3>
+            <p class="card__body">由独立演示页承载上传与 CPU 在线推理，主页保持纯静态零后端依赖。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Contract & Try Online -->
     <section class="section" id="try" aria-labelledby="demo-title">
-      <div class="container case-demo-entry" data-demo-card>
-        <div><p class="eyebrow">Open the demo / 完整体验</p><h2 id="demo-title">换一张图，<br>让模型来处理。</h2><p>在线演示在独立的去雾服务中打开，可拖拽上传、选择示例、滑动对比、查看耗时并下载结果。</p><div class="actions"><a class="btn primary" href="https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noopener noreferrer" data-demo-cta>打开在线演示 ↗</a></div><p class="demo-note" data-demo-note hidden>在线演示暂未开放，可以先查看上方的预生成对比样例。</p></div>
-        <dl class="case-entry-specs"><div><dt>图片格式</dt><dd>PNG 或 JPG，文件不超过 128KB。</dd></div><div><dt>结果尺寸</dt><dd>服务端按比例缩放至最长边 256px，再完成推理。</dd></div><div><dt>打开方式</dt><dd>在新标签进入演示页，上传与推理由独立服务完成。</dd></div><div><dt>等待时间</dt><dd>首次访问可能需要冷启动；具体耗时以演示页显示为准。</dd></div></dl>
+      <div class="container">
+        <div class="card">
+          <span class="eyebrow">OPEN THE DEMO · 独立在线演示与接口契约</span>
+          <h2 class="section-title" id="demo-title">前往独立演示服务体验你自己的图片</h2>
+          <p class="card__body">
+            本个人主页保持纯静态架构，不自行接管文件上传或推理；点击下方按钮将在新标签页进入独立去雾演示服务，可拖拽上传、选择示例、滑动对比并下载结果。首次访问如遇容器冷启动，请稍候片刻。
+          </p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>接口 / 规格项</th>
+                  <th>契约说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">GET /health</td>
+                  <td>返回推理服务健康状态与运行设备信息（如 CPU）。</td>
+                </tr>
+                <tr>
+                  <td class="mono">POST /dehaze</td>
+                  <td>接收 <code>multipart/form-data</code> 字段 <code>image</code>（PNG / JPG，大小 ≤ 128KB）；服务端按最长边 256px 等比缩放推理，返回去雾后的 PNG 图像与 <code>X-Processing-Time</code> 耗时响应头。图片仅临时用于当次推理，不落盘留存。</td>
+                </tr>
+                <tr>
+                  <td class="mono">错误状态码</td>
+                  <td>异常返回 <code>413</code>（文件超限）/ <code>400</code>（请求异常）/ <code>415</code>（格式不支持）/ <code>500</code>（推理失败）并附中文 <code>detail</code> 字段说明。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="btn-group" style="margin-top:0.5rem;">
+            <span data-service-slot="DEHAZE_DEMO_URL" data-active-label="在新标签打开独立演示页 ↗" data-pending-label="在线演示暂未开放，可查看上方预生成样例" data-link-class="btn btn--primary">
+              <a class="btn btn--primary" href="https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com" target="_blank" rel="noopener noreferrer">在新标签打开独立演示页 ↗</a>
+            </span>
+            <a class="btn btn--secondary" href="experience.html#dehaze-case">查看工程化案例记录</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section tight" id="method" aria-labelledby="method-title">
-      <div class="container"><div class="section-head"><h2 id="method-title">从图像问题，到模型实现</h2></div>
-        <div class="case-method"><article><span>01 / PROBLEM</span><h3>恢复对比与细节</h3><p>雾霾降低图像的对比度与色彩保真度，也会影响视觉算法的输入质量。目标是从一张有雾图像，重建更清晰的结果。</p></article><article><span>02 / MODEL</span><h3>生成与判别共同训练</h3><p>条件生成对抗网络 SE-CGAN：Tiramisu 密集连接 U-Net 生成器重建图像，70×70 PatchGAN 判别器约束局部纹理。</p></article><article><span>03 / EVALUATION</span><h3>让结果可以比较</h3><p>使用 RESIDE 合成雾图与 O-HAZE 真实雾图训练、评测，记录 SOTS 测试集的 PSNR 与 SSIM，并校验导出权重与训练工程的一致性。</p></article></div>
-        <details><summary>展开模型训练与推理说明</summary><div class="case-limit"><h2>实现补充</h2><p>训练采用 L1 重建损失、VGG 感知损失与对抗损失的加权组合。生成器负责重建无雾图像，判别器提供局部纹理约束。服务化后通过 FastAPI 接收 multipart 图片并返回 PNG，输入尺寸与上传体积受服务规格限制。</p></div></details>
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="works.html">
+          <span class="pager-card__kicker">← 返回目录</span>
+          <span class="pager-card__title">作品与研究目录</span>
+        </a>
+        <a class="pager-card pager-card--next" href="data-case.html">
+          <span class="pager-card__kicker">另一种观察 →</span>
+          <span class="pager-card__title">Data Helper 数据判断案例</span>
+        </a>
       </div>
-    </section>
-
-    <section class="section tight" id="delivery" aria-labelledby="delivery-title"><div class="container"><div class="section-head"><h2 id="delivery-title">让研究结果可以被打开</h2></div><p class="lead">最初是 PyQt6 Windows 桌面演示，后来把权重、推理与展示拆开，部署为可以通过链接访问的服务。</p><ol class="case-pipeline" aria-label="从本地演示到云端部署的四步链路"><li><span>01 / DESKTOP</span><strong>桌面演示</strong><p>PyQt6 加载模型权重，本地查看去雾结果。</p></li><li><span>02 / SERVICE</span><strong>推理服务</strong><p>导出权重、一致性校验与 FastAPI 接口。</p></li><li><span>03 / CONTAINER</span><strong>容器化</strong><p>Docker 固定依赖与启动环境，便于迁移。</p></li><li><span>04 / ONLINE</span><strong>在线体验</strong><p>CloudBase 云托管承载演示页与推理。</p></li></ol></div></section>
-    <section class="section tight"><div class="container case-limit"><h2>先把样例看清楚。</h2><p>上方对比展示这一张图片的模型输出；离线指标描述所用测试集上的表现，不代表每张真实场景图片都会得到同样的改善。可以在独立演示页换图比较，也可以继续查看<a href="experience.html#dehaze-case">工程化案例 ↗</a>。</p></div></section>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="works.html"><span><small>上一页</small><strong>返回作品目录</strong></span><b aria-hidden="true">←</b></a><a href="experience.html#dehaze-case"><span><small>继续看看</small><strong>去雾工程化案例</strong></span><b aria-hidden="true">↗</b></a></nav>
+    </nav>
   </main>
 
-  <footer class="footer"><div class="container"><span>© <span data-year>2026</span> 胡睿杰｜图像去雾</span></div></footer>
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/studio.js?v=51"></script>
-  <script type="module" src="js/folio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <div class="btn-group">
+          <a href="works.html">全部作品</a>
+          <a href="cv.html">在线简历</a>
+          <a href="contact.html">联系我</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js?v=20261120"></script>
+  <script type="module" src="js/compare.js?v=20261120"></script>
 </body>
 </html>

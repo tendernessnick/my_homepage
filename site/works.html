@@ -1,380 +1,592 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Works｜胡睿杰</title>
-  <meta name="description" content="胡睿杰的作品：NoticeMe、Data Helper、Weather Helper、MailHelper 四个独立产品，图像去雾毕业设计，以及纽约出租车运营分析与数据可视化案例。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="Works｜胡睿杰" />
-  <meta property="og:description" content="胡睿杰的作品：NoticeMe、Data Helper、Weather Helper、MailHelper 四个独立产品，图像去雾毕业设计，以及纽约出租车运营分析与数据可视化案例。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="preload" as="image" href="assets/sample_hazy.jpg" fetchpriority="low" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>作品、产品与研究 · 胡睿杰 HU RUIJIE</title>
+  <meta name="description" content="胡睿杰全部代表作品：NoticeMe、Data Helper、Weather Helper、MailHelper 四个 AI 辅助独立开发产品，SE-CGAN 图像去雾研究，CityU IS6335 纽约出租车运营分析，8 篇公众号代表推文与 12 张证书原件墙。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="works" class="folio-page works-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html" aria-current="page">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="about.html"><span>关于我</span><span class="mono">01</span></a>
+        <a class="mobile-drawer__link" href="experience.html"><span>实习与校园经历</span><span class="mono">02</span></a>
+        <a class="mobile-drawer__link" href="works.html" aria-current="page"><span>作品与研究</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="life.html"><span>摄影与生活</span><span class="mono">05</span></a>
+        <a class="mobile-drawer__link" href="contact.html"><span>联系我</span><span class="mono">06</span></a>
+        <a class="mobile-drawer__link" href="en.html" lang="en"><span>English Brief</span><span class="mono">EN</span></a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>03 / WORKS</span></div>
-    <section class="container page-hero ep-works-hero">
-      <div class="ep-work-heading"><div><p class="eyebrow">Works / 产品与分析</p><h1 class="page-title">从一个问题，<br>到具体的答案。</h1></div><div class="ep-work-summary" aria-label="四个独立产品，一项图像研究，一项数据分析案例"><div><strong>04</strong><span>独立产品 / PRODUCTS</span></div><div><strong>01</strong><span>图像研究 / RESEARCH</span></div><div><strong>01</strong><span>数据分析 / DATA CASE</span></div><p>Built around everyday questions.</p></div></div>
-      <p class="lead">四个独立产品，一项图像研究，一项数据分析案例。打开体验，或了解问题、方法与发现。</p>
-      <div class="work-index" aria-label="作品目录">
-        <a href="#noticeme" data-section-jump><span>01 / 桌面工具</span><strong>NoticeMe</strong><small>待办、提醒与日记 ↗</small></a>
-        <a href="#data-helper" data-section-jump><span>02 / 数据工作台</span><strong>Data Helper</strong><small>体检、清洗与分析 ↗</small></a>
-        <a href="#weather-helper" data-section-jump><span>03 / 球场决策</span><strong>Weather Helper</strong><small>香港网球天气 ↗</small></a>
-        <a href="#mail-helper" data-section-jump><span>04 / 桌面工具</span><strong>MailHelper</strong><small>校园邮件与日程 ↗</small></a>
-        <a href="#dehaze" data-section-jump><span>05 / 毕业设计</span><strong>SE-CGAN</strong><small>图像去雾研究 ↗</small></a>
-        <a href="#nyc-taxi" data-section-jump><span>06 / 数据分析</span><strong>纽约出租车运营</strong><small>需求、客流与收入 ↗</small></a>
-      </div>
-      <nav class="section-nav work-material-nav" aria-label="材料目录"><a href="#docs" data-section-jump>下载与入口 ↓</a><a href="#wx" data-section-jump>公众号作品 ↓</a><a href="#certs" data-section-jump>证书档案 ↓</a></nav>
-    </section>
-
-    <section class="section tight">
+    <section class="page-hero">
       <div class="container">
-        <div class="section-head work-products-heading">
-          <h2>六项代表作品</h2>
+        <span class="eyebrow">03 / WORKS · 产品、研究与内容档案</span>
+        <h1 class="page-hero__title">从一个真实问题，做到可验证的结果</h1>
+        <p class="page-hero__lead">
+          包含四个 AI 辅助独立开发产品、一项图像去雾研究、一项百万级行程数据分析案例，以及 8 篇校园公众号代表推文与 12 张证书原件档案。
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.5rem;">
+          <div class="filter-bar" data-filter-group data-filter-target="[data-work-item]" data-filter-status="#works-filter-status" role="group" aria-label="按类型筛选六项代表作品">
+            <button type="button" class="filter-btn" data-filter-value="all" aria-pressed="true">全部作品 (6)</button>
+            <button type="button" class="filter-btn" data-filter-value="product" aria-pressed="false">独立产品 (4)</button>
+            <button type="button" class="filter-btn" data-filter-value="research" aria-pressed="false">数据与研究 (2)</button>
+          </div>
+          <span class="mono" id="works-filter-status" data-template="当前显示 {n} 项作品" style="font-size:var(--text-xs);color:var(--ink-muted);">当前显示 6 项作品</span>
         </div>
 
-        <article class="flagship-work reveal" id="noticeme">
-          <div class="ep-project-rail"><span aria-hidden="true">01</span><p>本地记录与提醒</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">01 / NoticeMe · Windows 已发布 · 2026.11</span>
-            <h3>NoticeMe · 待办、提醒与日记</h3>
-            <p>把随手想到的事情记下来，再在需要的时候提醒自己。一个本地优先的桌面工具，将待办、重复提醒和日记放进同一处，目前提供 Windows 版下载。</p>
-            <div class="flagship-actions">
-              <a class="btn primary" href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noreferrer noopener">下载 Windows 版 ↗</a>
-              <a class="btn" href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
-            </div>
-            <details class="work-notes"><summary>功能与实现 <span>任务记录、提醒与本地 AI</span></summary>
-              <div class="work-value-list">
-              <p><strong>记录</strong><span>用自然语言快速记任务，支持重复任务、日记记录、托盘与快捷键，减少在不同工具之间切换。</span></p>
-              <p><strong>提醒</strong><span>置顶提醒卡、提示音与系统通知搭配使用，让提醒在桌面上有一个清晰的位置。</span></p>
-              <p><strong>工程</strong><span>Electron + React / TypeScript + Zustand，跨平台架构面向 Windows / macOS；JSON 原子写入与 7 份滚动备份。可选本地 Qwen 模型默认关闭，AI 提议先预览、确认后再写入任务。</span></p>
-            </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">Electron</span><span class="tag">React · TypeScript</span><span class="tag">Zustand</span><span class="tag">本地优先</span></div>
-            </details>
-          </div>
-          <figure class="preview-window preview-noticeme" aria-label="NoticeMe 真实任务界面截图节选">
-            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>NOTICEME / EVERYDAY NOTES</span></div>
-            <a class="preview-image-link" href="assets/previews/noticeme-tasks.webp" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 NoticeMe 任务界面截图节选">
-              <picture><source type="image/webp" srcset="assets/previews/noticeme-tasks-640.webp 640w, assets/previews/noticeme-tasks.webp 1440w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 650px" /><img src="assets/previews/noticeme-tasks.webp" width="1440" height="691" alt="NoticeMe 真实应用截图节选：任务列表、快速添加和待办分类" loading="lazy" decoding="async" /></picture>
-            </a>
-            <figcaption><strong>任务界面示例</strong><span>真实应用截图节选 · 点击查看原图 ↗</span></figcaption>
-            <div class="preview-footnote">随手记录 → 到时提醒 → 完成归档</div>
-          </figure>
-        </article>
-
-        <article class="flagship-work reveal" id="data-helper">
-          <div class="ep-project-rail"><span aria-hidden="true">02</span><p>让数据变得可用</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">02 / Data Helper · 在线应用 · 2026.09</span>
-            <h3>数据分析小助手 · Data Helper</h3>
-            <p>从一张有问题的表格开始：导入、体检、清洗、可视化，再把干净数据交给主力分析软件。桌面版在本机处理，云部署版在服务容器内处理。</p>
-            <div class="flagship-actions">
-              <a class="btn primary" data-datahelper-app data-datahelper-cta href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">进入在线体验</a>
-              <a class="btn" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
-              <a class="btn" href="data-case.html">读数据案例 ↗</a>
-            </div>
-            <details class="work-notes"><summary>功能与实现 <span>体检规则、公开案例与看板扩展</span></summary>
-              <div class="work-value-list">
-              <p><strong>产品</strong><span>纯本地规则体检引擎：0-100 质量评分 + 六维质量雷达 + 结构化问题清单，每个问题带一键修复；可检测列间算术关系违反与函数依赖冲突。</span></p>
-              <p><strong>工程</strong><span>FastAPI + DuckDB + Parquet 列存 + Vue3 / ECharts；大 CSV 分块流式直写 Parquet（20 万行/块）；22 种清洗变换与多步版本回溯。</span></p>
-              <p><strong>案例</strong><span>用 UCI Online Retail II 的 1,067,371 行零售交易跑通预处理：体检定位重复、格式和退货记录等问题，按本案例销售口径筛选得到 805,549 行记录；过程与结果随仓库公开。</span></p>
-              <p><strong>扩展</strong><span>支持 MCP 协议外接 AI 客户端；运营看板扩展分支新增 KPI 卡、环比与口径说明、转化漏斗、结果钉卡和全屏放映，独立于当前在线体验版本。</span></p>
-            </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">FastAPI</span><span class="tag">DuckDB</span><span class="tag">Parquet</span><span class="tag">Vue3 · ECharts</span><span class="tag">MCP</span></div>
-            </details>
-          </div>
-          <figure class="preview-window preview-data" aria-label="Data Helper 真实工作台截图">
-            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>DATA HELPER / WORKBENCH</span></div>
-            <a class="preview-image-link" href="assets/previews/data-workbench.png" target="_blank" rel="noreferrer noopener" aria-label="在新标签打开 Data Helper 工作台完整截图">
-              <picture><source type="image/webp" srcset="assets/previews/data-workbench-640.webp 640w, assets/previews/data-workbench-1280.webp 1280w" sizes="(max-width: 900px) calc(100vw - 80px), (max-width: 1100px) 56vw, 570px" /><img src="assets/previews/data-workbench.png" width="1280" height="720" alt="Data Helper 真实工作台：示例销售数据表、数据清洗侧栏和底部 SQL 控制台" loading="lazy" decoding="async" /></picture>
-            </a>
-            <figcaption><strong>真实工作台</strong><span>示例销售数据 · 点击查看原图 ↗</span></figcaption>
-            <div class="preview-footnote">导入 → 体检 → 修复 → 分析 → 导出</div>
-          </figure>
-        </article>
-
-        <article class="flagship-work reveal" id="weather-helper">
-          <div class="ep-project-rail"><span aria-hidden="true">03</span><p>为了下一场网球</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">03 / Weather Helper · 在线应用 · 2026.09</span>
-            <h3>网球天气助手（香港）· Weather Helper</h3>
-            <p>面向全港 57 个公共网球场的降雨决策 PWA：在官方预报之上做二次评价，回答「这个球场的预报今天信不信」。</p>
-            <div class="flagship-actions">
-              <a class="btn primary" data-weather-app data-weather-cta href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noreferrer noopener">打开在线应用 ↗</a>
-              <a class="btn" href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
-            </div>
-            <details class="work-notes"><summary>功能与实现 <span>预报融合、实况验证与工程</span></summary>
-              <div class="work-value-list">
-              <p><strong>产品</strong><span>融合天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 十年气候档案，输出 0-6 小时启发式降雨风险指数与「放心 / 边缘 / 别赌」决策建议；「去哪打」按时段找更干燥的球场，雨团地图查看降雨位置与走向。</span></p>
-              <p><strong>闭环</strong><span>球友到场众包上报实况（地理围栏 + 冷却防刷），保留事前预报版本并与天文台测站双轨配对，比较各预报源的漏报、误报与误差表现（Brier）。</span></p>
-              <p><strong>工程</strong><span>FastAPI + SQLAlchemy 定时调度 + React 19 / Vite / Tailwind 4；Web Push 开打前下雨提醒；80 项 pytest；Docker 云端部署，当前入口为 CloudBase。</span></p>
-            </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">React 19 · Vite</span><span class="tag">Tailwind 4</span><span class="tag">FastAPI</span><span class="tag">Web Push</span><span class="tag">Docker · CloudBase</span></div>
-            </details>
-          </div>
-          <figure class="preview-window preview-weather preview-weather--real" aria-label="Weather Helper 真实首页截图节选，历史界面记录而非实时天气">
-            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>WEATHER HELPER / HONG KONG</span></div>
-            <a class="preview-image-link" href="assets/previews/weather-current.webp" target="_blank" rel="noopener noreferrer" aria-label="放大查看网球天气助手真实首页记录">
-              <img src="assets/previews/weather-current.webp" width="768" height="708" alt="网球天气助手真实首页：57个公共网球场入口与采集时刻的历史概览；图中天气数值不是实时预报" loading="lazy" decoding="async" />
-            </a>
-            <figcaption><strong>真实首页记录</strong><span>2026-11-14 13:09 HKT · 静态截图节选</span></figcaption>
-            <div class="preview-footnote">历史界面，非实时天气。首次打开应用可能有平台访问提示。</div>
-          </figure>
-        </article>
-
-        <article class="flagship-work reveal" id="mail-helper">
-          <div class="ep-project-rail"><span aria-hidden="true">04</span><p>让重要信息先到达</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">04 / MailHelper · 双平台桌面工具 · 2026.10</span>
-            <h3>邮箱管家 · MailHelper</h3>
-            <p>从港校学生每天面对的校园邮件出发，做了一个 Windows / macOS 桌面管家：通过已登录的经典版 Outlook 同步邮件，自动分好类、标好轻重，重要通知不再淹没在收件箱里。</p>
-            <div class="flagship-actions">
-              <a class="btn primary" href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noreferrer noopener">下载最新版 ↗</a>
-              <a class="btn" href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noreferrer noopener">GitHub 仓库 ↗</a>
-            </div>
-            <details class="work-notes"><summary>功能与实现 <span>分类规则、Canvas 日程与双端</span></summary>
-              <div class="work-value-list">
-              <p><strong>产品</strong><span>七类自动分类（课程 / 职业发展 / 校园事务 / 财务缴费 / 通知 / 订阅 / 其他），分不准进「待确认」不默默分错；P0-P3 重要度标注，缴费截止与面试邀约一眼可见；改分一封，同发件人以后自动归对。</span></p>
-              <p><strong>日程</strong><span>从 Canvas 模板化通知邮件识别作业截止时间，按今天、未来 7 天等分组并提供临期提醒；分级邮件通知、全文搜索与每 5 分钟增量同步一起服务日常整理。</span></p>
-              <p><strong>工程</strong><span>.NET 8 共享核心，Windows WPF + macOS Avalonia 双界面，EF Core / SQLite 本地存储；GitHub Actions CI 与双平台发布。分类在本机完成，不存邮箱凭据；支持自写分类规则和保存前试跑。</span></p>
-            </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">.NET 8</span><span class="tag">WPF · Avalonia</span><span class="tag">EF Core · SQLite</span><span class="tag">GitHub Actions</span><span class="tag">Windows · macOS</span></div>
-            </details>
-          </div>
-          <div class="preview-window preview-mail" role="img" aria-label="MailHelper 界面示意：匿名样例邮件按课程、职业发展和缴费归类，Canvas 截止时间进入日程">
-            <div class="preview-titlebar"><span class="preview-window-dots" aria-hidden="true">● ● ●</span><span>MAILHELPER / INBOX</span></div>
-            <div class="preview-mail-main">
-              <div class="preview-mail-heading"><strong>各归其位。</strong><span>校园邮件 / 本地整理</span></div>
-              <div class="preview-mail-row"><span class="preview-priority preview-priority--urgent">P0</span><div><b>缴费截止提醒</b><small>财务缴费 · 样例邮件</small></div><span class="preview-mail-category">缴费</span></div>
-              <div class="preview-mail-row"><span class="preview-priority">P1</span><div><b>实习面试邀请</b><small>职业发展 · 样例邮件</small></div><span class="preview-mail-category">职业</span></div>
-              <div class="preview-mail-row"><span class="preview-priority">P1</span><div><b>Canvas 作业通知</b><small>课程学习 · 样例邮件</small></div><span class="preview-mail-category">课程</span></div>
-              <div class="preview-schedule"><span>DDL / 日程</span><strong>作业截止时间 → 临期提醒</strong><small>仅识别 Canvas 模板化通知</small></div>
-            </div>
-            <div class="preview-footnote">界面示意 · 全部使用匿名样例</div>
-          </div>
-        </article>
-
-        <article class="flagship-work reveal" id="dehaze">
-          <div class="ep-project-rail"><span aria-hidden="true">05</span><p>从图像研究到服务</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">05 / SE-CGAN · 毕业设计 · 在线演示</span>
-            <h3>单幅图像去雾 · SE-CGAN</h3>
-            <p>条件生成对抗网络实现单幅图像去雾。从 PyQt6 桌面演示起步，为了让体验零门槛迁移上云——点进去上传一张雾图，直接看效果。</p>
-            <div class="flagship-actions">
-              <a class="btn primary" href="dehaze.html" data-dehaze-demo>进入在线体验</a>
-              <a class="btn" href="experience.html">看经历页</a>
-            </div>
-            <details class="work-notes"><summary>功能与实现 <span>模型结构、评测与服务化</span></summary>
-              <div class="work-value-list">
-              <p><strong>模型</strong><span>Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失加权联合训练。</span></p>
-              <p><strong>评测</strong><span>RESIDE 合成雾图 + O-HAZE 真实雾图训练，SOTS 测试集 PSNR 28.05 / SSIM 0.9707，与训练工程逐像素一致性校验。</span></p>
-              <p><strong>部署</strong><span>PyQt6 桌面端 → FastAPI 推理服务 → Docker 容器化 → 腾讯云 CloudBase 云托管，CPU 在线推理。</span></p>
-            </div>
-              <div class="comic-strip" style="margin-top:16px"><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">CloudBase</span><span class="tag">PSNR 28.05</span></div>
-            </details>
-          </div>
-          <div class="flagship-preview flagship-pair" aria-label="去雾前后对比示例">
-            <figure><picture><source type="image/webp" srcset="assets/dehaze/hazy-480.webp 480w, assets/dehaze/hazy-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_hazy.jpg" alt="去雾前的有雾图像" loading="lazy" decoding="async" width="1024" height="1024" /></picture><figcaption>原图 · 有雾</figcaption></figure>
-            <figure><picture><source type="image/webp" srcset="assets/dehaze/clear-480.webp 480w, assets/dehaze/clear-512.webp 512w" sizes="(max-width: 760px) calc(100vw - 68px), (max-width: 1080px) 42vw, 480px" /><img src="assets/sample_dehazed.png" alt="SE-CGAN 去雾后的结果" loading="lazy" decoding="async" width="512" height="512" /></picture><figcaption>去雾后</figcaption></figure>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section tight">
-      <div class="container">
-        <article class="flagship-work reveal taxi-case" id="nyc-taxi">
-          <div class="ep-project-rail"><span aria-hidden="true">06</span><p>从行程数据到运营线索</p><a href="#main" data-section-jump aria-label="INDEX ↑ · 返回作品目录">INDEX ↑</a></div>
-          <div class="flagship-copy">
-            <span class="comic-label">06 / CityU IS6335 · 独立完成 · AI 辅助 · 2026.11</span>
-            <h3>纽约出租车运营分析与数据可视化</h3>
-            <p>如果要在纽约开出租车，应该关注哪些时段、区域和业务？我在 AI 辅助下独立完成这一课程项目，从公开行程数据出发，处理数据、绘制图表，再把发现整理成运营分析与展示材料。</p>
-            <p>主分析使用纽约 TLC 2025 年 3 月约 414.5 万条黄车记录，经清洗保留约 380.2 万条有效行程；另整理 2015、2019、2021、2023、2025 年各四个月、共 20 个月的记录数面板，比较不同时期的行业需求。</p>
-            <div class="flagship-actions"><a class="btn primary is-pending" data-taxi-dashboard data-pending-label="Tableau 交互展示待接入" data-ready-label="查看 Tableau 交互展示 ↗" aria-disabled="true">Tableau 交互展示待接入</a><a class="btn" href="cv.html#projects">查看简历条目</a></div>
-            <p>已完成 R 静态图表、分析与展示材料。<span data-taxi-dashboard-status data-pending-label="Tableau 个人交互可视化完成后，将从此处开放参观。" data-ready-label="Tableau 交互展示已接入，可通过上方入口参观。">Tableau 个人交互可视化完成后，将从此处开放参观。</span></p>
-            <div class="comic-strip"><span class="tag">R</span><span class="tag">ggplot2</span><span class="tag">sf</span><span class="tag">igraph</span><span class="tag">Python 指标复核</span></div>
-          </div>
-          <div class="work-value-list taxi-case-findings">
-            <p><strong>分析问题</strong><span>需求在一天内如何变化？哪些区域连接主要客流？机场业务、小费和账单构成呈现什么特点？通过时段图、地图与 OD 网络逐项分析。</span></p>
-            <p><strong>一个发现</strong><span>2025 年 3 月有效行程中，JFK 固定价单占 2.73%，贡献 10.12% 的票面毛收入。这是值得进一步评估的业务线索；是否更赚钱，还需要等待时间、空驶与成本数据。</span></p>
-            <p><strong>分析口径</strong><span>五个年份各四个月的记录数用于跨期对比，行程级结论限于 2025 年 3 月。按 RatecodeID = 2 识别 JFK 固定价单；票面毛收入按 fare_amount 汇总。</span></p>
-            <p><strong>个人工作</strong><span>在 AI 辅助下独立完成问题定义、R 数据处理、分析与静态可视化、关键指标复核，以及展示和答辩材料整理。</span></p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section tight records-materials" id="docs">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>材料与入口<span>· 继续了解</span></h2>
-        </div>
-        <p class="lead reveal">需要完整履历或原始材料时，可以从这里继续。</p>
-        <div class="resource-grid" aria-label="文档与在线入口">
-          <a class="resource-card reveal" href="dehaze.html" data-dehaze-demo>
-            <span>Online Demo · 在线体验</span>
-            <strong>去雾算法上传即用</strong>
-            <em>上传一张雾图，SE-CGAN 模型直接返回去雾结果，可拖动分割线对比前后效果。</em>
-          </a>
-          <a class="resource-card reveal" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">
-            <span>Resume · 2026 版</span>
-            <strong>下载通用简历</strong>
-            <em>包含五段实习（含在岗）、项目经历、技能证书与荣誉的通用版本。</em>
-          </a>
-          <a class="resource-card reveal" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">
-            <span>Resume · English</span>
-            <strong>下载英文版简历</strong>
-            <em>同一份经历的英文版本，适配外企与海外岗位投递。</em>
-          </a>
-          <a class="resource-card reveal" href="cv.html">
-            <span>CV · 在线履历</span>
-            <strong>完整履历一页看完</strong>
-            <em>教育背景、五段实习、四个自研项目、技能证书与荣誉的在线版本。</em>
-          </a>
-          <a class="resource-card reveal" href="experience.html">
-            <span>Cases · 经历拆解</span>
-            <strong>实习与项目的逐段记录</strong>
-            <em>和宏在岗实习的职责方向，四段已结束实习与毕业设计的具体过程。</em>
-          </a>
-          <a class="resource-card reveal" href="works.html#wx">
-            <span>WeChat · 公众号</span>
-            <strong>8 篇代表推文</strong>
-            <em>新闻部部长任期累计产出近 50 篇、阅读 10k+，这里挑了 8 篇代表作。</em>
-          </a>
-          <a class="resource-card reveal" href="works.html#certs">
-            <span>Certificates · 证书墙</span>
-            <strong>12 张证书原件</strong>
-            <em>CDA、计算机三级、证券从业、雅思、竞赛与奖学金，证件号已打码。</em>
-          </a>
+        <div class="jump-pills">
+          <a class="jump-pill" href="#noticeme">01 NoticeMe</a>
+          <a class="jump-pill" href="#data-helper">02 Data Helper</a>
+          <a class="jump-pill" href="#weather-helper">03 Weather Helper</a>
+          <a class="jump-pill" href="#mail-helper">04 MailHelper</a>
+          <a class="jump-pill" href="#dehaze">05 SE-CGAN 去雾</a>
+          <a class="jump-pill" href="#nyc-taxi">06 NYC Taxi 分析</a>
+          <a class="jump-pill" href="#wx">公众号推文 (8)</a>
+          <a class="jump-pill" href="#certs">证书原件墙 (12)</a>
+          <a class="jump-pill" href="#docs">材料入口 ↓</a>
         </div>
       </div>
     </section>
 
-    <section class="section tight records-publications" id="wx">
+    <!-- Six Core Works -->
+    <section class="section section--tight">
       <div class="container">
-        <div class="section-head reveal">
-          <h2>公众号代表推文<span>· 8 篇</span></h2>
+        <!-- 01 NoticeMe -->
+        <article class="work-dossier" id="noticeme" data-work-item data-category="product">
+          <div>
+            <div class="card__meta">
+              <span>01 / NOTICEME · 2026.11</span>
+              <span class="badge badge--cobalt">独立开发 · AI 辅助 · Windows 版已发布</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">NoticeMe · 待办、提醒与日记</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              把随手想到的事情记下来，再在需要的时候提醒自己。面向待办分散、容易遗漏的个人用户，整合任务清单、今日计划、重复提醒与日记；个人数据完全保存在本机（JSON 原子写入与 7 份滚动备份）。目前 Windows 版已发布（不推断 macOS 已正式发布）。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>规则式快速记录与可靠提醒：</strong>支持“明天 9 点交周报”等自然语言创建任务，搭配置顶卡片、提示音、系统通知、延后提醒与未处理循环提醒；提醒调度不依赖模型。</li>
+              <li><strong>可选本地 AI 边界：</strong>本地 AI 能力默认关闭，用于长文本拆解待办、从日记提取任务或周回顾，所有提议须先预览确认后才保存。</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">Electron</span>
+              <span class="badge">React · TypeScript</span>
+              <span class="badge">Zustand</span>
+              <span class="badge">本地存储 · 7 份备份</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <a class="btn btn--primary btn--sm" href="https://github.com/tendernessnick/noticeme/releases/latest" target="_blank" rel="noopener noreferrer">下载 Windows 版 ↗</a>
+              <a class="btn btn--secondary btn--sm" href="https://github.com/tendernessnick/noticeme" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <button type="button" class="zoom-trigger" data-lightbox-group="previews" data-lightbox-src="assets/previews/noticeme-tasks.webp" data-lightbox-caption="NoticeMe 真实应用截图节选：今日任务列表、快速添加与提醒事项">
+              <img src="assets/previews/noticeme-tasks.webp" alt="NoticeMe 真实应用截图节选：任务列表、快速添加和待办分类" width="1280" height="620" loading="lazy" />
+              <span class="zoom-trigger__pill">点击放大原图</span>
+            </button>
+            <span class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">真实应用截图节选 · 演示任务</span>
+          </div>
+        </article>
+
+        <!-- 02 Data Helper -->
+        <article class="work-dossier" id="data-helper" data-work-item data-category="product">
+          <div>
+            <div class="card__meta">
+              <span>02 / DATA HELPER · 2026.09</span>
+              <span class="badge badge--court">独立开发 · AI 辅助 · 已上线</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">数据分析小助手 · Data Helper</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              面向 Excel / CSV 分析前处理的规则体检工作台：导入、诊断、先预览后应用清洗、多步撤销与版本回溯、DuckDB SQL 查询与导出，支持 MCP 协议外接 AI 客户端（另维护独立运营看板扩展分支）。桌面版在本机处理，云部署版在服务容器内处理。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>纯本地规则体检引擎：</strong>0–100 规则评分与多维诊断清单，提供问题证据样本与一键修复入口，可检测缺失、重复、格式及列间算术关系与函数依赖异常。</li>
+              <li><strong>UCI Online Retail II 真实留存案例：</strong>对 1,067,371 行零售交易明细按有效销售业务口径筛选至 805,549 行（8 列投影为 7 列，规则评分 83.4 → 77.5），揭示样本与列集合同时变化时不能把分差简单判为质量提升或退步。</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">FastAPI</span>
+              <span class="badge">DuckDB</span>
+              <span class="badge">Parquet 列存</span>
+              <span class="badge">Vue3 · ECharts</span>
+              <span class="badge">MCP</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <span data-service-slot="DATAHELPER_DEMO_URL" data-active-label="打开在线应用 ↗" data-pending-label="应用维护中" data-link-class="btn btn--primary btn--sm">
+                <a class="btn btn--primary btn--sm" href="https://data-helper1-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noopener noreferrer">打开在线应用 ↗</a>
+              </span>
+              <a class="btn btn--accent btn--sm" href="data-case.html">阅读评分下降深度案例 ↗</a>
+              <a class="btn btn--secondary btn--sm" href="https://github.com/tendernessnick/data-helper" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <button type="button" class="zoom-trigger" data-lightbox-group="previews" data-lightbox-src="assets/previews/data-workbench.png" data-lightbox-caption="Data Helper 真实工作台：示例销售数据表、清洗侧栏与底部 DuckDB SQL 控制台">
+              <img src="assets/previews/data-workbench-1280.webp" alt="Data Helper 真实工作台：示例销售数据表、数据清洗侧栏和底部 SQL 控制台" width="1280" height="720" loading="lazy" />
+              <span class="zoom-trigger__pill">点击查看高清原图</span>
+            </button>
+            <span class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">真实工作台截图 · 示例销售数据</span>
+          </div>
+        </article>
+
+        <!-- 03 Weather Helper -->
+        <article class="work-dossier" id="weather-helper" data-work-item data-category="product">
+          <div>
+            <div class="card__meta">
+              <span>03 / WEATHER HELPER · 2026.09</span>
+              <span class="badge badge--court">独立开发 · AI 辅助 · 已上线</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">网球天气助手（香港）· Weather Helper</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              覆盖香港 57 个公共网球场的出行降雨决策 PWA：整合香港天文台 SWIRLS 临近预报、Open-Meteo 集合预报与 ERA5 历史气候资料，按开打时间与 1/2/3 小时场次提供风险评估、「去哪打」时段选场、雨团地图与开打前 Web Push 提醒。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>事前快照与双轨验证：</strong>冻结开打前的预报版本，与天文台测站实测及球友现场上报（地理围栏 + 冷却防刷）配对，比较漏报、误报与误差（Brier）。</li>
+              <li><strong>诚实边界与无法判断提示：</strong>0–100 启发式降雨风险指数<strong>不是已验证的真实降雨概率</strong>，单小时峰值不等于整场降雨概率；当数据过期、缺失或覆盖不足时，明确提示“无法判断”，不宣称准确率提升。</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">React 19 · Vite</span>
+              <span class="badge">Tailwind 4</span>
+              <span class="badge">FastAPI</span>
+              <span class="badge">Web Push</span>
+              <span class="badge">CloudBase</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <span data-service-slot="WEATHER_APP_URL" data-active-label="打开在线应用 ↗" data-pending-label="应用维护中" data-link-class="btn btn--primary btn--sm">
+                <a class="btn btn--primary btn--sm" href="https://weather-helper-312215-10-1477032709.sh.run.tcloudbase.com/" target="_blank" rel="noopener noreferrer">打开在线应用 ↗</a>
+              </span>
+              <a class="btn btn--secondary btn--sm" href="https://github.com/tendernessnick/weather_helper" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <button type="button" class="zoom-trigger" data-lightbox-group="previews" data-lightbox-src="assets/previews/weather-current.webp" data-lightbox-caption="Weather Helper 历史首页截图（2026-11-14 13:09 HKT 采集，非实时天气）">
+              <img src="assets/previews/weather-current.webp" alt="网球天气助手历史首页截图：57 个公共网球场入口与采集时刻概览，非实时天气" width="900" height="860" loading="lazy" />
+              <span class="zoom-trigger__pill">历史截图 · 点击放大</span>
+            </button>
+            <span class="mono" style="font-size:var(--text-xs);color:var(--accent-clay);">2026-11-14 13:09 HKT · 历史静态截图，非实时天气</span>
+          </div>
+        </article>
+
+        <!-- 04 MailHelper -->
+        <article class="work-dossier" id="mail-helper" data-work-item data-category="product">
+          <div>
+            <div class="card__meta">
+              <span>04 / MAILHELPER · 2026.10</span>
+              <span class="badge badge--cobalt">独立开发 · AI 辅助 · 双平台已发布</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">邮箱管家 · MailHelper</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              面向港校学生的 Windows / macOS 桌面校园邮件工具：通过已登录的经典版 Outlook 同步邮件，本机完成分类且不保存邮箱凭据，让缴费、面试邀约与课业截止不再淹没在收件箱里。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>七类分级与人工纠错沉淀：</strong>自动归入七类（课程 / 职业发展 / 校园事务 / 财务缴费 / 通知 / 订阅 / 其他）并标注 P0–P3 重要度；不确定邮件进入「待确认」不默默分错，人工纠正一封即沉淀同发件人规则，支持自写规则与保存前试跑。</li>
+              <li><strong>Canvas 模板化截止同步：</strong>从已有 Canvas 模板化通知提取作业截止时间，按日期分组并提供临期提醒，合并重复通知并同步截止变更。（仅针对已有 Canvas 模板，不宣称可识别任意邮件）</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">.NET 8 共享核心</span>
+              <span class="badge">Windows WPF</span>
+              <span class="badge">macOS Avalonia</span>
+              <span class="badge">EF Core · SQLite</span>
+              <span class="badge">GitHub Actions</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <a class="btn btn--primary btn--sm" href="https://github.com/tendernessnick/mail_helper/releases/latest" target="_blank" rel="noopener noreferrer">下载最新版 ↗</a>
+              <a class="btn btn--secondary btn--sm" href="https://github.com/tendernessnick/mail_helper" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <div class="mail-mockup" style="padding:1.2rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:0.55rem;border-bottom:1px solid var(--rule-hairline);">
+                <span class="mono" style="font-size:0.75rem;font-weight:700;">MAILHELPER / 分拣示意</span>
+                <span class="badge badge--clay">示意界面 · 匿名样例</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--p0">P0</span>
+                <span><strong>缴费截止提醒</strong> · 财务缴费（样例邮件）</span>
+                <span class="mono">高优提醒</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--p1">P1</span>
+                <span><strong>实习面试邀请</strong> · 职业发展（样例邮件）</span>
+                <span class="mono">置顶关注</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--p1">DDL</span>
+                <span><strong>Canvas 作业通知</strong> · 仅识别 Canvas 模板化通知 → 临期提醒</span>
+                <span class="mono">课程学习</span>
+              </div>
+              <div class="mail-mockup__row">
+                <span class="mail-mockup__tag mail-mockup__tag--review">待确认</span>
+                <span><strong>低置信度通知</strong> · 人工改分一次，同发件人后续自动归位</span>
+                <span class="mono">规则沉淀</span>
+              </div>
+            </div>
+            <span class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">为保护隐私，本栏为结构示意界面，全部使用匿名样例，非真实收件箱截图。</span>
+          </div>
+        </article>
+
+        <!-- 05 SE-CGAN Dehaze -->
+        <article class="work-dossier" id="dehaze" data-work-item data-category="research">
+          <div>
+            <div class="card__meta">
+              <span>05 / SE-CGAN · 本科毕业设计</span>
+              <span class="badge badge--cobalt">视觉研究 · 独立在线演示</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">单幅图像去雾 · SE-CGAN</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              采用条件生成对抗网络（Tiramisu 密集连接 U-Net 生成器 + 70×70 PatchGAN 判别器，L1 重建 + VGG 感知 + 对抗损失联合训练）解决单幅图像去雾问题，并完成从 PyQt6 桌面端到 FastAPI + Docker + CloudBase 独立推理服务的工程交付。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>离线评测口径：</strong>基于 RESIDE 合成雾图与 O-HAZE 真实雾图训练，SOTS 测试集离线记录 PSNR 28.05 / SSIM 0.9707，并校验导出权重与训练工程一致。</li>
+              <li><strong>在线推理口径（与离线分开说明）：</strong>独立演示服务支持 PNG/JPG ≤ 128KB，服务端按最长边 256px 等比缩放推理返回 PNG，不留存上传图片；示例图效果不代表所有真实图片表现。</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">PyTorch</span>
+              <span class="badge">FastAPI</span>
+              <span class="badge">Docker · CloudBase</span>
+              <span class="badge">SOTS PSNR 28.05</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <a class="btn btn--primary btn--sm" href="dehaze.html">进入交互对比与契约说明 ↗</a>
+              <span data-service-slot="DEHAZE_DEMO_URL" data-active-label="打开独立在线演示 ↗" data-pending-label="在线演示暂未开放" data-link-class="btn btn--secondary btn--sm">
+                <a class="btn btn--secondary btn--sm" href="https://dehaze-demo2-312215-10-1477032709.sh.run.tcloudbase.com" target="_blank" rel="noopener noreferrer">打开独立在线演示 ↗</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <div class="grid-2" style="gap:0.75rem;">
+              <figure class="media-frame" style="margin:0;">
+                <img src="assets/dehaze/hazy-480.webp" alt="去雾前的有雾图像样例" width="480" height="480" loading="lazy" />
+                <figcaption class="media-frame__caption"><span>原图 · 有雾</span><a href="assets/sample_hazy.jpg" target="_blank" rel="noopener noreferrer">原图 ↗</a></figcaption>
+              </figure>
+              <figure class="media-frame" style="margin:0;">
+                <img src="assets/dehaze/clear-480.webp" alt="SE-CGAN 去雾后的结果样例" width="480" height="480" loading="lazy" />
+                <figcaption class="media-frame__caption"><span>SE-CGAN 去雾后</span><a href="assets/sample_dehazed.png" target="_blank" rel="noopener noreferrer">原图 ↗</a></figcaption>
+              </figure>
+            </div>
+            <span class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);">预生成真实模型输出样例；滑动交互对比见 <a href="dehaze.html">dehaze.html</a></span>
+          </div>
+        </article>
+
+        <!-- 06 NYC Taxi / IS6335 -->
+        <article class="work-dossier" id="nyc-taxi" data-work-item data-category="research" style="border-bottom:0;">
+          <div>
+            <div class="card__meta">
+              <span>06 / CITYU IS6335 · 2026.11</span>
+              <span class="badge badge--cobalt">独立完成 · AI 辅助</span>
+            </div>
+            <h2 class="section-title" style="margin-top:0.5rem;">纽约出租车运营分析与数据可视化</h2>
+            <p class="card__body" style="margin-top:0.85rem;">
+              围绕“如果要在纽约开出租车，应重点关注哪些时段、区域与业务”展开分析。在 AI 辅助下独立完成问题定义、R 数据清洗与静态可视化、Python 关键指标复核及展示答辩材料整理。
+            </p>
+            <ul style="margin-top:0.85rem;">
+              <li><strong>数据范围与口径：</strong>主分析使用纽约 TLC 2025 年 3 月 <strong>4,145,257</strong> 条黄车行程记录，经 R 清洗保留 <strong>3,801,542</strong> 条有效行程；另整理 2015、2019、2021、2023、2025 五个代表年份各 3/6/9/12 月共 <strong>20 个月度记录数观测</strong>（非连续 20 个月、非全年）支持跨期对比。</li>
+              <li><strong>核心发现与边界：</strong>2025 年 3 月有效行程中，JFK 固定价单（<code>RatecodeID == 2</code>）<strong>有效行程占比 2.73%、票面毛收入占比 10.12%</strong>（分母为 <code>fare_amount</code>，区别于 <code>total_amount</code> 与净利润；是否更赚钱仍需等待时间、空驶与成本数据验证）。</li>
+            </ul>
+            <div class="badge-row" style="margin-top:1rem;">
+              <span class="badge">R</span>
+              <span class="badge">ggplot2</span>
+              <span class="badge">sf 地理分析</span>
+              <span class="badge">igraph OD 网络</span>
+              <span class="badge">Python 独立复核</span>
+            </div>
+            <div class="btn-group" style="margin-top:1.25rem;">
+              <span data-service-slot="TAXI_TABLEAU_URL" data-active-label="打开 Tableau 交互展示 ↗" data-pending-label="Tableau 交互展示待接入" data-link-class="btn btn--primary btn--sm">
+                <span class="service-pending" aria-disabled="true">Tableau 交互展示待接入</span>
+              </span>
+              <a class="btn btn--ghost btn--sm" href="cv.html#projects">查看简历条目 ↗</a>
+            </div>
+          </div>
+
+          <div class="work-dossier__visual">
+            <div class="card card--flat">
+              <span class="eyebrow">DATA &amp; VERIFICATION SNAPSHOT</span>
+              <div class="ledger" style="border-top:0;">
+                <div class="ledger__cell">
+                  <span class="ledger__label">2025.03 清洗留存</span>
+                  <span class="ledger__value">3,801,542</span>
+                  <span class="ledger__note">原始 4,145,257 条</span>
+                </div>
+                <div class="ledger__cell">
+                  <span class="ledger__label">跨期面板观测</span>
+                  <span class="ledger__value">20 个月</span>
+                  <span class="ledger__note">5 代表年份 × 3/6/9/12 月</span>
+                </div>
+              </div>
+              <div class="proof-stat">
+                <div>
+                  <div class="mono" style="font-size:0.72rem;color:var(--ink-muted);">JFK 固定价单（RatecodeID == 2 · Python 复核）</div>
+                  <div style="margin-top:0.25rem;font-weight:700;">有效行程占比 2.73% ｜ 票面毛收入（fare_amount）占比 10.12%</div>
+                </div>
+              </div>
+              <p class="card__body" style="font-size:var(--text-xs);" data-service-status="TAXI_TABLEAU_URL" data-active-text="已完成 R 静态图表与分析；Tableau 交互展示已开放。" data-pending-text="已完成 R 静态图表、分析与展示材料；Tableau 个人交互可视化完成后将通过同一配置入口开放。">
+                已完成 R 静态图表、分析与展示材料；Tableau 个人交互可视化完成后将通过同一配置入口开放。
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8 WeChat Articles -->
+    <section class="section section--bordered surface-subtle" id="wx" aria-labelledby="wx-heading">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">WECHAT EDITORIAL · 8 篇代表推文</span>
+            <h2 class="section-title" id="wx-heading">公众号代表作品</h2>
+          </div>
+          <p class="section-lead">
+            学生会新闻部部长任期内累计产出推文近 50 篇、累计阅读量 10k+（单篇最高 7000+，3 篇超 2000）。以下精选 8 篇代表作（文编 / 责任编辑 5 篇、美编 3 篇），点击可直达微信原文。
+          </p>
         </div>
-        <p class="lead reveal">新闻部部长任期内累计产出近 50 篇、阅读 10k+；以下 8 篇代表作，文编 / 责任编辑 5 篇、美编 3 篇。</p>
+
         <div class="wx-grid">
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/z9P_gwvTAOJxT_MzTmPVcQ" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w5.jpg" alt="【一线华闻】以赛促学 推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">文编 · 责任编辑</span></span>
-            <span class="wx-body"><strong>【一线华闻】以赛促学 "疫"起同行</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/Bn4-fViV33TYLHsL8V2Tqg" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w1.jpg" alt="毕业生特辑窦海波推文封面" width="640" height="272" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-cobalt);">文编 · 责任编辑｜华罗庚学院官方公众号</span>
+              <span class="wx-card__title">【毕业生特辑】窦海波——低头拉车，抬头看路</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/NXqxCXMpqaJDm2ABzrMVFQ" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w6.jpg" alt="宁波工程学院杭州湾汽车学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
-            <span class="wx-body"><strong>【典型】宁波工程学院杭州湾汽车学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/2otn8EKwWw6X2R6eRwSpQw" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w2.jpg" alt="篮球常大杯推文封面" width="640" height="272" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-cobalt);">文编 · 责任编辑｜华罗庚学院官方公众号</span>
+              <span class="wx-card__title">【篮球常大杯】新的历史，由我们创造！</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/Y8-2smrcAndDLQ6BBs83Aw" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w7.jpg" alt="华东理工大学现代生物医药产业联合学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
-            <span class="wx-body"><strong>【典型】华东理工大学现代生物医药产业联合学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/0dTZe7gymjFuOjVlIfJ3vw" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w3.jpg" alt="暑期实习日记推文封面" width="640" height="273" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-cobalt);">文编 · 责任编辑｜华罗庚学院官方公众号</span>
+              <span class="wx-card__title">【暑期加油站②】暑期实习日记</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/2cded3dgiGJMzlz9lGpQEA" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w8.jpg" alt="南昌航空大学航空制造产业学院案例推介封面" loading="lazy" decoding="async" /><span class="wx-card-tag wx-card-tag--school">美编</span></span>
-            <span class="wx-body"><strong>【动态】南昌航空大学航空制造产业学院案例推介</strong><span class="wx-src">现代产业学院 · 教育部委托学校运营</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/-TFmLNnZdMkgivTdldQ0sg" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w4.jpg" alt="新生特辑校园推文封面" width="640" height="272" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-cobalt);">文编 · 责任编辑｜华罗庚学院官方公众号</span>
+              <span class="wx-card__title">【新生特辑】去看看校园吧 就在这个国庆</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/Bn4-fViV33TYLHsL8V2Tqg" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w1.jpg" alt="毕业生特辑窦海波推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
-            <span class="wx-body"><strong>【毕业生特辑】窦海波——低头拉车，抬头看路</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/z9P_gwvTAOJxT_MzTmPVcQ" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w5.jpg" alt="一线华闻以赛促学推文封面" width="640" height="273" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-cobalt);">文编 · 责任编辑｜华罗庚学院官方公众号</span>
+              <span class="wx-card__title">【一线华闻】以赛促学 “疫”起同行</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/2otn8EKwWw6X2R6eRwSpQw" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w2.jpg" alt="篮球常大杯推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">文编 · 责任编辑</span></span>
-            <span class="wx-body"><strong>【篮球常大杯】新的历史，由我们创造！</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/NXqxCXMpqaJDm2ABzrMVFQ" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w6.jpg" alt="宁波工程学院杭州湾汽车学院案例推介封面" width="640" height="273" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-clay);">美编｜现代产业学院（教育部委托运营）</span>
+              <span class="wx-card__title">【典型】宁波工程学院杭州湾汽车学院案例推介</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/0dTZe7gymjFuOjVlIfJ3vw" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w3.jpg" alt="暑期实习日记推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
-            <span class="wx-body"><strong>【暑期加油站②】暑期实习日记</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/Y8-2smrcAndDLQ6BBs83Aw" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w7.jpg" alt="华东理工大学现代生物医药产业联合学院案例推介封面" width="640" height="273" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-clay);">美编｜现代产业学院（教育部委托运营）</span>
+              <span class="wx-card__title">【典型】华东理工大学现代生物医药产业联合学院案例推介</span>
+            </div>
           </a>
-          <a class="wx-card reveal" href="https://mp.weixin.qq.com/s/-TFmLNnZdMkgivTdldQ0sg" target="_blank" rel="noopener">
-            <span class="wx-cover"><img src="assets/wx/w4.jpg" alt="新生特辑校园推文封面" loading="lazy" decoding="async" /><span class="wx-card-tag">责任编辑</span></span>
-            <span class="wx-body"><strong>【新生特辑】去看看校园吧 就在这个国庆</strong><span class="wx-src">常州大学华罗庚学院 · 学院官方公众号</span></span>
+
+          <a class="wx-card" href="https://mp.weixin.qq.com/s/2cded3dgiGJMzlz9lGpQEA" target="_blank" rel="noopener noreferrer">
+            <div class="wx-card__thumb"><img src="assets/wx/w8.jpg" alt="南昌航空大学航空制造产业学院案例推介封面" width="640" height="272" loading="lazy" /></div>
+            <div class="wx-card__body">
+              <span class="mono" style="font-size:0.7rem;color:var(--accent-clay);">美编｜现代产业学院（教育部委托运营）</span>
+              <span class="wx-card__title">【动态】南昌航空大学航空制造产业学院案例推介</span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section tight records-certificates" id="certs">
+    <!-- 12 Certificates Wall -->
+    <section class="section" id="certs" aria-labelledby="certs-heading">
       <div class="container">
-        <div class="section-head reveal">
-          <h2>证书原件墙<span>· 点滴证明</span></h2>
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">CERTIFICATES · 12 张原件档案</span>
+            <h2 class="section-title" id="certs-heading">证书原件墙</h2>
+          </div>
+          <p class="section-lead">
+            包含 CDA 数据分析师、计算机三级、证券从业两科、雅思 7.0、全国大学生英语竞赛、普通话、奖学金与学生工作荣誉（证书证件号码均已打码；CET-6 552 / CET-4 571 成绩单备索）。点击任意卡片查看大图。
+          </p>
         </div>
-        <p class="wall-hint reveal">按住证书左右拖动浏览（证书上的证件号码已打码）。四六级成绩单备索。</p>
-        <div class="drag-wall cert-wall" data-drag-wall tabindex="0" aria-label="证书墙，可左右拖动">
-          <figure><img src="assets/certs/cda.jpg" alt="CDA 数据分析师一级证书" draggable="false" loading="lazy" /><figcaption>CDA 数据分析师 · 一级</figcaption></figure>
-          <figure><img src="assets/certs/jisuanji3.jpg" alt="全国计算机等级考试三级（数据库技术）证书" draggable="false" loading="lazy" /><figcaption>计算机三级 · 数据库技术</figcaption></figure>
-          <figure><img src="assets/certs/securities_law.jpg" alt="证券市场基本法律法规成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 法律法规 62 分</figcaption></figure>
-          <figure><img src="assets/certs/securities_market.jpg" alt="金融市场基础知识成绩单" draggable="false" loading="lazy" /><figcaption>证券从业 · 金融市场基础 64.5 分</figcaption></figure>
-          <figure><img src="assets/certs/ielts.jpg" alt="雅思成绩单" draggable="false" loading="lazy" /><figcaption>雅思成绩单 · 总分 7.0</figcaption></figure>
-          <figure><img src="assets/certs/neccs2022.jpg" alt="2022 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2022</figcaption></figure>
-          <figure><img src="assets/certs/neccs2023.jpg" alt="2023 全国大学生英语竞赛二等奖" draggable="false" loading="lazy" /><figcaption>英语竞赛 C 类二等奖 · 2023</figcaption></figure>
-          <figure><img src="assets/certs/scholarship2022.jpg" alt="2021-2022 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2021-2022</figcaption></figure>
-          <figure><img src="assets/certs/scholarship2024.jpg" alt="2023-2024 学年三等奖学金" draggable="false" loading="lazy" /><figcaption>校综合三等奖学金 · 2023-2024</figcaption></figure>
-          <figure><img src="assets/certs/advanced.jpg" alt="院学生会先进个人奖" draggable="false" loading="lazy" /><figcaption>院学生会「先进个人」</figcaption></figure>
-          <figure><img src="assets/certs/appointment.jpg" alt="学生会新闻部部长聘书" draggable="false" loading="lazy" /><figcaption>新闻部部长 · 聘书</figcaption></figure>
-          <figure><img src="assets/certs/putonghua.jpg" alt="普通话水平测试二级乙等证书" draggable="false" loading="lazy" /><figcaption>普通话 · 二级乙等</figcaption></figure>
-        </div>
-        <div class="comic-strip reveal">
-          <span class="tag">CDA 数据分析师 Level I</span>
-          <span class="tag">CET-6 · 552</span>
-          <span class="tag">CET-4 · 571</span>
+
+        <div class="cert-grid">
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/ielts.jpg" data-lightbox-caption="雅思成绩单 · 总分 7.0（听 8.5 / 读 7 / 写 6 / 口 6）">
+            <span class="cert-card__img"><img src="assets/certs/ielts.jpg" alt="雅思成绩单" width="798" height="1100" loading="lazy" /></span>
+            <span class="cert-card__label">雅思成绩单 · 总分 7.0</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/cda.jpg" data-lightbox-caption="CDA 数据分析师 Level I 证书">
+            <span class="cert-card__img"><img src="assets/certs/cda.jpg" alt="CDA 数据分析师一级证书" width="1100" height="778" loading="lazy" /></span>
+            <span class="cert-card__label">CDA 数据分析师 · 一级</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/jisuanji3.jpg" data-lightbox-caption="全国计算机等级考试三级（数据库技术）证书">
+            <span class="cert-card__img"><img src="assets/certs/jisuanji3.jpg" alt="全国计算机等级考试三级数据库技术证书" width="1100" height="778" loading="lazy" /></span>
+            <span class="cert-card__label">计算机三级 · 数据库技术</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/securities_market.jpg" data-lightbox-caption="证券从业 · 金融市场基础知识 64.5 分">
+            <span class="cert-card__img"><img src="assets/certs/securities_market.jpg" alt="金融市场基础知识成绩单" width="1100" height="778" loading="lazy" /></span>
+            <span class="cert-card__label">证券从业 · 金融市场基础 64.5</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/securities_law.jpg" data-lightbox-caption="证券从业 · 证券市场基本法律法规 62 分">
+            <span class="cert-card__img"><img src="assets/certs/securities_law.jpg" alt="证券市场基本法律法规成绩单" width="1100" height="778" loading="lazy" /></span>
+            <span class="cert-card__label">证券从业 · 法律法规 62</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/neccs2023.jpg" data-lightbox-caption="2023 年全国大学生英语竞赛 C 类二等奖">
+            <span class="cert-card__img"><img src="assets/certs/neccs2023.jpg" alt="2023 全国大学生英语竞赛二等奖" width="801" height="1100" loading="lazy" /></span>
+            <span class="cert-card__label">英语竞赛 C 类二等奖 · 2023</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/neccs2022.jpg" data-lightbox-caption="2022 年全国大学生英语竞赛 C 类二等奖">
+            <span class="cert-card__img"><img src="assets/certs/neccs2022.jpg" alt="2022 全国大学生英语竞赛二等奖" width="844" height="1100" loading="lazy" /></span>
+            <span class="cert-card__label">英语竞赛 C 类二等奖 · 2022</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/scholarship2024.jpg" data-lightbox-caption="2023-2024 学年校综合评测三等奖学金">
+            <span class="cert-card__img"><img src="assets/certs/scholarship2024.jpg" alt="2023-2024 学年三等奖学金" width="1100" height="772" loading="lazy" /></span>
+            <span class="cert-card__label">校综合三等奖学金 · 2023-2024</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/scholarship2022.jpg" data-lightbox-caption="2021-2022 学年校综合评测三等奖学金">
+            <span class="cert-card__img"><img src="assets/certs/scholarship2022.jpg" alt="2021-2022 学年三等奖学金" width="1100" height="778" loading="lazy" /></span>
+            <span class="cert-card__label">校综合三等奖学金 · 2021-2022</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/appointment.jpg" data-lightbox-caption="华罗庚学院学生会新闻部部长聘书">
+            <span class="cert-card__img"><img src="assets/certs/appointment.jpg" alt="学生会新闻部部长聘书" width="825" height="1100" loading="lazy" /></span>
+            <span class="cert-card__label">新闻部部长 · 聘书</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/advanced.jpg" data-lightbox-caption="2021-2022 学年院学生会「先进个人」奖">
+            <span class="cert-card__img"><img src="assets/certs/advanced.jpg" alt="院学生会先进个人奖" width="1100" height="784" loading="lazy" /></span>
+            <span class="cert-card__label">院学生会「先进个人」</span>
+          </button>
+          <button type="button" class="cert-card" data-lightbox-group="certs" data-lightbox-src="assets/certs/putonghua.jpg" data-lightbox-caption="普通话水平测试二级乙等证书">
+            <span class="cert-card__img"><img src="assets/certs/putonghua.jpg" alt="普通话水平测试二级乙等证书" width="1100" height="775" loading="lazy" /></span>
+            <span class="cert-card__label">普通话 · 二级乙等</span>
+          </button>
         </div>
       </div>
     </section>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="experience.html"><span><small>上一页</small><strong>实习与案例</strong></span><b aria-hidden="true">←</b></a><a href="cv.html"><span><small>继续看看</small><strong>在线履历</strong></span><b aria-hidden="true">↗</b></a></nav>
+
+    <!-- Docs & Downloads -->
+    <section class="section section--bordered surface-subtle" id="docs" aria-labelledby="docs-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">MATERIALS · 继续深入了解</span>
+          <h2 class="section-title" id="docs-heading">简历与材料入口</h2>
+        </div>
+        <div class="grid-4">
+          <a class="card card--interactive" href="cv.html" style="text-decoration:none;color:inherit;">
+            <span class="eyebrow">CV · 在线履历</span>
+            <h3 style="font-size:var(--text-lg);">一页看完完整记录</h3>
+            <p class="card__body">教育、五段实习、六项项目、技能证书与荣誉。</p>
+          </a>
+          <a class="card card--interactive" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf" style="text-decoration:none;color:inherit;">
+            <span class="eyebrow">RESUME · 中文版</span>
+            <h3 style="font-size:var(--text-lg);">下载中文 PDF ↓</h3>
+            <p class="card__body">已同步四个工具项目与 IS6335 项目。</p>
+          </a>
+          <a class="card card--interactive" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf" style="text-decoration:none;color:inherit;">
+            <span class="eyebrow">RESUME · ENGLISH</span>
+            <h3 style="font-size:var(--text-lg);">下载英文 PDF ↓</h3>
+            <p class="card__body">原有通用英文版本，适配外企及英文岗位。</p>
+          </a>
+          <a class="card card--interactive" href="experience.html" style="text-decoration:none;color:inherit;">
+            <span class="eyebrow">CASES · 经历拆解</span>
+            <h3 style="font-size:var(--text-lg);">看逐段实习过程</h3>
+            <p class="card__body">和宏职责方向、四段已完成实习与工程落地。</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="experience.html">
+          <span class="pager-card__kicker">← 上一页</span>
+          <span class="pager-card__title">实习与校园经历</span>
+        </a>
+        <a class="pager-card pager-card--next" href="cv.html">
+          <span class="pager-card__kicker">继续阅读 →</span>
+          <span class="pager-card__title">在线简历 CV</span>
+        </a>
+      </div>
+    </nav>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© <span data-year>2026</span> 胡睿杰｜Works</span>
-
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <div class="btn-group">
+          <a href="data-case.html">数据判断案例</a>
+          <a href="dehaze.html">去雾实验</a>
+          <a href="contact.html">联系我</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/folio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <script type="module" src="js/main.js?v=20261120"></script>
+  <script type="module" src="js/lightbox.js?v=20261120"></script>
 </body>
 </html>

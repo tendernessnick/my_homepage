@@ -81,3 +81,10 @@ my_homepage/
 【2026-11-20 追加 · v51 第二轮首页主视觉与节奏重塑】
 - `site/index.html` 重构为人物大画幅封面主视觉（桌面右栏 432×540 人像、手机左栏 3:4 肖像锁组）+ 分级 Bento 作品区 + 独立暗房 SE-CGAN 去雾舞台（`#dehaze-stage`）+ 双数据案例洞察区 + 三帧生活摄影接触印样；全站资源版本统一 `?v=51`。
 - 实测样式原始字节：`site/css/monograph.css`（30,141B）+ `site/css/pages.css`（110,806B）合计 140,947B（原 12 个旧 CSS 在 HEAD 合计 271,303B）。详见 `docs/gemini-redesign-20261120/README.md`。
+
+[2026-11-20 独立全量重设计结构说明]
+- site/ 前端文件已全量更新：保留全部 11 个 HTML 路由与原 site/assets/ 全部素材字节；
+- 新增原创站点图标 site/favicon.svg；
+- 样式拆分为 site/css/{tokens,base,layout,components,pages}.css；
+- 脚本拆分为 site/js/{config,main,compare,lightbox,data-case}.js（config.js 为服务入口单一配置文件）；
+- 设计说明、验证报告与截图位于 docs/gemini-independent-redesign-20261120/。

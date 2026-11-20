@@ -1,164 +1,372 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>为什么清洗后评分反而下降？｜Data Helper 项目观察 · 胡睿杰</title>
-  <meta name="description" content="用 Data Helper 留存的 UCI 电商示例，解释为何规则评分从83.4变为77.5：样本、字段与重复规则如何影响数据判断。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="article" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="为什么清洗后评分反而下降？｜Data Helper 项目观察 · 胡睿杰" />
-  <meta property="og:description" content="用 Data Helper 留存的 UCI 电商示例，解释为何规则评分从83.4变为77.5：样本、字段与重复规则如何影响数据判断。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>清洗后，体检分数为什么降低了？｜Data Helper 数据判断案例 · 胡睿杰</title>
+  <meta name="description" content="基于 UCI Online Retail II（1,067,371 → 805,549 行）真实留存结果：为什么按有效销售口径筛选并移除商品字段后，Data Helper 规则评分从 83.4 下降到 77.5？" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="works" class="folio-page data-case-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
+
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html"><span class="brand-mark">胡</span><span class="brand-text">胡睿杰</span></a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a><a href="about.html" data-nav="about">关于</a><a href="experience.html" data-nav="experience">经历</a><a href="works.html" data-nav="works">作品</a><a href="cv.html" data-nav="cv">履历</a><a href="life.html" data-nav="life">生活</a><a href="contact.html" data-nav="contact">联系</a>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html" aria-current="page">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
-  <nav class="mobile-nav" aria-label="移动端导航"><a href="index.html" data-nav="home">首页</a><a href="about.html" data-nav="about">关于</a><a href="experience.html" data-nav="experience">经历</a><a href="works.html" data-nav="works">作品</a><a href="cv.html" data-nav="cv">履历</a><a href="life.html" data-nav="life">生活</a><a href="contact.html" data-nav="contact">联系</a></nav>
+
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="works.html#data-helper"><span>返回 Data Helper</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="data-case.html" aria-current="page"><span>数据判断案例</span><span class="mono">CASE</span></a>
+        <a class="mobile-drawer__link" href="dehaze.html"><span>SE-CGAN 去雾</span><span class="mono">LAB</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="works.html#data-helper">← 返回 Data Helper</a><span>PROJECT OBSERVATION / 01</span></div>
-    <article class="data-case-article" aria-labelledby="case-title">
-      <header class="container dc-cover">
-        <div class="dc-cover-copy">
-          <p class="dc-overline"><span></span> DATA HELPER / 项目观察</p>
-          <h1 id="case-title">为什么清洗后，<br>评分反而下降？</h1>
-          <p class="dc-cover-intro">缺失值清零，问题数减少，体检分却变低了。<br>这组电商数据记录，让一个更值得问的问题浮出来：<strong>我们究竟在为哪一种分析，整理哪一种数据？</strong></p>
-          <a class="dc-read-link" href="#what-changed" data-section-jump>先看发生了什么 <span aria-hidden="true">↓</span></a>
-        </div>
-        <figure class="dc-score-figure" aria-labelledby="score-caption">
-          <figcaption id="score-caption"><span>RULE-BASED SCORE</span><span>规则评分 / 100</span></figcaption>
-          <div class="dc-score"><span>原始数据集</span><strong>83.4</strong></div>
-          <div class="dc-score-connector" aria-hidden="true"><span>↓</span><span>筛选 + 字段变化</span></div>
-          <div class="dc-score dc-score--after"><span>筛选后的数据集</span><strong>77.5</strong></div>
-          <p>两次评分对应的行列集合不同。<br>不能把这一步变化，直接读成质量改善或退步。</p>
-        </figure>
-        <div class="dc-cover-meta"><span>基于仓库留存示例记录</span><span>UCI Online Retail II</span><span>公开数据 · 未在本轮重跑</span></div>
-      </header>
-
-      <div class="container dc-reading-layout">
-        <aside class="dc-index" aria-label="案例目录">
-          <span>READ THE REASONING</span>
-          <nav><a href="#what-changed" data-section-jump><b>01</b> 记录</a><a href="#sales-definition" data-section-jump><b>02</b> 口径</a><a href="#projection" data-section-jump><b>03</b> 字段</a><a href="#interpretation" data-section-jump><b>04</b> 判断</a><a href="#sources" data-section-jump><b>05</b> 来源</a></nav>
-          <a class="dc-index-project" href="works.html#data-helper">Data Helper<br><span>返回产品介绍 ↗</span></a>
-        </aside>
-        <div class="dc-story">
-          <section class="dc-section" id="what-changed" aria-labelledby="change-title">
-            <div class="dc-section-label"><span>01 / THE OBSERVATION</span><span>先看记录</span></div>
-            <h2 id="change-title">缺失变成了 0，<br>总分却没有上升。</h2>
-            <p>Data Helper 的公开电商示例，先对原始数据做规则体检，再用 SQL 新建一个按本次“有效销售”口径筛选的数据集，最后重新体检。两次留存结果如下。</p>
-            <div class="dc-table-wrap">
-              <table class="dc-result-table">
-                <caption>两次体检的留存聚合结果</caption>
-                <thead><tr><th scope="col">指标</th><th scope="col">原始数据集</th><th scope="col">筛选后数据集</th></tr></thead>
-                <tbody>
-                  <tr><th scope="row">数据行数</th><td>1,067,371</td><td>805,549</td></tr>
-                  <tr><th scope="row">字段数</th><td>8</td><td>7</td></tr>
-                  <tr class="dc-score-row"><th scope="row">规则评分 / 100</th><td>83.4</td><td>77.5</td></tr>
-                  <tr><th scope="row">发现的问题项</th><td>15</td><td>11</td></tr>
-                  <tr><th scope="row">缺失单元格</th><td>247,389</td><td>0</td></tr>
-                  <tr><th scope="row">完全重复行</th><td>34,335</td><td>314,891</td></tr>
-                  <tr><th scope="row">完全重复行占比</th><td>3.22%</td><td>39.09%</td></tr>
-                  <tr><th scope="row">重复项扣分</th><td>1.6</td><td>15</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="dc-source-note">数值来自<a href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/01_health_check_raw.json" target="_blank" rel="noopener noreferrer">原始体检 JSON ↗</a>与<a href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/02_health_check_clean.json" target="_blank" rel="noopener noreferrer">筛选后体检 JSON ↗</a>。“完全重复行”按当前全部列判重，统计每组中首行之后的相同行。重复占比按各自的“重复行数 ÷ 数据行数”计算，保留两位小数；缺失单元格也对应各自的行列集合。</p>
-
-            <figure class="dc-bar-chart" aria-labelledby="duplicate-chart-title" aria-describedby="duplicate-chart-note">
-              <figcaption id="duplicate-chart-title"><strong>完全重复行占比</strong><span>同一尺度 / 0–100%</span></figcaption>
-              <div class="dc-bar-row"><div class="dc-bar-label"><span>原始数据集</span><strong>3.22%</strong></div><div class="dc-bar-track"><span style="width:3.22%"></span></div></div>
-              <div class="dc-bar-row dc-bar-row--after"><div class="dc-bar-label"><span>筛选后数据集</span><strong>39.09%</strong></div><div class="dc-bar-track"><span style="width:39.09%"></span></div></div>
-              <div class="dc-bar-axis" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
-              <p id="duplicate-chart-note">比例的分母和用于判重的字段集合都变了。图展示两次规则输出，不代表重复交易增加了多少。</p>
-            </figure>
-            <p>总分由多项规则共同构成。问题项从 15 项减少到 11 项，<strong>并不意味着每项问题的扣分也在减少</strong>。这里的重复项扣分从 1.6 分增加到 15 分，是阅读总分下降时需要追查的一项。</p>
-          </section>
-
-          <section class="dc-section" id="sales-definition" aria-labelledby="definition-title">
-            <div class="dc-section-label"><span>02 / DEFINE THE QUESTION</span><span>先定分析口径</span></div>
-            <h2 id="definition-title">这一步做的是筛选，<br>没有执行去重。</h2>
-            <p>本案例选择有客户 ID、数量和价格为正、发票号不以 C 开头的明细，构建本次定义的“有效销售”。它服务于特定分析目标，<strong>不是所有电商分析都该套用的清洗标准</strong>。退货或取消记录，在研究退货行为时仍然有用。</p>
-            <div class="dc-code-heading"><span>DUCKDB / SQL</span><span>按公开脚本整理</span></div>
-            <pre class="dc-code"><code><span class="dc-sql-key">SELECT</span>
-  "InvoiceNo",
-  <span class="dc-sql-key">CAST</span>(<span class="dc-sql-key">CAST</span>("CustomerID" <span class="dc-sql-key">AS BIGINT</span>) <span class="dc-sql-key">AS VARCHAR</span>)
-    <span class="dc-sql-key">AS</span> "CustomerID",
-  "InvoiceDate", "Quantity", "Price", "Country",
-  <span class="dc-sql-key">ROUND</span>("Quantity" * "Price", 2) <span class="dc-sql-key">AS</span> "Amount"
-<span class="dc-sql-key">FROM</span> ds1
-<span class="dc-sql-key">WHERE</span> "CustomerID" <span class="dc-sql-key">IS NOT NULL</span>
-  <span class="dc-sql-key">AND</span> "Quantity" &gt; 0
-  <span class="dc-sql-key">AND</span> "InvoiceNo" <span class="dc-sql-key">NOT LIKE</span> 'C%'
-  <span class="dc-sql-key">AND</span> "Price" &gt; 0;</code></pre>
-            <p class="dc-source-note"><code>ds1</code> 表示原始数据集的视图别名；公开脚本运行时按数据集生成别名。筛选条件、列投影与类型转换见<a href="https://github.com/tendernessnick/data-helper/blob/master/scripts/run_ecommerce_analysis.py" target="_blank" rel="noopener noreferrer">复现脚本 ↗</a>。SQL 没有 <code>DISTINCT</code>，也没有调用 <code>drop_duplicates</code>。</p>
-            <div class="dc-three-steps" aria-label="SQL 完成的三件事"><div><span>01</span><h3>选择行</h3><p>按本次销售分析的条件筛选明细。</p></div><div><span>02</span><h3>选择字段</h3><p>保留所需列，不再输出商品编号与描述。</p></div><div><span>03</span><h3>派生金额</h3><p>由数量 × 单价计算 Amount，保留两位小数。</p></div></div>
-          </section>
-
-          <section class="dc-section" id="projection" aria-labelledby="projection-title">
-            <div class="dc-section-label"><span>03 / THE MISSING CONTEXT</span><span>字段也在改变</span></div>
-            <h2 id="projection-title">少了商品信息，<br>“相同”有了新的含义。</h2>
-            <p>完全重复行检查比较的是<strong>当前输出列的整行值</strong>。原始数据有商品编号和商品描述，筛选后的结果移除了这两列，并新增金额列：8 列变成 7 列。</p>
-            <figure class="dc-field-map" aria-labelledby="field-map-title">
-              <figcaption id="field-map-title"><strong>字段集合变化</strong><span>实际 SQL 投影 / 非交易明细</span></figcaption>
-              <div class="dc-field-set"><div class="dc-field-set-label"><span>INPUT</span><strong>8 列</strong></div><ul aria-label="原始八列"><li>InvoiceNo</li><li class="dc-field-removed">StockCode <span>移除</span></li><li class="dc-field-removed">Description <span>移除</span></li><li>Quantity</li><li>InvoiceDate</li><li>Price</li><li>CustomerID</li><li>Country</li></ul></div>
-              <div class="dc-field-arrow" aria-hidden="true">↓ <span>筛选、投影与派生</span></div>
-              <div class="dc-field-set"><div class="dc-field-set-label"><span>OUTPUT</span><strong>7 列</strong></div><ul aria-label="输出七列"><li>InvoiceNo</li><li>CustomerID</li><li>InvoiceDate</li><li>Quantity</li><li>Price</li><li>Country</li><li class="dc-field-added">Amount <span>新增</span></li></ul></div>
-            </figure>
-            <div class="dc-projection-demo" data-projection-demo aria-labelledby="projection-demo-title">
-              <div class="dc-demo-kicker"><span>机制示意 · 虚构数据</span><span>始终保留 2 行</span></div>
-              <h3 id="projection-demo-title">只变字段，不删行。</h3>
-              <p>两条虚构商品明细属于同一示例订单，数量与单价相同，但商品码不同。点一下按钮，看看投影后发生什么。</p>
-              <div class="dc-demo-table-wrap"><table class="dc-demo-table"><caption>虚构的两行商品明细，仅用于说明字段投影</caption><thead><tr><th scope="col">订单</th><th scope="col" data-demo-product>商品码</th><th scope="col" data-demo-product>商品说明</th><th scope="col">数量</th><th scope="col">单价</th><th scope="col" data-demo-amount hidden>金额</th></tr></thead><tbody><tr><td>DEMO-01</td><td data-demo-product>A</td><td data-demo-product>虚构商品 A</td><td>2</td><td>10.00</td><td data-demo-amount hidden>20.00</td></tr><tr><td>DEMO-01</td><td data-demo-product>B</td><td data-demo-product>虚构商品 B</td><td>2</td><td>10.00</td><td data-demo-amount hidden>20.00</td></tr></tbody></table></div>
-              <div class="dc-demo-controls"><button type="button" data-projection-toggle aria-pressed="false" aria-describedby="projection-demo-note" hidden disabled>只保留分析字段 <span aria-hidden="true">↗</span></button><p data-projection-status role="status" aria-live="polite" aria-atomic="true">完整字段：商品码与说明不同；两行都在。</p></div>
-              <p class="dc-demo-note" id="projection-demo-note">为便于观察，仅展示相关字段；投影时移除商品码、商品说明，并由数量 × 单价派生金额。示意不计入上面的真实体检结果，也不能证明原样例中的重复行都应保留或删除。</p>
-            </div>
-            <p>原先由 <code>StockCode</code> 或 <code>Description</code> 区分的记录，投影到更少的字段后，<strong>可能在全部输出列上变得相同</strong>。新增的 <code>Amount</code> 由已有数量和价格计算，也不会补回商品信息。</p>
-            <blockquote class="dc-key-line"><p>输出行相同，<br>不自动等于重复录入。</p></blockquote>
-            <p>这是解释重复指标时必须检查的机制。仅凭这里的聚合值，还不能确定每条相同行的成因，也不能断言它们全部应该保留或全部应该删除。</p>
-          </section>
-
-          <section class="dc-section" id="interpretation" aria-labelledby="interpretation-title">
-            <div class="dc-section-label"><span>04 / READ BEFORE YOU REPAIR</span><span>从评分回到判断</span></div>
-            <h2 id="interpretation-title">先解释口径，<br>再判断是否去重。</h2>
-            <p>体检引擎让问题浮出来，业务定义决定怎样处理。这里更有价值的下一步，是沿着原始记录追查三件事：</p>
-            <ol class="dc-questions"><li><span aria-hidden="true">01</span><div><h3>分析单位是什么？</h3><p>一笔订单、一条商品明细，还是一位客户？先明确一行应该代表什么，再谈重复。</p></div></li><li><span aria-hidden="true">02</span><div><h3>判重需要哪些字段？</h3><p>回到商品信息和原始行，检查当前保留的列是否足以区分不同明细，不能只盯着输出表。</p></div></li><li><span aria-hidden="true">03</span><div><h3>相同行是怎样产生的？</h3><p>投影后相同、重复导入或其他业务原因，需要记录层面的证据。核实之后，再决定保留、合并或删除。</p></div></li></ol>
-            <div class="dc-takeaway"><span>WHAT THIS EXAMPLE SHOWS</span><p>评分是判断的起点。<br><strong>解释数据，才是分析的一部分。</strong></p><small>这组记录不证明整体质量已经改善，也不证明工具带来用户提效或商业收益。它说明：评分需要放回具体的数据口径里阅读。</small></div>
-          </section>
-
-          <section class="dc-section dc-sources" id="sources" aria-labelledby="sources-title">
-            <div class="dc-section-label"><span>05 / TRACE THE EVIDENCE</span><span>可以继续核对</span></div>
-            <h2 id="sources-title">让每个数字，<br>都有可以回去的地方。</h2>
-            <p>本文基于公开仓库保存的后端计算结果和 SQL 整理，未在本轮重新运行完整流水线。评分来自当时的规则引擎；存储扣分项存在舍入，不用于精确重算总分。</p>
-            <ul class="dc-source-list"><li><span>01 / DATASET</span><a href="https://doi.org/10.24432/C5CG6D" target="_blank" rel="noopener noreferrer">UCI · Online Retail II <b aria-hidden="true">↗</b></a><p>Chen, D. (2012). Online Retail II [Dataset]. UCI Machine Learning Repository. DOI: 10.24432/C5CG6D.</p></li><li><span>02 / RAW RECORDS</span><a href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/00_upload_meta.json" target="_blank" rel="noopener noreferrer">输入元信息 <b aria-hidden="true">↗</b></a><p><a href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/01_health_check_raw.json" target="_blank" rel="noopener noreferrer">原始体检 JSON ↗</a> / <a href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/02_health_check_clean.json" target="_blank" rel="noopener noreferrer">筛选后体检 JSON ↗</a></p></li><li><span>03 / PIPELINE</span><a href="https://github.com/tendernessnick/data-helper/blob/master/scripts/run_ecommerce_analysis.py" target="_blank" rel="noopener noreferrer">SQL 与复现脚本 <b aria-hidden="true">↗</b></a><p>本页解释对重复指标作了更谨慎的区分；聚合结果不足以确认每条相同行的业务含义。</p></li><li><span>04 / FACT SHEET</span><a href="assets/cases/data-helper-case.json" target="_blank" rel="noopener noreferrer">本页聚合事实 JSON <b aria-hidden="true">↗</b></a><p>仅包含聚合值、字段、SQL 口径和公开来源，不含交易明细。</p></li></ul>
-            <p class="dc-license">数据集作者：Daqing Chen。原始数据依据 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0 ↗</a> 提供；本页展示经筛选与字段转换的聚合结果，并对记录作解释性整理。原始数据说明见 <a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii" target="_blank" rel="noopener noreferrer">UCI 官方数据页 ↗</a>。</p>
-          </section>
+    <section class="page-hero">
+      <div class="container container--narrow">
+        <span class="eyebrow">PROJECT OBSERVATION / 01 · DATA HELPER</span>
+        <h1 class="page-hero__title" id="case-title">清洗后，体检分数为什么降低了？</h1>
+        <p class="page-hero__lead">
+          缺失单元格从 247,389 降为 0、问题项从 15 项减少到 11 项，Data Helper 的规则体检总分却从 <strong>83.4 降到了 77.5</strong>。这组来自 UCI Online Retail II 的真实留存记录，指向一个比调分更根本的问题：我们究竟在为哪一种分析，整理哪一种数据？
+        </p>
+        <div class="jump-pills">
+          <a class="jump-pill" href="#what-changed">01 留存记录</a>
+          <a class="jump-pill" href="#sales-definition">02 业务口径与 SQL</a>
+          <a class="jump-pill" href="#projection">03 字段投影机制</a>
+          <a class="jump-pill" href="#interpretation">04 从评分回到判断</a>
+          <a class="jump-pill" href="#sources">05 来源与局限</a>
+          <a class="jump-pill" href="works.html#data-helper">← 返回 Data Helper</a>
         </div>
       </div>
-    </article>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="works.html#data-helper"><span><small>回到产品</small><strong>Data Helper</strong></span><b aria-hidden="true">←</b></a><a href="dehaze.html"><span><small>另一种观察</small><strong>图像去雾实验</strong></span><b aria-hidden="true">↗</b></a></nav>
+    </section>
+
+    <!-- 01 What Changed -->
+    <section class="section" id="what-changed" aria-labelledby="change-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">01 / THE OBSERVATION · 先看发生了什么</span>
+        <h2 class="section-title" id="change-title" style="margin-top:0.5rem;">缺失清零，总分却没有上升</h2>
+        <p class="card__body" style="margin-top:0.85rem;">
+          Data Helper 公开电商示例先对原始数据运行规则体检，再用 DuckDB SQL 按本次定义的“有效销售”口径新建筛选后的数据集，最后重新运行体检。两次公开仓库留存的聚合结果如下（核对日期 2026-11-14，未在本轮重跑）：
+        </p>
+
+        <div class="table-wrap" style="margin-top:1.35rem;">
+          <table class="data-table">
+            <caption id="score-caption" class="sr-only">两次体检的留存聚合结果对比表</caption>
+            <thead>
+              <tr>
+                <th>留存聚合指标</th>
+                <th class="num">原始数据集（8 列）</th>
+                <th class="num">筛选后数据集（7 列）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>数据行数（交易明细行，非订单数）</td>
+                <td class="num">1,067,371</td>
+                <td class="num">805,549</td>
+              </tr>
+              <tr>
+                <td>字段数</td>
+                <td class="num">8</td>
+                <td class="num">7</td>
+              </tr>
+              <tr>
+                <td><strong>规则体检评分 / 100</strong></td>
+                <td class="num"><strong>83.4</strong></td>
+                <td class="num"><strong style="color:var(--accent-clay);">77.5</strong></td>
+              </tr>
+              <tr>
+                <td>发现的问题项</td>
+                <td class="num">15</td>
+                <td class="num">11</td>
+              </tr>
+              <tr>
+                <td>缺失单元格数</td>
+                <td class="num">247,389</td>
+                <td class="num">0</td>
+              </tr>
+              <tr>
+                <td>完全重复行（按当前全部列判重）</td>
+                <td class="num">34,335</td>
+                <td class="num">314,891</td>
+              </tr>
+              <tr>
+                <td>完全重复行占比（duplicateRows ÷ rows × 100）</td>
+                <td class="num">3.22%</td>
+                <td class="num" style="color:var(--accent-clay);font-weight:700;">39.09%</td>
+              </tr>
+              <tr>
+                <td>重复项存储扣分（含舍入）</td>
+                <td class="num">1.6</td>
+                <td class="num" style="color:var(--accent-clay);font-weight:700;">15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:1.5rem;">
+          <h3 id="duplicate-chart-title" style="font-size:var(--text-lg);">完全重复行占比对比（同一尺度 0–100%）</h3>
+          <div class="bar-compare">
+            <div class="bar-row">
+              <div class="bar-row__meta">
+                <span>原始数据集（1,067,371 行 · 8 列）</span>
+                <span class="mono">3.22%（34,335 行 · 扣分 1.6）</span>
+              </div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:3.22%;"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-row__meta">
+                <span>筛选后数据集（805,549 行 · 7 列）</span>
+                <span class="mono" style="color:var(--accent-clay);">39.09%（314,891 行 · 扣分 15）</span>
+              </div>
+              <div class="bar-track" aria-hidden="true"><div class="bar-fill bar-fill--clay" style="width:39.09%;"></div></div>
+            </div>
+          </div>
+          <p id="duplicate-chart-note" style="font-size:var(--text-xs);color:var(--ink-muted);">
+            重要提示：比例的分母（行数）与用于判重的字段集合（列数）同时发生了变化。上图仅展示两次规则引擎输出，不代表“重复交易增加了”。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Sales Definition & SQL -->
+    <section class="section section--bordered surface-subtle" id="sales-definition" aria-labelledby="definition-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">02 / DEFINE THE QUESTION · 口径与 SQL</span>
+        <h2 class="section-title" id="definition-title" style="margin-top:0.5rem;">这一步做的是业务口径筛选，不是通用清洗</h2>
+        <p class="card__body" style="margin-top:0.85rem;">
+          本案例保留有客户 ID、数量与单价为正、且发票号不以 <code>C</code> 开头的交易明细，用于构建本次定义的“有效销售明细”。它服务于特定分析目标，<strong>不是所有电商分析都应套用的清洗标准</strong>（例如研究退货行为时，取消单恰恰是核心样本）。此外，SQL 中没有使用 <code>DISTINCT</code>，也没有调用 <code>drop_duplicates</code>。
+        </p>
+
+        <div style="margin-top:1.25rem;">
+          <div class="mono" style="font-size:var(--text-xs);color:var(--ink-muted);margin-bottom:0.45rem;">DUCKDB / SQL（实际口径摘要 · ds1 为原始数据集视图别名）</div>
+          <pre class="code-block"><code><span class="code-kw">SELECT</span>
+  "InvoiceNo",
+  <span class="code-kw">CAST</span>(<span class="code-kw">CAST</span>("CustomerID" <span class="code-kw">AS</span> BIGINT) <span class="code-kw">AS</span> VARCHAR) <span class="code-kw">AS</span> "CustomerID",
+  "InvoiceDate", "Quantity", "Price", "Country",
+  <span class="code-kw">ROUND</span>("Quantity" * "Price", 2) <span class="code-kw">AS</span> "Amount"
+<span class="code-kw">FROM</span> ds1
+<span class="code-kw">WHERE</span> "CustomerID" <span class="code-kw">IS NOT NULL</span>
+  <span class="code-kw">AND</span> "Quantity" &gt; 0
+  <span class="code-kw">AND</span> "InvoiceNo" <span class="code-kw">NOT LIKE</span> <span class="code-str">'C%'</span>
+  <span class="code-kw">AND</span> "Price" &gt; 0;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Projection Mechanism & Interactive Simulator -->
+    <section class="section" id="projection" aria-labelledby="projection-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">03 / THE MISSING CONTEXT · 字段集合变化</span>
+        <h2 class="section-title" id="projection-title" style="margin-top:0.5rem;">少了商品信息，“完全重复行”有了新的含义</h2>
+        <p class="card__body" style="margin-top:0.85rem;">
+          规则引擎的“完全重复行”检查比较的是<strong>当前输出表的全部列</strong>。原始数据有 8 列，筛选输出移除了 <code>StockCode</code> 与 <code>Description</code> 并派生了 <code>Amount</code>（8 列变为 7 列）。原先由商品码或商品说明区分的两条明细，投影到更少字段后，就可能在全部输出列上变得完全相同；新增的 <code>Amount</code> 由数量与单价计算，不会补回商品身份。
+        </p>
+
+        <div class="card card--flat" style="margin-top:1.35rem;">
+          <h3 id="field-map-title" style="font-size:var(--text-base);">字段映射：8 列 → 7 列</h3>
+          <div class="schema-chips">
+            <span class="schema-chip">InvoiceNo</span>
+            <span class="schema-chip schema-chip--removed">StockCode（移除）</span>
+            <span class="schema-chip schema-chip--removed">Description（移除）</span>
+            <span class="schema-chip">Quantity</span>
+            <span class="schema-chip">InvoiceDate</span>
+            <span class="schema-chip">Price</span>
+            <span class="schema-chip">CustomerID（转整型再转字符串）</span>
+            <span class="schema-chip">Country</span>
+            <span class="schema-chip schema-chip--added">+ Amount（派生）</span>
+          </div>
+        </div>
+
+        <!-- Interactive Fictional Demo -->
+        <div class="card" id="projection-sim" style="margin-top:1.5rem;">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
+            <div>
+              <span class="badge badge--clay">机制示意 · 虚构数据（不计入真实体检结果）</span>
+              <h3 id="projection-demo-title" style="font-size:var(--text-lg);margin-top:0.45rem;">只变字段、不删行：切换查看投影前后</h3>
+            </div>
+            <div class="filter-bar" role="group" aria-label="切换示意表字段投影状态">
+              <button type="button" class="filter-btn" data-sim-mode="raw" aria-pressed="true">完整字段（含商品码）</button>
+              <button type="button" class="filter-btn" data-sim-mode="projected" aria-pressed="false">移除商品字段后</button>
+            </div>
+          </div>
+
+          <p id="projection-demo-note" class="card__body">
+            两条虚构商品明细属于同一示例订单（DEMO-01），数量与单价相同但商品码不同。切换按钮，观察行未减少但整行判重结果如何改变。
+          </p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead id="sim-head">
+                <tr>
+                  <th>订单</th>
+                  <th>商品码</th>
+                  <th>商品说明</th>
+                  <th class="num">数量</th>
+                  <th class="num">单价</th>
+                  <th class="num">金额</th>
+                </tr>
+              </thead>
+              <tbody id="sim-body">
+                <tr>
+                  <td class="mono">DEMO-01</td>
+                  <td class="mono"><strong>A</strong></td>
+                  <td>虚构商品 A</td>
+                  <td class="num">2</td>
+                  <td class="num">10.00</td>
+                  <td class="num">20.00</td>
+                </tr>
+                <tr>
+                  <td class="mono">DEMO-01</td>
+                  <td class="mono"><strong>B</strong></td>
+                  <td>虚构商品 B</td>
+                  <td class="num">2</td>
+                  <td class="num">10.00</td>
+                  <td class="num">20.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout" id="sim-verdict" aria-live="polite">
+            完整字段状态（2 行 · 0 条完全重复行）：商品码与商品说明不同，引擎识别为两条不同记录。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Interpretation -->
+    <section class="section section--bordered surface-subtle" id="interpretation" aria-labelledby="interpretation-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">04 / READ BEFORE YOU REPAIR · 从评分回到判断</span>
+        <h2 class="section-title" id="interpretation-title" style="margin-top:0.5rem;">先解释口径，再决定是否去重</h2>
+        <p class="card__body" style="margin-top:0.85rem;">
+          体检引擎的价值是让异常浮出水面，而不能替代分析判断。仅凭聚合结果不足以断言 314,891 条相同行全部合法或全部该删；正确的下一步是沿着原始记录确认三件事：
+        </p>
+
+        <div class="grid-3" style="margin-top:1.35rem;">
+          <article class="card">
+            <span class="eyebrow">01</span>
+            <h3 style="font-size:var(--text-base);">分析单位是什么？</h3>
+            <p class="card__body">一笔订单、一条商品明细，还是一位客户？先明确输出表的一行代表什么，再谈重复。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">02</span>
+            <h3 style="font-size:var(--text-base);">判重需要哪些字段？</h3>
+            <p class="card__body">回到原始商品字段，确认当前保留列是否足以区分不同明细，而非只盯输出表总分。</p>
+          </article>
+          <article class="card">
+            <span class="eyebrow">03</span>
+            <h3 style="font-size:var(--text-base);">相同行怎样产生？</h3>
+            <p class="card__body">投影碰撞、重复导入还是业务拆分？需要记录级证据核实后，再决定保留、合并或删除。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Sources & Limits -->
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="container container--narrow">
+        <span class="eyebrow">05 / TRACE THE EVIDENCE · 来源、署名与局限</span>
+        <h2 class="section-title" id="sources-title" style="margin-top:0.5rem;">让每个数字都有可以回去的地方</h2>
+
+        <div class="callout callout--clay" style="margin-top:1.15rem;">
+          <span class="callout__title">本案例局限与非声明</span>
+          <ul style="margin-top:0.35rem;">
+            <li>前后缺失单元格、重复数与总分不来自完全相同的行列集合，不能单独用来证明整体数据质量改善或退步。</li>
+            <li>不是本轮性能测试，不声明所有百万行数据都能秒级处理；不是用户使用统计，不声明节省时间、商业收益或准确率提升。</li>
+            <li>质量评分及扣分项为当时规则引擎输出；存储扣分项存在舍入，不用于精确重算总分。</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:1.35rem;">
+          <h3 style="font-size:var(--text-base);">数据集署名（UCI / CC BY 4.0）</h3>
+          <p class="card__body">
+            Chen, D. (2012). <em>Online Retail II</em> [Dataset]. UCI Machine Learning Repository. DOI: <a href="https://doi.org/10.24432/C5CG6D" target="_blank" rel="noopener noreferrer">10.24432/C5CG6D</a>（数据期间：2009-12-01 至 2011-12-09）。原始数据依据 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0 ↗</a> 提供；本页仅展示筛选与字段转换后的聚合结果及解释，不含原始交易明细。
+          </p>
+
+          <div class="btn-group">
+            <a class="btn btn--secondary btn--sm" href="assets/cases/data-helper-case.json" target="_blank" rel="noopener noreferrer">本页聚合事实 JSON ↗</a>
+            <a class="btn btn--ghost btn--sm" href="https://archive.ics.uci.edu/dataset/502/online+retail+ii" target="_blank" rel="noopener noreferrer">UCI 官方数据页 ↗</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/tendernessnick/data-helper/blob/master/scripts/run_ecommerce_analysis.py" target="_blank" rel="noopener noreferrer">复现脚本 ↗</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/00_upload_meta.json" target="_blank" rel="noopener noreferrer">输入元信息 ↗</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/01_health_check_raw.json" target="_blank" rel="noopener noreferrer">原始体检 JSON ↗</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/tendernessnick/data-helper/blob/master/examples/ecommerce/results/02_health_check_clean.json" target="_blank" rel="noopener noreferrer">筛选后体检 JSON ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="works.html#data-helper">
+          <span class="pager-card__kicker">← 回到产品</span>
+          <span class="pager-card__title">Data Helper 产品介绍</span>
+        </a>
+        <a class="pager-card pager-card--next" href="dehaze.html">
+          <span class="pager-card__kicker">另一种观察 →</span>
+          <span class="pager-card__title">SE-CGAN 图像去雾实验</span>
+        </a>
+      </div>
+    </nav>
   </main>
-  <footer class="footer"><div class="container"><span>© <span data-year>2026</span> 胡睿杰｜项目观察</span></div></footer>
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/evolution-case.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <div class="btn-group">
+          <a href="works.html">全部作品</a>
+          <a href="cv.html">在线简历</a>
+          <a href="contact.html">联系我</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js?v=20261120"></script>
+  <script type="module" src="js/data-case.js?v=20261120"></script>
 </body>
 </html>

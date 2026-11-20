@@ -1,198 +1,341 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life｜胡睿杰</title>
-  <meta name="description" content="胡睿杰的生活观察手记：十二张摄影、网球与剪辑日常、真实片单书架和歌单。上海出发，现于深圳实习。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="Life｜胡睿杰" />
-  <meta property="og:description" content="胡睿杰的生活观察手记：十二张摄影、网球与剪辑日常、真实片单书架和歌单。上海出发，现于深圳实习。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>摄影与生活档案 · 胡睿杰 HU RUIJIE</title>
+  <meta name="description" content="胡睿杰数据之外的生活档案：12 帧个人摄影作品、网球协会社长与剪辑创作、电影番剧书架与常听歌单。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="life" class="folio-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html" aria-current="page">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="about.html"><span>关于我</span><span class="mono">01</span></a>
+        <a class="mobile-drawer__link" href="experience.html"><span>实习与校园经历</span><span class="mono">02</span></a>
+        <a class="mobile-drawer__link" href="works.html"><span>作品与研究</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="life.html" aria-current="page"><span>摄影与生活</span><span class="mono">05</span></a>
+        <a class="mobile-drawer__link" href="contact.html"><span>联系我</span><span class="mono">06</span></a>
+        <a class="mobile-drawer__link" href="en.html" lang="en"><span>English Brief</span><span class="mono">EN</span></a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>05 / LIFE</span></div>
-    <section class="container page-hero life-sheet-hero">
-      <div class="ep-life-copy">
-      <p class="eyebrow">Life / Field Notes</p>
-      <span class="ep-life-heading" aria-hidden="true">OFF<br>SCREEN<span>●</span></span>
-      <h1 class="page-title">换个视角，<br>继续观察。</h1>
-      <p class="lead">网球、摄影和剪辑，是数据之外的几种日常。喜欢带着相机压马路，也把一些喜欢的电影、书和歌留在这里。</p>
-      <p class="life-sheet-location">上海出发，现于深圳实习。</p>
-      <nav class="section-nav" aria-label="本页导览">
-        <a class="tag" href="#gallery" data-section-jump>镜头片刻</a><a class="tag" href="#friend" data-section-jump>球场与创作</a><a class="tag" href="#media" data-section-jump>片单书架</a><a class="tag" href="#places" data-section-jump>拍摄足迹</a>
-      </nav></div>
-      <figure class="ep-life-cover"><img src="assets/life/life-06.jpg" alt="日落下的剪影，生活摄影选帧" width="1400" height="933" fetchpriority="high" decoding="async" /><figcaption><span>FIELD NOTES / 日落</span><span>一帧日常，换一个视角。</span></figcaption><span class="ep-life-cover-number" aria-hidden="true">12<br>FRAMES</span></figure>
-    </section>
-
-    <section class="section tight" id="gallery" aria-labelledby="photos-title">
+    <section class="page-hero">
       <div class="container">
-        <div class="section-head" id="shots"><h2 id="photos-title">镜头里的片刻</h2></div>
-        <div class="photo-index-intro"><p>街头、日落、旅途，还有偶然遇见的日常。</p><span>12 帧 · 点击放大</span></div>
-        <div class="photo-index-grid" aria-label="十二张生活摄影">
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-07.jpg" data-gallery-item data-gallery-caption="街头" aria-label="放大照片：街头"><img src="assets/life/life-07.jpg" alt="街头的气球摊" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">01</span><span>街头</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-06.jpg" data-gallery-item data-gallery-caption="日落" aria-label="放大照片：日落"><img src="assets/life/life-06.jpg" alt="日落下的剪影" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">02</span><span>日落</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-02.jpg" data-gallery-item data-gallery-caption="秋叶" aria-label="放大照片：秋叶"><img src="assets/life/life-02.jpg" alt="秋日金黄的树叶" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">03</span><span>秋叶</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-04.jpg" data-gallery-item data-gallery-caption="海岸" aria-label="放大照片：海岸"><img src="assets/life/life-04.jpg" alt="俯瞰海岸线" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">04</span><span>海岸</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-11.jpg" data-gallery-item data-gallery-caption="夜拍" aria-label="放大照片：夜拍"><img src="assets/life/life-11.jpg" alt="夜晚街头拍摄" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">05</span><span>夜拍</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-08.jpg" data-gallery-item data-gallery-caption="猫" aria-label="放大照片：猫"><img src="assets/life/life-08.jpg" alt="路边遇见的猫" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">06</span><span>猫</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-03.jpg" data-gallery-item data-gallery-caption="银杏" aria-label="放大照片：银杏"><img src="assets/life/life-03.jpg" alt="银杏树下的古建长廊" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">07</span><span>银杏</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-05.jpg" data-gallery-item data-gallery-caption="海边" aria-label="放大照片：海边"><img src="assets/life/life-05.jpg" alt="黑白色调的海边" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">08</span><span>海边</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-09.jpg" data-gallery-item data-gallery-caption="画摊" aria-label="放大照片：画摊"><img src="assets/life/life-09.jpg" alt="街边画像师" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">09</span><span>画摊</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-10.jpg" data-gallery-item data-gallery-caption="列车" aria-label="放大照片：列车"><img src="assets/life/life-10.jpg" alt="行驶中的列车窗外" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">10</span><span>列车</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-12.jpg" data-gallery-item data-gallery-caption="滑雪" aria-label="放大照片：滑雪"><img src="assets/life/life-12.jpg" alt="雪场滑雪" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">11</span><span>滑雪</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <figure class="photo-index-frame">
-            <a class="photo-index-image" href="assets/life/life-01.jpg" data-gallery-item data-gallery-caption="日常" aria-label="放大照片：日常"><img src="assets/life/life-01.jpg" alt="躺在木地板上休息" loading="lazy" decoding="async" /></a>
-            <figcaption><span class="photo-index-number">12</span><span>日常</span><span aria-hidden="true">↗</span></figcaption>
-          </figure>
-          <div class="photo-index-end" aria-hidden="true"><span>12 / 12 · FIELD NOTES</span><b>Ruijie</b></div>
+        <span class="eyebrow">05 / LIFE · FIELD NOTES</span>
+        <h1 class="page-hero__title">换一种视角，继续观察。</h1>
+        <p class="page-hero__lead">
+          网球、摄影和剪辑，是数据之外的几种日常。上海出发，目前在深圳实习；喜欢带着相机压马路，也把一些反复翻看的电影、番剧、书和歌留在这里。
+        </p>
+        <div class="jump-pills">
+          <a class="jump-pill" href="#gallery">镜头片刻 (12 帧) ↓</a>
+          <a class="jump-pill" href="#places">拍摄场景与花絮 ↓</a>
+          <a class="jump-pill" href="#friend">球场与剪辑台 ↓</a>
+          <a class="jump-pill" href="#media">片单与书架 ↓</a>
+          <a class="jump-pill" href="#listening">歌单常客 ↓</a>
         </div>
-        <p class="photo-index-hint">打开大图后，可用左右方向键翻看，按 Esc 返回。</p>
+
+        <figure class="life-hero-banner" style="margin:1.75rem 0 0;">
+          <img src="assets/intro-hero.jpg" alt="上海外滩蓝调时刻，眺望黄浦江对岸天际线" width="1920" height="1200" loading="eager" />
+        </figure>
       </div>
     </section>
 
+    <!-- 12 Frames Photography Gallery -->
+    <section class="section" id="gallery" aria-labelledby="photos-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">12 FRAMES · 镜头里的片刻</span>
+            <h2 class="section-title" id="photos-title">街头、日落、旅途与偶然遇见的日常</h2>
+          </div>
+          <p class="section-lead">
+            点击任意照片查看大图，支持键盘左右方向键切换、按 Esc 关闭并回到原位置。
+          </p>
+        </div>
+
+        <div class="photo-grid" id="shots">
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-01.jpg" data-lightbox-caption="01 / 日常 · 躺在木地板上休息">
+            <span class="photo-card__img"><img src="assets/life/life-01.jpg" alt="躺在木地板上休息" width="933" height="1400" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>躺在木地板上休息</span><span class="mono">01</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-02.jpg" data-lightbox-caption="02 / 秋叶 · 秋日金黄的树叶与古塔">
+            <span class="photo-card__img"><img src="assets/life/life-02.jpg" alt="秋日金黄的树叶" width="1400" height="788" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>秋日金黄的树叶</span><span class="mono">02</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-03.jpg" data-lightbox-caption="03 / 银杏 · 银杏树下的古建长廊">
+            <span class="photo-card__img"><img src="assets/life/life-03.jpg" alt="银杏树下的古建长廊" width="1400" height="596" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>银杏树下的古建长廊</span><span class="mono">03</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-04.jpg" data-lightbox-caption="04 / 海岸线 · 俯瞰海岸线">
+            <span class="photo-card__img"><img src="assets/life/life-04.jpg" alt="俯瞰海岸线" width="1400" height="933" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>俯瞰海岸线</span><span class="mono">04</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-05.jpg" data-lightbox-caption="05 / 海边 · 黑白色调的海边">
+            <span class="photo-card__img"><img src="assets/life/life-05.jpg" alt="黑白色调的海边" width="933" height="1400" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>黑白色调的海边</span><span class="mono">05</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-06.jpg" data-lightbox-caption="06 / 日落 · 日落下的剪影">
+            <span class="photo-card__img"><img src="assets/life/life-06.jpg" alt="日落下的剪影" width="1400" height="933" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>日落下的剪影</span><span class="mono">06</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-07.jpg" data-lightbox-caption="07 / 街头 · 街头的气球摊">
+            <span class="photo-card__img"><img src="assets/life/life-07.jpg" alt="街头的气球摊" width="933" height="1400" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>街头的气球摊</span><span class="mono">07</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-08.jpg" data-lightbox-caption="08 / 猫 · 路边遇见的猫">
+            <span class="photo-card__img"><img src="assets/life/life-08.jpg" alt="路边遇见的猫" width="1400" height="933" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>路边遇见的猫</span><span class="mono">08</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-09.jpg" data-lightbox-caption="09 / 画摊 · 街边画像师">
+            <span class="photo-card__img"><img src="assets/life/life-09.jpg" alt="街边画像师" width="1050" height="1400" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>街边画像师</span><span class="mono">09</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-10.jpg" data-lightbox-caption="10 / 列车 · 行驶中的列车窗外">
+            <span class="photo-card__img"><img src="assets/life/life-10.jpg" alt="行驶中的列车窗外" width="1400" height="788" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>行驶中的列车窗外</span><span class="mono">10</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-11.jpg" data-lightbox-caption="11 / 夜拍 · 夜晚街头拍摄">
+            <span class="photo-card__img"><img src="assets/life/life-11.jpg" alt="夜晚街头拍摄" width="933" height="1400" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>夜晚街头拍摄</span><span class="mono">11</span></span>
+          </button>
+          <button type="button" class="photo-card" data-lightbox-group="life-photos" data-lightbox-src="assets/life/life-12.jpg" data-lightbox-caption="12 / 滑雪 · 雪场滑雪">
+            <span class="photo-card__img"><img src="assets/life/life-12.jpg" alt="雪场滑雪" width="1400" height="933" loading="lazy" /></span>
+            <span class="photo-card__cap"><span>雪场滑雪</span><span class="mono">12</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Places & Candid Moments -->
+    <section class="section section--bordered surface-subtle" id="places" aria-labelledby="places-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FIELD SCENES · 镜头跟着日常走</span>
+          <h2 class="section-title" id="places-title">从街头巷尾到海岸与雪场</h2>
+          <p class="section-lead">古镇园林、海岸线、街头巷尾、列车窗外与雪场——镜头跟着日常换场地，以下为几张拍摄途中的记录。</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="media-frame" style="aspect-ratio:3/4;">
+            <img src="assets/life/life-p1.jpg" alt="手持相机走在林荫小径" width="675" height="900" loading="lazy" />
+          </div>
+          <div class="media-frame" style="aspect-ratio:3/4;">
+            <img src="assets/life/life-p2.jpg" alt="海边礁石留影" width="675" height="900" loading="lazy" />
+          </div>
+          <div class="media-frame" style="aspect-ratio:3/4;">
+            <img src="assets/life/life-p3.jpg" alt="雪场手持相机观察" width="675" height="900" loading="lazy" />
+          </div>
+          <div class="media-frame" style="aspect-ratio:3/4;">
+            <img src="assets/life/life-p4.jpg" alt="背着相机包逛市集" width="675" height="900" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tennis, Editing & Connection -->
     <section class="section" id="friend" aria-labelledby="daily-title">
       <div class="container">
-        <div class="section-head"><h2 id="daily-title">球场与剪辑台</h2></div>
-        <div class="life-sheet-notes">
-          <article><span class="life-sheet-note-label">01 / SPORT</span><h3>在球场换脑子。</h3><p>校网球协会社长，组织训练，也参与校级比赛执裁。约球、聊装备都可以。</p><a href="works.html#weather-helper">也因此做了一个天气助手 ↗</a></article>
-          <article><span class="life-sheet-note-label">02 / CREATE</span><h3>把画面整理成故事。</h3><p>用 PR / 剪映剪辑，用 Lightroom / Photoshop 修图。曾任校园新闻部部长，参与官方公众号排版与美编。</p><a href="works.html#wx">看看做过的推文 ↗</a></article>
-          <article><span class="life-sheet-note-label">03 / CONNECT</span><h3>从一个共同话题开始。</h3><p>约球、摄影、剪辑、求职交流都欢迎。上海出发，目前在深圳实习；英语可作为交流语言，雅思 7.0。</p><a href="contact.html">打个招呼 ↗</a></article>
+        <div class="section-head">
+          <span class="eyebrow">OFF SCREEN · 球场与剪辑台</span>
+          <h2 class="section-title" id="daily-title">运动、创作与交流</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="eyebrow">01 / SPORT</span>
+            <h3 class="card__title">在球场换脑子</h3>
+            <p class="card__body">曾任常州大学网球协会社长，组织周训也参与校级比赛执裁。约球、聊装备都可以，也因此生长出了香港 57 片球场的天气助手。</p>
+            <div class="card__foot"><a href="works.html#weather-helper">看看网球天气助手 ↗</a></div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">02 / CREATE</span>
+            <h3 class="card__title">把画面整理成故事</h3>
+            <p class="card__body">使用 PR / 剪映剪辑视频，Lightroom / Photoshop 修图。曾任校园新闻部部长，参与两个官方公众号的内容策划与美编排版。</p>
+            <div class="card__foot"><a href="works.html#wx">看看做过的代表推文 ↗</a></div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">03 / CONNECT</span>
+            <h3 class="card__title">从一个共同话题开始</h3>
+            <p class="card__body">约球、摄影、剪辑或求职交流都欢迎。上海出发，目前在深圳实习；英语可作为交流语言（雅思 7.0）。</p>
+            <div class="card__foot"><a href="contact.html">打个招呼 ↗</a></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section tight" id="media" aria-labelledby="shelf-title">
+    <!-- Books, Films, Series & Music -->
+    <section class="section section--bordered surface-subtle" id="media" aria-labelledby="shelf-title">
       <div class="container">
-        <div class="section-head"><h2 id="shelf-title">片单和书架</h2></div>
-        <p class="shelf-intro">科幻、竞速、战争大片都看，番剧补日常；书架上科幻与推理居多。</p>
-        <div class="shelf-archive">
-          <div class="shelf-collection"><div class="shelf-label"><h3>电影</h3><span>04 FILMS</span></div><ul class="shelf-list" aria-label="电影清单">
-              <li><img src="assets/media/wandering-earth.jpg" alt="《流浪地球》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《流浪地球》</strong><span>科幻</span></div></li>
-              <li><img src="assets/media/f1.jpg" alt="《F1：狂飙飞车》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《F1：狂飙飞车》</strong><span>运动</span></div></li>
-              <li><img src="assets/media/oppenheimer.jpg" alt="《奥本海默》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《奥本海默》</strong><span>传记</span></div></li>
-              <li><img src="assets/media/dragon-restaurant.jpg" alt="《欢迎来龙餐馆》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《欢迎来龙餐馆》</strong><span>战争</span></div></li>
-            </ul></div>
-          <div class="shelf-collection"><div class="shelf-label"><h3>番剧</h3><span>03 SERIES</span></div><ul class="shelf-list" aria-label="番剧清单">
-              <li><img src="assets/media/attack-on-titan.jpg" alt="《进击的巨人》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《进击的巨人》</strong><span>热血</span></div></li>
-              <li><img src="assets/media/frieren.jpg" alt="《葬送的芙莉莲》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《葬送的芙莉莲》</strong><span>奇幻</span></div></li>
-              <li><img src="assets/media/scissor-seven.jpg" alt="《刺客伍六七》海报" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《刺客伍六七》</strong><span>搞笑 / 热血</span></div></li>
-            </ul></div>
-          <div class="shelf-collection"><div class="shelf-label"><h3>书架</h3><span>03 BOOKS</span></div><ul class="shelf-list" aria-label="书架清单">
-              <li><img src="assets/media/three-body.jpg" alt="《三体》封面" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《三体》</strong><span>刘慈欣</span></div></li>
-              <li><img src="assets/media/baiyexing.jpg" alt="《白夜行》封面" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《白夜行》</strong><span>东野圭吾</span></div></li>
-              <li><img src="assets/media/linhai-xueyuan.jpg" alt="《林海雪原》封面" width="80" height="120" loading="lazy" decoding="async" /><div><strong>《林海雪原》</strong><span>曲波</span></div></li>
-            </ul></div>
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">ON THE SHELF · 04 FILMS · 03 SERIES · 03 BOOKS</span>
+            <h2 class="section-title" id="shelf-title">片单和书架</h2>
+          </div>
+          <p class="section-lead">科幻、竞速、战争传记大片都看，番剧补日常；书架上科幻、推理与纪实经典居多。</p>
+        </div>
+
+        <div class="filter-bar" style="margin-bottom:1.5rem;" data-filter-group data-filter-target="[data-media-item]" role="group" aria-label="按类型筛选片单书架">
+          <button type="button" class="filter-btn" data-filter-value="all" aria-pressed="true">全部 (10)</button>
+          <button type="button" class="filter-btn" data-filter-value="film" aria-pressed="false">电影 (4)</button>
+          <button type="button" class="filter-btn" data-filter-value="series" aria-pressed="false">番剧 (3)</button>
+          <button type="button" class="filter-btn" data-filter-value="book" aria-pressed="false">书籍 (3)</button>
+        </div>
+
+        <div class="media-shelf">
+          <article class="media-tile" data-media-item data-category="film">
+            <div class="media-tile__poster"><img src="assets/media/oppenheimer.jpg" alt="《奥本海默》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《奥本海默》</span><span class="media-tile__sub">电影 · 传记</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="film">
+            <div class="media-tile__poster"><img src="assets/media/wandering-earth.jpg" alt="《流浪地球》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《流浪地球》</span><span class="media-tile__sub">电影 · 科幻</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="film">
+            <div class="media-tile__poster"><img src="assets/media/f1.jpg" alt="《F1：狂飙飞车》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《F1：狂飙飞车》</span><span class="media-tile__sub">电影 · 运动</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="film">
+            <div class="media-tile__poster"><img src="assets/media/dragon-restaurant.jpg" alt="《欢迎来龙餐馆》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《欢迎来龙餐馆》</span><span class="media-tile__sub">电影 · 战争</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="series">
+            <div class="media-tile__poster"><img src="assets/media/frieren.jpg" alt="《葬送的芙莉莲》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《葬送的芙莉莲》</span><span class="media-tile__sub">番剧 · 奇幻</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="series">
+            <div class="media-tile__poster"><img src="assets/media/attack-on-titan.jpg" alt="《进击的巨人》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《进击的巨人》</span><span class="media-tile__sub">番剧 · 热血</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="series">
+            <div class="media-tile__poster"><img src="assets/media/scissor-seven.jpg" alt="《刺客伍六七》海报" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《刺客伍六七》</span><span class="media-tile__sub">番剧 · 搞笑 / 热血</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="book">
+            <div class="media-tile__poster"><img src="assets/media/three-body.jpg" alt="《三体》封面" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《三体》</span><span class="media-tile__sub">书籍 · 刘慈欣</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="book">
+            <div class="media-tile__poster"><img src="assets/media/baiyexing.jpg" alt="《白夜行》封面" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《白夜行》</span><span class="media-tile__sub">书籍 · 东野圭吾</span></div>
+          </article>
+          <article class="media-tile" data-media-item data-category="book">
+            <div class="media-tile__poster"><img src="assets/media/linhai-xueyuan.jpg" alt="《林海雪原》封面" width="480" height="720" loading="lazy" /></div>
+            <div class="media-tile__meta"><span class="media-tile__title">《林海雪原》</span><span class="media-tile__sub">书籍 · 曲波</span></div>
+          </article>
+        </div>
+
+        <!-- Listening -->
+        <div id="listening" style="margin-top:3rem;">
+          <div class="section-head" style="margin-bottom:1.25rem;">
+            <span class="eyebrow">PLAYLIST · 歌单常客</span>
+            <h3 class="section-title" id="listening-title" style="font-size:var(--text-xl);">循环列表里的三首歌</h3>
+          </div>
+          <div class="grid-3">
+            <article class="card" style="flex-direction:row;align-items:center;gap:1rem;">
+              <img src="assets/media/aicuo.jpg" alt="王力宏歌曲封面" width="76" height="76" style="width:76px;height:76px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy" />
+              <div>
+                <h4 style="font-size:var(--text-base);">爱错</h4>
+                <p class="media-tile__sub">王力宏</p>
+              </div>
+            </article>
+            <article class="card" style="flex-direction:row;align-items:center;gap:1rem;">
+              <img src="assets/media/baby.jpg" alt="Baby 单曲封面" width="76" height="76" style="width:76px;height:76px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy" />
+              <div>
+                <h4 style="font-size:var(--text-base);">Baby</h4>
+                <p class="media-tile__sub">Justin Bieber</p>
+              </div>
+            </article>
+            <article class="card" style="flex-direction:row;align-items:center;gap:1rem;">
+              <img src="assets/media/wedonttalkanymore.jpg" alt="We Don't Talk Anymore 单曲封面" width="76" height="76" style="width:76px;height:76px;border-radius:8px;object-fit:cover;flex-shrink:0;" loading="lazy" />
+              <div>
+                <h4 style="font-size:var(--text-base);">We Don't Talk Anymore</h4>
+                <p class="media-tile__sub">Charlie Puth</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="listening" aria-labelledby="listening-title">
-      <div class="container">
-        <div class="section-head"><h2 id="listening-title">歌单常客</h2></div>
-        <ul class="shelf-songs" aria-label="喜欢的三首歌">
-          <li><img src="assets/media/wedonttalkanymore.jpg" alt="We Don't Talk Anymore 单曲封面" width="56" height="56" loading="lazy" decoding="async" /><div><strong>We Don't Talk Anymore</strong><span>Charlie Puth</span></div><span class="shelf-track-number" aria-hidden="true">01</span></li>
-          <li><img src="assets/media/baby.jpg" alt="Baby 单曲封面" width="56" height="56" loading="lazy" decoding="async" /><div><strong>Baby</strong><span>Justin Bieber</span></div><span class="shelf-track-number" aria-hidden="true">02</span></li>
-          <li><img src="assets/media/aicuo.jpg" alt="王力宏歌曲封面" width="56" height="56" loading="lazy" decoding="async" /><div><strong>爱错</strong><span>王力宏</span></div><span class="shelf-track-number" aria-hidden="true">03</span></li>
-        </ul>
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="cv.html">
+          <span class="pager-card__kicker">← 上一页</span>
+          <span class="pager-card__title">在线简历 CV</span>
+        </a>
+        <a class="pager-card pager-card--next" href="contact.html">
+          <span class="pager-card__kicker">继续阅读 →</span>
+          <span class="pager-card__title">联系我</span>
+        </a>
       </div>
-    </section>
-
-    <section class="section tight" id="places" aria-labelledby="places-title">
-      <div class="container">
-        <div class="section-head"><h2 id="places-title">镜头跟着日常走</h2></div>
-        <div class="life-sheet-places"><div><span class="life-sheet-note-label">FROM SHANGHAI</span><p>从街头巷尾到海岸与雪场，镜头也跟着日常换场地。</p></div><ul aria-label="已有拍摄足迹"><li>上海 · 外滩</li><li>古镇园林</li><li>海岸线</li><li>雪场</li><li>街头巷尾</li><li>列车窗外</li></ul></div>
-      </div>
-    </section>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="cv.html"><span><small>上一页</small><strong>在线履历</strong></span><b aria-hidden="true">←</b></a><a href="contact.html"><span><small>继续看看</small><strong>联系我</strong></span><b aria-hidden="true">↗</b></a></nav>
+    </nav>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© <span data-year>2026</span> 胡睿杰｜Life</span>
-      
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <div class="btn-group">
+          <a href="index.html">回到主页</a>
+          <a href="works.html">全部作品</a>
+          <a href="contact.html">联系我</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/gallery.js?v=51"></script>
-  <script type="module" src="js/folio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <script type="module" src="js/main.js?v=20261120"></script>
+  <script type="module" src="js/lightbox.js?v=20261120"></script>
 </body>
 </html>

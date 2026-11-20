@@ -1,58 +1,73 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404｜胡睿杰</title>
-  <meta name="description" content="页面不存在或尚未建出，返回胡睿杰的个人主页。" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 页面未找到 · 胡睿杰 HU RUIJIE</title>
   <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="error" class="folio-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
-
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>404 / PAGE NOT FOUND</span></div>
-    <section class="container error-sheet" aria-labelledby="error-title"><div class="error-mark" aria-hidden="true">4<span>0</span>4<small>NO SIGNAL / 换条路继续</small></div><div><p class="eyebrow">No entry / 页面未找到</p><h1 class="page-title" id="error-title">这一页走丢了。<br>换个方向看看。</h1><p class="lead">这个链接没有对应的页面。可以回到主页，或直接打开作品与联系入口。</p><div class="actions"><a class="btn primary" href="index.html">回到主页 ↗</a><a class="btn" href="works.html">看看作品 ↗</a><a class="btn" href="contact.html">联系我 ↗</a></div></div></section>
+    <section class="section" style="padding-block:clamp(4rem,10vw,7.5rem);">
+      <div class="container container--narrow">
+        <div class="card" style="padding:clamp(1.75rem,4vw,3rem);">
+          <span class="eyebrow">404 / PAGE NOT FOUND · NO ENTRY</span>
+          <h1 class="page-hero__title" id="error-title" style="margin-top:0.5rem;">这一页走丢了，换条路继续。</h1>
+          <p class="card__body" style="margin-top:0.75rem;max-width:52ch;">
+            你访问的地址没有对应页面。可以直接返回胡睿杰的主页，或跳转到作品、在线简历与联系页面。
+          </p>
+          <div class="btn-group" style="margin-top:1.5rem;">
+            <a class="btn btn--primary" href="index.html">回到主页 ↗</a>
+            <a class="btn btn--secondary" href="works.html">浏览作品 ↗</a>
+            <a class="btn btn--secondary" href="cv.html">在线简历 ↗</a>
+            <a class="btn btn--ghost" href="contact.html">联系我 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© 2026 胡睿杰</span>
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE</span>
+        <a href="index.html">← 胡睿杰 / 首页</a>
+      </div>
     </div>
   </footer>
-  <script type="module" src="js/evolution.js?v=51"></script>
+
+  <script type="module" src="js/main.js?v=20261120"></script>
 </body>
 </html>

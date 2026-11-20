@@ -122,3 +122,12 @@
 - **2026-11-20 [Codex 独立验收收尾]** Gemini/agy Neon XHigh 完成同一会话两轮设计后，独立审查收紧首页事实措辞：NoticeMe 说明改为提醒调度不依赖模型、AI 可选且创建需确认；Taxi 两个不同占比改为并列，跨期范围明确为五个代表年份的20个月度记录数观测；GPA补4.1/5，人像画框使用PROFILE而不推断拍摄年份。保留11月19日未提交文案与双语PDF字节、配置导出和旧重要锚点。更正前述v50日志的CSS体积：第一轮末两CSS实测129,733B；最终v51两CSS共140,947B，均为原始字节；本轮开工前工作区快照的12份CSS为273,952B，和Git HEAD口径不同。独立浏览器验收、截图与备份由本次Codex会话保存；最终验证结果见交付报告。未提交、推送或部署，后端未改。
 
 - **2026-11-20 [前端会话 · GitHub 同步授权与提交范围]** 用户在完成v51预览后明确要求停止调用Gemini、直接同步远端GitHub，CloudBase由用户自行发布。本轮将site/完整v51、11月19日项目与中文简历更新、三份设计/内容依据文档及共享日志/结构说明一并提交，按现有发布流程快进master并同步设计分支codex/homepage-evolution-20261114。已fetch核对远端无分叉，94个站点文件与最终验收指纹完全一致，8份JS语法和git diff --check通过。原有未跟踪.zcodeignore、aktools_log.log、my_homeage_qrcode.png及忽略的原始材料均保留在本地；不操作CloudBase发布控制台。最终提交与推送状态以Git历史及本轮回复为准。
+
+## 2026-11-20｜个人主页独立全量重设计（Cleanroom 交付）
+
+- 在隔离干净目录 `F:/AICoding/_handoffs/homepage-gemini-cleanroom-20261120` 完成全量前端原创重写（未读取原 `site/` 前端代码或历史视觉日志），验收通过后已安装至 `site/`。
+- 备份路径：`F:\AICoding\_backups\my_homepage-site-pre-gemini-redesign-20261120`；原始 `site/assets/` 字节（含 `resume.pdfx`、`resume-en.pdfx`、照片、证书与案例 JSON）原样保留并通过 67 项 SHA-256 核验。
+- 保留全部 11 个独立静态路由与历史锚点；采用原生 HTML/CSS（`css/tokens.css`、`base.css`、`layout.css`、`components.css`、`pages.css`）与 ES Modules（`js/config.js`、`main.js`、`compare.js`、`lightbox.js`、`data-case.js`），零构建依赖，静态可直传托管。
+- 设计与验证说明及截图归档于 `docs/gemini-independent-redesign-20261120/`。本轮仅完成本地安装与验收，未执行 git commit、push 或云端部署。
+
+- **2026-11-20 [GitHub 同步 · Gemini 独立重设计]** 用户在确认旧版 v51 备份后授权同步当前新版。旧版固定回退标签 `frontend-v51-backup-before-gemini-20261120` 已推送并核对指向 `fe6b8b9af7ac79c83d06f7617cbb00272d526c5d`，另有已校验完整历史 bundle。当前新版以独立提交保存，按现有主线流程快进 `master` 并同步本次设计分支 `codex/gemini-independent-redesign-20261120`，新增版本标签 `frontend-gemini-independent-20261120`。提交范围仅为 `site/`、`docs/gemini-independent-redesign-20261120/`、本日志与 `项目结构.txt`；原有未跟踪 `.zcodeignore`、`aktools_log.log`、`my_homeage_qrcode.png` 及被忽略原始材料继续保留在本地。同步前核对 92 个生成文件与安装文件哈希完全一致，5 个 JS 语法、11 页静态资源/历史锚点/重复 ID 检查与 67 项内容素材哈希校验通过；此前 Gemini 的 44 组视口及交互复测报告随文档归档。本轮只做 GitHub 同步，不操作 CloudBase 控制台。最终提交和远端指向以 Git 历史及本轮交付回复为准。

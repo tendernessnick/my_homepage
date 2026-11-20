@@ -1,118 +1,231 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact｜胡睿杰</title>
-  <meta name="description" content="联系胡睿杰：邮箱、微信、电话，以及简历下载与各版块快捷入口。" />
-  <meta name="theme-color" content="#f6f4ee" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="胡睿杰 / RUIJIE HU" />
-  <meta property="og:title" content="Contact｜胡睿杰" />
-  <meta property="og:description" content="联系胡睿杰：邮箱、微信、电话，以及简历下载与各版块快捷入口。" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="胡睿杰个人主页：把复杂的事，做得清楚。数据分析、商业 AI、独立产品。" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/favicon.svg?v=51" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/monograph.css?v=51" />
-  <link rel="stylesheet" href="css/pages.css?v=51" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>联系我 · 胡睿杰 HU RUIJIE</title>
+  <meta name="description" content="联系胡睿杰（HU RUIJIE）：邮箱 921458257@qq.com、电话 18916647173、微信 nick921458257、GitHub 与中英文 PDF 简历下载。" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/tokens.css?v=20261120" />
+  <link rel="stylesheet" href="css/base.css?v=20261120" />
+  <link rel="stylesheet" href="css/layout.css?v=20261120" />
+  <link rel="stylesheet" href="css/components.css?v=20261120" />
+  <link rel="stylesheet" href="css/pages.css?v=20261120" />
 </head>
-<body data-page="contact" class="folio-page">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<body>
+  <a class="skip-link" href="#main">跳到正文内容</a>
 
   <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">胡</span>
-        <span class="brand-text">胡睿杰</span>
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-mark__monogram" aria-hidden="true">HR</span>
+        <span class="brand-mark__text">
+          <span class="brand-mark__name">胡睿杰</span>
+          <span class="brand-mark__sub">HU RUIJIE · 2026</span>
+        </span>
       </a>
-      <nav class="top-nav" aria-label="主导航">
-        <a href="index.html" data-nav="home">首页</a>
-        <a href="about.html" data-nav="about">关于</a>
-        <a href="experience.html" data-nav="experience">经历</a>
-        <a href="works.html" data-nav="works">作品</a>
-        <a href="cv.html" data-nav="cv">履历</a>
-        <a href="life.html" data-nav="life">生活</a>
-        <a href="contact.html" data-nav="contact">联系</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="site-nav__link" href="index.html">首页</a>
+        <a class="site-nav__link" href="about.html">关于</a>
+        <a class="site-nav__link" href="experience.html">经历</a>
+        <a class="site-nav__link" href="works.html">作品</a>
+        <a class="site-nav__link" href="cv.html">简历</a>
+        <a class="site-nav__link" href="life.html">生活</a>
+        <a class="site-nav__link" href="contact.html" aria-current="page">联系</a>
       </nav>
-      <a class="site-language" href="en.html" lang="en" aria-label="EN — Read the English overview">EN</a>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-cmd-open aria-label="站内快速索引">
+          <span>索引</span>
+          <kbd class="icon-btn__kbd">Ctrl K</kbd>
+        </button>
+        <a class="icon-btn lang-pill" href="en.html" lang="en">EN</a>
+        <button type="button" class="menu-toggle" data-drawer-open aria-expanded="false" aria-controls="mobile-drawer" aria-label="打开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" aria-label="移动端导航">
-    <a href="index.html" data-nav="home">首页</a>
-    <a href="about.html" data-nav="about">关于</a>
-    <a href="experience.html" data-nav="experience">经历</a>
-    <a href="works.html" data-nav="works">作品</a>
-    <a href="cv.html" data-nav="cv">履历</a>
-    <a href="life.html" data-nav="life">生活</a>
-    <a href="contact.html" data-nav="contact">联系</a>
-  </nav>
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="移动端导航">
+      <div class="mobile-drawer__head">
+        <span class="brand-mark__name">胡睿杰 · HU RUIJIE</span>
+        <button type="button" class="icon-btn" data-drawer-close>关闭</button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="移动端主导航">
+        <a class="mobile-drawer__link" href="index.html"><span>首页</span><span class="mono">00</span></a>
+        <a class="mobile-drawer__link" href="about.html"><span>关于我</span><span class="mono">01</span></a>
+        <a class="mobile-drawer__link" href="experience.html"><span>实习与校园经历</span><span class="mono">02</span></a>
+        <a class="mobile-drawer__link" href="works.html"><span>作品与研究</span><span class="mono">03</span></a>
+        <a class="mobile-drawer__link" href="cv.html"><span>在线简历</span><span class="mono">04</span></a>
+        <a class="mobile-drawer__link" href="life.html"><span>摄影与生活</span><span class="mono">05</span></a>
+        <a class="mobile-drawer__link" href="contact.html" aria-current="page"><span>联系我</span><span class="mono">06</span></a>
+        <a class="mobile-drawer__link" href="en.html" lang="en"><span>English Brief</span><span class="mono">EN</span></a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
-    <div class="container folio-context"><a href="index.html">← 胡睿杰 / 首页</a><span>06 / CONTACT</span></div>
-    <section class="container page-hero ep-contact-hero">
-      <div class="ep-contact-word" aria-hidden="true">HELLO<span>↗</span></div>
-      <p class="eyebrow">Contact / 联系</p>
-      <h1 class="page-title">聊一件<br>具体的事。</h1>
-      <p class="lead">数据分析、业务与战略研究、商业 AI 的机会，或一个想交流的产品想法。不限于工作话题，网球和摄影也欢迎。</p>
-    </section>
-
-    <section class="section tight" aria-labelledby="reach-email-title">
-      <div class="container reach-address-book">
-        <div class="reach-mail">
-          <span class="reach-overline">01 / EMAIL</span>
-          <h2 id="reach-email-title">从一封邮件开始。</h2>
-          <a class="reach-email-address" href="mailto:921458257@qq.com">921458257@qq.com<span aria-hidden="true">↗</span></a>
-          <p>可以简单写下来意，附上岗位信息、项目链接或想讨论的问题。</p>
-          <div class="reach-mail-actions"><a class="btn primary" href="mailto:921458257@qq.com">写一封邮件 ↗</a><button class="btn" type="button" data-copy="921458257@qq.com" aria-live="polite">复制邮箱</button></div>
-        </div>
-        <div class="reach-other">
-          <article class="reach-contact-row"><div><span class="reach-overline">02 / PHONE</span><h3>电话 / 短信</h3><a class="reach-contact-value" href="tel:18916647173">18916647173</a></div><div class="reach-contact-actions"><a class="reach-plain-button" href="tel:18916647173">拨打 ↗</a><button class="reach-plain-button" type="button" data-copy="18916647173" aria-live="polite">复制号码</button></div></article>
-          <article class="reach-contact-row"><div><span class="reach-overline">03 / WECHAT</span><h3>微信</h3><span class="reach-contact-value">nick921458257</span></div><div class="reach-contact-actions"><button class="reach-plain-button" type="button" data-copy="nick921458257" aria-live="polite">复制微信号</button></div></article>
-          <p class="reach-note">添加微信时备注来意，方便我知道怎样接上话题。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="reach-topic-title">
+    <section class="page-hero">
       <div class="container">
-        <div class="section-head"><h2 id="reach-topic-title">可以从这些话题聊起</h2></div>
-        <div class="reach-topics">
-          <article><span class="reach-overline">OPPORTUNITIES</span><h3>工作与机会</h3><p>数据分析、商业分析、业务与战略研究。岗位方向和具体问题，能让交流更直接。</p><a href="cv.html" class="reach-text-link">先看在线履历 ↗</a></article>
-          <article><span class="reach-overline">PRODUCTS</span><h3>产品与实现</h3><p>桌面提醒、数据工作台、天气决策、校园邮件，以及把模型做成在线服务的过程。</p><a href="works.html" class="reach-text-link">先看看作品 ↗</a></article>
-          <article><span class="reach-overline">OFF THE CLOCK</span><h3>网球与摄影</h3><p>约球、聊剪辑、交换拍摄想法，或者聊聊带着相机压马路时遇到的风景。</p><a href="life.html" class="reach-text-link">翻开生活档案 ↗</a></article>
+        <span class="eyebrow">06 / CONTACT · 联系</span>
+        <h1 class="page-hero__title">聊一件具体的事</h1>
+        <p class="page-hero__lead">
+          数据分析、业务与战略研究、商业 AI 的岗位机会，或者一个想交流的产品想法。不限于工作话题，网球与摄影也同样欢迎。
+        </p>
+      </div>
+    </section>
+
+    <!-- Direct Channels -->
+    <section class="section" aria-labelledby="reach-email-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">DIRECT CHANNELS · 直达方式</span>
+          <h2 class="section-title" id="reach-email-title">从一封邮件、一通电话或微信开始</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card contact-channel">
+            <span class="eyebrow">01 / EMAIL</span>
+            <div class="contact-value">921458257@qq.com</div>
+            <p class="card__body">欢迎简单写下来意，附上岗位信息、项目链接或想讨论的问题。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <a class="btn btn--primary btn--sm" href="mailto:921458257@qq.com">写一封邮件 ↗</a>
+              <button type="button" class="btn btn--secondary btn--sm" data-copy-text="921458257@qq.com" data-copy-label="邮箱">复制邮箱</button>
+            </div>
+          </article>
+
+          <article class="card contact-channel">
+            <span class="eyebrow">02 / PHONE · 电话 / 短信</span>
+            <div class="contact-value">18916647173</div>
+            <p class="card__body">面试沟通或紧急事宜可直接致电或短信联系。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <a class="btn btn--primary btn--sm" href="tel:18916647173">拨打 ↗</a>
+              <button type="button" class="btn btn--secondary btn--sm" data-copy-text="18916647173" data-copy-label="手机号">复制号码</button>
+            </div>
+          </article>
+
+          <article class="card contact-channel">
+            <span class="eyebrow">03 / WECHAT · 微信</span>
+            <div class="contact-value">nick921458257</div>
+            <p class="card__body">添加微信时请备注来意（如公司/岗位或交流主题），方便及时对接。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <button type="button" class="btn btn--primary btn--sm" data-copy-text="nick921458257" data-copy-label="微信号">复制微信号</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section tight" aria-labelledby="reach-resource-title">
-      <div class="container reach-resources">
-        <div><span class="reach-overline">TAKE A LOOK</span><h2 id="reach-resource-title">把需要的材料带走。</h2><p>五段实习（含在岗）与四个独立产品的在线记录。</p></div>
-        <div class="reach-resource-links">
-          <div><span>简历</span><a href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">中文 PDF ↓</a><a href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English PDF ↓</a></div>
-          <div><span>经历</span><a href="cv.html">在线履历 ↗</a><a href="experience.html">实习与案例 ↗</a></div>
-          <div><span>作品</span><a href="works.html">项目与推文 ↗</a><a href="dehaze.html" data-dehaze-demo>去雾在线体验 ↗</a></div>
-          <div><span>代码</span><a href="https://github.com/tendernessnick" target="_blank" rel="noreferrer noopener">GitHub / tendernessnick ↗</a></div>
+    <!-- Topics -->
+    <section class="section section--bordered surface-subtle" aria-labelledby="reach-topic-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">TOPICS · 可以从这些话题聊起</span>
+          <h2 class="section-title" id="reach-topic-title">交流方向</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="eyebrow">OPPORTUNITIES</span>
+            <h3 class="card__title">工作与岗位机会</h3>
+            <p class="card__body">业务分析、数据分析、商业分析、战略研究与商业 AI 落地方向。明确的业务场景与具体问题，能让交流更高效。</p>
+            <div class="card__foot"><a href="cv.html">先看在线履历 ↗</a></div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">PRODUCTS</span>
+            <h3 class="card__title">产品与工程实现</h3>
+            <p class="card__body">桌面提醒、数据工作台、香港网球天气决策、校园邮件管家，以及将模型从论文做成云端在线服务的过程。</p>
+            <div class="card__foot"><a href="works.html">先看看作品 ↗</a></div>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">OFF THE CLOCK</span>
+            <h3 class="card__title">网球与摄影</h3>
+            <p class="card__body">约球、聊剪辑、交换拍摄想法，或者分享带着相机压马路时遇见的瞬间。</p>
+            <div class="card__foot"><a href="life.html">翻开生活档案 ↗</a></div>
+          </article>
         </div>
       </div>
     </section>
-    <nav class="container folio-pagination" aria-label="继续浏览"><a href="life.html"><span><small>上一页</small><strong>摄影与生活</strong></span><b aria-hidden="true">←</b></a><a href="index.html"><span><small>继续看看</small><strong>回到主页</strong></span><b aria-hidden="true">↗</b></a></nav>
+
+    <!-- Take-home Resources -->
+    <section class="section" aria-labelledby="reach-resource-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">TAKE A LOOK · 资料带走</span>
+          <h2 class="section-title" id="reach-resource-title">把需要的材料直接带走</h2>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <span class="eyebrow">RESUME</span>
+            <h3 style="font-size:var(--text-lg);">PDF 简历下载</h3>
+            <p class="card__body">中文版含四个工具项目与 IS6335 更新；英文版为原有通用版。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <a class="btn btn--primary btn--sm" href="assets/resume.pdfx" download="胡睿杰-简历-2026.pdf">中文 PDF ↓</a>
+              <a class="btn btn--secondary btn--sm" href="assets/resume-en.pdfx" download="HuRuijie-Resume-2026.pdf">English PDF ↓</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">CODE</span>
+            <h3 style="font-size:var(--text-lg);">开源代码仓库</h3>
+            <p class="card__body">查看四个独立产品仓库、留存数据案例结果与复现脚本。</p>
+            <div style="margin-top:auto;">
+              <a class="btn btn--secondary btn--sm" href="https://github.com/tendernessnick" target="_blank" rel="noopener noreferrer">GitHub / tendernessnick ↗</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">RECORD</span>
+            <h3 style="font-size:var(--text-lg);">在线履历与案例</h3>
+            <p class="card__body">五段实习（含在岗）与完整项目脉络。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <a class="btn btn--ghost btn--sm" href="cv.html">在线履历 ↗</a>
+              <a class="btn btn--ghost btn--sm" href="experience.html">实习拆解 ↗</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">EXPERIMENTS</span>
+            <h3 style="font-size:var(--text-lg);">专题体验入口</h3>
+            <p class="card__body">数据评分深度案例与 SE-CGAN 图像去雾对比。</p>
+            <div class="btn-group" style="margin-top:auto;">
+              <a class="btn btn--ghost btn--sm" href="data-case.html">数据案例 ↗</a>
+              <a class="btn btn--ghost btn--sm" href="dehaze.html">去雾体验 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="page-pager" aria-label="页面前后跳转">
+      <div class="container page-pager__inner">
+        <a class="pager-card" href="life.html">
+          <span class="pager-card__kicker">← 上一页</span>
+          <span class="pager-card__title">摄影与生活档案</span>
+        </a>
+        <a class="pager-card pager-card--next" href="index.html">
+          <span class="pager-card__kicker">回到起点 →</span>
+          <span class="pager-card__title">胡睿杰主页</span>
+        </a>
+      </div>
+    </nav>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <span>© <span data-year>2026</span> 胡睿杰｜Contact</span>
-      
+      <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:0;">
+        <span>© 2026 胡睿杰 HU RUIJIE · 921458257@qq.com</span>
+        <a href="en.html" lang="en">English Overview ↗</a>
+      </div>
     </div>
   </footer>
 
-  <button class="back-top" data-back-top type="button" aria-label="返回顶部">↑</button>
-  <script type="module" src="js/app.js?v=51"></script>
-  <script type="module" src="js/folio.js?v=51"></script>
-  <script type="module" src="js/evolution.js?v=51"></script>
+  <script type="module" src="js/main.js?v=20261120"></script>
 </body>
 </html>
